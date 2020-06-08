@@ -1,0 +1,280 @@
+% % % % % % % % % % % % %
+% Preamble % % %
+% % % % % % % % % % % % %
+\documentclass{iheid}
+
+% Setup macros -- Please complete yaml in index.Rmd
+\newcommand{\mytitle}{A Graduate Institute Thesis\\
+Template for R Markdown \texttt{iheidddown}:\\}
+\newcommand{\myauthor}{James Hollway}
+\newcommand{\myemail}{\href{mailto:james.hollway@graduateinstitute.ch}{\nolinkurl{james.hollway@graduateinstitute.ch}}}
+\newcommand{\mydepartment}{IRPS}
+\newcommand{\mythesisno}{99999} % provided by PhD secretariat
+\newcommand{\mykeywords}{rmarkdown, template, reproducible research,
+iheid} % only used for PDF metadata
+\newcommand{\mysubject}{IHEID dissertation template in
+rmarkdown} % only used for PDF metadata
+\newcommand{\mylogo}{Logo_CMYK_Hi.eps} % name of the IHEID logo file
+
+% enable link highlighting to be turned off from YAML
+\usepackage[colorlinks=false,pdfpagelabels,hidelinks=true]{hyperref}
+
+% add a "DRAFT" footer to every normal page
+\fancyfoot[C]{\emph{Draft -- Please do not cite or circulate.}}
+
+% chose biliography options % % %
+\usepackage[backend=biber, % if this doesn't work for you, use bibtex8 as a backend
+%style=verbose, % use this if you are in the law department
+style=authoryear, % use this if you are in any other department
+maxcitenames=3, % how many authors to cite before resorting to ``et al''
+maxbibnames=99, % in the bibliography we want them all though
+sortcites=true, % this re-sorts citations alphabetically when you cite several at once
+hyperref=true, % this adds a link to a citations date that points to the reference
+%backref=true, % references state on which page they are cited
+abbreviate=true,
+url=false, % don't add (lengthy) URL information
+doi=false, % don't add (lengthy) DOI information
+autolang=hyphen]]{biblatex}
+\newcommand*{\bibtitle}{References}
+
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+\renewcommand*{\bibfont}{\raggedright\small}
+
+% Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
+\addbibresource{mybib.bib}
+
+% Setup different header and footer for title page(s)
+\fancypagestyle{firstpages} {
+	\fancyhf{} % clear header and footer
+	\renewcommand{\headrulewidth}{0pt} % remove header line
+	\renewcommand{\footrulewidth}{0pt} % remove footer line
+}
+
+% Setup custom title format
+\makeatletter
+\renewcommand\maketitle
+  {\vspace*{3cm} % distance from top of page to title
+  \centering{
+  \Large\sffamily\textbf{\@title}
+  \vspace{1cm}\par % distance to programme statement
+  \centering\large\sffamily\textbf{THESIS}\\
+  submitted at the Graduate Institute\\
+  in fulfillment of the requirements of the\\
+  \myprogramme
+  \vspace*{0.5cm}\par % distance to author
+  \centering\large\sffamily{
+	by\\
+	\vspace{0.5cm} % distance between 'by' and author name
+	\@author
+  }
+  \bigskip\par
+  }
+  }
+\makeatother
+
+% % % % % % % % % % % % %
+% Document Starts Here % % %
+% % % % % % % % % % % % %
+\begin{document}
+
+%%%%%%%%%%%%%%%%%
+% TITLEPAGES
+%%%%%%%%%%%%%%%%%
+% TITLEPAGE 1
+\begin{titlepage}
+\hspace*{-1.25cm}
+\includegraphics[width=0.4\linewidth]{\mylogo}
+
+\maketitle
+
+\vspace*{1cm}
+
+\sffamily{Thesis No. \mythesisno}
+
+\vspace*{1cm}
+\sffamily\textbf{Geneva}\\
+\sffamily\textbf{\the\year}
+
+\thispagestyle{firstpages} % this line is needed to set a different header/footer than for the rest of the document
+\end{titlepage}
+
+% TITLEPAGE 2 (empty page)
+\newpage\null\thispagestyle{empty}\newpage
+
+% TITLEPAGE 3
+\begin{titlepage}
+\vspace*{5cm}
+
+\centering\Large\sffamily\textbf{\mytitle}
+
+\vspace*{10cm}
+
+\large\raisebox{0.1em}{\textcopyright} \sffamily\textbf{\the\year} \hspace{1em} \sffamily\textbf{\MakeUppercase{\mylastname}}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+
+% TITLEPAGE 4
+\begin{titlepage}
+\centering\sffamily{
+INSTITUT DE HAUTES ETUDES INTERNATIONALES ET DU DEVELOPPEMENT\\
+GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
+}
+
+\maketitle
+
+\vspace*{1cm}
+
+\sffamily{Thesis No. \mythesisno}
+
+\vspace*{1cm}
+\sffamily\textbf{Geneva}\\
+\sffamily\textbf{\the\year}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+
+% TITLEPAGE 5
+\begin{titlepage}
+
+\textcolor{red}{PLACEHOLDER: REPLACE PAGE WITH A DOCUMENT PROVIDED BY PHD SECRETARIAT}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+
+% TITLEPAGE 6
+\begin{titlepage}
+\centering\sffamily{
+INSTITUT DE HAUTES ETUDES INTERNATIONALES ET DU DEVELOPPEMENT\\
+GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
+}
+
+\vspace*{1cm}
+
+\begin{center}
+\sffamily\large\textbf{RESUME / ABSTRACT}
+
+\sffamily\normalsize{
+	\begin{abstract}
+	This \emph{R Markdown} template is for writing an Oxford University
+ thesis. The template is built using Yihui Xie's \texttt{bookdown}
+ package, with heavy inspiration from Chester Ismay's
+ \texttt{thesisdown} and the \texttt{OxThesis} \LaTeX~template (most
+ recently adapted by John McManigle).
+
+ This template's sample content include illustrations of how to write a
+ thesis in R Markdown, and largely follows the structure from
+ \href{https://ulyngs.github.io/rmarkdown-workshop-2019/}{this R
+ Markdown workshop}.
+
+ Congratulations for taking a step further into the lands of open,
+ reproducible science by writing your thesis using a tool that allows
+ you to transparently include tables and dynamically generated plots
+ directly from the underlying data. Hip hooray!
+\end{abstract}
+\end{center}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+\restoregeometry % Reset page geometry
+\setcounter{page}{1} % Reset page counter
+%%%%%%%%%%%%%%%%%
+% END TITLE PAGES
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+% START MAIN CONTENT
+%%%%%%%%%%%%%%%%%
+% Start roman pages
+\begin{romanpages}
+
+% If you'd like to add a dedication, un-comment the following.
+\begin{dedication}
+  For X, if you wish
+\end{dedication}
+
+% Same for acknowledgements
+\begin{acknowledgements}
+ 	This is where you will normally thank your advisor, colleagues, family
+  and friends, as well as funding and institutional support. In our
+  case, we will give our praises to the people who developed the ideas
+  and tools that allow us to push open science a little step forward by
+  writing plain-text, transparent, and reproducible theses in R
+  Markdown.
+
+  We must be grateful to John Gruber for inventing the original version
+  of Markdown, to John MacFarlane for creating Pandoc
+  (\url{http://pandoc.org}) which converts Markdown to a large number of
+  output formats, and to Yihui Xie for creating \texttt{knitr} which
+  introduced R Markdown as a way of embedding code in Markdown
+  documents, and \texttt{bookdown} which added tools for technical and
+  longer-form writing.
+
+  Special thanks to \href{http://chester.rbind.io}{Chester Ismay}, who
+  created the \texttt{thesisdown} package that helped many a PhD student
+  write their theses in R Markdown. And a very special tahnks to John
+  McManigle, whose adaption of Sam Evans' adaptation of Keith Gillow's
+  original maths template for writing an Oxford University DPhil thesis
+  in \LaTeX~provided the template that I adapted for R Markdown.
+
+  Finally, profuse thanks to JJ Allaire, the founder and CEO of
+  \href{http://rstudio.com}{RStudio}, and Hadley Wickham, the mastermind
+  of the tidyverse without whom we'd all just given up and done data
+  science in Python instead. Thanks for making data science easier, more
+  accessible, and more fun for us all.
+
+  \begin{flushright}
+  Ulrik Lyngs \\
+  Linacre College, Oxford \\
+  2 December 2018
+  \end{flushright}
+\end{acknowledgements}
+
+% Uncomment to generate a list of tables
+
+% Uncomment to generate a list of abbreviations
+% This might be a good place for a glossary, etc.
+\include{front-and-back-matter/abbreviations}
+
+% end roman pages
+\end{romanpages}
+
+%%%%%%%%%%%%%%%%%
+% CHAPTERS
+%%%%%%%%%%%%%%%%%
+% Add or remove any chapters you'd like here, by file name (excluding '.tex'):
+\flushbottom
+
+% all your chapters and appendices will appear here
+\hypertarget{introduction}{%
+\section*{Introduction}\label{introduction}}
+\addcontentsline{toc}{section}{Introduction}
+
+Welcome to the \emph{R Markdown} template for writing a PhD Dissertation
+at the Graduate Institute of International and Development Studies in
+Geneva. This sample content is based on the
+\href{https://github.com/jhollway/iheidmytex}{IHEID LaTeX dissertation
+template} and the R Bookdown package.
+
+This project was inspired by by the
+\href{https://github.com/ulyngs/oxforddown}{oxforddown},\href{https://github.com/ismayc/thesisdown}{thesisdown},
+\href{https://github.com/benmarwick/huskydown}{huskydown} and
+\href{https://github.com/rstudio/bookdown}{bookdown} packages. If you
+are new to working with \texttt{bookdown} and \texttt{rmarkdown}, please
+read over the great documentation provided by \texttt{thesisdown},
+\texttt{oxforddown} and in the
+\href{https://bookdown.org/yihui/bookdown/}{bookdown book}.
+
+
+%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%
+\setlength{\baselineskip}{0pt} % Single-space References
+
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=bibintoc,title={\bibtitle}]}
+
+%%%%%%%%%%%%%%%%% 
+% END DOCUMENT BODY
+%%%%%%%%%%%%%%%%%
+\end{document}
