@@ -1,0 +1,52 @@
+---
+title: |
+  A Graduate Institute Thesis \
+  Template for R Markdown
+  `iheidddown`: \
+author: James Hollway
+email: james.hollway@graduateinstitute.ch
+department: "IRPS"
+thesisno: "99999"
+keywords: "rmarkdown, template, reproducible research, iheid"
+subject: "IHEID dissertation template in rmarkdown"
+#abstract: |
+#  `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
+acknowledgements: |
+  `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
+dedication: For X, if you wish
+abbreviations: "front-and-back-matter/abbreviations" # path to your .tex file
+bibliography: mybib.bib
+bibliography-heading-in-pdf: References # Works Cited, Bibliography... 
+bib-authoryear: true   # true = format references as author-year, false = verbose
+hidelinks: true # true = clickable links are highlighted with a colored border
+draft: true # true = add "Please do not cite or circulate" to the footer
+output:
+  pdf_document:
+    template: templates/iheiddiss.tex
+    fig_caption: yes
+    latex_engine: xelatex
+    keep_tex: false
+    citation_package: biblatex  
+  bookdown::gitbook:
+    css: templates/style.css
+    config:
+      sharing:
+        facebook: false
+        twitter: false
+        all: false
+---
+
+
+```{r create_chunk_options, include=FALSE, eval=knitr::is_latex_output()}
+source('scripts_and_filters/create_chunk_options.R')
+source('scripts_and_filters/wrap_lines.R')
+```
+<!--
+Include the create_chunk_options chunk above at the top of your index.Rmd file
+This will include code to create additional chunk options (e.g. for adding author references to savequotes)and to make sure lines in code soft wrap
+If you need to create your own additional chunk options, edit the file scripts/create_chunk_options.R
+-->
+
+
+```{r introduction, child = '_00-introduction.Rmd'}
+```

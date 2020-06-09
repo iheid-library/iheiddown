@@ -3,6 +3,60 @@
 % % % % % % % % % % % % %
 \documentclass{iheid}
 
+% Setup macros -- Please complete yaml in index.Rmd
+\newcommand{\mytitle}{$title$}
+\newcommand{\myauthor}{$author$}
+\newcommand{\myemail}{$email$}
+\newcommand{\mydepartment}{$department$}
+\newcommand{\mythesisno}{$thesisno$} % provided by PhD secretariat
+\newcommand{\mykeywords}{$keywords$} % only used for PDF metadata
+\newcommand{\mysubject}{$subject$} % only used for PDF metadata
+\newcommand{\mylogo}{Logo_CMYK_Hi.eps} % name of the IHEID logo file
+
+% enable link highlighting to be turned off from YAML
+\usepackage[colorlinks=false,pdfpagelabels,hidelinks=$hidelinks$]{hyperref}
+
+% add a "DRAFT" footer to every normal page
+$if(draft)$
+\fancyfoot[C]{\emph{Draft -- Please do not cite or circulate.}}
+$endif$
+
+% chose biliography options % % %
+$if(bib-authoryear)$
+\usepackage[backend=biber, % if this doesn't work for you, use bibtex8 as a backend
+%style=verbose, % use this if you are in the law department
+style=authoryear, % use this if you are in any other department
+maxcitenames=3, % how many authors to cite before resorting to ``et al''
+maxbibnames=99, % in the bibliography we want them all though
+sortcites=true, % this re-sorts citations alphabetically when you cite several at once
+hyperref=true, % this adds a link to a citations date that points to the reference
+%backref=true, % references state on which page they are cited
+abbreviate=true,
+url=false, % don't add (lengthy) URL information
+doi=false, % don't add (lengthy) DOI information
+autolang=hyphen]]{biblatex}
+\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
+$else$
+\usepackage[backend=biber, % if this doesn't work for you, use bibtex8 as a backend
+style=verbose, % use this if you are in the law department
+maxcitenames=3, % how many authors to cite before resorting to ``et al''
+maxbibnames=99, % in the bibliography we want them all though
+sortcites=true, % this re-sorts citations alphabetically when you cite several at once
+hyperref=true, % this adds a link to a citations date that points to the reference
+%backref=true, % references state on which page they are cited
+abbreviate=true,
+url=false, % don't add (lengthy) URL information
+doi=false, % don't add (lengthy) DOI information
+autolang=hyphen]]{biblatex}
+\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
+$endif$
+
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+\renewcommand*{\bibfont}{\raggedright\small}
+
+% Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
+\addbibresource{$bibliography$}
+
 % Setup different header and footer for title page(s)
 \fancypagestyle{firstpages} {
 	\fancyhf{} % clear header and footer
@@ -115,8 +169,9 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 \sffamily\large\textbf{RESUME / ABSTRACT}
 
 \sffamily\normalsize{
-Your Abstract
-}
+	\begin{abstract}
+	$abstract$
+\end{abstract}
 \end{center}
 
 \thispagestyle{firstpages}
@@ -126,82 +181,60 @@ Your Abstract
 %%%%%%%%%%%%%%%%%
 % END TITLE PAGES
 %%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%
-% MAIN CONTENT
+% START MAIN CONTENT
 %%%%%%%%%%%%%%%%%
-\tableofcontents % table of contents
-\clearpage % page break
-\listoffigures % list of figures
-\listoftables % list of tables
-\clearpage
+% Start roman pages
+\begin{romanpages}
 
-\section{Section Title}\label{sec:intro}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
-\footnote{
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-}.
+% If you'd like to add a dedication, un-comment the following.
+$if(dedication)$
+\begin{dedication}
+  $dedication$
+\end{dedication}
+$endif$
 
-For examples, see \hyperref[sec:demo]{Section \ref{sec:demo}}.
+% Same for acknowledgements
+$if(acknowledgements)$
+\begin{acknowledgements}
+ 	$acknowledgements$
+\end{acknowledgements}
+$endif$
 
-\section{Demonstrations}\label{sec:demo}
-\textcite{Hollway2017} is an example of an in-text citation. If you use ``autocite'' \autocite{Hollway2017}, the citation is automatically surrounded with brackets. 
-The style will automatically update when you change it's configuration in the \TeX~ file. 
-To learn more about how to use ``biblatex'', the package we are using here for referencing, see \href{http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf}{this cheatsheet}.
+% Uncomment to generate a list of tables
+$if(lot)$
+\listoftables
+  \mtcaddchapter
+$endif$
 
-If you want to change fonts, check \href{https://www.tug.org/pracjourn/2006-1/schmidt/schmidt.pdf}{here}.
+% Uncomment to generate a list of abbreviations
+% This might be a good place for a glossary, etc.
+$if(abbreviations)$
+\include{$abbreviations$}
+$endif$
 
-\subsection{Math and Code}
-Math can be inline such as $ y = \alpha + \beta x + \epsilon $ or look like this: 
-$$ \bar{x} = \frac{1}{n} \sum_{i=1}^{n}x_i $$
+% end roman pages
+\end{romanpages}
 
-The math might express an equation used in a \texttt{package}. 
-Indeed, you can write whole sections of code like so:
-\texttt{model1 <- estimate(y \textasciitilde~ x1 + x2, data)}
+%%%%%%%%%%%%%%%%%
+% CHAPTERS
+%%%%%%%%%%%%%%%%%
+% Add or remove any chapters you'd like here, by file name (excluding '.tex'):
+\flushbottom
 
-\subsection{Tables and Figures}
+% all your chapters and appendices will appear here
+$body$
 
-I recommend using the optional packages (see Preamble) to produce more sophisticated tables such as \cref{tab:alternative}.
 
-\begin{table}[H]
-%[H] Changes how LaTex places your tables/figures. Options:
-%H means the table/figure should absolutely be placed here (requires float package)
-%! indicates that some restrictions should be ignored
-%h indicates that the float is allowed to be placed inline
-%t indicates that the float is allowed to go into a top area
-%b indicates that the float is allowed to go into a bottom area
-%p indicates the the float is allowed to go on a float page or column area
-% More info: https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
-\centering
-\caption{Yet Another Table}
-\label{tab:alternative}
-    \begin{tabular}{c c c}
-    	\toprule
-    	\textbf{Variable X} & \multicolumn{2}{c}{\textbf{Variable Y}} \\
-    	\midrule
-        & \textit{Y: Value 1} & \textit{Y: Value 2} \\ \midrule
-        \textit{X: Value 1} & \makecell{I\\ \textbf{Name for I}} & \makecell{II\\ \textbf{Name for II}} \\ \midrule
-        \textit{X: Value 2} & \makecell{III\\ \textbf{Name for III}} & \makecell{IV\\ \textbf{Name for IV}}  \\ 
-    	\bottomrule
-    \end{tabular}
-    \caption*{\footnotesize\textit{Note:} This note is not too long, so it doesn't exceed the width of the table by much.}
-\end{table}
-
-Figures are included using the ``includegraphics'' command:
-
-\begin{figure}[!ht]
-	\caption{Example Figure}
-    \label{somefigure}
-    \centerline{
-    	\includegraphics[width=0.4\linewidth]{Logo_CMYK_Hi.eps}
-    }
-    \vspace{1em}
-    \caption*{\parbox{0.4\textwidth}{\footnotesize{\textit{Note:} This text is wider than the figure, but we can manually fit the width to that of the figure using the ``parbox'' command.}}}
-\end{figure}
-
-%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%
 % BIBLIOGRAPHY
 %%%%%%%%%%%%%%%%%
-\printbibliography 
+\setlength{\baselineskip}{0pt} % Single-space References
+
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=bibintoc,title={\bibtitle}]}
+
 
 %%%%%%%%%%%%%%%%%
 % APPENDICES
@@ -209,6 +242,7 @@ Figures are included using the ``includegraphics'' command:
 \appendix
 
 \section{Appendix Title}\label{app:APPENDIXNAME}
+
 
 %%%%%%%%%%%%%%%%% 
 % END DOCUMENT BODY

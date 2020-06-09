@@ -4,25 +4,25 @@
 \documentclass{iheid}
 
 % Setup macros -- Please complete yaml in index.Rmd
-\newcommand{\mytitle}{A Graduate Institute Thesis\\
-Template for R Markdown \texttt{iheidddown}:\\}
-\newcommand{\myauthor}{James Hollway}
-\newcommand{\myemail}{\href{mailto:james.hollway@graduateinstitute.ch}{\nolinkurl{james.hollway@graduateinstitute.ch}}}
-\newcommand{\mydepartment}{IRPS}
-\newcommand{\mythesisno}{99999} % provided by PhD secretariat
-\newcommand{\mykeywords}{rmarkdown, template, reproducible research,
-iheid} % only used for PDF metadata
-\newcommand{\mysubject}{IHEID dissertation template in
-rmarkdown} % only used for PDF metadata
+\newcommand{\mytitle}{$title$}
+\newcommand{\myauthor}{$author$}
+\newcommand{\myemail}{$email$}
+\newcommand{\mydepartment}{$department$}
+\newcommand{\mythesisno}{$thesisno$} % provided by PhD secretariat
+\newcommand{\mykeywords}{$keywords$} % only used for PDF metadata
+\newcommand{\mysubject}{$subject$} % only used for PDF metadata
 \newcommand{\mylogo}{Logo_CMYK_Hi.eps} % name of the IHEID logo file
 
 % enable link highlighting to be turned off from YAML
-\usepackage[colorlinks=false,pdfpagelabels,hidelinks=true]{hyperref}
+\usepackage[colorlinks=false,pdfpagelabels,hidelinks=$hidelinks$]{hyperref}
 
 % add a "DRAFT" footer to every normal page
+$if(draft)$
 \fancyfoot[C]{\emph{Draft -- Please do not cite or circulate.}}
+$endif$
 
 % chose biliography options % % %
+$if(bib-authoryear)$
 \usepackage[backend=biber, % if this doesn't work for you, use bibtex8 as a backend
 %style=verbose, % use this if you are in the law department
 style=authoryear, % use this if you are in any other department
@@ -35,14 +35,27 @@ abbreviate=true,
 url=false, % don't add (lengthy) URL information
 doi=false, % don't add (lengthy) DOI information
 autolang=hyphen]]{biblatex}
-\newcommand*{\bibtitle}{References}
-
+\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
+$else$
+\usepackage[backend=biber, % if this doesn't work for you, use bibtex8 as a backend
+style=verbose, % use this if you are in the law department
+maxcitenames=3, % how many authors to cite before resorting to ``et al''
+maxbibnames=99, % in the bibliography we want them all though
+sortcites=true, % this re-sorts citations alphabetically when you cite several at once
+hyperref=true, % this adds a link to a citations date that points to the reference
+%backref=true, % references state on which page they are cited
+abbreviate=true,
+url=false, % don't add (lengthy) URL information
+doi=false, % don't add (lengthy) DOI information
+autolang=hyphen]]{biblatex}
+\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
+$endif$
 
 % This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
 \renewcommand*{\bibfont}{\raggedright\small}
 
 % Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
-\addbibresource{mybib.bib}
+\addbibresource{$bibliography$}
 
 % Setup different header and footer for title page(s)
 \fancypagestyle{firstpages} {
@@ -157,21 +170,7 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 
 \sffamily\normalsize{
 	\begin{abstract}
-	This \emph{R Markdown} template is for writing an Oxford University
- thesis. The template is built using Yihui Xie's \texttt{bookdown}
- package, with heavy inspiration from Chester Ismay's
- \texttt{thesisdown} and the \texttt{OxThesis} \LaTeX~template (most
- recently adapted by John McManigle).
-
- This template's sample content include illustrations of how to write a
- thesis in R Markdown, and largely follows the structure from
- \href{https://ulyngs.github.io/rmarkdown-workshop-2019/}{this R
- Markdown workshop}.
-
- Congratulations for taking a step further into the lands of open,
- reproducible science by writing your thesis using a tool that allows
- you to transparently include tables and dynamically generated plots
- directly from the underlying data. Hip hooray!
+	$abstract$
 \end{abstract}
 \end{center}
 
@@ -190,52 +189,30 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 \begin{romanpages}
 
 % If you'd like to add a dedication, un-comment the following.
+$if(dedication)$
 \begin{dedication}
-  For X, if you wish
+  $dedication$
 \end{dedication}
+$endif$
 
 % Same for acknowledgements
+$if(acknowledgements)$
 \begin{acknowledgements}
- 	This is where you will normally thank your advisor, colleagues, family
-  and friends, as well as funding and institutional support. In our
-  case, we will give our praises to the people who developed the ideas
-  and tools that allow us to push open science a little step forward by
-  writing plain-text, transparent, and reproducible theses in R
-  Markdown.
-
-  We must be grateful to John Gruber for inventing the original version
-  of Markdown, to John MacFarlane for creating Pandoc
-  (\url{http://pandoc.org}) which converts Markdown to a large number of
-  output formats, and to Yihui Xie for creating \texttt{knitr} which
-  introduced R Markdown as a way of embedding code in Markdown
-  documents, and \texttt{bookdown} which added tools for technical and
-  longer-form writing.
-
-  Special thanks to \href{http://chester.rbind.io}{Chester Ismay}, who
-  created the \texttt{thesisdown} package that helped many a PhD student
-  write their theses in R Markdown. And a very special tahnks to John
-  McManigle, whose adaption of Sam Evans' adaptation of Keith Gillow's
-  original maths template for writing an Oxford University DPhil thesis
-  in \LaTeX~provided the template that I adapted for R Markdown.
-
-  Finally, profuse thanks to JJ Allaire, the founder and CEO of
-  \href{http://rstudio.com}{RStudio}, and Hadley Wickham, the mastermind
-  of the tidyverse without whom we'd all just given up and done data
-  science in Python instead. Thanks for making data science easier, more
-  accessible, and more fun for us all.
-
-  \begin{flushright}
-  Ulrik Lyngs \\
-  Linacre College, Oxford \\
-  2 December 2018
-  \end{flushright}
+ 	$acknowledgements$
 \end{acknowledgements}
+$endif$
 
 % Uncomment to generate a list of tables
+$if(lot)$
+\listoftables
+  \mtcaddchapter
+$endif$
 
 % Uncomment to generate a list of abbreviations
 % This might be a good place for a glossary, etc.
-\include{front-and-back-matter/abbreviations}
+$if(abbreviations)$
+\include{$abbreviations$}
+$endif$
 
 % end roman pages
 \end{romanpages}
@@ -247,24 +224,7 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 \flushbottom
 
 % all your chapters and appendices will appear here
-\hypertarget{introduction}{%
-\section*{Introduction}\label{introduction}}
-\addcontentsline{toc}{section}{Introduction}
-
-Welcome to the \emph{R Markdown} template for writing a PhD Dissertation
-at the Graduate Institute of International and Development Studies in
-Geneva. This sample content is based on the
-\href{https://github.com/jhollway/iheidmytex}{IHEID LaTeX dissertation
-template} and the R Bookdown package.
-
-This project was inspired by by the
-\href{https://github.com/ulyngs/oxforddown}{oxforddown},\href{https://github.com/ismayc/thesisdown}{thesisdown},
-\href{https://github.com/benmarwick/huskydown}{huskydown} and
-\href{https://github.com/rstudio/bookdown}{bookdown} packages. If you
-are new to working with \texttt{bookdown} and \texttt{rmarkdown}, please
-read over the great documentation provided by \texttt{thesisdown},
-\texttt{oxforddown} and in the
-\href{https://bookdown.org/yihui/bookdown/}{bookdown book}.
+$body$
 
 
 %%%%%%%%%%%%%%%%%
@@ -279,4 +239,3 @@ read over the great documentation provided by \texttt{thesisdown},
 % END DOCUMENT BODY
 %%%%%%%%%%%%%%%%%
 \end{document}
-

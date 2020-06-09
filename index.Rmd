@@ -17,14 +17,16 @@ abstract: |
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
-dedication: For Yihui Xie
+dedication: For X, if you wish
 abbreviations: "front-and-back-matter/abbreviations" # path to .tex file with abbreviations
+bib-authoryear: true   # true = format references as author-year, false = verbose
+draft: true # true = add "Please do not cite or circulate" to the footer
 
 #######################
 ## bibliography path ##
 #######################
-bibliography: references.bib
-bibliography-heading-in-pdf: Bibliography
+bibliography: mybib.bib
+bibliography-heading-in-pdf: References # Works Cited, Bibliography... 
 
 #####################
 ## PDF formatting  ##
@@ -49,17 +51,20 @@ params:
 ## output options  ##
 #####################
 output:
-  bookdown::pdf_book:
-    template: templates/template.tex
+  pdf_document:
+    template: templates/iheiddiss.tex
+    fig_caption: yes
     latex_engine: xelatex
-    keep_tex: true
+    keep_tex: false
     citation_package: biblatex  
     pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"] #remove filter to stop applying blue background to inline corrections
+#  bookdown::pdf_book:
   bookdown::gitbook:
     css: templates/style.css
     config:
       sharing:
         facebook: false
+        twitter: false
         twitter: yes
         all: false
   bookdown::word_document2:

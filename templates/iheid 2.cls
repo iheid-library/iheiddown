@@ -37,41 +37,6 @@
 % Note that this directory must have a copy of the IHEID logo, as referenced with the '\mylogo' command above
 \graphicspath{{./graphics/}} % here we point to the directory named 'Graphics' inside the directory of this file
 
-% Setup bibliography % % %
-\RequirePackage[backend=biber, % if this doesn't work for you, use bibtex8 as a backend
-%style=verbose, % use this if you are in the law department
-style=authoryear, % use this if you are in any other department
-maxcitenames=3, % how many authors to cite before resorting to ``et al''
-maxbibnames=99, % in the bibliography we want them all though
-sortcites=true, % this re-sorts citations alphabetically when you cite several at once
-hyperref=true, % this adds a link to a citations date that points to the reference
-%backref=true, % references state on which page they are cited
-abbreviate=true,
-url=false, % don't add (lengthy) URL information
-doi=false, % don't add (lengthy) DOI information
-autolang=hyphen]{biblatex}
-% The following is where you put the path to your bibliography:
-\addbibresource{mybib.bib}
-
-% Setup meta-data of your project
-\input{projectinfo.cls} % modify your title, name etc. in this file
-\title{\mytitle}
-\newcommand{\myauthor}{\myfirstname {} \mylastname}
-\author{\myauthor}
-\newcommand{\mylogo}{Logo_CMYK_Hi.eps} % name of the IHEID logo file
-
-% Setup links and PDF metadata
-\usepackage{varioref} % automated decoration of references with words about position
-\RequirePackage[colorlinks=true,linkcolor=black,citecolor=red,filecolor=red,urlcolor=red, bookmarks]{hyperref} % uses IHEID red for external links
-\hypersetup{
-pdftitle = {\mytitle},
-pdfsubject = {\mysubject},
-pdfauthor = {\myauthor},
-pdfkeywords = {\mykeywords},
-draft = false, % activates package
-}
-\RequirePackage{hypcap} % fix for more precise in-document links
-
 % Setup header and footer
 \RequirePackage{fancyhdr} % package to customize page headers
 \pagestyle{fancy}
@@ -103,6 +68,8 @@ draft = false, % activates package
 \setlength{\parindent}{0em} % paragraph indentation
 \captionsetup[figure]{font={it},labelformat={default},labelsep=period,textfont={normal},justification=justified,name={Figure}} % figure caption style
 \captionsetup[table]{font={it},labelformat={default},labelsep=period,textfont={normal},justification=justified,name={Table}} % table caption style
+
+
 
 % Environments % % %
 
@@ -328,3 +295,5 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 % JEM: combine all of the commands you run before appendices start
 \newcommand{\startappendices}
   {\appendix\adjustmtc\noappendicestocpagenum\addappheadtotoc\appendixpage}
+
+
