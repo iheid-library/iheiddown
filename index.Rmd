@@ -1,25 +1,55 @@
 ---
+#####################
+## thesis metadata ##
+#####################
 title: |
+  `iheiddown`: \
   A Graduate Institute Thesis \
   Template for R Markdown
-  `iheidddown`: \
-author: James Hollway
-email: james.hollway@graduateinstitute.ch
-department: "IRPS"
-thesisno: "99999"
-keywords: "rmarkdown, template, reproducible research, iheid"
-subject: "IHEID dissertation template in rmarkdown"
-#abstract: |
-#  `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
+author: Author Name
+email: my.email@graduateinstitute.ch
+# degree: Doctor of Philosophy
+# department: Your Department
+# thesisno: 99999 # provided by secretariat
+keywords: your, keywords # only used for PDF metadata
+# degreedate: June 2020
+abstract: |
+  `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
 dedication: For X, if you wish
-abbreviations: "front-and-back-matter/abbreviations" # path to your .tex file
+abbreviations: "front-and-back-matter/abbreviations" # path to .tex file with abbreviations
+bib-authoryear: true   # true = format references as author-year, false = verbose
+draft: true # true = add "Please do not cite or circulate" to the footer
+
+#######################
+## bibliography path ##
+#######################
 bibliography: mybib.bib
 bibliography-heading-in-pdf: References # Works Cited, Bibliography... 
-bib-authoryear: true   # true = format references as author-year, false = verbose
-hidelinks: true # true = clickable links are highlighted with a colored border
-draft: true # true = add "Please do not cite or circulate" to the footer
+
+#####################
+## PDF formatting  ##
+#####################
+# abstractseparate: true  # include front page w/ abstract for examination schools?
+bib-humanities: true   #set to true if you want in-text references formatted as author-year
+doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography
+draft: true # add as DRAFT mark in the footer?
+page-layout: nobind #'nobind' for PDF output (equal margins), 'twoside' for two-sided binding (mirror margins and blank pages), leave blank for one-sided binding (left margin > right margin)
+hidelinks: true #if false, the PDF output highlights clickable links with a colored border - you will probably want to set this to true for PDF version you wish to physically print
+toc-depth: 2 # depth of heading to include in table of contents
+lof: true # list of figures in front matter?
+lot: true # list of tables in front matter?
+# mini-toc: true  # mini-table of contents at start of each chapter? (this just prepares it; you must also add \minitoc after the chapter titles)
+# mini-lot: false  # mini-list of tables by start of each chapter?
+# mini-lof: false  # mini-list of figures by start of each chapter?
+
+params:
+  corrections: true # set false to stop applying blue background to blocks of corrections
+
+#####################
+## output options  ##
+#####################
 output:
   pdf_document:
     template: templates/iheiddiss.tex
@@ -27,13 +57,21 @@ output:
     latex_engine: xelatex
     keep_tex: false
     citation_package: biblatex  
+    pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"] #remove filter to stop applying blue background to inline corrections
+#  bookdown::pdf_book:
   bookdown::gitbook:
     css: templates/style.css
     config:
       sharing:
         facebook: false
         twitter: false
+        twitter: yes
         all: false
+  bookdown::word_document2:
+    toc: true   
+link-citations: true
+documentclass: book
+
 ---
 
 
@@ -43,7 +81,8 @@ source('scripts_and_filters/wrap_lines.R')
 ```
 <!--
 Include the create_chunk_options chunk above at the top of your index.Rmd file
-This will include code to create additional chunk options (e.g. for adding author references to savequotes)and to make sure lines in code soft wrap
+This will include code to create additional chunk options (e.g. for adding author references to savequotes)
+and to make sure lines in code soft wrap
 If you need to create your own additional chunk options, edit the file scripts/create_chunk_options.R
 -->
 
