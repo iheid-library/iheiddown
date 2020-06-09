@@ -1,0 +1,216 @@
+% % % % % % % % % % % % %
+% Preamble % % %
+% % % % % % % % % % % % %
+\documentclass{iheid}
+
+% Setup different header and footer for title page(s)
+\fancypagestyle{firstpages} {
+	\fancyhf{} % clear header and footer
+	\renewcommand{\headrulewidth}{0pt} % remove header line
+	\renewcommand{\footrulewidth}{0pt} % remove footer line
+}
+
+% Setup custom title format
+\makeatletter
+\renewcommand\maketitle
+  {\vspace*{3cm} % distance from top of page to title
+  \centering{
+  \Large\sffamily\textbf{\@title}
+  \vspace{1cm}\par % distance to programme statement
+  \centering\large\sffamily\textbf{THESIS}\\
+  submitted at the Graduate Institute\\
+  in fulfillment of the requirements of the\\
+  \myprogramme
+  \vspace*{0.5cm}\par % distance to author
+  \centering\large\sffamily{
+	by\\
+	\vspace{0.5cm} % distance between 'by' and author name
+	\@author
+  }
+  \bigskip\par
+  }
+  }
+\makeatother
+
+% % % % % % % % % % % % %
+% Document Starts Here % % %
+% % % % % % % % % % % % %
+\begin{document}
+
+%%%%%%%%%%%%%%%%%
+% TITLEPAGES
+%%%%%%%%%%%%%%%%%
+% TITLEPAGE 1
+\begin{titlepage}
+\hspace*{-1.25cm}
+\includegraphics[width=0.4\linewidth]{\mylogo}
+
+\maketitle
+
+\vspace*{1cm}
+
+\sffamily{Thesis N$^{\circ}$ \mythesisno}
+
+\vspace*{1cm}
+\sffamily\textbf{Geneva}\\
+\sffamily\textbf{\the\year}
+
+\thispagestyle{firstpages} % this line is needed to set a different header/footer than for the rest of the document
+\end{titlepage}
+
+% TITLEPAGE 2 (empty page)
+\newpage\null\thispagestyle{empty}\newpage
+
+% TITLEPAGE 3
+\begin{titlepage}
+\vspace*{5cm}
+
+\centering\Large\sffamily\textbf{\mytitle}
+
+\vspace*{10cm}
+
+\large\raisebox{0.1em}{\textcopyright} \sffamily\textbf{\the\year} \hspace{1em} \sffamily\textbf{\MakeUppercase{\mylastname}}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+
+% TITLEPAGE 4
+\begin{titlepage}
+\centering\sffamily{
+INSTITUT DE HAUTES ETUDES INTERNATIONALES ET DU DEVELOPPEMENT\\
+GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
+}
+
+\maketitle
+
+\vspace*{1cm}
+
+\sffamily{Thesis N$^{\circ}$ \mythesisno}
+
+\vspace*{1cm}
+\sffamily\textbf{Geneva}\\
+\sffamily\textbf{\the\year}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+
+% TITLEPAGE 5
+\begin{titlepage}
+
+\textcolor{red}{PLACEHOLDER: REPLACE PAGE WITH A DOCUMENT PROVIDED BY PHD SECRETARIAT}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+
+% TITLEPAGE 6
+\begin{titlepage}
+\centering\sffamily{
+INSTITUT DE HAUTES ETUDES INTERNATIONALES ET DU DEVELOPPEMENT\\
+GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
+}
+
+\vspace*{1cm}
+
+\begin{center}
+\sffamily\large\textbf{RESUME / ABSTRACT}
+
+\sffamily\normalsize{
+Your Abstract
+}
+\end{center}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+\restoregeometry % Reset page geometry
+\setcounter{page}{1} % Reset page counter
+%%%%%%%%%%%%%%%%%
+% END TITLE PAGES
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+% MAIN CONTENT
+%%%%%%%%%%%%%%%%%
+\tableofcontents % table of contents
+\clearpage % page break
+\listoffigures % list of figures
+\listoftables % list of tables
+\clearpage
+
+\section{Section Title}\label{sec:intro}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+\footnote{
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+}.
+
+For examples, see \hyperref[sec:demo]{Section \ref{sec:demo}}.
+
+\section{Demonstrations}\label{sec:demo}
+\textcite{Hollway2017} is an example of an in-text citation. If you use ``autocite'' \autocite{Hollway2017}, the citation is automatically surrounded with brackets. 
+The style will automatically update when you change it's configuration in the \TeX~ file. 
+To learn more about how to use ``biblatex'', the package we are using here for referencing, see \href{http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf}{this cheatsheet}.
+
+If you want to change fonts, check \href{https://www.tug.org/pracjourn/2006-1/schmidt/schmidt.pdf}{here}.
+
+\subsection{Math and Code}
+Math can be inline such as $ y = \alpha + \beta x + \epsilon $ or look like this: 
+$$ \bar{x} = \frac{1}{n} \sum_{i=1}^{n}x_i $$
+
+The math might express an equation used in a \texttt{package}. 
+Indeed, you can write whole sections of code like so:
+\texttt{model1 <- estimate(y \textasciitilde~ x1 + x2, data)}
+
+\subsection{Tables and Figures}
+
+I recommend using the optional packages (see Preamble) to produce more sophisticated tables such as \cref{tab:alternative}.
+
+\begin{table}[H]
+%[H] Changes how LaTex places your tables/figures. Options:
+%H means the table/figure should absolutely be placed here (requires float package)
+%! indicates that some restrictions should be ignored
+%h indicates that the float is allowed to be placed inline
+%t indicates that the float is allowed to go into a top area
+%b indicates that the float is allowed to go into a bottom area
+%p indicates the the float is allowed to go on a float page or column area
+% More info: https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+\centering
+\caption{Yet Another Table}
+\label{tab:alternative}
+    \begin{tabular}{c c c}
+    	\toprule
+    	\textbf{Variable X} & \multicolumn{2}{c}{\textbf{Variable Y}} \\
+    	\midrule
+        & \textit{Y: Value 1} & \textit{Y: Value 2} \\ \midrule
+        \textit{X: Value 1} & \makecell{I\\ \textbf{Name for I}} & \makecell{II\\ \textbf{Name for II}} \\ \midrule
+        \textit{X: Value 2} & \makecell{III\\ \textbf{Name for III}} & \makecell{IV\\ \textbf{Name for IV}}  \\ 
+    	\bottomrule
+    \end{tabular}
+    \caption*{\footnotesize\textit{Note:} This note is not too long, so it doesn't exceed the width of the table by much.}
+\end{table}
+
+Figures are included using the ``includegraphics'' command:
+
+\begin{figure}[!ht]
+	\caption{Example Figure}
+    \label{somefigure}
+    \centerline{
+    	\includegraphics[width=0.4\linewidth]{Logo_CMYK_Hi.eps}
+    }
+    \vspace{1em}
+    \caption*{\parbox{0.4\textwidth}{\footnotesize{\textit{Note:} This text is wider than the figure, but we can manually fit the width to that of the figure using the ``parbox'' command.}}}
+\end{figure}
+
+%%%%%%%%%%%%%%%%% 
+% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%
+\printbibliography 
+
+%%%%%%%%%%%%%%%%%
+% APPENDICES
+%%%%%%%%%%%%%%%%%
+\appendix
+
+\section{Appendix Title}\label{app:APPENDIXNAME}
+
+%%%%%%%%%%%%%%%%% 
+% END DOCUMENT BODY
+%%%%%%%%%%%%%%%%%
+\end{document}
