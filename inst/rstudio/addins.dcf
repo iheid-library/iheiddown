@@ -1,0 +1,4 @@
+Name: Edit iheiddown profile
+Description: Quickly open up the profile file for the iheiddown package.
+Binding: iheiddown_profile
+Interactive: false
