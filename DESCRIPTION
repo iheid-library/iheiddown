@@ -10,8 +10,7 @@ Authors@R:
 Description: This package supports writing theses according to
     the Graduate Institute of International and Development Studies 
     regulations.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Imports: bookdown, thesisdown, tidyverse
 Encoding: UTF-8
 LazyData: true
