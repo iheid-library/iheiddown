@@ -149,7 +149,35 @@ $endif$
   }
 \makeatother
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT HERE  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+
+%%%%%%%%%%%%%%%%%
+% TITLEPAGES
+%%%%%%%%%%%%%%%%%
+
+% TITLEPAGE 1
+\begin{titlepage}
+\hspace*{-1.25cm}
+\includegraphics[width=0.4\linewidth]{figure/iheid.eps}
+
+\maketitle
+
+\vspace*{1cm}
+
+\sffamily{Thesis No. $thesisno$}
+
+\vspace*{1cm}
+\sffamily\textbf{Geneva}\\
+\sffamily\textbf{\the\year}
+
+\thispagestyle{firstpages} % this line is needed to set a different header/footer than for the rest of the document
+\end{titlepage}
+
+% TITLEPAGE 2 (empty page)
+\newpage\null\thispagestyle{empty}\newpage
 
 %%%%% CHOOSE YOUR LINE SPACING HERE
 % This is the official option.  Use it for your submission copy and library copy:
@@ -167,7 +195,6 @@ $endif$
 % UL: You can set the general paragraph spacing here - I've set it to 2pt (was 0) so
 % it's less claustrophobic
 \setlength{\parskip}{2pt plus 1pt}
-
 
 % Leave this line alone; it gets things started for the real document.
 \setlength{\baselineskip}{\textbaselineskip}
@@ -189,7 +216,7 @@ $endif$
 \begin{romanpages}
 
 % Title page is created here
-\maketitle
+% \maketitle
 
 %%%%% DEDICATION -- If you'd like one, un-comment the following.
 $if(dedication)$
