@@ -120,7 +120,35 @@ $endif$
 	\renewcommand{\st}{\textsuperscript{st}}
 	\newcommand{\rd}{\textsuperscript{rd}}
 
-%%%%% THE ACTUAL DOCUMENT STARTS HERE
+% Setup different header and footer for title page(s)
+\fancypagestyle{firstpages} {
+	\fancyhf{} % clear header and footer
+	\renewcommand{\headrulewidth}{0pt} % remove header line
+	\renewcommand{\footrulewidth}{0pt} % remove footer line
+}
+
+% Setup custom title format
+\makeatletter
+\renewcommand\maketitle
+  {\vspace*{3cm} % distance from top of page to title
+  \centering{
+  \Large\sffamily\textbf{\@title}
+  \vspace{1cm}\par % distance to programme statement
+  \centering\large\sffamily\textbf{THESIS}\\
+  submitted at the Graduate Institute\\
+  in fulfillment of the requirements of the\\
+  $department$
+  \vspace*{0.5cm}\par % distance to author
+  \centering\large\sffamily{
+	by\\
+	\vspace{0.5cm} % distance between 'by' and author name
+	\@author
+  }
+  \bigskip\par
+  }
+  }
+\makeatother
+
 \begin{document}
 
 %%%%% CHOOSE YOUR LINE SPACING HERE
