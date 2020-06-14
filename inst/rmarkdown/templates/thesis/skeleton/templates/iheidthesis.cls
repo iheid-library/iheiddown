@@ -272,52 +272,6 @@
 }
 {\end{alwayssingle}}
 
-
-%ABSTRACT
-%
-%The abstract environment puts a large, bold, centered "Abstract" label at
-%the top of the page. The abstract itself appears in a quote environment,
-%i.e. tabbed in at both sides, and on its own page.
-
-\renewenvironment{abstract}%
-{   \begin{alwayssingle}\chapter*{Abstract}
-    \thispagestyle{empty}
-    \pagestyle{empty}
-   \setlength{\baselineskip}{\frontmatterbaselineskip}}
-{\end{alwayssingle}}
-
-%The abstractseparate environment is for running of a page with the abstract
-%on including title and author etc as required to be handed in separately
-
-\newenvironment{abstractseparate} {\newgeometry{margin=3.3cm}\thispagestyle{empty}\begin{alwayssingle}
- \begin{center}
-    {\Large \bfseries \@title \par}
-\ifmasterssubmission
-    {{\large \vspace*{3ex} Candidate no.\ \@candidateno} \par}
-\else
-    {{\large \vspace*{2ex} \@author} \par}
-\fi
-{\large \vspace*{1ex}
-\ifmasterssubmission
-    {Thesis word count: {\@wordcount} \par}
-\else
-    {{\@college} \par}
-    {University of Oxford \par}
-\fi
-\vspace*{1ex}
-    {{\it \submittedtext} \par}
-    {\it {\@degree} \par}
-\vspace*{2ex}
-    {\@degreedate} \par}
-\vfill
-  {\Large \bfseries  Abstract}
-  \end{center}
-\vspace{1ex}
-   \setlength{\baselineskip}{\abstractseparatelineskip} %UL was \z@ rather than \abstractseparatelineskip
-   \setlength{\parskip}{\abstractseparateparskip}} %UL add this line so paragraph skip can be customised
-{\vfill\end{alwayssingle}\restoregeometry}
-
-
 %ROMANPAGES
 %
 % The romanpages environment set the page numbering to lowercase roman one

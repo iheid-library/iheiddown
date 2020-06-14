@@ -221,6 +221,33 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 \thispagestyle{firstpages}
 \end{titlepage}
 
+% TITLEPAGE 6
+\begin{titlepage}
+\centering\sffamily{
+INSTITUT DE HAUTES ETUDES INTERNATIONALES ET DU DEVELOPPEMENT\\
+GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
+}
+
+\vspace*{1cm}
+
+\begin{center}
+\sffamily\large\textbf{RESUME / ABSTRACT}
+
+\vspace*{1cm}
+
+\sffamily\normalsize{$abstract$}
+\end{center}
+
+\thispagestyle{firstpages}
+\end{titlepage}
+\restoregeometry % Reset page geometry
+\setcounter{page}{1} % Reset page counter
+
+%%%%%%%%%%%%%%%%%
+% END TITLE PAGES
+%%%%%%%%%%%%%%%%%
+
+
 %%%%% CHOOSE YOUR LINE SPACING HERE
 % This is the official option.  Use it for your submission copy and library copy:
 \setlength{\textbaselineskip}{22pt plus2pt}
@@ -257,9 +284,6 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 % keeping with most typesetting conventions.
 \begin{romanpages}
 
-% Title page is created here
-% \maketitle
-
 %%%%% DEDICATION -- If you'd like one, un-comment the following.
 $if(dedication)$
 \begin{dedication}
@@ -273,11 +297,6 @@ $if(acknowledgements)$
  	$acknowledgements$
 \end{acknowledgements}
 $endif$
-
-%%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
-\begin{abstract}
-	$abstract$
-\end{abstract}
 
 %%%%% MINI TABLES
 % This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
