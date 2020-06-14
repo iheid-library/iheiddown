@@ -1,0 +1,121 @@
+---
+####################
+## Metadata       ##
+####################
+title: |
+  `iheiddown`: \
+  A Thesis Template \
+  For the Graduate Institute Geneva \
+  in R Markdown
+firstnames: Author
+lastnames: Name
+thesisno: 12345
+degree: Doctor of Philosophy
+department: Your Department
+degreedate: June 2020
+
+####################
+## Front Matter   ##
+####################
+dedication: For you
+resume: | # otherwise known as the abstract
+  `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
+acknowledgements: |
+  `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
+abbreviations: "front-and-back-matter/abbreviations" # path to .tex file with abbreviations
+toc-depth: 2 # depth of heading to include in table of contents
+lof: true # list of figures in front matter?
+lot: true # list of tables in front matter?
+mini-toc: true  # mini-table of contents at start of each chapter? (this just prepares it; you must also add \minitoc after the chapter titles)
+mini-lot: false  # mini-list of tables by start of each chapter?
+mini-lof: false  # mini-list of figures by start of each chapter?
+
+####################
+## Bibliography   ##
+####################
+bibliography: bib/references.bib
+bibliography-heading-in-pdf: References
+bib-humanities: true   #set to true if you want in-text references formatted as author-year
+doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography
+
+#####################
+## PDF Formatting  ##
+#####################
+draft: true # add as DRAFT mark in the footer?
+page-layout: nobind #'nobind' for PDF output (equal margins), 
+# 'twoside' for two-sided binding (mirror margins and blank pages), 
+# leave blank for one-sided binding (left margin > right margin)
+hidelinks: false #if false, the PDF output highlights clickable links with a colored border - you will probably want to set this to true for PDF version you wish to physically print
+
+params:
+  corrections: true # set false to stop applying blue background to blocks of corrections
+
+#####################
+## Output Options  ##
+#####################
+output:
+  bookdown::pdf_book:
+    template: templates/template.tex
+    keep_tex: true
+    citation_package: biblatex  
+    pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"] #remove filter to stop applying blue background to inline corrections
+link-citations: true
+documentclass: book
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of 
+metadata used to produce the document.  Be careful with spacing in this header!
+
+If you'd prefer to not include a Dedication, for example, simply delete the section entirely, or silence them (add # before each line). 
+
+If you have other LaTeX packages you would like to include, delete the # before header-includes and list the packages after hyphens on new lines.
+
+If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+
+If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
+-->
+
+<!-- The {.unnumbered} option here means that the introduction will be 
+"Chapter 0." You can also use {-} for no numbers on chapters.
+-->
+
+# Preface {.unnumbered}
+
+Welcome to the *R Markdown* template for writing a PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva. 
+This sample content is based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and the R `bookdown` package.
+But hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before.
+
+Using _R Markdown_ will also allow you to easily keep track of your analyses in **R** chunks of code, with the resulting plots and output included as well.  
+The hope is this _R Markdown_ template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
+
+Hopefully, you won't have much of a learning period to go through and you will reap the benefits of a nicely formatted thesis.  The use of LaTeX in combination with _Markdown_ is more consistent than the output of a word processor, much less prone to corruption or crashing, and the resulting file is smaller than a Word file. While you may have never had problems using Word in the past, your thesis is likely going to be about twice as large and complex as anything you've written before, taxing Word's capabilities.  After working with _Markdown_ and **R** together for a few weeks, we are confident this will be your reporting style of choice going forward.
+
+<!-- 
+If you're still on the fence about using _R Markdown_, check out the resource
+for newbies available at <https://rbasics.netlify.com>. 
+-->
+
+## Why use it? {-}
+
+_R Markdown_ creates a simple and straightforward way to interface with the beauty of LaTeX.  Packages have been written in **R** to work directly with LaTeX to produce nicely formatting tables and paragraphs. In addition to creating a user friendly interface to LaTeX, _R Markdown_ also allows you to read in your data, to analyze it and to visualize it using **R** functions, and also to provide the documentation and commentary on the results of your project.  Further, it allows for **R** results to be passed inline to the commentary of your results.  You'll see more on this later.  
+
+<!-- 
+Having your code and commentary all together in one place has a plethora of 
+benefits!
+-->
+
+## Who should use it? {-}
+
+Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about the final appearance of their document should use _R Markdown_. Of particular use should be anyone in the sciences, but the user-friendly nature of _Markdown_ and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should make it of great benefit to nearly anyone writing a thesis project.
+
+## For additional help with bookdown {-} 
+
+This project was inspired by by the [oxforddown](https://github.com/ulyngs/oxforddown), 
+[thesisdown](https://github.com/ismayc/thesisdown), 
+[huskydown](https://github.com/benmarwick/huskydown) and 
+[bookdown](https://github.com/rstudio/bookdown) packages. 
+If you are new to working with `bookdown` and `rmarkdown`, 
+please read over the great documentation provided by `thesisdown`, `oxforddown` and in the [bookdown book](https://bookdown.org/yihui/bookdown/).
+
+Please visit [the free online bookdown reference guide](https://bookdown.org/yihui/bookdown/).

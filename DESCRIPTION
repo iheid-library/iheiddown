@@ -1,0 +1,18 @@
+Package: iheiddown
+Title: A RMarkdown class for IHEID dissertations
+Version: 0.0.1
+Authors@R: 
+    person(given = "James",
+           family = "Hollway",
+           role = c("aut", "cre"),
+           email = "james.hollway@graduateinstitute.ch",
+           comment = c(ORCID = "0000-0002-8361-9647"))
+Description: This package supports writing theses according to
+    the Graduate Institute of International and Development Studies 
+    regulations.
+License: MIT + file LICENSE
+Imports: bookdown, thesisdown, tidyverse
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
