@@ -12,7 +12,7 @@
 %
 %-------------------------- identification ---------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{templates/ociamthesis}[2015/04/30 Oxford thesis class]
+\ProvidesClass{templates/iheidthesis}[2020/06/14 IHEID thesis class]
 %-------------------------- initial code -----------------------
 
 % JEM: Defaults to one-side, but passing 'twoside' should set everything up for that
@@ -33,16 +33,10 @@
 \newlength{\singlebaselineskip}
 \newlength{\frontmatterbaselineskip}
 \newlength{\textbaselineskip}
-% UL 2 Dec 2018: make it possible to customise line and paragraph spacing in separate abstract page
-\newlength{\abstractseparatelineskip}  
-\newlength{\abstractseparateparskip}  
 
 \setlength{\singlebaselineskip}{\baselineskip}
 \setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
 \setlength{\textbaselineskip}{22pt plus2pt}
-\setlength{\abstractseparatelineskip}{10pt plus1pt minus1pt}
-\setlength{\abstractseparateparskip}{0pt plus 1pt}
-
 
 \newcommand{\submittedtext}{{A thesis submitted for the degree of}}
 \usepackage{varwidth}
@@ -53,7 +47,19 @@
    \rule[5mm]{7mm}{1pt}\hspace{1em}%
    \begin{varwidth}{\textwidth}I hereby certify that this is entirely\\my own work unless otherwise stated.\end{varwidth}}
 
+%ABSTRACT
 %
+%The abstract environment puts a large, bold, centered "Abstract" label at
+%the top of the page. The abstract itself appears in a quote environment,
+%i.e. tabbed in at both sides, and on its own page.
+
+\renewenvironment{abstract}%
+{   \begin{alwayssingle}\chapter*{Abstract}
+    \thispagestyle{empty}
+    \pagestyle{empty}
+   \setlength{\baselineskip}{\frontmatterbaselineskip}}
+{\end{alwayssingle}}
+
 % DECLARATIONS
 %
 % These macros are used to declare arguments needed for the
@@ -69,17 +75,6 @@
 \def\candidateno#1{\gdef\@candidateno{#1}}
 % Your word count (for master's submissions)
 \def\wordcount#1{\gdef\@wordcount{#1}}
-\newif\ifmasterssubmission
-% adds candidate number and word count in place of name and college
-\masterssubmissionfalse
-
-
-%
-% CRESTS
-%
-
-\def\crest{{\includegraphics{figures/beltcrest.pdf}}}
-
 
 %
 % Define text area of page and margin offsets
@@ -197,52 +192,6 @@
        \fi}%
        {\if@restonecol\twocolumn
        \else\newpage\thispagestyle{empty}\fi}
-
-
-%define title page layout
-
-\renewcommand{\maketitle}{%
-\begin{alwayssingle}\null
-    \renewcommand{\footnotesize}{\small}
-    \renewcommand{\footnoterule}{\relax}
-    \thispagestyle{empty}
-\ifmasterssubmission
-  \begin{center}
-  \vspace*{-3ex}
-    { \LARGE {\bfseries {\@title}} \par}
-{\large \vspace*{25mm} {\crest \par} \vspace*{20mm}}
-    {{\Large Candidate no.\ \@candidateno} \par}
-{\large \vspace*{1ex}
-    {Word count: {\@wordcount} \par}
-\vspace*{4ex}
-    {{\submittedtext} \par}
-\vspace*{1ex}
-    {\it {\@degree} \par}
-\vspace*{6ex}
-	{{\originalitytext} \par}
-\vspace*{2ex}
-    {\@degreedate}}
-  \end{center}
-\else
-  \begin{center}
-    { \LARGE {\bfseries {\@title}} \par}
-{\large \vspace*{30mm} {\crest \par} \vspace*{25mm}}
-    {{\Large \@author} \par}
-{\large \vspace*{1ex}
-    {{\@college} \par}
-\vspace*{1ex}
-    {University of Oxford \par}
-\vspace*{20mm}
-    {{\submittedtext} \par}
-\vspace*{1ex}
-    {\it {\@degree} \par}
-\vspace*{2ex}
-    {\@degreedate}}
-  \end{center}
-\fi
-  \vfill\null
-\end{alwayssingle}}
-
 
 
 % DEDICATION
