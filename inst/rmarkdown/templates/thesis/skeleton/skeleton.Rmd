@@ -18,7 +18,7 @@ degreedate: June 2020
 ## Front Matter   ##
 ####################
 dedication: For you
-abstract: |
+resume: | # otherwise known as the abstract
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
