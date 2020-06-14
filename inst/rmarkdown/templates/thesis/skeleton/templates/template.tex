@@ -142,7 +142,7 @@ $endif$
   \centering\large\sffamily{
 	by\\
 	\vspace{0.5cm} % distance between 'by' and author name
-	\@author
+	$firstnames$ $lastnames$
   }
   \bigskip\par
   }
@@ -161,7 +161,7 @@ $endif$
 % TITLEPAGE 1
 \begin{titlepage}
 \hspace*{-1.25cm}
-\includegraphics[width=0.4\linewidth]{figure/iheid.eps}
+\includegraphics[width=0.4\linewidth]{figures/iheid.eps}
 
 \maketitle
 
@@ -178,6 +178,19 @@ $endif$
 
 % TITLEPAGE 2 (empty page)
 \newpage\null\thispagestyle{empty}\newpage
+
+% TITLEPAGE 3
+\begin{titlepage}
+\vspace*{5cm}
+
+\centering\Large\sffamily\textbf{$title$}
+
+\vspace*{10cm}
+
+\large\raisebox{0.1em}{\textcopyright} \sffamily\textbf{\the\year} \hspace{1em} \sffamily\textbf{\MakeUppercase{$lastnames$}}
+
+\thispagestyle{firstpages}
+\end{titlepage}
 
 %%%%% CHOOSE YOUR LINE SPACING HERE
 % This is the official option.  Use it for your submission copy and library copy:

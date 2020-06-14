@@ -7,7 +7,8 @@ title: |
   A Thesis Template \
   For the Graduate Institute Geneva \
   in R Markdown
-author: Author Name
+firstnames: Author
+lastnames: Name
 thesisno: 12345
 degree: Doctor of Philosophy
 department: Your Department
