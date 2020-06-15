@@ -13,22 +13,21 @@ That's it! `iheiddown` is now installed and ready to go.
 
 ## Getting started
 
-- LaTeX - download and install the MacTeX distribution from [tug.org/mactex/](http://www.tug.org/mactex/) (please be aware that it's quite large - 4.1 gigs!)
-  - (For unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble! If you are normally using TinyTex for PDF output and can't get `iheiddown` to work, try uninstalling tinytex::uninstall_tinytex(), then install the MacTeX LaTeX distribution and restart RStudio.)
-- [R](https://cran.rstudio.com) and [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download)
+`iheiddown` sets up a thesis template that you can then modify for your dissertation.
+It's very easy to get started.
+
+1. Open RStudio (if it is not already).
+1. Click the new document symbol at the very top left and choose `R Markdown...`. 
+1. Then from the options on the left `From Template`. 
+1. Scroll down through the options on the right until you find `Thesis   {iheiddown}`.
+1. Name your thesis project (if in doubt 'Untitled' is fine) and select where the project should be saved on your harddrive.
+
+Congratulations! You have now set up a thesis project.
+
+<!--
 - The R packages `bookdown`, `tidyverse`, and `reticulate` (the other packages you need should be automatically installed when you build this project for the first time in RStudio)
 - (If on a Mac): Command line developer tools. You can install these by typing `xcode-select --install` in a terminal prompt
-
-
-## Writing your thesis
-
-To use this template to write your thesis, do the following:
-- update the YAML header (the stuff at the top between '---') in **index.Rmd** with your name, college, etc.
-- write the individual chapters as **.Rmd** files in the root folder - **the introduction chapter *must* be named _00-introduction.Rmd**.
-- write the front matter (abstract, acknowledgements, abbreviations) and back matter (appendices) by adjusting the **.Rmd** files in the **front-and-back-matter/** folder
-- for abbreviations, change **front-and-back-matter/abbreviations.tex** to fit your needs (follow the LaTeX syntax in there)
-
-**.Rmd** files you don't want included in the body text must be given file names that begin with an underscore (e.g. **front-and-back-matter/\_abstract.Rmd** and **front-and-back-matter/\_acknowledgements.Rmd**). (Alternatively, specify manually in **\_bookdown.yml** which files should be merged into the body text.)
+-->
 
 
 ## Knitting individual chapters
