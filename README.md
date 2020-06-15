@@ -29,7 +29,60 @@ Congratulations! You have now set up a thesis project.
 - (If on a Mac): Command line developer tools. You can install these by typing `xcode-select --install` in a terminal prompt
 -->
 
+## Writing your thesis
 
+When you create the template for the first time, 
+the main document you have created (e.g. Untitled.Rmd) will automatically open in RStudio.
+In this document you can enter in key details about yourself and your dissertation
+between the \-\-\- and \-\-\-.
+Note that any text after hashtags, \#, are comments only and are not computed. 
+
+The \#metadata\# section should be fairly self-explanatory.
+The \#front matter\# section includes pointers to various front matter elements,
+such as dedications, acknowledgements (thank you), abbreviations, and your abstract.
+Note that it points to files in a folder created by the template 
+called "front-and-back-matter/".
+If you look in this folder, you will find placeholders for your own
+abstract and acknowledgements.
+You can simply edit these and the 
+edited versions will be used when the thesis is compiled.
+This section also includes various options for 
+toggling lists of figures, tables, etc, in the final version.
+
+The \#bibliography\# section points to where the bibtex file (.bib) with
+all your bibliographic information resides.
+You can also just call your .bib file "references.bib" and replace the
+template version in the bib/ folder.
+Lastly, the \#formatting\# section offers options for changing the format
+ready for printing.
+You can mostly ignore the \#output\# section, for now.
+
+Below the second \-\-\- is some example text that will become 
+the preface of the thesis when it is compiled.
+So where is the real content of the dissertation?
+
+Just as the abstract and acknowledgements, etc,
+were kept in a "front-and-back-matter/" folder,
+so too are the individual chapters of your dissertation
+kept in a "chapters/" folder.
+The placeholder text is designed to take you through the
+basic syntax and more complicated options available when
+using Rmarkdown,
+but once you feel comfortable and have created your own
+examples, feel free to delete the placeholder text
+(or even the files) and create your own in its place.
+
+Markdown is easy to read as well as write,
+so there's no need for endless compilation.
+But when it comes time to compile the document,
+just type (or copy) the following into the console:
+
+`bookdown::render_book('Untitled.Rmd', 'bookdown::pdf_book')`^["Untitled.Rmd" should be replaced with whatever you called your thesis document in step 5 of Getting started above. Note that R's working directory must be set to the project folder (in this case "Untitled/") to find the metadata/preface file.]
+
+All your front matter and chapters of your thesis will be compiled
+and the complete product can be found under the project folder: "docs/_main.pdf".
+
+<!-- 
 ## Knitting individual chapters
 
 To knit an individual chapter without compiling the entire thesis:
@@ -45,11 +98,12 @@ output:
     template: templates/iheiddiss.tex
 ```
 This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
+-->
 
 ## Output 
 
-The PDF version is fully functional. The word, gitbook and epub versions might be developed at a later time.
-
+The PDF version is fully functional. 
+The word, gitbook and epub versions might be developed at a later time.
 
 ## Feedback
 
