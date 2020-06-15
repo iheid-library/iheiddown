@@ -1,10 +1,15 @@
 # iheiddown <img src="inst/iheiddown.png" align="right" width="150"/>
 
+This GitHub repository provides an R Markdown template for writing a Masters or PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and R.
 
-This GitHub repository provides an R Markdown template for writing a PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and the R Bookdown package.
+## Installing iheiddown
 
-This project was inspired by by the [oxforddown](https://github.com/ulyngs/oxforddown),[thesisdown](https://github.com/ismayc/thesisdown), [huskydown](https://github.com/benmarwick/huskydown) and [bookdown](https://github.com/rstudio/bookdown) packages. If you are new to working with `bookdown` and `rmarkdown`, please read over the great documentation provided by `thesisdown`, `oxforddown` and in the [bookdown book](https://bookdown.org/yihui/bookdown/).
+1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [$\LaTeX$](https://www.latex-project.org/get/) on your system.^[Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try uninstalling tinytex::uninstall_tinytex() and install a local copy. Unfortunately, full LaTeX installations are *large*.]
+1. Open RStudio and click on the `Packages` tab of the bottom right pane of the window (by default).
+Click `Install` at the top left of that tab and type "devtools" into the text box. Hit enter.
+1. Next type (or copy) `devtools::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
 
+That's it! `iheiddown` is now installed and ready to go.
 
 ## Getting started
 
