@@ -107,5 +107,6 @@ The word, gitbook and epub versions might be developed at a later time.
 
 ## Feedback
 
-Please get in touch with [me](https://jameshollway.com) or raise an issue for this repo
-if you encounter any bugs, if you have any suggestions, or if you want to contribute.
+Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this repo
+if you encounter any bugs or if you have any suggestions,
+or [get in touch with me](https://jameshollway.com) if you want to contribute.
