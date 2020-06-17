@@ -113,4 +113,3 @@ or [get in touch with me](https://jameshollway.com) if you want to contribute.
 
 <sup><a name="myfootnote1">1</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
 
-
