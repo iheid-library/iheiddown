@@ -1,5 +1,12 @@
 # iheiddown <img src="inst/iheiddown.png" align="right" width="150"/>
 
+<!-- badges: start -->
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
+![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
+![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
+![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total)
+<!-- badges: end -->
+
 This GitHub repository provides an R Markdown template for writing a Masters or PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and R.
 
 ## Installing iheiddown
