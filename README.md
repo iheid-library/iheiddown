@@ -4,7 +4,7 @@ This GitHub repository provides an R Markdown template for writing a Masters or 
 
 ## Installing iheiddown
 
-1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [$\LaTeX$](https://www.latex-project.org/get/) on your system.^[Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try uninstalling tinytex::uninstall_tinytex() and install a local copy. Unfortunately, full LaTeX installations are *large*.]
+1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [$\LaTeX$](https://www.latex-project.org/get/) on your system.<sup>[1](#myfootnote1)</sup>
 1. Open RStudio and click on the `Packages` tab of the bottom right pane of the window (by default).
 Click `Install` at the top left of that tab and type "devtools" into the text box. Hit enter.
 1. Next type (or copy) `devtools::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
@@ -32,7 +32,7 @@ Congratulations! You have now set up a thesis project.
 ## Writing your thesis
 
 When you create the template for the first time, 
-the main document you have created (e.g. Untitled.Rmd) will automatically open in RStudio.
+the main document you have created (e.g. 'Untitled.Rmd') will automatically open in RStudio.
 In this document you can enter in key details about yourself and your dissertation
 between the \-\-\- and \-\-\-.
 Note that any text after hashtags, \#, are comments only and are not computed. 
@@ -75,12 +75,9 @@ examples, feel free to delete the placeholder text
 Markdown is easy to read as well as write,
 so there's no need for endless compilation.
 But when it comes time to compile the document,
-just type (or copy) the following into the console:
-
-`bookdown::render_book('Untitled.Rmd', 'bookdown::pdf_book')`^["Untitled.Rmd" should be replaced with whatever you called your thesis document in step 5 of Getting started above. Note that R's working directory must be set to the project folder (in this case "Untitled/") to find the metadata/preface file.]
-
-All your front matter and chapters of your thesis will be compiled
-and the complete product can be found under the project folder: "docs/_main.pdf".
+just turn to your main .Rmd file ('Untitled.Rmd' in our case)
+and either click the `Knit` button at the top
+or use the keyboard shortcut `Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
 
 <!-- 
 ## Knitting individual chapters
@@ -102,6 +99,9 @@ This will format the chapter in the myiheidtex style but without including the f
 
 ## Output 
 
+All your front matter and chapters of your thesis will be compiled
+and the complete product can be found under the project folder: "docs/_main.pdf".
+
 The PDF version is fully functional. 
 The word, gitbook and epub versions might be developed at a later time.
 
@@ -110,3 +110,6 @@ The word, gitbook and epub versions might be developed at a later time.
 Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this repo
 if you encounter any bugs or if you have any suggestions,
 or [get in touch with me](https://jameshollway.com) if you want to contribute.
+
+<sup><a name="myfootnote1">1</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
+
