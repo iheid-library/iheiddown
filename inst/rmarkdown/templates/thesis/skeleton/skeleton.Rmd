@@ -13,11 +13,16 @@ thesisno: 12345
 degree: Doctor of Philosophy
 department: Your Department
 degreedate: June 2020
+# This is the YAML (YAML Ain't Markup Language) header that includes 
+# metadata used to produce the document. 
+# Be careful with spacing in this header!
+# Two spaces at the start of the line create indentation,
+# which embeds the parameter in a hierarchy.
 
 ####################
 ## Front Matter   ##
 ####################
-dedication: For you
+dedication: For you #If you'd prefer to not include a Dedication, for example, simply delete the section entirely, or silence them (add # before each line). 
 resume: | # otherwise known as the abstract
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
@@ -58,24 +63,14 @@ link-citations: true
 documentclass: book
 ---
 
-<!--
-Above is the YAML (YAML Ain't Markup Language) header that includes a lot of 
-metadata used to produce the document.  Be careful with spacing in this header!
-
-If you'd prefer to not include a Dedication, for example, simply delete the section entirely, or silence them (add # before each line). 
-
-If you have other LaTeX packages you would like to include, delete the # before header-includes and list the packages after hyphens on new lines.
-
-If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
-
-If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
--->
+# Preface {.unnumbered}
 
 <!-- The {.unnumbered} option here means that the introduction will be 
 "Chapter 0." You can also use {-} for no numbers on chapters.
--->
 
-# Preface {.unnumbered}
+If you'd like to include a comment that won't be produced in your resulting file 
+enclose it in a block like this.
+-->
 
 Welcome to the *R Markdown* template for writing a PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva. 
 This sample content is based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and the R `bookdown` package.
