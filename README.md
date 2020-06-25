@@ -2,6 +2,20 @@
 
 This GitHub repository provides an R Markdown template for writing a Masters or PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and R.
 
+## Features
+
+- Conforms to the PhD dissertation guidelines
+
+- All six title pages with IHEID logo
+
+- Front and back matter, including dedication, abstract, abbreviations, 
+tables of contents, figures, and tables
+
+- Linked cross-referencing
+
+- And much more!
+
+
 ## Installing iheiddown
 
 1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [$\LaTeX$](https://www.latex-project.org/get/) on your system.<sup>[1](#myfootnote1)</sup>

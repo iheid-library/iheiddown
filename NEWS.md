@@ -1,6 +1,8 @@
-# iheiddown 0.2.1
+# iheiddown 0.2.3
 
 * Added a `NEWS.md` file to track changes to the package.
+* Fixed double licensing
+* Added features section to README
 
 # iheiddown 0.2.0
 
