@@ -26,7 +26,7 @@ the user-friendly nature and pretty output should make it of great benefit to ne
 
 ## Installing iheiddown
 
-1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [LaTeX](https://www.latex-project.org/get/) on your system.<sup>[1](#myfootnote1)</sup>
+1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [LaTeX](https://www.latex-project.org/get/), or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup> on your system.<sup>[2](#myfootnote2)</sup>
 1. Open RStudio and click on the `Packages` tab of the bottom right pane of the window (by default).
 Click `Install` at the top left of that tab and type "devtools" into the text box. Hit enter.
 1. Next type (or copy) `devtools::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
@@ -133,5 +133,6 @@ Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this r
 if you encounter any bugs or if you have any suggestions,
 or [get in touch with me](https://jameshollway.com) if you want to contribute.
 
-<sup><a name="myfootnote1">1</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
+<sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you have the latest MiKTeX version installed on you computer. From the MiKTeX console, you should regularly check for updates as "MiKTeX user mode", this will prevent issues when generating your pdf document from your Markdown template.    
+<sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
 
