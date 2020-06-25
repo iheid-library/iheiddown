@@ -24,6 +24,20 @@ or are including tables, figures, equations, or complex cross-references
 (e.g. table of contents, figures, tables, appendices, or an index) in their dissertation,
 the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
 
+## Features
+
+- Conforms to the PhD dissertation guidelines
+
+- All six title pages with IHEID logo
+
+- Front and back matter, including dedication, abstract, abbreviations, 
+tables of contents, figures, and tables
+
+- Linked cross-referencing
+
+- And much more!
+
+
 ## Installing iheiddown
 
 1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [LaTeX](https://www.latex-project.org/get/), or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup> on your system.<sup>[2](#myfootnote2)</sup>

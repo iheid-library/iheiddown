@@ -1,6 +1,6 @@
 Package: iheiddown
 Title: A RMarkdown class for IHEID dissertations
-Version: 0.2.1
+Version: 0.2.3
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
