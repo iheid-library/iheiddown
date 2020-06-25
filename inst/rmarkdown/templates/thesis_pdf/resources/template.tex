@@ -87,7 +87,26 @@ $endif$
 \usepackage[normalem]{ulem}
 
 %UL 15 Oct 2019, enable link highlighting to be turned off from YAML
-\usepackage[colorlinks=false,pdfpagelabels,hidelinks=$hidelinks$]{hyperref}
+% \usepackage[dvipsnames]{color}
+% \usepackage[colorlinks=true,pdfpagelabels,hidelinks=$hidelinks$]{hyperref}
+\RequirePackage[colorlinks=true,linkcolor=red,
+citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for external links
+% \hypersetup{citecolor=red}
+
+%%%%% FONTS
+\RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+%\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
+\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
+\RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+% For the headings we will use Helvetica
+\RequirePackage{helvet}
+\RequirePackage{sectsty}
+\allsectionsfont{\sffamily}
+% For the main text and equations we will use Baskerville and Palatino
+\RequirePackage{mathpazo}
+\RequirePackage{baskervald}
+% For formatting code or package names, we will use Lucida Console
+\RequirePackage{zi4}
 
 %%%%% BIBLIOGRAPHY SETUP
 % Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
@@ -106,7 +125,8 @@ $endif$
 
 %UL 3 Dec 2018: set this from YAML in index.Rmd
 $if(bib-humanities)$
-\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=false, uniquename=false]{biblatex}
+\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, 
+doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=false, uniquename=false]{biblatex}
 \newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
 $else$
 \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=$doi-in-bibliography$, isbn=false]{biblatex}
@@ -128,20 +148,6 @@ $endif$
 % Everybody needs to complete the following:
 \title{$title$}
 \author{$author$}
-% \department{$department$}
-
-% Master's candidates who require the alternate title page (with candidate number and word count)
-% must also un-comment and complete the following three lines:
-%\masterssubmissiontrue
-%\candidateno{933516}
-%\wordcount{28,815}
-
-% Uncomment the following line if your degree also includes exams (eg most masters):
-%\renewcommand{\submittedtext}{Submitted in partial completion of the}
-% Your full degree name.  (But remember that DPhils aren't "in" anything.  They're just DPhils.)
-% \degree{$degree$}
-% Term and year of submission, or date if your board requires (eg most masters)
-% \degreedate{$degreedate$}
 
 % JEM: Lengths for single spacing (ie separate abstract, captions), front matter (abstract,
 %   acknowledgements, table of contents, etc), and main body text.
@@ -262,7 +268,6 @@ $endif$
 \newlist{abbrv}{itemize}{1}
 \setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
 
-\usepackage{microtype}
 \usepackage{nicefrac}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -290,8 +295,6 @@ $endif$
 \graphicspath{{figures/}{_bookdown_files/}}
 
 \usepackage{xfrac}
-
-% \usepackage{xcolor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACTUAL DOCUMENT HERE  %%
@@ -359,7 +362,6 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 % TITLEPAGE 5
 \begin{titlepage}
 
-% \textcolor{red}{PLACEHOLDER: REPLACE PAGE WITH A DOCUMENT PROVIDED BY PHD SECRETARIAT}
 \includepdf{SecretariatDocument.pdf}
 
 \thispagestyle{firstpages}

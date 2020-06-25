@@ -1,6 +1,28 @@
 # iheiddown <img src="inst/iheiddown.png" align="right" width="150"/>
 
-This GitHub repository provides an R Markdown template for writing a Masters or PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and R.
+<!-- badges: start -->
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
+![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
+![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
+![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total)
+<!-- badges: end -->
+
+This GitHub repository provides an R Markdown template for writing 
+a Masters or PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva 
+in RStudio based on the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex).
+
+_R Markdown_ creates a user-friendly, simple and straightforward way to write a well-formatted dissertation,
+with nicely formatted paragraphs, tables and figures that can be generated directly from your data,
+weaving together argument, evidence, and interpretation.
+The use of LaTeX in combination with _Markdown_ is more consistent than the output of a word processor, 
+much less prone to corruption or crashing, and the resulting file is smaller than a Word file. 
+While you may have never had problems using Word in the past, 
+your thesis is likely going to be about twice as large and complex as anything you've written before, 
+taxing Word's capabilities.
+Though `iheiddown` should shine in particular for those who are analysing data, 
+or are including tables, figures, equations, or complex cross-references 
+(e.g. table of contents, figures, tables, appendices, or an index) in their dissertation,
+the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
 
 ## Features
 
@@ -18,7 +40,7 @@ tables of contents, figures, and tables
 
 ## Installing iheiddown
 
-1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [$\LaTeX$](https://www.latex-project.org/get/) on your system.<sup>[1](#myfootnote1)</sup>
+1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [LaTeX](https://www.latex-project.org/get/), or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup> on your system.<sup>[2](#myfootnote2)</sup>
 1. Open RStudio and click on the `Packages` tab of the bottom right pane of the window (by default).
 Click `Install` at the top left of that tab and type "devtools" into the text box. Hit enter.
 1. Next type (or copy) `devtools::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
@@ -125,5 +147,6 @@ Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this r
 if you encounter any bugs or if you have any suggestions,
 or [get in touch with me](https://jameshollway.com) if you want to contribute.
 
-<sup><a name="myfootnote1">1</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
+<sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you have the latest MiKTeX version installed on you computer. From the MiKTeX console, you should regularly check for updates as "MiKTeX user mode", this will prevent issues when generating your pdf document from your Markdown template.    
+<sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
 

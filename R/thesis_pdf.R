@@ -12,7 +12,7 @@
 #' output:iheiddown::thesis_pdf
 #' }
 thesis_pdf <- function(...){
-  bookdown::pdf_book(..., 
+  bookdown::pdf_book(..., latex_engine = "xelatex",
                      template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex', 
                                                  package = 'iheiddown'))
 }
