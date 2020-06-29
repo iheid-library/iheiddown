@@ -4,7 +4,8 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
 ![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
-![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total)
+[![HitCount](http://hits.dwyl.com/jhollway/thesiscraft.svg)](http://hits.dwyl.com/jhollway/thesiscraft)
+<!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
 This GitHub repository provides an R Markdown template for writing 
