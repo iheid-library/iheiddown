@@ -4,7 +4,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
 ![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
-[![HitCount](http://hits.dwyl.com/jhollway/thesiscraft.svg)](http://hits.dwyl.com/jhollway/thesiscraft)
+[![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
