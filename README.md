@@ -43,8 +43,8 @@ tables of contents, figures, and tables
 
 1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [LaTeX](https://www.latex-project.org/get/), or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup> on your system.<sup>[2](#myfootnote2)</sup>
 1. Open RStudio and click on the `Packages` tab of the bottom right pane of the window (by default).
-Click `Install` at the top left of that tab and type "devtools" into the text box. Hit enter.
-1. Next type (or copy) `devtools::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
+Click `Install` at the top left of that tab and type "remotes" into the text box. Hit enter.
+1. Next type (or copy) `remotes::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
 
 That's it! `iheiddown` is now installed and ready to go.
 
