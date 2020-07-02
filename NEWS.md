@@ -1,3 +1,14 @@
+# iheiddown 0.3.0
+
+* Added `syllabus_pdf()` function
+* Added syllabus template
+  * Required sections: title, code, credits, year, semester, program, professor and TA details, course description
+  * Optional sections: course aims, structure, materials, evaluation, policies
+  * Body section for course schedule
+* Added skeleton files for syllabus
+  * Includes auto week progression
+  * Includes example citations
+
 # iheiddown 0.2.3
 
 * Added a `NEWS.md` file to track changes to the package.

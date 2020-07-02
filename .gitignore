@@ -6,3 +6,4 @@ oxforddown/*
 *.log
 docs/*
 Untitled/*
+*.Rd

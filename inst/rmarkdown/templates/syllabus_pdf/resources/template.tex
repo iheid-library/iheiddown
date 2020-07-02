@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=1.3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{calc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont{Arial}
+%\usepackage{lmodern}
+%\usepackage{ebgaramond}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{hanging}
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+\subsectionfont{\fontsize{10}{12}\selectfont}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{\baselineskip}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\author{$prof$}
+
+\begin{document}	
+
+\hspace*{-1.25cm}
+\includegraphics[width=0.3\linewidth]{figures/iheid.eps}
+\vspace{0.25cm}
+
+
+\begin{minipage}[t][98mm][t]{0.60\textwidth}
+\textbf{\textcolor{red}{$program$}}
+
+Academic year $year$
+\vspace{0.25cm}
+
+\textbf{\textcolor{red}{$title$}}
+
+$code$ -- $semester$ -- $credits$ ECTS
+\vspace{0.25cm}
+
+\textbf{\textcolor{red}{Course Description}}
+
+$description$
+\vspace{0.25cm}
+	\end{minipage}%
+	\hspace{0.5cm}\vrule{}\hspace{0.5cm}
+	\begin{minipage}[t][95mm][t]{0.30\textwidth}
+	\begin{minipage}[t][37mm][t]{\textwidth}
+	\textbf{PROFESSOR}\\
+	
+	$prof$
+	
+	\vspace{0.1cm}
+	$prof-email$
+	\vspace{0.1cm}
+	
+Office hours: \\
+$location$,\\
+$prof-office-hours$
+	
+	\end{minipage}
+	\vspace{1cm}\hrule{}\vspace{0.5cm}
+	\begin{minipage}[t][38mm][t]{\textwidth}
+	\textbf{ASSISTANT}\\
+	
+	$ta$
+
+	\vspace{0.1cm}
+	$ta-email$
+	\vspace{0.1cm}
+
+Office hours: \\
+$ta-office-hours$
+
+	\end{minipage}
+	\end{minipage}
+	\hrule{}
+	\vspace{0.5cm}
+	
+\textbf{\textcolor{red}{Syllabus}}	
+
+$if(aims)$\section*{Course Aims}
+
+$aims$$endif$
+
+$if(structure)$\section*{Course Structure}
+
+$structure$$endif$
+
+$if(materials)$\section*{Course Materials}
+
+$materials$$endif$
+
+%\newpage
+$if(evaluation)$\section*{Course Evaluation}
+
+$evaluation$$endif$
+
+$if(policies)$\section*{Course Policies}
+
+$policies$$endif$
+
+% \newpage
+
+\section*{Course Schedule}
+
+$body$
+
+\centering
+	-- This syllabus is subject to change --
+	
+\end{document}

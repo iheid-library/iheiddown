@@ -1,0 +1,110 @@
+---
+####################
+## Metadata       ##
+####################
+title: |
+  Transfiguration
+code: MINT001
+credits: 12
+year: 2020--2021
+semester: Fall
+program: |
+  Master of International Wizardry \
+  Master of International Quidditch
+# This is the YAML (YAML Ain't Markup Language) header that includes 
+# metadata used to produce the document. 
+# Be careful with spacing in this header!
+# Two spaces at the start of the line create indentation,
+# which embeds the parameter in a hierarchy.
+
+####################
+## Professor      ##
+####################
+prof: Minerva McGonagall
+prof-email: minerva.mcgonagall@graduateinstitute.ch
+location: Zoom 123-456-7890
+prof-office-hours: "[Fridays, 17--19](https://bit.ly/goog.ly)"
+
+####################
+## Assistant      ##
+####################
+ta: Neville Longbottom
+ta-email: neville.longbottom@graduateinstitute.ch
+ta-office-hours: By appointment
+
+####################
+## Course         ##
+####################
+description: |
+  This course teaches everything you ever wanted
+  to know about transfiguration. You will learn
+  how to transform yourself entirely.
+aims: |
+  This course has two main purposes.
+  First, it provides a deeper understanding of transfiguration.
+  Second, it applies these insights through practical exercises.
+structure: |
+  Extraordinarily, due to the novel coronavirus pandemic, 
+  we will be moving this course online for the remainder of the semester.
+materials: |
+  There is no required textbook for this course.
+  All materials can be found on Moodle.
+evaluation: |
+  Evaluation is by a combination of participation, term papers, and exam.
+  
+  **Participation (10%)**: This is about participation.
+  
+  **Papers (40%)**: This is about the term papers.
+  
+  **Exam (50%)**: This is about the exam.
+policies: |
+  *Auditing* is possible. Please contact me.
+  
+  *Grading* is according to the Swiss 1-6 scale.
+  
+  *Plagiarism* is not tolerated at the Graduate Institute. 
+  If you are unsure, please contact the TA.
+
+#####################
+## Output Options  ##
+#####################
+output:
+  bookdown::render_book:
+    input: "Untitled/Untitled.Rmd"
+    output_format: iheiddown::syllabus_pdf
+link-citations: true
+---
+
+```{r, echo = FALSE}
+mon <- as.Date("2020-09-14")
+
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%d/%m")
+ tfri <- format(tfri, format="%d/%m")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Week ",zadv,sep=''," (", tmon," - ",tfri, ")")
+ return(tmp)
+}
+
+library(RefManageR)
+bib <- ReadBib("bib/references.bib") # Change to whatever is your .bib file
+myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
+```
+
+##  `r advdate(mon, 1)`: Transfiguration alphabet {-}
+
+```{r, echo = FALSE, results="asis"}
+bib["Darwin1859", "Satchell2009"]
+```
+
+##  `r advdate(mon, 2)`: Transformation formula {-}
+
+##  `r advdate(mon, 3)`: Desk into pig {-}
+
+##  `r advdate(mon, 4)`: Match to needle {-}
+
+##  `r advdate(mon, 5)`: Switching spell {-}
+
+##  `r advdate(mon, 6)`: Mice to snuffboxes {-}
