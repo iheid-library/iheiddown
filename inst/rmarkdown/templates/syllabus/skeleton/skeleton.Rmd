@@ -17,6 +17,14 @@ program: |
 # Two spaces at the start of the line create indentation,
 # which embeds the parameter in a hierarchy.
 
+####################
+## Professor      ##
+####################
+prof: Minerva McGonagall
+prof-email: minerva.mcgonagall@graduateinstitute.ch
+location: Zoom 123-456-7890
+prof-office-hours: "[Fridays, 17--19](https://bit.ly/goog.ly)"
+
 #####################
 ## Output Options  ##
 #####################
