@@ -74,3 +74,30 @@ output:
     output_format: iheiddown::syllabus_pdf
 link-citations: true
 ---
+
+```{r, echo = FALSE}
+mon <- as.Date("2020-09-14")
+
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%d/%m")
+ tfri <- format(tfri, format="%d/%m")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Week ",zadv,sep=''," (", tmon," - ",tfri, ")")
+ return(tmp)
+}
+```
+
+##  `r advdate(mon, 1)`: Transfiguration alphabet {-}
+
+
+##  `r advdate(mon, 2)`: Transformation formula {-}
+
+##  `r advdate(mon, 3)`: Desk into pig {-}
+
+##  `r advdate(mon, 4)`: Match to needle {-}
+
+##  `r advdate(mon, 5)`: Switching spell {-}
+
+##  `r advdate(mon, 6)`: Mice to snuffboxes {-}
