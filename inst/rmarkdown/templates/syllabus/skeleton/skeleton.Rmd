@@ -39,6 +39,10 @@ description: |
   This course teaches everything you ever wanted
   to know about transfiguration. You will learn
   how to transform yourself entirely.
+aims: |
+  This course has two main purposes.
+  First, it provides a deeper understanding of transfiguration.
+  Second, it applies these insights through practical exercises.
 #####################
 ## Output Options  ##
 #####################
