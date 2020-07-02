@@ -25,6 +25,13 @@ prof-email: minerva.mcgonagall@graduateinstitute.ch
 location: Zoom 123-456-7890
 prof-office-hours: "[Fridays, 17--19](https://bit.ly/goog.ly)"
 
+####################
+## Assistant      ##
+####################
+ta: Neville Longbottom
+ta-email: neville.longbottom@graduateinstitute.ch
+ta-office-hours: By appointment
+
 #####################
 ## Output Options  ##
 #####################
