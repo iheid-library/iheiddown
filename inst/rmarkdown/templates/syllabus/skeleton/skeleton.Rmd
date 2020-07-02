@@ -32,6 +32,13 @@ ta: Neville Longbottom
 ta-email: neville.longbottom@graduateinstitute.ch
 ta-office-hours: By appointment
 
+####################
+## Course         ##
+####################
+description: |
+  This course teaches everything you ever wanted
+  to know about transfiguration. You will learn
+  how to transform yourself entirely.
 #####################
 ## Output Options  ##
 #####################
