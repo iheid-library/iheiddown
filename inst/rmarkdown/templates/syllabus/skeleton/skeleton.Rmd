@@ -1,0 +1,10 @@
+---
+#####################
+## Output Options  ##
+#####################
+output:
+  bookdown::render_book:
+    input: "Untitled/Untitled.Rmd"
+    output_format: iheiddown::syllabus_pdf
+link-citations: true
+---
