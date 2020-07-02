@@ -87,10 +87,17 @@ advdate <- function(obj, adv) {
  tmp <- paste("Week ",zadv,sep=''," (", tmon," - ",tfri, ")")
  return(tmp)
 }
+
+library(RefManageR)
+bib <- ReadBib("bib/references.bib") # Change to whatever is your .bib file
+myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
 ```
 
 ##  `r advdate(mon, 1)`: Transfiguration alphabet {-}
 
+```{r, echo = FALSE, results="asis"}
+bib["Darwin1859", "Satchell2009"]
+```
 
 ##  `r advdate(mon, 2)`: Transformation formula {-}
 
