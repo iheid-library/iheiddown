@@ -1,4 +1,22 @@
 ---
+####################
+## Metadata       ##
+####################
+title: |
+  Transfiguration
+code: MINT001
+credits: 12
+year: 2020--2021
+semester: Fall
+program: |
+  Master of International Wizardry \
+  Master of International Quidditch
+# This is the YAML (YAML Ain't Markup Language) header that includes 
+# metadata used to produce the document. 
+# Be careful with spacing in this header!
+# Two spaces at the start of the line create indentation,
+# which embeds the parameter in a hierarchy.
+
 #####################
 ## Output Options  ##
 #####################
