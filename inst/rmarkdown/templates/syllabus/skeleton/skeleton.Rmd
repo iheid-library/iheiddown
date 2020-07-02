@@ -57,6 +57,14 @@ evaluation: |
   **Papers (40%)**: This is about the term papers.
   
   **Exam (50%)**: This is about the exam.
+policies: |
+  *Auditing* is possible. Please contact me.
+  
+  *Grading* is according to the Swiss 1-6 scale.
+  
+  *Plagiarism* is not tolerated at the Graduate Institute. 
+  If you are unsure, please contact the TA.
+
 #####################
 ## Output Options  ##
 #####################
