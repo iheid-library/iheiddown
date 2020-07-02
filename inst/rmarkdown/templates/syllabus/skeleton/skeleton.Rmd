@@ -49,6 +49,14 @@ structure: |
 materials: |
   There is no required textbook for this course.
   All materials can be found on Moodle.
+evaluation: |
+  Evaluation is by a combination of participation, term papers, and exam.
+  
+  **Participation (10%)**: This is about participation.
+  
+  **Papers (40%)**: This is about the term papers.
+  
+  **Exam (50%)**: This is about the exam.
 #####################
 ## Output Options  ##
 #####################
