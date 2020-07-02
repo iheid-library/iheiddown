@@ -46,6 +46,9 @@ aims: |
 structure: |
   Extraordinarily, due to the novel coronavirus pandemic, 
   we will be moving this course online for the remainder of the semester.
+materials: |
+  There is no required textbook for this course.
+  All materials can be found on Moodle.
 #####################
 ## Output Options  ##
 #####################
