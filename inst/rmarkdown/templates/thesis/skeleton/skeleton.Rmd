@@ -10,7 +10,7 @@ title: |
 firstnames: Author
 lastnames: Name
 thesisno: 12345
-degree: Doctor of Philosophy
+phd: true # Or: false for Masters
 department: Your Department
 degreedate: June 2020
 # This is the YAML (YAML Ain't Markup Language) header that includes 
