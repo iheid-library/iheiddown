@@ -10,9 +10,12 @@ title: |
 firstnames: Author
 lastnames: Name
 thesisno: 12345
-degree: Doctor of Philosophy
+phd: true # Or: false for Masters
 department: Your Department
 degreedate: June 2020
+supervisor: Minerva McGonagall
+secondreader: Horace Slughorn
+examiner: Olympe Maxime # only required if PhD; otherwise delete or comment out
 # This is the YAML (YAML Ain't Markup Language) header that includes 
 # metadata used to produce the document. 
 # Be careful with spacing in this header!

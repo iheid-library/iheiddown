@@ -317,6 +317,13 @@ $endif$
 \sffamily{Thesis No. $thesisno$}
 
 \vspace*{1cm}
+\sffamily\textbf{Supervisor: $supervisor$}\\
+\sffamily\textbf{Second Reader: $secondreader$}
+$if(phd)$
+\\\sffamily\textbf{External Examiner: $examiner$}
+$endif$
+
+\vspace*{1cm}
 \sffamily\textbf{Geneva}\\
 \sffamily\textbf{\the\year}
 
@@ -324,6 +331,7 @@ $endif$
 \end{titlepage}
 
 % TITLEPAGE 2 (empty page)
+$if(phd)$
 \newpage\null\thispagestyle{empty}\newpage
 
 % TITLEPAGE 3
@@ -366,6 +374,7 @@ GRADUATE INSTITUTE OF INTERNATIONAL AND DEVELOPMENT STUDIES
 
 \thispagestyle{firstpages}
 \end{titlepage}
+$endif$
 
 % TITLEPAGE 6
 \begin{titlepage}

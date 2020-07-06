@@ -1,3 +1,11 @@
+# iheiddown 0.4.0
+
+* Differentiated between PhD theses and masters dissertations in front pages
+  * Breaking change: Note that you will now need to specify phd: true or phd: false in metadata
+* Added supervisor and second reader information to metadata, appear on first page
+  * Added external examiner information to metadata, appears on first page for PhDs
+* Updates to pull request template
+
 # iheiddown 0.3.0
 
 * Added `syllabus_pdf()` function
