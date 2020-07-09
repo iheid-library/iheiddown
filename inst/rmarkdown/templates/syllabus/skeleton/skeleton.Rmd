@@ -89,7 +89,7 @@ advdate <- function(obj, adv) {
 }
 
 library(RefManageR)
-bib <- ReadBib("bib/references.bib") # Change to whatever is your .bib file
+bib <- ReadBib("references.bib") # Change to whatever is your .bib file
 myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
 ```
 
