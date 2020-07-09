@@ -1,6 +1,6 @@
 # If you specify a sub directory with rmd_subdir, then bookdown will search through this
 # folder too
-rmd_subdir: ["front-and-back-matter","chapters"]
+rmd_subdir: ["front-matter","chapters"]
 # Make sure to start any acknowledgements and/or abstract Rmd files with 
 # an underscore, e.g. _abstract.Rmd. 
 # Otherwise bookdown will start to merge the abstract in to the body text which almost 
