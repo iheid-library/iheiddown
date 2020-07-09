@@ -9,7 +9,7 @@ rmd_subdir: ["front-matter","chapters"]
 # rmd_files: ["Untitled.Rmd", "chapters/01-basics.Rmd", "front-and-back-matter/99-references.Rmd"]
 
 # The following can be changed to another folder if you wish
-output_dir: "docs"
+output_dir: "versions"
 
 # Please suggest and submit changes to the source .Rmd files here:
 edit: https://github.com/jhollway/iheiddown/tree/master/%s
