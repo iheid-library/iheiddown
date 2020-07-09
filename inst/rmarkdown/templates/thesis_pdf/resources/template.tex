@@ -13,6 +13,7 @@
 %%%% PAGE LAYOUT
 % Pass this in from YAML
 \documentclass[a4paper, $if(page-layout)$$page-layout$$endif$]{report}
+\usepackage[includehead,hmargin={3.1cm, 3.1cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
@@ -33,6 +34,27 @@ $endif$
 $if(draft)$
 \fancyfoot[C]{\emph{DRAFT Printed on \today}}
 $endif$
+
+%%%%% FONTS
+\RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+%\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
+\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
+\RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+% For the headings we will use Helvetica
+\RequirePackage{helvet}
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} % silence the warning
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
+\allsectionsfont{\sffamily}
+% For the main text and equations we will use Baskerville and Palatino
+\RequirePackage{mathpazo}
+\RequirePackage{baskervald}
+% For formatting code or package names, we will use Lucida Console
+\RequirePackage{zi4}
+% Enable strikethrough
+\usepackage[normalem]{ulem}
+
 
 % This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
 % paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
@@ -65,30 +87,12 @@ $endif$
 \preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
 \makeatother
 
-%UL 26 Mar 2019, enable strikethrough
-\usepackage[normalem]{ulem}
-
 %UL 15 Oct 2019, enable link highlighting to be turned off from YAML
 % \usepackage[dvipsnames]{color}
 % \usepackage[colorlinks=true,pdfpagelabels,hidelinks=$hidelinks$]{hyperref}
 \RequirePackage[colorlinks=true,linkcolor=red,
 citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for external links
 % \hypersetup{citecolor=red}
-
-%%%%% FONTS
-\RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
-%\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
-\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
-\RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
-% For the headings we will use Helvetica
-\RequirePackage{helvet}
-\RequirePackage{sectsty}
-\allsectionsfont{\sffamily}
-% For the main text and equations we will use Baskerville and Palatino
-\RequirePackage{mathpazo}
-\RequirePackage{baskervald}
-% For formatting code or package names, we will use Lucida Console
-\RequirePackage{zi4}
 
 %%%%% BIBLIOGRAPHY SETUP
 % Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
@@ -490,9 +494,9 @@ $body$
 %   \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
 % \end{savequote}
 
-\setlength{\baselineskip}{0pt} % JEM: Single-space References
-
-{\renewcommand*\MakeUppercase[1]{#1}%
-\printbibliography[heading=bibintoc,title={\bibtitle}]}
+% \setlength{\baselineskip}{0pt} % JEM: Single-space References
+% 
+% {\renewcommand*\MakeUppercase[1]{#1}%
+% \printbibliography[heading=bibintoc,title={References}]}
 
 \end{document}
