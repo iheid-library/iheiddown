@@ -1,3 +1,21 @@
+# iheiddown 0.5.0
+
+* Fixed issue #13 related to bookdown v0.2.0
+  * `thesis_pdf()` now a wrapper for `bookdown::render_book()` rather than `bookdown::pdf_book()`
+  * `syllabus_pdf()` now a wrapper for `rmarkdown::render()` rather than `rmarkdown::pdf_document()`
+  * Note that this is a breaking change compared to older scripts
+* Fixed sectsty `\underbar` error
+  * On thesis template
+  * On syllabus template
+* Fixed empty bibliography issue
+  * Moved thesis references chapter
+  * Changed front-and-back-matter to just front-matter
+* Fixed 'nobind' global option issue
+  * 'oneside' and 'twoside' remain as options
+* Simplified syllabus skeleton structure
+* Changed thesis output directory to 'versions'
+* Added more informative filenames for thesis and syllabus outputs
+
 # iheiddown 0.4.0
 
 * Differentiated between PhD theses and masters dissertations in front pages
