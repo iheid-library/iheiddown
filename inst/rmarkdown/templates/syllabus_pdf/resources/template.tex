@@ -1,5 +1,13 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[top=1.3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} % silence the warning
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
+\sectionfont{\fontsize{12}{15}\selectfont}
+\subsectionfont{\fontsize{10}{12}\selectfont}
+
 \usepackage{calc}
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
@@ -14,10 +22,6 @@
 \usepackage{longtable}
 \usepackage{hanging}
 
-\usepackage{sectsty}
-\sectionfont{\fontsize{12}{15}\selectfont}
-\subsectionfont{\fontsize{10}{12}\selectfont}
-
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{\baselineskip}
 \usepackage[colorlinks=true,urlcolor=blue]{hyperref}
@@ -26,7 +30,7 @@
 \begin{document}	
 
 \hspace*{-1.25cm}
-\includegraphics[width=0.3\linewidth]{figures/iheid.eps}
+\includegraphics[width=0.3\linewidth]{iheid.eps}
 \vspace{0.25cm}
 
 

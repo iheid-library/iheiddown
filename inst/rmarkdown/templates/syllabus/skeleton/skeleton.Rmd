@@ -4,7 +4,7 @@
 ####################
 title: |
   Transfiguration
-code: MINT001
+code: &code MINT001
 credits: 12
 year: 2020--2021
 semester: Fall
@@ -69,9 +69,9 @@ policies: |
 ## Output Options  ##
 #####################
 output:
-  bookdown::render_book:
-    input: "Untitled/Untitled.Rmd"
-    output_format: iheiddown::syllabus_pdf
+  iheiddown::syllabus_pdf:
+    input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
+    output_file: *code
 link-citations: true
 ---
 
@@ -89,7 +89,7 @@ advdate <- function(obj, adv) {
 }
 
 library(RefManageR)
-bib <- ReadBib("bib/references.bib") # Change to whatever is your .bib file
+bib <- ReadBib("references.bib") # Change to whatever is your .bib file
 myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
 ```
 

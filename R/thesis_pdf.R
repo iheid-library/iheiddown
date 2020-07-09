@@ -9,10 +9,13 @@
 #'   template
 #' @examples
 #' \dontrun{
-#' output:iheiddown::thesis_pdf
+#' knit: iheiddown::thesis_pdf
 #' }
 thesis_pdf <- function(...){
-  bookdown::pdf_book(..., latex_engine = "xelatex",
-                     template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex', 
-                                                 package = 'iheiddown'))
+  options(bookdown.render.file_scope = FALSE)
+  bookdown::render_book(..., 
+                        output_file = paste0("Thesis_", Sys.Date()), 
+                        output_format = bookdown::pdf_book(latex_engine = "xelatex",
+                                                        template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex',
+                                                                               package = 'iheiddown')))
 }
