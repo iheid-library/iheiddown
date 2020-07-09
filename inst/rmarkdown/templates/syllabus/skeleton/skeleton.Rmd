@@ -4,7 +4,7 @@
 ####################
 title: |
   Transfiguration
-code: MINT001
+code: &code MINT001
 credits: 12
 year: 2020--2021
 semester: Fall
@@ -71,6 +71,7 @@ policies: |
 output:
   iheiddown::syllabus_pdf:
     input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
+    output_file: *code
 link-citations: true
 ---
 
