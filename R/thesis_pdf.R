@@ -14,6 +14,7 @@
 thesis_pdf <- function(...){
   options(bookdown.render.file_scope = FALSE)
   bookdown::render_book(..., 
+                        output_file = paste0("Thesis_", Sys.Date()), 
                         output_format = bookdown::pdf_book(latex_engine = "xelatex",
                                                         template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex',
                                                                                package = 'iheiddown')))
