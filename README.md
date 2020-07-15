@@ -48,6 +48,8 @@ Click `Install` at the top left of that tab and type "remotes" into the text box
 
 That's it! `iheiddown` is now installed and ready to go.
 
+Note that you can always rerun `remotes::install_github("jhollway/iheiddown")` -- if there's a newer version, it'll install that.
+
 ## Getting started
 
 `iheiddown` sets up a thesis template that you can then modify for your dissertation.
@@ -60,11 +62,6 @@ It's very easy to get started.
 1. Name your thesis project (if in doubt 'Untitled' is fine) and select where the project should be saved on your harddrive.
 
 Congratulations! You have now set up a thesis project.
-
-<!--
-- The R packages `bookdown`, `tidyverse`, and `reticulate` (the other packages you need should be automatically installed when you build this project for the first time in RStudio)
-- (If on a Mac): Command line developer tools. You can install these by typing `xcode-select --install` in a terminal prompt
--->
 
 ## Writing your thesis
 

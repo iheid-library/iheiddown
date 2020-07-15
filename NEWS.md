@@ -1,3 +1,23 @@
+# iheiddown 0.5.1
+
+* Fixed `front-matter/` error
+* Shortened thesis abstract
+* Elaborated thesis acknowledgements
+* Shortened thesis preface
+  * Elaborated *RMarkdown* motivation in thesis preface
+* Renamed chapter 1 to `01-introduction.Rmd`
+  * Discusses markup and formatting
+* Renamed chapter 2 to `02-theory.Rmd`
+  * Discusses bibliographies and citations
+* Renamed chapter 3 to `03-method.Rmd`
+  * Discusses inline code and math
+* Renamed chapter 4 to `04-results.Rmd`
+  * Discusses data analysis and tables and figures
+* Added chapter 5 as `05-conclusion.Rmd`
+  * Discusses additional resources and next steps
+* Fixed references chapter title not appearing 
+* Added `bookdown::preview_chapter()` YAML to each chapter
+
 # iheiddown 0.5.0
 
 * Fixed issue #13 related to bookdown v0.2.0
