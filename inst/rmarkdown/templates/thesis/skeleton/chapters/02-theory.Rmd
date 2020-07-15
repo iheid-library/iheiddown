@@ -47,6 +47,16 @@ If you wish to drop the name,
 say because you wish to replace it with something more fitting in the context,
 you could say that Darwin's -@Darwin1859 theory of evolution is brilliant.
 
+To cite multiple entries together, you can just concatenate the entries, 
+separated by semi-colons.
+For example, this package [@iheiddown2020] very much builds and relies upon the excellent work of others [@bookdown2016; @solomon2020].
+
+You can also add page numbers and notes.
+For example, you should start reading a book from the first page [@Darwin1859, p. 1],
+though often all of them are good [@Darwin1859, pp. 1-502].
+These need not be page numbers, but could be other suffixes.
+You can add prefixes too [see @bookdown2016; cf. @solomon2020].
+
 ### Tips for bibliographies
 
 - Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. 
