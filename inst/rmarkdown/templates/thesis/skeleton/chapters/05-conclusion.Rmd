@@ -29,3 +29,8 @@ output:
 
 - [`bookdown`](https://bookdown.org/yihui/bookdown/)
 
+## Anything else?
+
+If you'd like to see examples of other things in this template, 
+please add them as feature requests to the [iheiddown](https://github.com/jhollway/iheiddown) website. 
+We love to see people using _RMarkdown_ for their theses, and are happy to help.
