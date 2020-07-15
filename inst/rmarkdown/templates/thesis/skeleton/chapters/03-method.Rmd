@@ -1,1 +1,8 @@
+---
+title: Methods
+knit: bookdown::preview_chapter
+output:
+  output_format: rmarkdown::pdf_document
+---
+
 # Methods {#methods}

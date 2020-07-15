@@ -1,1 +1,8 @@
+---
+title: Introduction
+knit: bookdown::preview_chapter
+output:
+  output_format: rmarkdown::pdf_document
+---
+
 # Introduction {#intro}
