@@ -32,3 +32,33 @@ These labels will automatically be generated (if not specified) by changing the 
 Look for the reference to this label at the beginning of Chapter 2.
 -->
 
+## Line breaks, paragraphs, and spacing
+
+Generally, it's useful to write each sentence (or part of a new sentence) on a new line.
+This aids in readability---for you writing, but also for your readers, who will appreciate short, succinct prose.
+Any text written in the line immediately following will be included in the same paragraph.
+You do not need to add a space after finishing a line.
+This will be added automatically.
+
+If you want to start a new paragraph, all you need to do is hit enter/return twice before continuing writing.
+The empty line signals that the paragraph is over, and we should start a new one.
+
+Be careful with your spacing in _Markdown_ documents though.
+While whitespace largely is ignored, it does at times give _Markdown_ signals as to how to proceed.
+For example, at the end of this line, I'm going to add several white spaces.   
+And then I'm going to continue.  
+As you will see in the final PDF, while the paragraph structure is maintained,
+the standard text justification is broken.
+
+As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.
+In other words, there is no need to indent basic text in the Rmd document 
+(in fact, it might cause your text to do funny things if you do).
+
+\vfill
+
+If for some reason you need some extra space between paragraphs,
+you can use `\vfill`.
+You can force a new page with `\newpage`.
+
+\newpage
+
