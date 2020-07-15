@@ -27,10 +27,10 @@ examiner: Olympe Maxime # only required if PhD; otherwise delete or comment out
 ####################
 dedication: For you #If you'd prefer to not include a Dedication, for example, simply delete the section entirely, or silence them (add # before each line). 
 resume: | # otherwise known as the abstract
-  `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
+  `r paste(readLines("front-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
-  `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
-abbreviations: "front-and-back-matter/abbreviations" # path to .tex file with abbreviations
+  `r paste(readLines("front-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
+abbreviations: "front-matter/abbreviations" # path to .tex file with abbreviations
 toc-depth: 2 # depth of heading to include in table of contents
 lof: true # list of figures in front matter?
 lot: true # list of tables in front matter?
