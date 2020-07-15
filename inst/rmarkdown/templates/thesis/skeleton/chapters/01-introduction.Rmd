@@ -62,3 +62,20 @@ You can force a new page with `\newpage`.
 
 \newpage
 
+## Quotation
+
+Normal in-text quotations are simple enough.
+Just "enclose the quotation in speech marks".
+\LaTeX\ will do the hard work of parsing out what is the start and end of the quote.
+
+If you wish to include longer quotations as a block quote,
+just start a new paragraph with a > symbol preceding the first line.
+
+> This signals that the quotation should be indented from both sides.
+I can add sentences to the paragraph,
+and to conclude the block quotation...
+
+I just start another paragraph.
+If you would like fancier block quotes,
+just raise this as an issue [on GitHub](https://github.com/jhollway/iheiddown).
+
