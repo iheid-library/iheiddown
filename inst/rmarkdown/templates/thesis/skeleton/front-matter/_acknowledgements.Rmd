@@ -1,12 +1,30 @@
-This is where you normally thank your advisor, colleagues, family and friends, as well as funding and institutional support. In our case, we will give our praises to the people who developed the ideas and tools that allow us to push open science a little step forward by writing plain-text, transparent, and reproducible theses in R Markdown. 
-We must be grateful to John Gruber for inventing the original version of Markdown, to John MacFarlane for creating Pandoc (<http://pandoc.org>) which converts Markdown to a large number of output formats, and to Yihui Xie for creating `knitr` which introduced R Markdown as a way of embedding code in Markdown documents, and `bookdown` which added tools for technical and longer-form writing.
+This is where you normally thank your advisor, colleagues, family and friends, as well as funding and institutional support. 
+In our case, we will acknowledge here those who developed the ideas and tools that allow us to push open science a little step further 
+by writing plain-text, transparent, and reproducible theses in *RMarkdown*. 
 
-Special thanks to [Chester Ismay](http://chester.rbind.io), who created the `thesisdown` package that helped many a PhD student write their theses in R Markdown. Special thanks also to John McManigle, whose adaption of Sam Evans' adaptation of Keith Gillow's original maths template for writing an Oxford University DPhil thesis in \LaTeX\ provided the template for the PDF.
-A very special thanks to Ulrik Lyngs' RMarkdown version of this template in `oxforddown`,
-which, together with `thesisdown`, `rticles`, and `memor`,
-served as inspiration for this package.
+First, we thank Leslie Lamport for originally creating \LaTeX\, 
+and Frank Mittelbach, Chris Rowley, and Rainer Schöpf for their ongoing development.
+Thank you to John Gruber for inventing the original version of Markdown, 
+to John MacFarlane for creating Pandoc (<http://pandoc.org>), 
+which converts Markdown to a large number of output formats including \LaTeX\.
 
-Finally, profuse thanks to JJ Allaire, the founder and CEO of [RStudio](http://rstudio.com), and Hadley Wickham, the mastermind of the tidyverse without whom we'd all just given up and done data science in Python instead. Thanks for making data science easier, more accessible, and more fun for us all.
+Next, we are grateful to Ross Ihaka and Robert Gentleman from the University of Auckland for developing **R** 
+from John Chambers' **S** programming language.
+**R** is used to 
+Thank you also to JJ Allaire, the founder and CEO of [RStudio](http://rstudio.com), 
+and Hadley Wickham, mastermind of the `tidyverse` suite of packages,
+without which we'd all just given up and done data science in Python instead.
+
+Lastly, thank you to Yihui Xie for creating 
+`knitr` which introduced *RMarkdown* as a way of embedding code in Markdown documents, 
+and `bookdown` which added tools for technical and longer-form writing.
+[Chester Ismay](http://chester.rbind.io) created the `thesisdown` package which,
+together with `rticles` and `memor`, served as inspiration for this package. 
+And special thanks to Ulrik Lyngs, 
+who converted John McManigle and Sam Evans' adaptations of Keith Gillow's original \LaTeX\ template for writing an Oxford University DPhil thesis 
+into an `oxforddown` *RMarkdown* template that serves as the basis for this skeleton.
+
+These enormous contributions make theses and dissertations easier to write, share, and replicate.
 
 \begin{flushright}
 James Hollway \\

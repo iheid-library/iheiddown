@@ -1,76 +1,154 @@
-```{r include_packages_2, include = FALSE}
-# This chunk ensures that the thesisdown package is
-# installed and loaded. This thesisdown package includes
-# the template files for the thesis and also two functions
-# used for labeling and referencing
-if (!require(remotes)) {
-  if (params$`Install needed packages for {thesisdown}`) {
-    install.packages("remotes", repos = "https://cran.rstudio.com")
-  } else {
-    stop(
-      paste(
-        'You need to run install.packages("remotes")',
-        "first in the Console."
-      )
-    )
-  }
+---
+title: Results
+knit: bookdown::preview_chapter
+output:
+  output_format: rmarkdown::pdf_document
+---
+
+# Results {#results}
+
+## Loading and exploring data
+
+Included in this template is a file called `flights.csv`.  
+This file includes a subset of the larger dataset of information about all flights that departed from Seattle and Portland in 2014. 
+More information about this dataset and its **R** package is available at <https://github.com/ismayc/pnwflights14>. 
+This subset includes only Portland flights and only rows that were complete with no missing values. 
+Merges were also done with the `airports` and `airlines` data sets in the `pnwflights14` package to get more descriptive airport and airline names.
+
+We can load in this data set using the following commands:
+
+```{r load_data}
+# flights.csv is in the data directory
+flights <- read.csv("data/flights.csv")
+```
+
+The data is now stored in the data frame called `flights` in **R**.  
+To get a better feel for the variables included in this dataset we can use a variety of functions. 
+Here we can see the dimensions (rows by columns) and also the names of the columns.
+
+```{r str}
+dim(flights)
+names(flights)
+```
+
+Another good idea is to take a look at the dataset in table form.  
+With this dataset having more than 20,000 rows, we won't explicitly show the results of the command here. 
+I recommend you enter the command into the Console **_after_** you have run the **R** chunks above to load the data into **R**.
+
+```{r view_flights, eval=FALSE}
+View(flights)
+```
+
+While not required, it is highly recommended you use the `dplyr` package to manipulate and summarize your data set as needed.  
+It uses a syntax that is easy to understand using chaining operations.  
+Below I've created a few examples of using `dplyr` to get information about the Portland flights in 2014.  
+You will also see the use of the `ggplot2` package, which produces beautiful, high-quality academic visuals.
+
+We begin by checking to ensure that needed packages are installed and then we load them into our current working environment:
+
+```{r load_pkgs, message=FALSE}
+# List of packages required for this analysis
+pkg <- c("dplyr", "ggplot2", "knitr", "bookdown")
+# Check if packages are not installed and assign the
+# names of the packages not installed to the variable new.pkg
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+# If there are any packages in the list that aren't installed,
+# install them
+if (length(new.pkg)) {
+  install.packages(new.pkg, repos = "https://cran.rstudio.com")
 }
-if (!require(dplyr)) {
-  if (params$`Install needed packages for {thesisdown}`) {
-    install.packages("dplyr", repos = "https://cran.rstudio.com")
-  } else {
-    stop(
-      paste(
-        'You need to run install.packages("dplyr")',
-        "first in the Console."
-      )
-    )
-  }
-}
-if (!require(ggplot2)) {
-  if (params$`Install needed packages for {thesisdown}`) {
-    install.packages("ggplot2", repos = "https://cran.rstudio.com")
-  } else {
-    stop(
-      paste(
-        'You need to run install.packages("ggplot2")',
-        "first in the Console."
-      )
-    )
-  }
-}
-if (!require(bookdown)) {
-  if (params$`Install needed packages for {thesisdown}`) {
-    install.packages("bookdown", repos = "https://cran.rstudio.com")
-  } else {
-    stop(
-      paste(
-        'You need to run install.packages("bookdown")',
-        "first in the Console."
-      )
-    )
-  }
-}
-if (!require(thesisdown)) {
-  if (params$`Install needed packages for {thesisdown}`) {
-    remotes::install_github("ismayc/thesisdown")
-  } else {
-    stop(
-      paste(
-        "You need to run",
-        'remotes::install_github("ismayc/thesisdown")',
-        "first in the Console."
-      )
-    )
-  }
-}
+# Load packages
 library(thesisdown)
 library(dplyr)
 library(ggplot2)
 library(knitr)
-flights <- read.csv("data/flights.csv", stringsAsFactors = FALSE)
 ```
 
+\clearpage
+
+The example we show here does the following:
+
+- Selects only the `carrier_name` and `arr_delay` from the `flights` dataset and then assigns this subset to a new variable called `flights2`. 
+
+- Using `flights2`, we determine the largest arrival delay for each of the carriers.
+
+```{r max_delays}
+flights2 <- flights %>%
+  select(carrier_name, arr_delay)
+max_delays <- flights2 %>%
+  group_by(carrier_name) %>%
+  summarize(max_arr_delay = max(arr_delay, na.rm = TRUE))
+```
+
+A useful function in the `knitr` package for making nice tables in _R Markdown_ is called `kable`.  
+It is much easier to use than manually entering values into a table by copying and pasting values into Excel or LaTeX.  
+This again goes to show how nice reproducible documents can be! 
+(Note the use of `results="asis"`, which will produce the table instead of the code to create the table.)  
+The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
+
+```{r maxdelays, results="asis"}
+kable(max_delays,
+  col.names = c("Airline", "Max Arrival Delay"),
+  caption = "Maximum Delays by Airline",
+  caption.short = "Max Delays by Airline",
+  longtable = TRUE,
+  booktabs = TRUE
+)
+```
+
+The last two options make the table a little easier-to-read.
+
+We can further look into the properties of the largest value here for American Airlines Inc.  
+To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original `flights` dataset.
+
+
+```{r max_props}
+flights %>%
+  dplyr::filter(
+    arr_delay == 1539,
+    carrier_name == "American Airlines Inc."
+  ) %>%
+  select(-c(
+    month, day, carrier, dest_name, hour,
+    minute, carrier_name, arr_delay
+  ))
+```
+
+We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth.  
+Lastly, we show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
+
+```{r march3plot, fig.height=3, fig.width=6}
+flights %>%
+  dplyr::filter(month == 3, day == 3) %>%
+  ggplot(aes(x = dep_time, y = arr_delay)) +
+  geom_point()
+```
+
+## R chunks
+
+When you click the **Knit** button above a document will be generated that includes both content as well as the output of any embedded **R** code chunks within the document. 
+You can embed an **R** code chunk like this (`cars` is a built-in **R** dataset):
+
+```{r cars}
+summary(cars)
+```
+
+## Including plots
+
+You can also embed plots. 
+For example, here is a way to use the base **R** graphics package to produce a plot using the built-in `pressure` dataset:
+
+```{r pressure, echo=FALSE, cache=TRUE, fig.height=3, fig.width=5}
+plot(pressure)
+```
+
+Note that the `echo=FALSE` parameter was added to the code chunk to prevent printing of the **R** code that generated the plot. 
+There are plenty of other ways to add chunk options (like `fig.height` and `fig.width` in the chunk above).  
+More information is available at <https://yihui.org/knitr/options/>.  
+
+Another useful chunk option is the setting of `cache=TRUE` as you see here.  
+If document rendering becomes time consuming due to long computations or plots that are expensive to generate you can use knitr caching to improve performance.  
+Later in this file, you'll see a way to reference plots created in **R** or external figures.
 
 # Tables, Graphics, References, and Labels {#ref-labels}
 
@@ -150,7 +228,7 @@ include_graphics("figures/subdivision.pdf")
 
 Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALSE` is specified so that the **R** code is hidden in the document.
 
-**More Figure Stuff**
+### More Figure Stuff
 
 Lastly, we will explore how to rotate and enlarge figures using the `out.extra` chunk option.  (Currently this only works in the PDF version of the book.)
 
@@ -159,35 +237,4 @@ include_graphics("figures/subdivision.pdf")
 ```
 
 As another example, here is a reference: Figure \@ref(fig:subd2).  
-
-## Footnotes and Endnotes
-
-You might want to footnote something. ^[footnote text] The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way. More information can be found about both on the CUS site or feel free to reach out to <data@reed.edu>.
-
-## Bibliographies
-
-Of course you will need to cite things, and you will probably accumulate an armful of sources. There are a variety of tools available for creating a bibliography database (stored with the .bib extension).  In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero.  The Reed librarians have created Zotero documentation at <https://libguides.reed.edu/citation/zotero>.  In addition, a tutorial is available from Middlebury College at <https://sites.middlebury.edu/zoteromiddlebury/>.
-
-_R Markdown_ uses _pandoc_ (<https://pandoc.org/>) to build its bibliographies.  One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the "at" symbol.  For example, here's a reference to a book about worrying:  [@Darwin1859].  This `Darwin1859` entry appears in a file called `references.bib` in the `bib` folder.  This bibliography database file was created by a program called BibTeX.  You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the `bib` folder.  
-
-For more information about BibTeX and bibliographies, see [here](https://web.reed.edu/cis/help/latex/index.html). There are three pages on this topic:  _bibtex_ (which talks about using BibTeX, at <https://web.reed.edu/cis/help/latex/bibtex.html>), _bibtexstyles_ (about how to find and use the bibliography style that best suits your needs, at <https://web.reed.edu/cis/help/latex/bibtexstyles.html>) and _bibman_ (which covers how to make and maintain a bibliography by hand, without BibTeX, at <https://web.reed.edu/cis/help/latex/bibman.html>). The last page will not be useful unless you have only a few sources.
-
-If you look at the YAML header at the top of the main .Rmd file you can see that we can specify the style of the bibliography by referencing the appropriate csl file.  You can download a variety of different style files at <https://www.zotero.org/styles>.  Make sure to download the file into the csl folder.  
-
-<!-- Fill the rest of the page with the content below for the PDF version. -->
-
-\vfill
-
-**Tips for Bibliographies**
-
-- Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. Typing in source after source is mind-numbing enough; do you really want to do it for hours on end in late April? Think of it as procrastination.
-- The cite key (a citation's label) needs to be unique from the other entries.
-- When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
-- Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
-- To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
-- You can add an iheiddown citation.^[@iheiddown2020] 
-
-## Anything else?
-
-If you'd like to see examples of other things in this template, please add them as feature requests to the github.com website. We love to see people using _R Markdown_ for their theses, and are happy to help.
 

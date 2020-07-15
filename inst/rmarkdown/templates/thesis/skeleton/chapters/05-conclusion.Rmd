@@ -1,0 +1,36 @@
+---
+title: Conclusion
+knit: bookdown::preview_chapter
+output:
+  output_format: rmarkdown::pdf_document
+---
+
+# Conclusion {#conclusion}
+
+## Additional resources
+
+- [_Markdown_ Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+- _RMarkdown_
+    - [Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+    - [Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+    - [For newbies](https://rbasics.netlify.com) 
+
+
+- _RStudio IDE_
+    - [Official website](https://rstudio.com/products/rstudio/)
+    - [Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+
+- [`dplyr`](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html)
+
+- `ggplot2`
+    - [Documentation](https://ggplot2.tidyverse.org/)
+    - [Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+
+- [`bookdown`](https://bookdown.org/yihui/bookdown/)
+
+## Anything else?
+
+If you'd like to see examples of other things in this template, 
+please add them as feature requests to the [iheiddown](https://github.com/jhollway/iheiddown) website. 
+We love to see people using _RMarkdown_ for their theses, and are happy to help.

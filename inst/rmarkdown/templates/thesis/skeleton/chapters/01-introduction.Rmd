@@ -1,0 +1,116 @@
+---
+title: Introduction
+knit: bookdown::preview_chapter
+output:
+  output_format: rmarkdown::pdf_document
+---
+
+# Introduction {#intro}
+
+Here is a brief introduction into using *RMarkdown*.
+_Markdown_ is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.
+_RMarkdown_ provides the flexibility of _Markdown_ with the implementation of **R** input and output.
+For more details on using _RMarkdown_ see <https://rmarkdown.rstudio.com>.
+
+## Commenting
+
+<!-- 
+If you'd like to include a comment that won't be produced in your resulting file 
+enclose it in a block like this.
+-->
+
+<!-- If it's just a single line, you can wrap it like this. -->
+
+As you can see in the final PDF, the above comments are not printed.
+This can be hugely helpful for keeping notes for yourself
+right where you need them.
+I'll be using them to add some notes for you about the functionality in this package.
+
+<!--
+The {#intro} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  
+These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  
+Look for the reference to this label at the beginning of Chapter 2.
+-->
+
+## Line breaks, paragraphs, and spacing
+
+Generally, it's useful to write each sentence (or part of a new sentence) on a new line.
+This aids in readability---for you writing, but also for your readers, who will appreciate short, succinct prose.
+Any text written in the line immediately following will be included in the same paragraph.
+You do not need to add a space after finishing a line.
+This will be added automatically.
+
+If you want to start a new paragraph, all you need to do is hit enter/return twice before continuing writing.
+The empty line signals that the paragraph is over, and we should start a new one.
+
+Be careful with your spacing in _Markdown_ documents though.
+While whitespace largely is ignored, it does at times give _Markdown_ signals as to how to proceed.
+For example, at the end of this line, I'm going to add several white spaces.   
+And then I'm going to continue.  
+As you will see in the final PDF, while the paragraph structure is maintained,
+the standard text justification is broken.
+
+As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.
+In other words, there is no need to indent basic text in the Rmd document 
+(in fact, it might cause your text to do funny things if you do).
+
+\vfill
+
+If for some reason you need some extra space between paragraphs,
+you can use `\vfill`.
+You can force a new page with `\newpage`.
+
+\newpage
+
+## Quotation
+
+Normal in-text quotations are simple enough.
+Just "enclose the quotation in speech marks".
+\LaTeX\ will do the hard work of parsing out what is the start and end of the quote.
+
+If you wish to include longer quotations as a block quote,
+just start a new paragraph with a > symbol preceding the first line.
+
+> This signals that the quotation should be indented from both sides.
+I can add sentences to the paragraph,
+and to conclude the block quotation...
+
+I just start another paragraph.
+If you would like fancier block quotes,
+just raise this as an issue [on GitHub](https://github.com/jhollway/iheiddown).
+
+## Lists
+
+It's easy to create a list.
+It can be unordered like
+
+* Item 1
+* Item 2
+
+or it can be ordered like
+
+1. Item 1
+4. Item 2
+
+Note that I intentionally mislabeled Item 2 as number 4.  
+_Markdown_ automatically figures this out!  
+You can put any numbers in the list and it will create the list.  
+Check it out below.
+
+To create a sublist, just indent the values a bit (at least four spaces or a tab).  
+(Here's one case where indentation is key!)
+
+1. Item 1
+1. Item 2
+1. Item 3
+    - Item 3a
+    - Item 3b
+
+## Footnotes
+
+As you write, you might want to footnote something.^[The footnote will be in a smaller font and enumerated and placed appropriately.] 
+Alternatively, you can specify the footnote yourself.[^2]
+
+
+[^2]: And then write the text out at the bottom of the page/document.
+

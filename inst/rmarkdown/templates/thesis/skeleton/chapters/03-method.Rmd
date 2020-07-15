@@ -1,0 +1,96 @@
+---
+title: Methods
+knit: bookdown::preview_chapter
+output:
+  output_format: rmarkdown::pdf_document
+---
+
+# Methods {#methods}
+
+Your methods section will discuss the approach you will take for your dissertation.
+
+## Writing up math
+
+\TeX\ is the best way to typeset mathematics. 
+Donald Knuth designed \TeX\ when he got frustrated at how long it was taking the typesetters to finish his book, 
+which contained a lot of mathematics.  
+One nice feature of _RMarkdown_ is its ability to read LaTeX code directly.
+
+If you are writing a thesis that includes equations, then this section will be useful.
+If not, you can just skip over or delete this section 
+(you can always come back to it later by creating a new templated folder or looking at this chapter on the GitHub account online.)
+
+### In-line expressions
+
+First, we can include short equations into our normal text by enclosing \LaTeX\ equations in dollar signs. 
+So `$\sum_{i=1}^N i$` will read $\sum_{i=1}^N i$.
+
+### Displayed expressions
+
+\LaTeX\ also includes the option to present mathematical expressions on one or more separate lines:
+
+$$
+\pi(\theta|X_1< y_1,\dots,X_n<y_n) \varpropto \pi(\theta) \prod_{i=1}^n\int_{-\infty}^{y_i}
+   \exp\left(-{(x-\theta)^2\over{2\sigma^2}}\right)\ dx
+$$
+
+
+$$
+\sum_{j=1}^n (\delta\theta_j)^2 \leq {{\beta_i^2}\over{\delta_i^2 + \rho_i^2}}
+\left[ 2\rho_i^2 + {\delta_i^2\beta_i^2\over{\delta_i^2 + \rho_i^2}} \right] \equiv \omega_i^2
+$$
+
+Another equation:
+
+$$\det\left|\,\begin{matrix}%
+c_0&c_1\hfill&c_2\hfill&\ldots&c_n\hfill\cr
+c_1&c_2\hfill&c_3\hfill&\ldots&c_{n+1}\hfill\cr
+c_2&c_3\hfill&c_4\hfill&\ldots&c_{n+2}\hfill\cr
+\,\vdots\hfill&\,\vdots\hfill&
+  \,\vdots\hfill&&\,\vdots\hfill\cr
+c_n&c_{n+1}\hfill&c_{n+2}\hfill&\ldots&c_{2n}\hfill\cr
+\end{matrix}\right|>0$$
+
+### Symbols
+
+Many of the symbols you will need can be found on the [Comprehensive LaTeX Symbol Guide](https://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf).
+
+\noindent Exponent or Superscript: $\mathrm{O^-}$
+
+\noindent Subscript: $\mathrm{CH_4}$
+
+To stack numbers or letters as in $\mathrm{Fe_2^{2+}}$, the subscript is defined first, and then the superscript is defined.
+
+\noindent Delta: $\Delta$
+
+<!--
+The \noindent command does what you'd expect:  
+it forces the current line/paragraph to not indent. 
+This was done here to match the format of the LaTeX thesis PDF.
+-->
+
+You can get around math mode's automatic italicizing in \LaTeX\ by using the argument `$\mathrm{formula here}$`, 
+with your formula inside the curly brackets.  
+(Notice the use of the backticks here which enclose text that acts as code.)
+
+So, $\mathrm{Fe_2^{2+}Cr_2O_4}$ is written `$\mathrm{Fe_2^{2+}Cr_2O_4}$`.
+
+## Inline code
+
+If you'd like to put the results of your analysis directly into your discussion, add inline code like this:
+
+> The `cos` of $2 \pi$ is `r cos(2*pi)`. 
+
+Another example would be the direct calculation of the standard deviation:
+
+> The standard deviation of `speed` in `cars` is `r sd(cars$speed)`.
+
+One last neat feature is the use of the `ifelse` conditional statement which can be used to output text depending on the result of an **R** calculation:
+
+> `r ifelse(sd(cars$speed) < 6, "The standard deviation is less than 6.", "The standard deviation is equal to or greater than 6.")`
+
+Note the use of `>` here, which signifies a quotation environment that will be indented.
+
+As you see with `$2 \pi$` above, mathematics can be added by surrounding the mathematical text with dollar signs.  
+More examples of this are in [Mathematics and Science] if you uncomment the code in [Math].  
+
