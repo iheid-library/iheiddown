@@ -106,3 +106,11 @@ To create a sublist, just indent the values a bit (at least four spaces or a tab
     - Item 3a
     - Item 3b
 
+## Footnotes
+
+As you write, you might want to footnote something.^[The footnote will be in a smaller font and enumerated and placed appropriately.] 
+Alternatively, you can specify the footnote yourself.[^2]
+
+
+[^2]: And then write the text out at the bottom of the page/document.
+
