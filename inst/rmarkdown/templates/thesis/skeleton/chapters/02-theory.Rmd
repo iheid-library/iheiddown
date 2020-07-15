@@ -6,3 +6,21 @@ output:
 ---
 
 # Theory {#theory}
+
+## Referencing
+
+Your dissertation, and perhaps your theory/literature review chapter in particular,
+will likely have plenty of citations.
+Indeed, you will probably accumulate an armful of sources.
+This section outlines how to assemble a bibliography and cite in text.
+
+### Tips for bibliographies
+
+- Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. 
+Typing in source after source is mind-numbing enough; do you really want to do it for hours on end in late May? 
+Think of it as procrastination.
+- The cite key (a citation's label) needs to be unique from the other entries.
+- When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
+- Bibliographies made using BibTeX (whether manually or using a manager) accept \LaTeX\ markup, so you can italicize and add symbols as necessary.
+- To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
+- You can add an iheiddown citation.^[@iheiddown2020] 
