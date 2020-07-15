@@ -35,6 +35,8 @@ There are a variety of tools available for creating these files.
 For example, you may want to consider using the free and easy-to-use tool called Zotero.  
 Our wonderful librarians have created documentation on [how to use Zotero](https://libguides.graduateinstitute.ch/zotero/home).
 
+### Citing with `citr`
+
 After creating your personal bibliographic database,
 you can cite these entries in your dissertation with an `@` symbol, 
 followed by the correct, unique identifier for that entry.
@@ -56,6 +58,15 @@ For example, you should start reading a book from the first page [@Darwin1859, p
 though often all of them are good [@Darwin1859, pp. 1-502].
 These need not be page numbers, but could be other suffixes.
 You can add prefixes too [see @bookdown2016; cf. @solomon2020].
+
+A more efficient way for entering these into your documents is by using the R package `citr`.
+The `citr` package includes an 'addin' for RStudio that you can bind a keyboard shortcut to,
+and that raises a search window where you can type author, year, or title information in to to find the required entry/ies.
+
+![Citing with citr](../figures/citr.png)
+
+It is enormously useful, particularly as your bibliography gets larger.
+If you'd like to learn more, see [the README of its GitHub account](https://github.com/crsh/citr).
 
 ### Tips for bibliographies
 
