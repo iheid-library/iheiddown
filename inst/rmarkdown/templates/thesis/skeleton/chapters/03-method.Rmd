@@ -6,3 +6,46 @@ output:
 ---
 
 # Methods {#methods}
+### Symbols
+
+Many of the symbols you will need can be found on the [Comprehensive LaTeX Symbol Guide](https://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf).
+
+\noindent Exponent or Superscript: $\mathrm{O^-}$
+
+\noindent Subscript: $\mathrm{CH_4}$
+
+To stack numbers or letters as in $\mathrm{Fe_2^{2+}}$, the subscript is defined first, and then the superscript is defined.
+
+\noindent Delta: $\Delta$
+
+<!--
+The \noindent command does what you'd expect:  
+it forces the current line/paragraph to not indent. 
+This was done here to match the format of the LaTeX thesis PDF.
+-->
+
+You can get around math mode's automatic italicizing in \LaTeX\ by using the argument `$\mathrm{formula here}$`, 
+with your formula inside the curly brackets.  
+(Notice the use of the backticks here which enclose text that acts as code.)
+
+So, $\mathrm{Fe_2^{2+}Cr_2O_4}$ is written `$\mathrm{Fe_2^{2+}Cr_2O_4}$`.
+
+## Inline code
+
+If you'd like to put the results of your analysis directly into your discussion, add inline code like this:
+
+> The `cos` of $2 \pi$ is `r cos(2*pi)`. 
+
+Another example would be the direct calculation of the standard deviation:
+
+> The standard deviation of `speed` in `cars` is `r sd(cars$speed)`.
+
+One last neat feature is the use of the `ifelse` conditional statement which can be used to output text depending on the result of an **R** calculation:
+
+> `r ifelse(sd(cars$speed) < 6, "The standard deviation is less than 6.", "The standard deviation is equal to or greater than 6.")`
+
+Note the use of `>` here, which signifies a quotation environment that will be indented.
+
+As you see with `$2 \pi$` above, mathematics can be added by surrounding the mathematical text with dollar signs.  
+More examples of this are in [Mathematics and Science] if you uncomment the code in [Math].  
+
