@@ -14,6 +14,39 @@ will likely have plenty of citations.
 Indeed, you will probably accumulate an armful of sources.
 This section outlines how to assemble a bibliography and cite in text.
 
+### Assembling a bibliography
+
+_RMarkdown_ uses [_pandoc_](https://pandoc.org/) to build its bibliographies.
+^[One nice feature of this is that, unlike using straight \LaTeX\, you won't need to do a second compile to load in references.]
+*pandoc* (and \LaTeX\) rely on one or more external bibliography databases that contain all the bibliographic information
+that you may use in your thesis.
+In the end though, when it builds your bibliography, 
+it will only create an entry for those items that you actually cite.
+
+The required format for these bibliography database files is **BibTeX**.
+**BibTeX** files are stored in a plain text file with the .bib extension.
+See [this link](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM) for more.
+I have placed an example file under the `/bib/` folder.
+You can simply replace this with your own file under the same name,
+or point to your file instead by changing the correct field
+in the YAML header in the main .Rmd file.
+
+There are a variety of tools available for creating these files.
+For example, you may want to consider using the free and easy-to-use tool called Zotero.  
+Our wonderful librarians have created documentation on [how to use Zotero](https://libguides.graduateinstitute.ch/zotero/home).
+
+After creating your personal bibliographic database,
+you can cite these entries in your dissertation with an `@` symbol, 
+followed by the correct, unique identifier for that entry.
+Let's take for example the `Darwin1859` entry that appears in the `references.bib` file in the `bib` folder.  
+
+Standard parenthetical citations can be indicated with square brackets [@Darwin1859].
+Without them, you will get a text citation.
+For example, @Darwin1859 said some smart things.
+If you wish to drop the name, 
+say because you wish to replace it with something more fitting in the context,
+you could say that Darwin's -@Darwin1859 theory of evolution is brilliant.
+
 ### Tips for bibliographies
 
 - Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. 
