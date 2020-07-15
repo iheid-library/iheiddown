@@ -6,6 +6,51 @@ output:
 ---
 
 # Methods {#methods}
+
+Your methods section will discuss the approach you will take for your dissertation.
+
+## Writing up math
+
+\TeX\ is the best way to typeset mathematics. 
+Donald Knuth designed \TeX\ when he got frustrated at how long it was taking the typesetters to finish his book, 
+which contained a lot of mathematics.  
+One nice feature of _RMarkdown_ is its ability to read LaTeX code directly.
+
+If you are writing a thesis that includes equations, then this section will be useful.
+If not, you can just skip over or delete this section 
+(you can always come back to it later by creating a new templated folder or looking at this chapter on the GitHub account online.)
+
+### In-line expressions
+
+First, we can include short equations into our normal text by enclosing \LaTeX\ equations in dollar signs. 
+So `$\sum_{i=1}^N i$` will read $\sum_{i=1}^N i$.
+
+### Displayed expressions
+
+\LaTeX\ also includes the option to present mathematical expressions on one or more separate lines:
+
+$$
+\pi(\theta|X_1< y_1,\dots,X_n<y_n) \varpropto \pi(\theta) \prod_{i=1}^n\int_{-\infty}^{y_i}
+   \exp\left(-{(x-\theta)^2\over{2\sigma^2}}\right)\ dx
+$$
+
+
+$$
+\sum_{j=1}^n (\delta\theta_j)^2 \leq {{\beta_i^2}\over{\delta_i^2 + \rho_i^2}}
+\left[ 2\rho_i^2 + {\delta_i^2\beta_i^2\over{\delta_i^2 + \rho_i^2}} \right] \equiv \omega_i^2
+$$
+
+Another equation:
+
+$$\det\left|\,\begin{matrix}%
+c_0&c_1\hfill&c_2\hfill&\ldots&c_n\hfill\cr
+c_1&c_2\hfill&c_3\hfill&\ldots&c_{n+1}\hfill\cr
+c_2&c_3\hfill&c_4\hfill&\ldots&c_{n+2}\hfill\cr
+\,\vdots\hfill&\,\vdots\hfill&
+  \,\vdots\hfill&&\,\vdots\hfill\cr
+c_n&c_{n+1}\hfill&c_{n+2}\hfill&\ldots&c_{2n}\hfill\cr
+\end{matrix}\right|>0$$
+
 ### Symbols
 
 Many of the symbols you will need can be found on the [Comprehensive LaTeX Symbol Guide](https://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf).
