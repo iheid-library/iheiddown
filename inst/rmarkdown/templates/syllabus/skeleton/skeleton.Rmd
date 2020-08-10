@@ -80,15 +80,6 @@ draft: true
 startdate <- as.Date("2020-09-14")
 ```
 
-advdate <- function(obj, adv) {
- tmon <- obj + 7*(adv-1)
- tfri <- obj + 4 + 7*(adv-1)
- tmon <- format(tmon, format="%d/%m")
- tfri <- format(tfri, format="%d/%m")
- zadv <- sprintf("%02d", adv)
- tmp <- paste("Week ",zadv,sep=''," (", tmon," - ",tfri, ")")
- return(tmp)
-}
 ##  `r advdate(startdate, 1)`: Transfiguration alphabet
 
 library(RefManageR)
