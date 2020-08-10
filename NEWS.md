@@ -11,6 +11,7 @@
   * Updated syllabus template for `chicago-syllabus.csl`
 * Using second-level numbering for subsections in syllabus `template.tex`
 * Added draft: true option in YAML
+* Added codecov checks to github actions .yml
 
 # iheiddown 0.5.1
 

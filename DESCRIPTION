@@ -13,7 +13,7 @@ Description: This package supports writing dissertations, theses, and syllabi
     according to the Graduate Institute of International and Development Studies 
     regulations.
 License: MIT
-Imports: bookdown, tidyverse, roxygen2, citr
+Imports: bookdown, tidyverse, roxygen2, citr, covr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
