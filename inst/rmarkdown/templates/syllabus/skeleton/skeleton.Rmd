@@ -66,6 +66,12 @@ policies: |
   If you are unsure, please contact the TA.
 
 #####################
+## Bibliography    ##
+#####################
+bibliography: references.bib
+csl: chicago-syllabus.csl
+
+#####################
 ## Output Options  ##
 #####################
 output:
@@ -82,17 +88,13 @@ startdate <- as.Date("2020-09-14")
 
 ##  `r advdate(startdate, 1)`: Transfiguration alphabet
 
-library(RefManageR)
-bib <- ReadBib("references.bib") # Change to whatever is your .bib file
-myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
-```
+@Darwin1859
 
+@iheiddown2020
 
-```{r, echo = FALSE, results="asis"}
-bib["Darwin1859", "Satchell2009"]
-```
 ##  `r advdate(startdate, 2)`: Transformation formula
 
+@Satchell2009
 
 ##  `r advdate(startdate, 3)`: Desk into pig
 
