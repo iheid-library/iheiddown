@@ -71,3 +71,5 @@ jobs:
           file.copy(binary, "build")
         shell: Rscript {0}
     
+      - name: Calculate code coverage
+        run: Rscript -e "covr::codecov()"
