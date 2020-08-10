@@ -8,6 +8,9 @@
 \sectionfont{\fontsize{12}{15}\selectfont}
 \subsectionfont{\fontsize{10}{12}\selectfont}
 
+\renewcommand{\thesection}{}% Remove section references...
+\renewcommand{\thesubsection}{Week \arabic{subsection}}%... from subsections
+
 \usepackage{calc}
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
