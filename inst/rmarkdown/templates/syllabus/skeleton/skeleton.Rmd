@@ -66,6 +66,12 @@ policies: |
   If you are unsure, please contact the TA.
 
 #####################
+## Bibliography    ##
+#####################
+bibliography: references.bib
+csl: chicago-syllabus.csl
+
+#####################
 ## Output Options  ##
 #####################
 output:
@@ -73,38 +79,27 @@ output:
     input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
     output_file: *code
 link-citations: true
+draft: true
 ---
 
 ```{r, echo = FALSE}
-mon <- as.Date("2020-09-14")
-
-advdate <- function(obj, adv) {
- tmon <- obj + 7*(adv-1)
- tfri <- obj + 4 + 7*(adv-1)
- tmon <- format(tmon, format="%d/%m")
- tfri <- format(tfri, format="%d/%m")
- zadv <- sprintf("%02d", adv)
- tmp <- paste("Week ",zadv,sep=''," (", tmon," - ",tfri, ")")
- return(tmp)
-}
-
-library(RefManageR)
-bib <- ReadBib("references.bib") # Change to whatever is your .bib file
-myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
+startdate <- as.Date("2020-09-14")
 ```
 
-##  `r advdate(mon, 1)`: Transfiguration alphabet {-}
+##  `r advdate(startdate, 1)`: Transfiguration alphabet
 
-```{r, echo = FALSE, results="asis"}
-bib["Darwin1859", "Satchell2009"]
-```
+@Darwin1859
 
-##  `r advdate(mon, 2)`: Transformation formula {-}
+@iheiddown2020
 
-##  `r advdate(mon, 3)`: Desk into pig {-}
+##  `r advdate(startdate, 2)`: Transformation formula
 
-##  `r advdate(mon, 4)`: Match to needle {-}
+@Satchell2009
 
-##  `r advdate(mon, 5)`: Switching spell {-}
+##  `r advdate(startdate, 3)`: Desk into pig
 
-##  `r advdate(mon, 6)`: Mice to snuffboxes {-}
+##  `r advdate(startdate, 4)`: Match to needle
+
+##  `r advdate(startdate, 5)`: Switching spell
+
+##  `r advdate(startdate, 6)`: Mice to snuffboxes

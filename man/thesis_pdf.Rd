@@ -16,6 +16,6 @@ to specify using the IHEID Thesis LaTeX template file.
 }
 \examples{
 \dontrun{
-output:iheiddown::thesis_pdf
+knit: iheiddown::thesis_pdf
 }
 }

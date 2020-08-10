@@ -5,6 +5,7 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
 [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown)
+[![Codecov test coverage](https://codecov.io/gh/jhollway/iheiddown/branch/master/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=master)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
@@ -134,7 +135,8 @@ This will format the chapter in the myiheidtex style but without including the f
 ## Output 
 
 All your front matter and chapters of your thesis will be compiled
-and the complete product can be found under the project folder: "docs/_main.pdf".
+and the complete product can be found under the project folder "versions/".
+A date is automatically appended to the filename to assist with tracking versions.
 
 The PDF version is fully functional. 
 The word, gitbook and epub versions might be developed at a later time.
