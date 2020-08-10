@@ -1,3 +1,17 @@
+# iheiddown 0.6.0
+
+* Set up `testthat` for package
+* Added `advdate()` for incrementing dates by week
+  * Updated syllabus template for `advdate()`
+  * Added test for `advdate()`
+* Added `chicago-syllabus.csl`
+  * No more reliance on `RefManageR`
+  * Imports `citr`, not strictly a dependence but highly recommended
+  * No bibliography at end of document
+  * Updated syllabus template for `chicago-syllabus.csl`
+* Using second-level numbering for subsections in syllabus `template.tex`
+* Added draft: true option in YAML
+
 # iheiddown 0.5.1
 
 * Fixed `front-matter/` error
