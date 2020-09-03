@@ -69,7 +69,7 @@ policies: |
 ## Bibliography    ##
 #####################
 bibliography: references.bib
-csl: chicago-syllabus.csl
+csl: geneva-syllabus.csl
 
 #####################
 ## Output Options  ##
