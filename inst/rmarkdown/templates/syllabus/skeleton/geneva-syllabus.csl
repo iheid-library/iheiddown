@@ -1503,42 +1503,4 @@
       <text variable="annote" display="block"/>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="21" et-al-use-first="19" et-al-use-last="true" entry-spacing="0" line-spacing="2">
-    <sort>
-      <key macro="date-sort-group" sort="descending"/>
-      <key macro="date-sort-date" sort="descending"/>
-      <key variable="status"/>
-      <key macro="author-bib"/>
-      <key macro="title"/>
-    </sort>
-    <layout>
-      <choose>
-        <if type="bill legal_case legislation treaty" match="any">
-          <choose>
-            <if variable="DOI URL" match="any">
-              <text macro="legal-cites"/>
-            </if>
-            <else>
-              <text macro="legal-cites" suffix="."/>
-            </else>
-          </choose>
-        </if>
-        <else>
-          <group delimiter=" ">
-            <group delimiter=". " suffix=".">
-              <text macro="author-bib"/>
-              <text macro="date-bib"/>
-              <text macro="title-and-descriptions"/>
-              <text macro="container"/>
-              <text macro="event"/>
-              <text macro="publisher"/>
-            </group>
-            <text macro="access"/>
-            <text macro="publication-history"/>
-          </group>
-        </else>
-      </choose>
-      <text variable="annote" display="block"/>
-    </layout>
-  </bibliography>
 </style>
