@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% IHEID CHAPTER TEMPLATE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% PAGE LAYOUT
+% Pass this in from YAML
+\documentclass[a4paper, oneside]{report}
+\usepackage[includehead,hmargin={3.1cm, 3.1cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\fancyhf{} % clear the header and footers
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{\thechapter. #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}} 
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LO]{\emph{\leftmark}}
+
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\emph{\thepage}}}
+
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+\fancyfoot[C]{\emph{DRAFT from \today}}
+
+%%%%% FONTS
+\RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+%\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
+\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
+\RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+% For the headings we will use Helvetica
+\RequirePackage{helvet}
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} % silence the warning
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
+\allsectionsfont{\sffamily}
+% For the main text and equations we will use Baskerville and Palatino
+\RequirePackage{mathpazo}
+\RequirePackage{baskervald}
+% For formatting code or package names, we will use Lucida Console
+\RequirePackage{zi4}
+% Enable strikethrough
+\usepackage[normalem]{ulem}
+
+% This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
+% paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
+% your corrected thesis to your examiners for review.  Turn it off, and the blue disappears.
+% $if(params.corrections)$
+% \correctionstrue
+% $endif$
+
+% UL 30 Nov 2018 pandoc puts lists in 'tightlist' command when no space between bullet points in Rmd file
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+ 
+%UL 15 Oct 2019, enable link highlighting to be turned off from YAML
+% \usepackage[dvipsnames]{color}
+% \usepackage[colorlinks=true,pdfpagelabels,hidelinks=$hidelinks$]{hyperref}
+\RequirePackage[colorlinks=true,linkcolor=red,
+citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for external links
+% \hypersetup{citecolor=red}
+
+%%%%% BIBLIOGRAPHY SETUP
+% Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
+% The options included below are just very basic "sciencey" and "humanitiesey" options to get started.
+% If you've not used LaTeX before, I recommend reading a little about biblatex/biber and getting started with it.
+% If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
+% Either way, you'll have to choose and configure an appropriate bibliography format...
+
+% The science-type option: numerical in-text citation with references in order of appearance.
+% \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=false, isbn=false]{biblatex}
+% \newcommand*{\bibtitle}{References}
+
+% The humanities-type option: author-year in-text citation with an alphabetical works cited.
+% \usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=false, isbn=false]{biblatex}
+% \newcommand*{\bibtitle}{Works Cited}
+
+%UL 3 Dec 2018: set this from YAML in index.Rmd
+% $if(bib-humanities)$
+% \usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, 
+% doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=false, uniquename=false]{biblatex}
+% \newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
+% $else$
+% \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=$doi-in-bibliography$, isbn=false]{biblatex}
+% \newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
+% $endif$
+
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+% \renewcommand*{\bibfont}{\raggedright\small}
+
+% Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
+% \addbibresource{$bibliography$}
+
+% Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
+%\numberwithin{equation}{subsection}
+
+
+%%%%% THESIS / TITLE PAGE INFORMATION
+% Everybody needs to complete the following:
+% \title{$title$}
+% \author{$author$}
+
+% JEM: Lengths for single spacing (ie separate abstract, captions), front matter (abstract,
+%   acknowledgements, table of contents, etc), and main body text.
+\newlength{\singlebaselineskip}
+\newlength{\frontmatterbaselineskip}
+\newlength{\textbaselineskip}
+
+\setlength{\singlebaselineskip}{\baselineskip}
+\setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
+\setlength{\textbaselineskip}{22pt plus2pt}
+
+%
+% Environments
+%
+
+\usepackage[nohints,tight]{minitoc} 
+	\setcounter{minitocdepth}{2} 
+	% Generates mini tables of contents per chapter
+	
+% For the abbreviations
+\usepackage{enumitem}
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+
+\usepackage{nicefrac}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+
+\usepackage{longtable} 
+	% Allows tables to span multiple pages (this package must be called before hyperref)
+
+\usepackage[font=small,labelfont=bf]{caption} 
+	% Nicer captions
+
+\usepackage{multicol,multirow,array} 
+	% Used to make multiple columns for the indices and for creating columns that span multiple rows in tables
+
+\usepackage{rotating} 
+	% To allow tables in landscape mode
+
+\usepackage{booktabs} 
+	% For better looking tables
+
+\usepackage{pdfpages} 
+	% Allows multi-page pdfs to be inserted as graphics
+	
+\usepackage{graphicx}
+\graphicspath{{../figures/}{_bookdown_files/}}
+
+\usepackage{xfrac}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT HERE  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%% CHOOSE YOUR LINE SPACING HERE
+% This is the official option.  Use it for your submission copy and library copy:
+\setlength{\textbaselineskip}{22pt plus2pt}
+% This is closer spacing (about 1.5-spaced) that you might prefer for your personal copies:
+%\setlength{\textbaselineskip}{18pt plus2pt minus1pt}
+
+% You can set the spacing here for the roman-numbered pages (acknowledgements, table of contents, etc.)
+\setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
+
+% UL: You can set the general paragraph spacing here - I've set it to 2pt (was 0) so
+% it's less claustrophobic
+\setlength{\parskip}{2pt plus 1pt}
+
+% Leave this line alone; it gets things started for the real document.
+\setlength{\baselineskip}{\textbaselineskip}
+
+%%%%% CHAPTERS
+% Add or remove any chapters you'd like here, by file name (excluding '.tex'):
+\flushbottom
+
+% all your chapters and appendices will appear here
+$body$
+
+
+%%%%% REFERENCES
+
+% JEM: Quote for the top of references (just like a chapter quote if you're using them).  Comment to skip.
+% \begin{savequote}[8cm]
+% The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
+%   \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
+% \end{savequote}
+
+% \setlength{\baselineskip}{0pt} % JEM: Single-space References
+% 
+% {\renewcommand*\MakeUppercase[1]{#1}%
+% \printbibliography[heading=bibintoc,title={References}]}
+
+\end{document}
