@@ -2,6 +2,7 @@
 
 export(advdate)
 export(bookdown_profile)
+export(chapter_pdf)
 export(syllabus_pdf)
 export(thesis_pdf)
 importFrom(utils,file.edit)
