@@ -149,12 +149,33 @@ and starts a new page.
 
 ## Loading and exploring data
 
-Included in this template is a file called `flights.csv`.  
-This file includes a subset of the larger dataset of information about all flights that departed from Seattle and Portland in 2014. 
-More information about this dataset and its **R** package is available at <https://github.com/ismayc/pnwflights14>. 
-This subset includes only Portland flights and only rows that were complete with no missing values. 
-Merges were also done with the `airports` and `airlines` data sets in the `pnwflights14` package to get more descriptive airport and airline names.
+Sometimes it is not an existing image that must be imported,
+but instead you wish to create a table or plot of some data that you have imported.
+In this section, we're going to very quickly cover how to import internal and external data,
+how to manipulate and summarise the data, create plots from that data,
+and tabulate inferential results from that data.
 
+### Importing data {#import-data}
+
+In some cases, the data you need might be available already in an **R** package.
+An example below is a very short code chunk that summarises a dataset that is built into **R**.
+Here it is particularly easy, as we do not even need to load the data (it is loaded by default).
+
+```{r cars}
+summary(cars)
+```
+
+Othertimes you may need to load the data first before summarising it,
+with the function `data()`.
+There are an increasing number of data packages for **R** available,
+including several on a range of international and development topics.
+
+The other option is to import data that resides in a file outside of **R**.
+Included in this template is a file called `flights.csv`.
+This file includes a subset of the larger dataset of information about all flights that departed from Seattle and Portland in 2014.^[More information about this dataset and its **R** package is available at [https://github.com/ismayc/pnwflights14](https://github.com/ismayc/pnwflights14).] 
+This subset includes only Portland flights and only rows that were complete with no missing values. 
+Merges were also done with the `airports` and `airlines` data sets in the `pnwflights14` package 
+to get more descriptive airport and airline names.
 We can load in this data set using the following commands:
 
 ```{r load_data}
@@ -162,7 +183,7 @@ We can load in this data set using the following commands:
 flights <- read.csv("data/flights.csv")
 ```
 
-The data is now stored in the data frame called `flights` in **R**.  
+The data is now stored in the data frame called `flights` in the cached environment for this _RMarkdown_ document in **R**.
 To get a better feel for the variables included in this dataset we can use a variety of functions. 
 Here we can see the dimensions (rows by columns) and also the names of the columns.
 
@@ -171,45 +192,26 @@ dim(flights)
 names(flights)
 ```
 
-Another good idea is to take a look at the dataset in table form.  
-With this dataset having more than 20,000 rows, we won't explicitly show the results of the command here. 
-I recommend you enter the command into the Console **_after_** you have run the **R** chunks above to load the data into **R**.
+Another good idea is to take a look at the dataset in table form.
+With this dataset having more than 20,000 rows, we won't explicitly show the results of the command here,
+so we'll use the `eval=FALSE` chunk option to make sure the following is not run when you 'knit' the document.
+Still, you can press the green play button at the right of the chunk to run the chunk on demand,
+bringing up a new tab showing the data.
 
 ```{r view_flights, eval=FALSE}
 View(flights)
 ```
 
-While not required, it is highly recommended you use the `dplyr` package to manipulate and summarize your data set as needed.  
-It uses a syntax that is easy to understand using chaining operations.  
-Below I've created a few examples of using `dplyr` to get information about the Portland flights in 2014.  
-You will also see the use of the `ggplot2` package, which produces beautiful, high-quality academic visuals.
-
-We begin by checking to ensure that needed packages are installed and then we load them into our current working environment:
-
-```{r load_pkgs, message=FALSE}
-# List of packages required for this analysis
-pkg <- c("dplyr", "ggplot2", "knitr", "bookdown")
-# Check if packages are not installed and assign the
-# names of the packages not installed to the variable new.pkg
-new.pkg <- pkg[!(pkg %in% installed.packages())]
-# If there are any packages in the list that aren't installed,
-# install them
-if (length(new.pkg)) {
-  install.packages(new.pkg, repos = "https://cran.rstudio.com")
-}
-# Load packages
-library(thesisdown)
-library(dplyr)
-library(ggplot2)
-library(knitr)
-```
-
 \clearpage
 
+### Manipulating and summarising data
+
+While not required, it is highly recommended you use the `dplyr` package to manipulate and summarize your data set as needed.
+It uses a syntax that is easy to understand using chaining or 'pipe' operations (`%>%`).
+Below I've created a few examples of using `dplyr` to get information about the Portland flights in 2014.
 The example we show here does the following:
 
-- Selects only the `carrier_name` and `arr_delay` from the `flights` dataset and then assigns this subset to a new variable called `flights2`. 
-
+- Selects only the `carrier_name` and `arr_delay` from the `flights` dataset and then assigns this subset to a new variable called `flights2`.
 - Using `flights2`, we determine the largest arrival delay for each of the carriers.
 
 ```{r max_delays}
@@ -220,11 +222,12 @@ max_delays <- flights2 %>%
   summarize(max_arr_delay = max(arr_delay, na.rm = TRUE))
 ```
 
-A useful function in the `knitr` package for making nice tables in _R Markdown_ is called `kable`.  
-It is much easier to use than manually entering values into a table by copying and pasting values into Excel or LaTeX.  
+A useful function in the `knitr` package for making nice tables in _RMarkdown_ is called `kable`.  
+It is much easier to use than manually entering values into a table by copying and pasting values into Excel or \LaTeX\.
 This again goes to show how nice reproducible documents can be! 
-(Note the use of `results="asis"`, which will produce the table instead of the code to create the table.)  
-The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
+The chunk option `results="asis"` makes sure the table is produced, not the code to create the table.
+Tables created with the `kable()` function (in `{knitr}`) can be extended in many useful (and pretty) ways
+with the recommended `{kableExtra}` package.
 
 ```{r maxdelays, results="asis"}
 kable(max_delays,
@@ -236,11 +239,14 @@ kable(max_delays,
 )
 ```
 
-The last two options make the table a little easier-to-read.
+Note that instead of adding the caption details in the chunk options, we will be adding this in the `kable()` function,
+which then passes this on up.
+The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
+The last two options make Table \@ref(tab:maxdelays) a little easier-to-read.^[Note that we can create references/links to tables using a very similar syntax here to that with figures above. We can preface the reference with "Table" or "Tab." or so, and then create the reference with the format `\@ref(tab:chunk-label)`.]
 
-We can further look into the properties of the largest value here for American Airlines Inc.  
+We can further look into the properties of the largest value here for American Airlines Inc.
 To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original `flights` dataset.
-
+We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth.  
 
 ```{r max_props}
 flights %>%
@@ -254,8 +260,20 @@ flights %>%
   ))
 ```
 
-We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth.  
-Lastly, we show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
+### Creating plots
+
+Once data has been loaded or imported and manipulated or filtered as required,
+a common task is to visualise some key dimensions of the data to inform the reader.
+Here the package `{ggplot2}` plays nicely with `{dplyr}` and other `{tidyverse}` packages.
+`{ggplot2}` produces beautiful, high-quality academic visuals,
+and has been extended with a huge range of add-ons for a very broad variety of visualisation styles
+no matter what kind of data you have.
+
+We're going to continue playing with the `flights` dataset from Chapter \@ref(import-data).
+First, let us show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
+Note that once you open the plotting function with `ggplot()`,
+additional elements are chained not with the pipe operator `%>%` but `+`.
+Considerably more help than I can offer here on how to use `ggplot()` can be found online.
 
 ```{r march3plot, fig.height=3, fig.width=6}
 flights %>%
@@ -264,37 +282,24 @@ flights %>%
   geom_point()
 ```
 
-## R chunks
+Next Figure \@ref(fig:delaysboxplot) presents a bar graph with the mean flight departure delays by airline from Portland for 2014.
+A table linking these carrier codes to airline names is available at [https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv](https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv).
 
-When you click the **Knit** button above a document will be generated that includes both content as well as the output of any embedded **R** code chunks within the document. 
-You can embed an **R** code chunk like this (`cars` is a built-in **R** dataset):
-
-```{r cars}
-summary(cars)
+```{r delaysboxplot, warnings=FALSE, messages=FALSE, fig.cap="Mean Delays by Airline", fig.width=6}
+mean_delay_by_carrier <- flights %>%
+  group_by(carrier) %>%
+  summarize(mean_dep_delay = mean(dep_delay))
+ggplot(mean_delay_by_carrier, aes(x = carrier, y = mean_dep_delay)) +
+  geom_bar(position = "identity", stat = "identity", fill = "red")
 ```
 
-## Including plots
-
-You can also embed plots. 
+You don't have to use `{ggplot2}` though.
 For example, here is a way to use the base **R** graphics package to produce a plot using the built-in `pressure` dataset:
 
 ```{r pressure, echo=FALSE, cache=TRUE, fig.height=3, fig.width=5}
 plot(pressure)
 ```
 
-Note that the `echo=FALSE` parameter was added to the code chunk to prevent printing of the **R** code that generated the plot. 
-There are plenty of other ways to add chunk options (like `fig.height` and `fig.width` in the chunk above).  
-More information is available at <https://yihui.org/knitr/options/>.  
-
-Another useful chunk option is the setting of `cache=TRUE` as you see here.  
-If document rendering becomes time consuming due to long computations or plots that are expensive to generate you can use knitr caching to improve performance.  
-Later in this file, you'll see a way to reference plots created in **R** or external figures.
-
-# Tables, Graphics, References, and Labels {#ref-labels}
-
-## Tables
-
-In addition to the tables that can be automatically generated from a data frame in **R** that you saw in [R Markdown Basics] using the `kable()` function, you can also create tables using _pandoc_. (More information is available at <https://pandoc.org/README.html#tables>.)  This might be useful if you don't have values specifically stored in **R**, but you'd like to display them in table form.  Below is an example.  Pay careful attention to the alignment in the table and hyphens to create the rows and columns.
 
 ----------------------------------------------------------------------------------
   Factors                    Correlation between Parents & Child      Inherited
