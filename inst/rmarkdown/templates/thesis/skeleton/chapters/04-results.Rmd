@@ -61,6 +61,92 @@ If you need it to appear in the list of figures or tables, it should be placed i
 In the remainder of this chapter,
 we will see how to use code chunks to include figures, load and summarise data, and present results from your analysis.
 
+## Including external figures
+
+First, we will treat how to include figures in _RMarkdown_ in more detail.
+If your thesis has a lot of figures, _RMarkdown_ might behave better for you than your usual word processor,
+which can have a tendency to .
+One perk is that it will automatically number the figures accordingly in each chapter.
+You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier.
+If you label your figures, you can move the figures around and _RMarkdown_ will automatically adjust the numbering for you.
+No need for you to remember!
+So that you don't have to get too far into \LaTeX\ to do this, a couple **R** functions have been created for you to assist.
+You'll see their use below.
+
+### Numbering and labelling figures
+
+You don't need to number figures in _RMarkdown_; it'll do it automatically.
+And captioning a figure is awfully easy too.
+In the **R** chunk below, we will load in a picture that is stored as `iheid.eps` in our `figures` directory.
+The `include_graphics()` function is from the `{knitr}` package, that does most of the heavy lifting here.
+We'll label the chunk 'iheidlogo' so that we can refer back to it later,
+and give the figure the caption "IHEID logo".
+You will see that here you do not need to include the parameter `echo=FALSE`,
+as the code including the figure is hidden by default.
+
+```{r iheidlogo, fig.cap="IHEID logo"}
+include_graphics(path = "figures/iheid.eps")
+```
+
+### Referencing figures
+
+Referencing figures in the text should be done with a little reference to the chunk label
+so that it will always refer to the right figure number, 
+even if you add additional figures and plots before it.
+To reference the IHEID logo use a backslash, at-symbol, and then in parentheses `fig:chunk-label`,
+like so `\@ref(fig:iheidlogo)`.
+Usually some descriptor like "Figure", "Fig.", "Illustration" or other is added before this reference,
+so that it reads something like Figure \@ref(fig:iheidlogo).
+Note that the reference is hyperlinked in the resulting PDF, 
+so that you can click on it to take you to the page where the original figure is printed.
+
+### Resizing figures
+
+It is common to resize external image files so that they fit the format of the text.
+The most common way to do this was already demonstrated in the code chunk for Figure \@ref(fig:chunk-parts) above.
+There we used the parameter `out.width="\\textwidth"` to, in this case, shrink the image to the width of the text,
+but this same parameter specification would also expand an image to fit the width of the text where possible.
+
+Another option is the `out.extra` chunk option. 
+This can be used to shrink or expand an image loaded from a file more specifically by specifying `"scale= "`.
+Here we use the graph stored in the "subdivision.pdf" file, again found in the `figures` subdirectory.
+The output can be found in Fig. \@ref(fig:subd).
+
+```{r subd, fig.cap="Subdiv. graph", out.extra="scale=0.75"}
+include_graphics("figures/subdivision.pdf")
+```
+
+We can also use the `out.extra` chunk option to enlarge figures, 
+and even to rotate them any number of degrees around its axis.
+In Figure \@ref(fig:subd2), we see an example where Figure \@ref(fig:subd) has been enlarged and flipped upside down.
+
+```{r subd2, out.extra="angle=180, scale=1.1", fig.scap="Subdiv. graph flipped", fig.cap="A Larger Figure, Flipped Upside Down"}
+include_graphics("figures/subdivision.pdf")
+```
+
+If you look closely at the chunk options,
+you will also see that two different captions have been provided.
+The `fig.scap` is a short caption that overrides the main caption, `fig.cap`, in the table of contents.
+This can be very useful where, for example, you need to describe the figure in a caption over several lines,
+details that do not need to be presented in the table of contents.
+
+### Placing figures
+
+One thing that may be annoying is the way _RMarkdown_ handles "floats" like tables and figures (it's really \LaTeX's fault). 
+\LaTeX\ will try to find the best place to put your object based on the text around it and,
+until you're really, truly done writing, it is best to just leave it where it lies. 
+There are some optional arguments specified in the options parameter of the `label` function.
+If you need to shift your figure around, it might be good to look [here](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions) (you can click on the word 'here') on tweaking the options argument.
+
+Spacing out your chunks between paragraphs can help, 
+as it can give \LaTeX\ more options to find a suitable home for the figure or table,
+as \LaTeX\ would otherwise try and keep all the text together, saving the image for later.
+A last trick is to write `\clearpage` directly in your _RMarkdown_ document.
+This gives \LaTeX\ a chance to catch up with all the 'floats' it has accumulated,
+and starts a new page.
+
+\clearpage 
+
 ## Loading and exploring data
 
 Included in this template is a file called `flights.csv`.  
