@@ -5,6 +5,62 @@ knit: iheiddown::chapter_pdf
 
 # Results {#results}
 
+## An intro to R chunks
+
+One of the most useful parts of _RMarkdown_ is the ability to weave or 'knit' text 
+(as we've seen in the previous three chapters)
+together with the code that produces tables and graphics for your final document.
+This has various advantages such as:
+
+- *coherence*: for you, having your analysis and text together means keeping a coherent story together about why you did the analysis you did, how you got to your results, and what your interpretation of these results is
+- *amendability*: this gives you an opportunity to update the code, for example by filtering the data in a different way, and rerun the code to see how any statistics, tables or graphs related to the data may have changed
+- *reproducibility*: this also, importantly, supports a reproducible workflow such that you, or others, can rerun and test the code at a later point
+
+To 'knit' such text and code together, code for particular graphs or tables should first be inserted into the text in 'chunks'.
+These chunks are opened with three backticks and closed in a new line with another three backticks.
+The code that produces the desired output is included between these lines, 
+which can include comments etc.
+A key part of these chunks are the chunk parameters,
+which are included in braces immediately following the first set of backticks.
+The first parameter indicates the programming language.
+The second parameter, 
+which is optional and should be separated from the first parameter only by a space,
+is a chunk label.
+It is important that this chunk label includes no spaces and is unique to this chunk.
+Then, separated by commas, are any additional parameters included.
+In the figure below, two examples are included:
+whether or not the code itself should be shown (`echo`)
+and whether or not the code should be evaluated or run (`eval`).
+Other parameters that we will see later include figure width, captions, etc.^[More information is available at [https://yihui.org/knitr/options/](https://yihui.org/knitr/options/).]
+
+```{r chunk-parts, results="asis", echo=FALSE, fig.cap="Chunk parts", out.width="\\textwidth"}
+knitr::include_graphics("figures/chunk-parts.png")
+```
+
+In the code chunk shown in Figure \@ref(fig:chunk-parts),
+we can see that it is loading a package library.
+Functions and objects loaded or created in earlier chunks are cached by default and
+thus held on to for use in later chunks.
+It is therefore quite common to have a chunk early on in your chapter (or even your whole dissertation)
+that loads a number of the packages you need later on.
+As an example, below is a short code chunk that loads a set of **R** packages that we are going to rely on
+for the rest of this chapter.
+
+```{r load_pkgs, message=FALSE}
+# Load packages
+library(dplyr)
+library(ggplot2)
+library(knitr)
+```
+
+When you click the **Knit** button above in RStudio a document will be generated that includes both content 
+as well as the output of any embedded **R** code chunks within the document.
+If you need a graphic or tabular material to be part of the text, you can just put it inline. 
+If you need it to appear in the list of figures or tables, it should be placed in a code chunk.
+
+In the remainder of this chapter,
+we will see how to use code chunks to include figures, load and summarise data, and present results from your analysis.
+
 ## Loading and exploring data
 
 Included in this template is a file called `flights.csv`.  
