@@ -1,3 +1,20 @@
+# iheiddown 0.7.0
+
+## Thesis
+
+* Added `chapter_pdf()` knit function for previewing chapters (closes #19)
+* Added `bookdown_profile` addin for RStudio to improve access to the bookdown profile
+* Overhaul of chapter 4 of skeleton:
+  * More detail and figure on code chunks
+  * More detail on including external graphics
+  * More detail on loading, exploring, and summarising data
+  * Added detail on presenting tables of inferential results (closes #18)
+
+## Syllabus
+
+* Added 'geneva-syllabus.csl' to support in-text full citations (fixes #20)
+* Added 'tightlist' framework to syllabus template
+
 # iheiddown 0.6.0
 
 * Set up `testthat` for package

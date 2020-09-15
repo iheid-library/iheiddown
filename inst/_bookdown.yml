@@ -1,0 +1,19 @@
+# If you specify a sub directory with rmd_subdir, then bookdown will search through this
+# folder too
+rmd_subdir: ["front-matter","chapters"]
+# Make sure to start any acknowledgements and/or abstract Rmd files with 
+# an underscore, e.g. _abstract.Rmd. 
+# Otherwise bookdown will start to merge the abstract in to the body text which almost 
+# certainly isn't what you want
+# Alternatively, you can comment out rmd_subdir and specify manually what files to include with rmd_files
+# rmd_files: ["Untitled.Rmd", "chapters/01-basics.Rmd", "back-matter/99-references.Rmd"]
+
+# The following can be changed to another folder if you wish
+output_dir: "versions"
+
+# Please suggest and submit changes to the source .Rmd files here:
+edit: https://github.com/jhollway/iheiddown/tree/master/%s
+
+# If this is set to true, then you don't have to manually delete the merged _main.Rmd file 
+# if something goes wrong when you try to build
+delete_merged_file: true

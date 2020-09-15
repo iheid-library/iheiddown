@@ -98,7 +98,6 @@ In addition to creating a user friendly interface to \LaTeX\, _RMarkdown_ also a
 Further, it allows for **R** results to be passed inline to the commentary of your results.  
 You'll see more on this later.  
 
-
 ## Who should use it? {-}
 
 Anyone who needs to analyses data, include lots of tables or figures, complex cross-references, mathematical equations,
