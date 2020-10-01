@@ -56,7 +56,7 @@ and especially with `{iheiddown}` easy.
 So though `{iheiddown}` is especially attractive to those writing dissertations with many tables and figures,
 the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
 
-You can see an example of the kind of dissertation output you can expect [here](https://github.com/jhollway/iheiddown/inst/rmarkdown/templates/thesis/skeleton/versions/Thesis.pdf).
+You can see an example of the kind of dissertation output you can expect [here](https://cdn.githubraw.com/jhollway/iheiddown/inst/rmarkdown/templates/thesis/skeleton/versions/IHEIDThesisExample.pdf).
 
 ## Installing iheiddown
 
