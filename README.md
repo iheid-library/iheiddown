@@ -30,10 +30,12 @@ which offers versus common word processors:
 tables of contents, figures, and tables
 - automatic figure and table referencing
 - automatic creation of your bibliography
+- compilation chapter-by-chapter (for sending to your supervisor) or whole dissertation (for submission)
 - cross-referencing
 - smaller files
 - automatic versioning
 - and much more!
+
 Though you may have never had problems using Word in the past, 
 the size and structure of most theses tax Word's capabilities. 
 
