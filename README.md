@@ -5,40 +5,58 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
 [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown)
-[![Codecov test coverage](https://codecov.io/gh/jhollway/iheiddown/branch/master/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
-This GitHub repository provides an R Markdown template for writing 
-a Masters or PhD Dissertation at the Graduate Institute of International and Development Studies in Geneva 
-in RStudio based on the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex).
+`{iheiddown}` is a package that provides templates for writing documents
+in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
+Institut de hautes études internationales et du développement (IHEID)
+in (R) markdown.
 
-_R Markdown_ creates a user-friendly, simple and straightforward way to write a well-formatted dissertation,
-with nicely formatted paragraphs, tables and figures that can be generated directly from your data,
-weaving together argument, evidence, and interpretation.
-The use of LaTeX in combination with _Markdown_ is more consistent than the output of a word processor, 
-much less prone to corruption or crashing, and the resulting file is smaller than a Word file. 
-While you may have never had problems using Word in the past, 
-your thesis is likely going to be about twice as large and complex as anything you've written before, 
-taxing Word's capabilities.
-Though `iheiddown` should shine in particular for those who are analysing data, 
-or are including tables, figures, equations, or complex cross-references 
-(e.g. table of contents, figures, tables, appendices, or an index) in their dissertation,
-the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
+The main use case for `{iheiddown}` is for writing
+a **Masters or PhD Dissertation at IHEID**,
+as it offers a user-friendly, simple, and straightforward way
+to write a well-formatted and consistent dissertation
+that weaves together argument, evidence, and interpretation.
 
 ## Features
 
-- Conforms to the PhD dissertation guidelines
-
-- All six title pages with IHEID logo
-
-- Front and back matter, including dedication, abstract, abbreviations, 
+The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
+which offers versus common word processors: 
+- less prone to corruption or crashing
+- more internal consistency
+- ensured consistency with the IHEID dissertation and other guidelines, e.g. dedication, abstract, abbreviations, 
 tables of contents, figures, and tables
+- automatic figure and table referencing
+- automatic creation of your bibliography
+- cross-referencing
+- smaller files
+- automatic versioning
+- and much more!
+Though you may have never had problems using Word in the past, 
+the size and structure of most theses tax Word's capabilities. 
 
-- Linked cross-referencing
+However, `{iheiddown}` helps you avoid the need to (learn how to) write in LaTeX.
+LaTeX can be daunting for first time users, 
+and many users often feel it would only pay off if they were writing very complex dissertations.
+`{iheiddown}` allows students to write their dissertations in _RMarkdown_.
+[_Markdown_](https://www.markdownguide.org) is a simple and easy-to-use way to 'markup' parts of plain text as headings, **bold** or *italics*
+(and much more) in ways that remain very readable and thus editable as you write.
+`{iheiddown}`, R, and LaTeX do the work to turn this into a beautiful dissertation.
+You write in minimally marked-up plan text and you get a correctly-formatted dissertation out at the end.
 
-- And much more!
+But wait, there's more!
+Because `{iheiddown}` is an **R** package,
+it especially shines for those who are analysing data.
+[R](https://www.r-project.org) is a *free* statistical programme and language 
+that has a *huge* range of packages available for most current methods of analysis and visualisation.
+[RStudio](https://rstudio.com) is a typical frontend that makes working in **R**
+and especially with `{iheiddown}` easy.
+So though `{iheiddown}` is especially attractive to those writing dissertations with many tables and figures,
+the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
 
+You can see an example of the kind of dissertation output you can expect [here](https://github.com/jhollway/iheiddown/inst/rmarkdown/templates/thesis/skeleton/versions/Thesis.pdf).
 
 ## Installing iheiddown
 
@@ -97,17 +115,17 @@ the preface of the thesis when it is compiled.
 So where is the real content of the dissertation?
 
 Just as the abstract and acknowledgements, etc,
-were kept in a "front-and-back-matter/" folder,
+were kept in a "front-matter/" folder,
 so too are the individual chapters of your dissertation
 kept in a "chapters/" folder.
 The placeholder text is designed to take you through the
 basic syntax and more complicated options available when
-using Rmarkdown,
+using _RMarkdown_,
 but once you feel comfortable and have created your own
 examples, feel free to delete the placeholder text
 (or even the files) and create your own in its place.
 
-Markdown is easy to read as well as write,
+_Markdown_ is easy to read as well as write,
 so there's no need for endless compilation.
 But when it comes time to compile the document,
 just turn to your main .Rmd file ('Untitled.Rmd' in our case)

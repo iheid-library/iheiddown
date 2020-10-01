@@ -60,11 +60,13 @@ You can add prefixes too [see @bookdown2016; cf. @solomon2020].
 A more efficient way for entering these into your documents is by using the R package `citr`.
 The `citr` package includes an 'addin' for RStudio that you can bind a keyboard shortcut to,
 and that raises a search window where you can type author, year, or title information in to to find the required entry/ies.
-
-![Citing with citr](../figures/citr.png)
-
 It is enormously useful, particularly as your bibliography gets larger.
 If you'd like to learn more, see [the README of its GitHub account](https://github.com/crsh/citr).
+
+![Citing with citr](../figures/citr.png){ width=100%, height=45% }
+
+
+\newpage
 
 ### Tips for bibliographies
 

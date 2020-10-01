@@ -49,6 +49,14 @@ c_2&c_3\hfill&c_4\hfill&\ldots&c_{n+2}\hfill\cr
 c_n&c_{n+1}\hfill&c_{n+2}\hfill&\ldots&c_{2n}\hfill\cr
 \end{matrix}\right|>0$$
 
+
+### Model equations
+
+One hassle is writing \LaTeX\ equations for the models you run in your analysis.
+Fortunately, there is an app (sic: package) for that!
+[`{Equatiomatic}`](https://github.com/datalorax/equatiomatic) takes some of the pain out of that chore.
+More details can be found [here](https://datalorax.github.io/equatiomatic/articles/intro-equatiomatic.html#other-models-1).
+
 ### Symbols
 
 Many of the symbols you will need can be found on the [Comprehensive LaTeX Symbol Guide](https://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf).
