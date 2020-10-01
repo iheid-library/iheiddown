@@ -12,7 +12,7 @@ rmd_subdir: ["front-matter","chapters"]
 output_dir: "versions"
 
 # Please suggest and submit changes to the source .Rmd files here:
-edit: https://github.com/jhollway/iheiddown/tree/master/%s
+edit: https://github.com/jhollway/iheiddown/tree/main/%s
 
 # If this is set to true, then you don't have to manually delete the merged _main.Rmd file 
 # if something goes wrong when you try to build
