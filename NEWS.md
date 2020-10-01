@@ -1,3 +1,16 @@
+# iheiddown 0.7.1
+
+## Thesis
+
+* Rescaled `{citr}` image in chapter 2 of template
+* Added `{Equatiomatic}` option to chapter 3 of thesis template
+* Added IHEIDThesisExample.pdf for demonstration purposes
+
+## Package
+
+* Updated README
+* Added info on load
+
 # iheiddown 0.7.0
 
 ## Thesis
