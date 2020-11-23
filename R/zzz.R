@@ -1,9 +1,9 @@
-#' @importFrom utils packageVersion packageDescription
+#' @importFrom utils packageStartupMessage packageVersion packageDescription
 .onLoad <- function(libname, pkgname) {
-  packageStartupMessage(pkgname, " for IHEID\n")
-  packageStartupMessage("Version ", utils::packageVersion("iheiddown"),
+  packageStartupMessage(crayon::red(pkgname, " for IHEID\n"))
+  packageStartupMessage(crayon::red("Version ", utils::packageVersion("iheiddown"),
     " created on ",
     utils::packageDescription("iheiddown", fields = "Date"),
     "\n"
-  )
+  ))
 }
