@@ -1,8 +1,14 @@
 ---
 title: Conclusion
-knit: iheiddown::chapter_pdf
+author: "Author"
+output:
+  iheiddown::chapter_pdf:
+    input: "05-conclusion.Rmd" # Replace with whatever the name of this file is
+    author: "Author"
+    chapter: "5"
 ---
 
+\setcounter{chapter}{5}
 # Conclusion {#conclusion}
 
 ## Additional resources

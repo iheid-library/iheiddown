@@ -1,8 +1,15 @@
 ---
 title: Results
-knit: iheiddown::chapter_pdf
+author: "Author"
+output:
+  iheiddown::chapter_pdf:
+    input: "04-results.Rmd" # Replace with whatever the name of this file is
+    author: "Author"
+    chapter: "4"
+
 ---
 
+\setcounter{chapter}{4}
 # Results {#results}
 
 ## An intro to R chunks

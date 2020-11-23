@@ -1,8 +1,14 @@
 ---
 title: Methods
-knit: iheiddown::chapter_pdf
+author: "Author"
+output:
+  iheiddown::chapter_pdf:
+    input: "03-method.Rmd" # Replace with whatever the name of this file is
+    author: "Author"
+    chapter: "3"
 ---
 
+\setcounter{chapter}{3}
 # Methods {#methods}
 
 Your methods section will discuss the approach you will take for your dissertation.
@@ -29,13 +35,13 @@ So `$\sum_{i=1}^N i$` will read $\sum_{i=1}^N i$.
 
 $$
 \pi(\theta|X_1< y_1,\dots,X_n<y_n) \varpropto \pi(\theta) \prod_{i=1}^n\int_{-\infty}^{y_i}
-   \exp\left(-{(x-\theta)^2\over{2\sigma^2}}\right)\ dx
+   \exp\left(-\frac{(x-\theta)^2}{2\sigma^2}\right)\ dx
 $$
 
 
 $$
-\sum_{j=1}^n (\delta\theta_j)^2 \leq {{\beta_i^2}\over{\delta_i^2 + \rho_i^2}}
-\left[ 2\rho_i^2 + {\delta_i^2\beta_i^2\over{\delta_i^2 + \rho_i^2}} \right] \equiv \omega_i^2
+\sum_{j=1}^n (\delta\theta_j)^2 \leq \frac{\beta_i^2}{\delta_i^2 + \rho_i^2}
+\left[ 2\rho_i^2 + \frac{\delta_i^2\beta_i^2}{\delta_i^2 + \rho_i^2} \right] \equiv \omega_i^2
 $$
 
 Another equation:

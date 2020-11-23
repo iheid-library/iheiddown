@@ -76,7 +76,7 @@ csl: geneva-syllabus.csl
 #####################
 output:
   iheiddown::syllabus_pdf:
-    input: "skeleton.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
+    input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
     output_file: *code
 link-citations: true
 draft: true

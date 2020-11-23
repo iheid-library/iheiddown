@@ -1,8 +1,18 @@
 ---
 title: Introduction
-knit: iheiddown::chapter_pdf
+author: "Author"
+abstract: |
+  In this chapter, I'll introduce how to write basic text using markdown.
+  It is super simple, as you will see. You just write normal text,
+  but then indicate where you want certain formatting with some very basic 'markup'.
+output:
+  iheiddown::chapter_pdf:
+    input: "01-introduction.Rmd" # Replace with whatever the name of this file is
+    author: "Author"
+    chapter: "1"
 ---
 
+\setcounter{chapter}{1}
 # Introduction {#intro}
 
 Here is a brief introduction into using *RMarkdown*.
