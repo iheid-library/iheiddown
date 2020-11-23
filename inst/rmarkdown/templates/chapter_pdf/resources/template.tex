@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% IHEID CHAPTER TEMPLATE %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% PAGE LAYOUT
 % Pass this in from YAML
@@ -93,11 +93,17 @@ citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for exter
 % Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
 %\numberwithin{equation}{subsection}
 
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+  {\par}
 
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
-% \title{$title$}
-% \author{$author$}
+\title{$title$}
+\author{$author$}
 
 % JEM: Lengths for single spacing (ie separate abstract, captions), front matter (abstract,
 %   acknowledgements, table of contents, etc), and main body text.
@@ -154,6 +160,12 @@ citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for exter
 %% ACTUAL DOCUMENT HERE  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+
+\maketitle
+
+$abstract$
+
+\tableofcontents
 
 %%%%% CHOOSE YOUR LINE SPACING HERE
 % This is the official option.  Use it for your submission copy and library copy:
