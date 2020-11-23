@@ -1,3 +1,25 @@
+# iheiddown 0.7.2
+
+## Thesis
+
+* Closed #28 by adding more details to filenames
+  * Added author details to `thesis_pdf()` output
+  * Added author details to `chapter_pdf()` output
+  * Added chapter details to `chapter_pdf()` output
+* Paused minitoc
+  * `thesis_pdf()` and `chapter_pdf()` clean up `*.maf` and `*.mtc` files afterward
+* `chapter_pdf()` now exports to `versions/`
+  * Closed #33 as `chapter_pdf()` prints chapter abstract and chapter table of contents
+  * Added manual `\setcounter{}` to example chapters
+* Fixed #34 cslreferences bug in `thesis_pdf()` and `chapter_pdf()`
+* Replaced deprecated `\over` use in equations in chapter 3 example with `\frac{}{}`
+
+## Package
+
+* Release individual packages
+* More colourful load
+* Fixed `{citr}` dependency
+
 # iheiddown 0.7.1
 
 ## Thesis
