@@ -119,9 +119,16 @@ citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for exter
 % Environments
 %
 
-\usepackage[nohints,tight]{minitoc} 
-	\setcounter{minitocdepth}{2} 
-	% Generates mini tables of contents per chapter
+% Managing minitoc for chapters
+% \usepackage[nohints,tight]{minitoc} 
+% 	\setcounter{minitocdepth}{2} 
+% 	% Generates mini tables of contents per chapter
+% 	
+% % JEM: The following fixes minitoc to not be multiple-spaced.
+% \makeatletter
+% \let\oldmtc@verse\mtc@verse
+% \renewcommand{\mtc@verse}[1]{\oldmtc@verse{#1}\setlength{\baselineskip}{\z@}}
+% \makeatother
 	
 % For the abbreviations
 \usepackage{enumitem}
