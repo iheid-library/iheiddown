@@ -2,7 +2,8 @@
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
 #' to specify using the IHEID Thesis LaTeX template file.
-#'
+#' @param ... Instructions passed to the function from a correctly specified .Rmd document
+#' @param author The surname of the author, passed to the function by a correctly specified .Rmd document
 #' @importFrom bookdown render_book
 #' @importFrom bookdown pdf_book
 #' @export
@@ -28,7 +29,9 @@ thesis_pdf <- function(..., author){
 #'
 #' This function can be used in the header of each constituent chapter of an IHEID thesis
 #' to output a draft version of the chapter for proofreading or sending to your supervisor.
-#'
+#' @param ... Instructions passed to the function from a correctly specified .Rmd document
+#' @param author The surname of the author, passed to the function by a correctly specified .Rmd document
+#' @param chapter The chapter number (or title) of the dissertation, passed to the function by a correctly specified .Rmd document
 #' @importFrom bookdown preview_chapter
 #' @importFrom rmarkdown pdf_document
 #' @export

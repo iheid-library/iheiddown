@@ -5,8 +5,9 @@
 #'
 #' @export
 #'
+#' @param ... Instructions passed to the function from a correctly specified .Rmd document
 #' @param input The name of the .Rmd file to serve as input.
-#' @param output The file name for the exported PDF. Giving the course code variable '*code'
+#' @param output_file The file name for the exported PDF. Giving the course code variable '*code'
 #' specified in the YAML above provides an automatically named file.
 #' @importFrom rmarkdown pdf_document
 #' @return A modified \code{pdf_document} based on the IHEID Syllabus LaTeX
