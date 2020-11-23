@@ -10,3 +10,4 @@ Untitled/*
 *.maf
 *.mtc*
 inst/rmarkdown/templates/thesis/skeleton/_bookdown_files/*
+pres/*
