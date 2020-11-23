@@ -3,6 +3,8 @@
 #' This is a function called in output in the YAML of the driver Rmd file
 #' to specify using the IHEID Thesis LaTeX template file.
 #'
+#' @importFrom bookdown render_book
+#' @importFrom bookdown pdf_book
 #' @export
 #'
 #' @return A modified \code{pdf_document} based on the IHEID Thesis LaTeX
@@ -27,6 +29,8 @@ thesis_pdf <- function(..., author){
 #' This function can be used in the header of each constituent chapter of an IHEID thesis
 #' to output a draft version of the chapter for proofreading or sending to your supervisor.
 #'
+#' @importFrom bookdown preview_chapter
+#' @importFrom rmarkdown pdf_document
 #' @export
 #'
 #' @return A modified \code{pdf_document} based on the IHEID Thesis LaTeX
