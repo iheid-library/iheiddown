@@ -18,6 +18,8 @@ thesis_pdf <- function(..., author){
                         output_format = bookdown::pdf_book(latex_engine = "xelatex",
                                                         template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex',
                                                                                package = 'iheiddown')))
+  file.remove(c(list.files(pattern='.*.maf', recursive=TRUE),
+                list.files(pattern='.*.mtc', recursive=TRUE)))
 }
 
 #' Creates an R Markdown PDF Thesis chapter
@@ -39,4 +41,6 @@ chapter_pdf <- function(..., author, chapter){
                         output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
                                                            template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
                                                                                   package = 'iheiddown')))
+  file.remove(c(list.files(pattern='.*.maf', recursive=TRUE),
+                list.files(pattern='.*.mtc', recursive=TRUE)))
 }
