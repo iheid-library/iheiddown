@@ -8,7 +8,7 @@ title: |
   For the Graduate Institute Geneva \
   in R Markdown
 firstnames: Author
-lastnames: Name
+lastnames: &author Name
 thesisno: 12345
 phd: true # Or: false for Masters
 department: Your Department
@@ -58,7 +58,10 @@ hidelinks: false #if false, the PDF output highlights clickable links with a col
 #####################
 ## Output Options  ##
 #####################
-knit: iheiddown::thesis_pdf
+output:
+  iheiddown::thesis_pdf:
+    input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "mythesis.Rmd"
+    author: *author
 link-citations: true
 documentclass: book
 ---
