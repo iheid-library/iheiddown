@@ -34,7 +34,7 @@ abbreviations: "front-matter/abbreviations" # path to .tex file with abbreviatio
 toc-depth: 2 # depth of heading to include in table of contents
 lof: true # list of figures in front matter?
 lot: true # list of tables in front matter?
-mini-toc: true  # mini-table of contents at start of each chapter? (this just prepares it; you must also add \minitoc after the chapter titles)
+mini-toc: false  # mini-table of contents at start of each chapter? (this just prepares it; you must also add \minitoc after the chapter titles)
 mini-lot: false  # mini-list of tables by start of each chapter?
 mini-lof: false  # mini-list of figures by start of each chapter?
 

@@ -245,15 +245,15 @@ $endif$
   }
 \makeatother
 
-\usepackage[nohints,tight]{minitoc} 
-	\setcounter{minitocdepth}{2} 
+% \usepackage[nohints,tight]{minitoc} 
+% 	\setcounter{minitocdepth}{2} 
 	% Generates mini tables of contents per chapter
 	
-% JEM: The following fixes minitoc to not be multiple-spaced.
-\makeatletter
-\let\oldmtc@verse\mtc@verse
-\renewcommand{\mtc@verse}[1]{\oldmtc@verse{#1}\setlength{\baselineskip}{\z@}}
-\makeatother
+% % JEM: The following fixes minitoc to not be multiple-spaced.
+% \makeatletter
+% \let\oldmtc@verse\mtc@verse
+% \renewcommand{\mtc@verse}[1]{\oldmtc@verse{#1}\setlength{\baselineskip}{\z@}}
+% \makeatother
 
 % For the abbreviations
 \usepackage{enumitem}
@@ -445,15 +445,15 @@ $endif$
 % This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
 % (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
 % next two lines if you want a per-chapter list of figures or tables.
-$if(mini-toc)$
-  \dominitoc % include a mini table of contents
-$endif$
-$if(mini-lof)$
-  \dominilof  % include a mini list of figures
-$endif$
-$if(mini-lot)$
-  \dominilot  % include a mini list of tables
-$endif$
+% $if(mini-toc)$
+%   \dominitoc % include a mini table of contents
+% $endif$
+% $if(mini-lof)$
+%   \dominilof  % include a mini list of figures
+% $endif$
+% $if(mini-lot)$
+%   \dominilot  % include a mini list of tables
+% $endif$
 
 % This aligns the bottom of the text of each page.  It generally makes things look better.
 \flushbottom
@@ -463,14 +463,14 @@ $endif$
 
 $if(lof)$
 \listoffigures
-	\mtcaddchapter
+	% \mtcaddchapter
   	% \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
 $endif$
 
 % Uncomment to generate a list of tables:
 $if(lot)$
 \listoftables
-  \mtcaddchapter
+  % \mtcaddchapter
 $endif$
 
 %%%%% LIST OF ABBREVIATIONS
