@@ -11,6 +11,35 @@ output:
 \setcounter{chapter}{5}
 # Conclusion {#conclusion}
 
+In sum, `{iheiddown}` offers an easy way to write IHEID-consistent theses,
+but is enormously extensible and adaptable, 
+allowing students to craft their own dissertations and other documents.
+
+## Using iheiddown for proposals
+
+As an example of this, let us consider how one might begin using iheiddown
+from the start of a masters or doctoral dissertation,
+and not just at the end while 'writing up' (a good idea in any case).
+
+One feature often requested by supervisors from DDPs and MPTs
+is the preparation of a plan about how and when the various tasks
+associated with the project will be completed.
+Your supervisor may even ask for this to be presented in a table or a Gantt chart.
+
+We have covered tables in the previous chapter.
+Here I want to offer a quick vignette about how you can create a Gantt chart
+that outlines the temporal progression you expect to make.
+We will use the `{ggantrify}` package to do this.
+
+```{r }
+library("ganttrify")
+ganttrify(project = ganttrify::test_project,
+          project_start_date = "2020-03",
+          colour_palette = iheiddown::iheid_palette("Centres", 
+                                                    type = "continuous")
+          )
+```
+
 ## Additional resources
 
 - [_Markdown_ Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
