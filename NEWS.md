@@ -1,3 +1,13 @@
+# iheiddown 0.7.3
+
+## Package
+
+* Fixed #38 by adding `iheid_palettes` and `iheid_palette()` for accessing IHEID and SDG color palettes
+
+## Thesis
+
+* Closed #22 by adding example of how to create a Gantt plot including call to `iheid_palette()` 
+
 # iheiddown 0.7.2
 
 ## Thesis

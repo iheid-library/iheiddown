@@ -1,7 +1,7 @@
 Package: iheiddown
 Title: A package for writing IHEID documents in RMarkdown
-Date: 2020-11-23
-Version: 0.7.2
+Date: 2020-12-19
+Version: 0.7.3
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
@@ -26,4 +26,4 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat, kableExtra
+    testthat, kableExtra, ggantrify
