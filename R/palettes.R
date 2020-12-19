@@ -44,6 +44,7 @@ iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
 #'   to automatically interpolate between colours.
 #' @importFrom graphics rect par image text
 #' @return A vector of colours.
+#' @source Adapted from https://github.com/karthik/wesanderson/blob/master/R/colors.R
 #' @export
 #' @keywords colors
 #' @examples
