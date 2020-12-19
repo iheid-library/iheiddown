@@ -297,7 +297,9 @@ mean_delay_by_carrier <- flights %>%
   group_by(carrier) %>%
   summarize(mean_dep_delay = mean(dep_delay))
 ggplot(mean_delay_by_carrier, aes(x = carrier, y = mean_dep_delay)) +
-  geom_bar(position = "identity", stat = "identity", fill = "red")
+  geom_bar(position = "identity", stat = "identity", 
+           fill = iheiddown::iheid_palette("IHEID", 1)) +
+  theme_minimal()
 ```
 
 You don't have to use `{ggplot2}` though.
