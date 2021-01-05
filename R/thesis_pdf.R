@@ -42,12 +42,23 @@ thesis_pdf <- function(..., author){
 #' \dontrun{
 #' knit: iheiddown::chapter_pdf
 #' }
-chapter_pdf <- function(..., author, chapter){
-  bookdown::preview_chapter(...,
-                        output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
-                        output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
-                                                           template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
-                                                                                  package = 'iheiddown')))
-  file.remove(c(list.files(pattern='.*.maf', recursive=TRUE),
-                list.files(pattern='.*.mtc', recursive=TRUE)))
+chapter_pdf <- function(..., author, chapter, in_context){
+  
+  if(in_context){
+    bookdown::preview_chapter(...,
+                              output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
+                              output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
+                                                                      template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
+                                                                                             package = 'iheiddown')))
+    file.remove(c(list.files(pattern='.*.maf', recursive=TRUE),
+                  list.files(pattern='.*.mtc', recursive=TRUE)))
+  } else {
+    rmarkdown::render(...,
+                      output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
+                      output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
+                                                              template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
+                                                                                     package = 'iheiddown')))
+  }
+  
+  
 }

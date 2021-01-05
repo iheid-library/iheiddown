@@ -10,6 +10,7 @@ output:
     input: "01-introduction.Rmd" # Replace with whatever the name of this file is
     author: "Author"
     chapter: "1"
+    in_context: false
 ---
 
 \setcounter{chapter}{1}

@@ -6,7 +6,7 @@ output:
     input: "04-results.Rmd" # Replace with whatever the name of this file is
     author: "Author"
     chapter: "4"
-
+    in_context: false
 ---
 
 \setcounter{chapter}{4}
