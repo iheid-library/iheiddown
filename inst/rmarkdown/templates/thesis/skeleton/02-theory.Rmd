@@ -16,7 +16,7 @@ output:
     in_context: false
 ---
 
-\setcounter{chapter}{2}
+\setcounter{chapter}{1} <!-- Set the counter at one number less than the chapter number to initialize it. -->
 # Theory {#theory}
 
 ## Referencing
