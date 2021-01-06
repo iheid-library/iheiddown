@@ -9,7 +9,7 @@ output:
     in_context: false
 ---
 
-\setcounter{chapter}{3}
+\setcounter{chapter}{2}
 # Methods {#methods}
 
 Your methods section will discuss the approach you will take for your dissertation.

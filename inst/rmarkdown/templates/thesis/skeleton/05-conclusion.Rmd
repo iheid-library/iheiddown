@@ -9,7 +9,7 @@ output:
     in_context: false
 ---
 
-\setcounter{chapter}{5}
+\setcounter{chapter}{4}
 # Conclusion {#conclusion}
 
 In sum, `{iheiddown}` offers an easy way to write IHEID-consistent theses,

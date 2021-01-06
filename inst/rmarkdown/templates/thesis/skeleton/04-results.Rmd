@@ -9,7 +9,7 @@ output:
     in_context: false
 ---
 
-\setcounter{chapter}{4}
+\setcounter{chapter}{3}
 # Results {#results}
 
 ## An intro to R chunks
