@@ -86,7 +86,7 @@ draft: true
 startdate <- as.Date("2020-09-14")
 ```
 
-##  `r advdate(startdate, 1)`: Transfiguration alphabet
+##  `r advdate(startdate, 1)`: Inheriting a Ring
 
 @Darwin1859
 
