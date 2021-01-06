@@ -13,7 +13,7 @@ output:
     in_context: false
 ---
 
- \setcounter{chapter}{0} <!-- Set the counter at one number less than the chapter number to initialize it. -->
+\setcounter{chapter}{1}
 # Introduction {#intro}
 
 Here is a brief introduction into using *RMarkdown*.

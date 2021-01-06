@@ -9,7 +9,7 @@ output:
     in_context: false
 ---
 
-\setcounter{chapter}{3} <!-- Set the counter at one number less than the chapter number to initialize it. -->
+\setcounter{chapter}{4}
 # Results {#results}
 
 ## An intro to R chunks

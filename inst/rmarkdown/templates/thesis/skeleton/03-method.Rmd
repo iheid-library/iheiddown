@@ -9,7 +9,7 @@ output:
     in_context: false
 ---
 
-\setcounter{chapter}{2} <!-- Set the counter at one number less than the chapter number to initialize it. -->
+\setcounter{chapter}{3}
 # Methods {#methods}
 
 Your methods section will discuss the approach you will take for your dissertation.
