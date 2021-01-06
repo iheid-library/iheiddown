@@ -30,7 +30,7 @@ Your supervisor may even ask for this to be presented in a table or a Gantt char
 We have covered tables in the previous chapter.
 Here I want to offer a quick vignette about how you can create a Gantt chart
 that outlines the temporal progression you expect to make.
-We will use the `{ggantrify}` package to do this.
+We will use the `{gantrify}` package to do this.
 
 ```{r }
 library("ganttrify")
