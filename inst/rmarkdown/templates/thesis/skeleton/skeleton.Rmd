@@ -41,10 +41,11 @@ mini-lof: false  # mini-list of figures by start of each chapter?
 ####################
 ## Bibliography   ##
 ####################
-bibliography: bib/references.bib
+bibliography: [bib/packages.bib,bib/references.bib]
 bibliography-heading-in-pdf: References
 bib-humanities: true   #set to true if you want in-text references formatted as author-year
 doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography
+# nocite: '@*' #Uncomment if you want all elements in your .bib file to appear in your bibliography.
 
 #####################
 ## PDF Formatting  ##
@@ -72,6 +73,12 @@ documentclass: book
 The {.unnumbered} option here means that the introduction will be 
 "Chapter 0." You can also use {-} for no numbers on chapters.
 -->
+
+```{r, include=FALSE}
+knitr::write_bib(c(.packages(), "bookdown"), "bib/packages.bib")
+```
+
+<!-- This chunk creates automatically a .bib file to cite the loaded packages in the bibliography. Do not forget to uncomment "nocite: '@*'" in the header if you want all packages to be cited even if you did not mention them in the body of the text.-->
 
 Welcome to the *RMarkdown* template for writing masters theses or PhD dissertations 
 at the Graduate Institute of International and Development Studies in Geneva. 
