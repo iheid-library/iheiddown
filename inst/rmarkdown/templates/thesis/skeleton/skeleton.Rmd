@@ -14,8 +14,8 @@ phd: true # Or: false for Masters
 department: Your Department
 degreedate: June 2020
 supervisor: Gandalf the Grey
-secondreader: Aragorn II Elessar
-examiner: Gimli # only required if PhD; otherwise delete or comment out
+secondreader: Galadriel
+examiner: Aragorn II Elessar # only required if PhD; otherwise delete or comment out
 # This is the YAML (YAML Ain't Markup Language) header that includes 
 # metadata used to produce the document. 
 # Be careful with spacing in this header!
