@@ -30,9 +30,10 @@ $endif$
 
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\emph{\thepage}}}
 
-% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.) Page numbers are also printed on the right side.
 $if(draft)$
 \fancyfoot[C]{\emph{DRAFT Printed on \today}}
+\fancyfoot[R]{\emph{\thepage}}
 $endif$
 
 %%%%% FONTS
