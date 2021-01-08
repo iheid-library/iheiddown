@@ -61,7 +61,7 @@ hidelinks: false #if false, the PDF output highlights clickable links with a col
 #####################
 output:
   iheiddown::thesis_pdf:
-    input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "mythesis.Rmd"
+    input: "00-Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "mythesis.Rmd"
     author: *author
 link-citations: true
 documentclass: book
