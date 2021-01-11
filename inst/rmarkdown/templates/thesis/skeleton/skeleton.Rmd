@@ -45,8 +45,8 @@ bibliography: [bib/packages.bib,bib/references.bib]
 bibliography-heading-in-pdf: References
 bib-humanities: true   #set to true if you want in-text references formatted as author-year
 doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography
-# csl: apa.csl #Uncomment to integrate the bibliography style file that you have put in the root folder of your thesis. Search the Zotero Stlye Repository for the required citation style (https://www.zotero.org/styles).
-# nocite: '@*' #Uncomment if you want all elements in your .bib file to appear in your bibliography.
+# csl: bibstyles/apa.csl #Uncomment to integrate the bibliography style file that you have put in the bibstyles folder of your thesis. Search the Zotero Stlye Repository for the required citation style (https://www.zotero.org/styles).
+nocite: '@*' #Uncomment if you want all elements in your .bib file to appear in your bibliography (i.e. all R-packages you used)
 
 #####################
 ## PDF Formatting  ##
