@@ -5,3 +5,7 @@ You don't really need to alter this chapter unless you want to change the name o
 to 'Bibliography', 'Literature', or something similar.
 Any references included in the chapters will be printed here automatically.
 -->
+```{=latex}
+\markboth{References}{References}
+```
+<!-- This code chunk serves as a custom style for the reference section. Don't change it unless you really want to. -->
