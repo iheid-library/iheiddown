@@ -1,5 +1,9 @@
 # Appendix: The Echoes of the Code{-}
 
+```{=latex}
+\markboth{Appendix}{Appendix}
+```
+
 The goal of this appendix is to echo the code you used in your thesis for a greater sense of transparency and replicability of your research. Note that `ref.labels` can be set to any label. Hence, you can filter the code you want replicated in the appendix by setting labels to the desired code chunks in the various chapters. See [this excellent resource](https://bookdown.org/yihui/rmarkdown-cookbook/code-appendix.html) for more information.
 
 
