@@ -20,7 +20,7 @@ thesis_pdf <- function(..., author){
                         output_file = paste0(author, "_", "Thesis_", Sys.Date()), 
                         output_format = bookdown::pdf_book(latex_engine = "xelatex",
                                                         template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex',
-                                                                               package = 'iheiddown')))
+                                                                               package = 'iheiddown'), citation_package = "biblatex"))
   file.remove(c(list.files(pattern='.*.maf', recursive=TRUE),
                 list.files(pattern='.*.mtc', recursive=TRUE)))
 }

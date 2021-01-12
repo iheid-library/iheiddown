@@ -110,28 +110,21 @@ citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for exter
 % \usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=false, isbn=false]{biblatex}
 % \newcommand*{\bibtitle}{Works Cited}
 
-%UL 3 Dec 2018: set this from YAML in index.Rmd
-$if(bib-humanities)$
-\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, 
-doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=false, uniquename=false]{biblatex}
-\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
-$else$
-\usepackage[style=numeric-comp, sorting=none, backend=biber, doi=$doi-in-bibliography$, isbn=false]{biblatex}
-\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
-$endif$
-
-% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
-\renewcommand*{\bibfont}{\raggedright\small}
+%More versatile and less restrictive version that lets users apply biblatex style options from the Yaml header in the index.Rmd file.
+\usepackage[style=$bib-style$, sorting=$bib-sorting$, backend=biber, maxcitenames=2, useprefix, 
+doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=$bib-isbn$, dashed=$bib-dashed$, uniquename=false]{biblatex}
 
 % Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
 \addbibresource{$bibliography$}
+\addbibresource{$packagebibliography$}
 
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newenvironment{cslreferences}%
-  {\setlength{\parindent}{0pt}%
-  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
-  {\par}
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+\renewcommand*{\bibfont}{\raggedright$if(bib-smallfont)$\small$endif$}
+
+% Cites all the entries in the various bibliography files
+$if(citeall)$
+\nocite{*}
+$endif$
 
 % Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
 %\numberwithin{equation}{subsection}
@@ -503,7 +496,7 @@ $body$
 
 % \setlength{\baselineskip}{0pt} % JEM: Single-space References
 % 
-% {\renewcommand*\MakeUppercase[1]{#1}%
-% \printbibliography[heading=bibintoc,title={References}]}
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=bibintoc,title={References}]}
 
 \end{document}

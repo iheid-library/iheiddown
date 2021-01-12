@@ -1,4 +1,4 @@
-# References {-}
+`r if(!knitr:::is_latex_output()) '# References {-}'`
 
 <!-- 
 You don't really need to alter this chapter unless you want to change the name of the bibliography section 
@@ -8,4 +8,4 @@ Any references included in the chapters will be printed here automatically.
 ```{=latex}
 \markboth{References}{References}
 ```
-<!-- This code chunk serves as a custom style for the reference section. Don't change it unless you really want to. -->
+<!-- This quiet code chunk serves as a custom style for the reference section and adds a custom header Don't change it unless you really want to. -->
