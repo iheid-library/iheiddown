@@ -2,10 +2,8 @@
 
 ## Package
 
-* Fixed #42 where the chapter_pdf() function which displayed placeholder text and headers for other unpreviewed chapters when knitting. 
-
+* Fixed #42 where the `chapter_pdf()` function displayed placeholder text and headers for other unpreviewed chapters when knitting. 
 * Closed #26 by adding an automatic package citations function to the thesis template.
-
 * Updated the README to signal that new projects must be named "00-ProjectTitle" to avoid issues when merging Rmd files together.
 
 ## Thesis
