@@ -2,7 +2,7 @@
 ####################
 ## Metadata       ##
 ####################
-title: |
+doctitle: |
   `iheiddown`: \
   A Thesis Template \
   For the Graduate Institute Geneva \
