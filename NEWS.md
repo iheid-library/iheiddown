@@ -10,6 +10,10 @@
 
 * Closed #32 by changing Harry Potter references to LOTR references. 
 
+## Syllabus
+
+* Closed #32 by changing Harry Potter references to LOTR references. 
+
 # iheiddown 0.7.3
 
 ## Package

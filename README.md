@@ -82,7 +82,7 @@ It's very easy to get started.
 1. Click the new document symbol at the very top left and choose `R Markdown...`. 
 1. Then from the options on the left `From Template`. 
 1. Scroll down through the options on the right until you find `Thesis   {iheiddown}`.
-1. Name your thesis project by using the following format: 00-NameOfYourProject (for example: 00-Untitled).
+1. Name your thesis project by using the following format: 00-NameOfYourProject (for example: 00-MyThesisTitle).
 1. Select where the project should be saved on your harddrive.
 
 Congratulations! You have now set up a thesis project.
