@@ -19,7 +19,10 @@
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\emph{\thepage}}}
 
 % This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
-\fancyfoot[C]{\emph{DRAFT from \today}}
+$if(draft)$
+\fancyfoot[C]{\emph{DRAFT: \today}}
+\fancyfoot[R]{\emph{\thepage}}
+$endif$
 
 %%%%% FONTS
 \RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
@@ -99,6 +102,19 @@ citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for exter
   {\setlength{\parindent}{0pt}%
   \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
   {\par}
+  
+$if(highlighting-macros)$
+$highlighting-macros$
+%UL 2 Dec 2018 add a bit of white space before and after code blocks
+\renewenvironment{Shaded}
+{
+  \vspace{4pt}%
+  \begin{snugshade}%
+}{%
+  \end{snugshade}%
+  \vspace{4pt}%
+}
+$endif$
 
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
