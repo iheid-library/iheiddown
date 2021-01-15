@@ -8,7 +8,7 @@
 #' }
 #' @export
 theme_iheid <- function(){
-  font <- "Helvetica"
+  font <- "sans"
   
   ggplot2::theme(
     
@@ -17,7 +17,7 @@ theme_iheid <- function(){
     plot.title = ggplot2::element_text(family=font,
                                        size=28,
                                        face="bold",
-                                       color=iheid_palette("IHEID")[1]),
+                                       color=iheid_palette("IHEID")["IHEIDRed"]),
     #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
     plot.subtitle = ggplot2::element_text(family=font,
                                           size=22,
@@ -34,14 +34,14 @@ theme_iheid <- function(){
     legend.key = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family=font,
                                         size=18,
-                                        color=iheid_palette("IHEID")[2]),
+                                        color=iheid_palette("IHEID")["IHEIDBlack"]),
     
     #Axis format
     #This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart - the cookbook shows examples of how to do so.
     axis.title = ggplot2::element_blank(),
     axis.text = ggplot2::element_text(family=font,
                                       size=14,
-                                      color=iheid_palette("IHEID")[2]),
+                                      color=iheid_palette("IHEID")["IHEIDBlack"]),
     axis.text.x = ggplot2::element_text(margin=ggplot2::margin(5, b = 10)),
     axis.ticks = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
@@ -49,7 +49,7 @@ theme_iheid <- function(){
     #Grid lines
     #This removes all minor gridlines and adds major y gridlines. In many cases you will want to change this to remove y gridlines and add x gridlines. The cookbook shows you examples for doing so
     panel.grid.minor = ggplot2::element_blank(),
-    panel.grid.major.y = ggplot2::element_line(color=iheid_palette("IHEID")[3]),
+    panel.grid.major.y = ggplot2::element_line(color=iheid_palette("IHEID")["IHEIDGrey"]),
     panel.grid.major.x = ggplot2::element_blank(),
     
     #Blank background
