@@ -1,6 +1,6 @@
 #' A ggplot2 theme for IHEID style plots
 #' 
-#' @importFrom ggplot2 theme
+#' @importFrom ggplot2 theme margin element_text element_blank element_line element_rect
 #' @examples 
 #' \dontrun{
 #' ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
