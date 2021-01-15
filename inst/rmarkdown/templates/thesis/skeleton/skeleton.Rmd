@@ -2,7 +2,7 @@
 ####################
 ## Metadata       ##
 ####################
-title: |
+doctitle: |
   `iheiddown`: \
   A Thesis Template \
   For the Graduate Institute Geneva \
@@ -13,9 +13,9 @@ thesisno: 12345
 phd: true # Or: false for Masters
 department: Your Department
 degreedate: June 2020
-supervisor: Minerva McGonagall
-secondreader: Horace Slughorn
-examiner: Olympe Maxime # only required if PhD; otherwise delete or comment out
+supervisor: Gandalf the Grey
+secondreader: Galadriel
+examiner: Aragorn II Elessar # only required if PhD; otherwise delete or comment out
 # This is the YAML (YAML Ain't Markup Language) header that includes 
 # metadata used to produce the document. 
 # Be careful with spacing in this header!
@@ -41,10 +41,11 @@ mini-lof: false  # mini-list of figures by start of each chapter?
 ####################
 ## Bibliography   ##
 ####################
-bibliography: bib/references.bib
+bibliography: bib/references.bib #Set your bibliography file here.
 bibliography-heading-in-pdf: References
-bib-humanities: true   #set to true if you want in-text references formatted as author-year
-doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography
+bib-style: authoryear # See https://www.overleaf.com/learn/latex/biblatex_citation_styles for a list of the commonly used built-in citations styles of biblatex.
+bib-sorting: nyt #See https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX for different bibliography sorting options.
+citeall: true #Set this to true if you want all elements in your .bib file to appear in your bibliography (i.e. all R-packages you used).
 
 #####################
 ## PDF Formatting  ##
@@ -60,7 +61,7 @@ hidelinks: false #if false, the PDF output highlights clickable links with a col
 #####################
 output:
   iheiddown::thesis_pdf:
-    input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "mythesis.Rmd"
+    input: "00-Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "mythesis.Rmd"
     author: *author
 link-citations: true
 documentclass: book
@@ -72,6 +73,13 @@ documentclass: book
 The {.unnumbered} option here means that the introduction will be 
 "Chapter 0." You can also use {-} for no numbers on chapters.
 -->
+
+<!-- This chunk creates automatically a .bib file to cite the loaded packages in the bibliography. Do not forget to set "citeall" to true in the bibliography section of the YAML header if you want all packages to be cited even if you did not mention them in the body of the text.-->
+
+```{r, include=FALSE}
+knitr::write_bib(c(.packages(), "bookdown"), "bib/packages.bib")
+```
+
 
 Welcome to the *RMarkdown* template for writing masters theses or PhD dissertations 
 at the Graduate Institute of International and Development Studies in Geneva. 

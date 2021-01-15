@@ -9,8 +9,8 @@ credits: 12
 year: 2020--2021
 semester: Fall
 program: |
-  Master of International Wizardry \
-  Master of International Quidditch
+  Master of International Ring-bearers \
+  Master of the International Fellowship of the Ring
 # This is the YAML (YAML Ain't Markup Language) header that includes 
 # metadata used to produce the document. 
 # Be careful with spacing in this header!
@@ -20,16 +20,16 @@ program: |
 ####################
 ## Professor      ##
 ####################
-prof: Minerva McGonagall
-prof-email: minerva.mcgonagall@graduateinstitute.ch
+prof: Gandalf the Grey
+prof-email: gandalf.thegrey@graduateinstitute.ch
 location: Zoom 123-456-7890
 prof-office-hours: "[Fridays, 17--19](https://bit.ly/goog.ly)"
 
 ####################
 ## Assistant      ##
 ####################
-ta: Neville Longbottom
-ta-email: neville.longbottom@graduateinstitute.ch
+ta: Frodo Baggins
+ta-email: frodo.baggins@graduateinstitute.ch
 ta-office-hours: By appointment
 
 ####################
@@ -37,11 +37,11 @@ ta-office-hours: By appointment
 ####################
 description: |
   This course teaches everything you ever wanted
-  to know about transfiguration. You will learn
-  how to transform yourself entirely.
+  to know about the Fellowship of the Ring. You will learn
+  how to melt rings in volcanoes, evade Nazgûls, and not to trust Saruman.
 aims: |
   This course has two main purposes.
-  First, it provides a deeper understanding of transfiguration.
+  First, it provides a deeper understanding of resisting the Power of the Ring.
   Second, it applies these insights through practical exercises.
 structure: |
   Extraordinarily, due to the novel coronavirus pandemic, 
@@ -86,20 +86,20 @@ draft: true
 startdate <- as.Date("2020-09-14")
 ```
 
-##  `r advdate(startdate, 1)`: Transfiguration alphabet
+##  `r advdate(startdate, 1)`: Inheriting a Ring
 
 @Darwin1859
 
 @iheiddown2020
 
-##  `r advdate(startdate, 2)`: Transformation formula
+##  `r advdate(startdate, 2)`: Escaping the Shire
 
 @Satchell2009
 
-##  `r advdate(startdate, 3)`: Desk into pig
+##  `r advdate(startdate, 3)`: Fleeing from the Nazgûl
 
-##  `r advdate(startdate, 4)`: Match to needle
+##  `r advdate(startdate, 4)`: Meeting Strider
 
-##  `r advdate(startdate, 5)`: Switching spell
+##  `r advdate(startdate, 5)`: Arrival in Rivendell
 
-##  `r advdate(startdate, 6)`: Mice to snuffboxes
+##  `r advdate(startdate, 6)`: On the road to Mordor

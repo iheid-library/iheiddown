@@ -4,8 +4,9 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
 ![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
-[![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown)
+<!-- [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown) -->
 [![Codecov test coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=main)
+[![CodeFactor](https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main)](https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
@@ -29,7 +30,7 @@ which offers versus common word processors:
 - ensured consistency with the IHEID dissertation and other guidelines, e.g. dedication, abstract, abbreviations, 
 tables of contents, figures, and tables
 - automatic figure and table referencing
-- automatic creation of your bibliography
+- automatic compilation of your references and bibliography (under different styles)
 - compilation chapter-by-chapter (for sending to your supervisor) or whole dissertation (for submission)
 - cross-referencing
 - smaller files
@@ -81,7 +82,8 @@ It's very easy to get started.
 1. Click the new document symbol at the very top left and choose `R Markdown...`. 
 1. Then from the options on the left `From Template`. 
 1. Scroll down through the options on the right until you find `Thesis   {iheiddown}`.
-1. Name your thesis project (if in doubt 'Untitled' is fine) and select where the project should be saved on your harddrive.
+1. Name your thesis project by using the following format: 00-NameOfYourProject (for example: 00-MyThesisTitle).
+1. Select where the project should be saved on your harddrive.
 
 Congratulations! You have now set up a thesis project.
 

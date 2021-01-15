@@ -1,3 +1,25 @@
+# iheiddown 0.7.4
+
+## Package
+
+- Updated README to inform users that new theses must be named "00-ProjectTitle" to avoid issues when merging Rmd files together
+- Closed #39 by adding the `{ggplot2}` theme `theme_iheid()`
+  - Fixed #50 by adding tests for `theme_iheid()`
+
+## Thesis
+
+- Closed #32 by changing lorem ipsum to LOTR references
+- Fixed #49 by changing the "title" macro to "doctitle" to avoid an issue with Pandoc conversion to Latex on MacOS
+- Fixed #47 by tweaking the draft macro to display page numbers properly when activated
+- Fixed #42 where the `chapter_pdf()` function displayed placeholder text and headers for other unpreviewed chapters when knitting
+- Closed #26 by adding an automatic package citations function to the thesis template.
+  - Fixed #45 by changing the bibliography management tool to `{biblatex}` and implemented a series of macros in the YAML header of the index file
+- Closed #46 by adding an appendix example that can include all the code from chapter code chunks
+
+## Syllabus
+
+- Closed #32 by changing lorem ipsum to LOTR references. 
+
 # iheiddown 0.7.3
 
 ## Package

@@ -62,6 +62,7 @@ jobs:
 
       - name: Document
         run: Rscript -e 'roxygen2::roxygenise()'
+
       - name: Binary
         run: |
           pkgbuild::clean_dll()

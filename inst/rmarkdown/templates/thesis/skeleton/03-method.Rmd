@@ -6,9 +6,10 @@ output:
     input: "03-method.Rmd" # Replace with whatever the name of this file is
     author: "Author"
     chapter: "3"
+    in_context: false
 ---
 
-\setcounter{chapter}{3}
+\setcounter{chapter}{2}
 # Methods {#methods}
 
 Your methods section will discuss the approach you will take for your dissertation.

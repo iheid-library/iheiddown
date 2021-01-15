@@ -1,0 +1,25 @@
+# Appendix: The Echoes of the Code{-}
+
+```{=latex}
+\markboth{Appendix}{Appendix}
+```
+
+The goal of this appendix is to echo the code you used in your thesis for a greater sense of transparency and replicability of your research. 
+Note that `ref.labels` can be set to any label. 
+Hence, you can filter the code you want replicated in the appendix by setting labels to the desired code chunks in the various chapters. 
+See [this excellent resource](https://bookdown.org/yihui/rmarkdown-cookbook/code-appendix.html) for more information.
+
+
+This might be particularly useful when you perform model selection to output intermediary steps here instead of in the code to avoid cluttering your report. 
+
+```{r get-labels, echo = FALSE}
+labs <- knitr::all_labels()
+labs <- setdiff(labs, c("setup", "get-labels"))
+```
+
+```{r all-code, ref.label=labs, eval=FALSE}
+```
+
+# Appendix: The Echoes of the Code redux{-}
+
+Add as many appendices as you like.

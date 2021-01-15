@@ -30,9 +30,10 @@ $endif$
 
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\emph{\thepage}}}
 
-% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.) Page numbers are also printed on the right side.
 $if(draft)$
-\fancyfoot[C]{\emph{DRAFT Printed on \today}}
+\fancyfoot[C]{\emph{DRAFT: \today}}
+\fancyfoot[R]{\emph{\thepage}}
 $endif$
 
 %%%%% FONTS
@@ -109,28 +110,39 @@ citecolor=red,filecolor=red,urlcolor=black]{hyperref} % uses IHEID red for exter
 % \usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=false, isbn=false]{biblatex}
 % \newcommand*{\bibtitle}{Works Cited}
 
-%UL 3 Dec 2018: set this from YAML in index.Rmd
-$if(bib-humanities)$
-\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, 
-doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=false, uniquename=false]{biblatex}
-\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
-$else$
-\usepackage[style=numeric-comp, sorting=none, backend=biber, doi=$doi-in-bibliography$, isbn=false]{biblatex}
-\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
-$endif$
+\usepackage[style=$bib-style$, sorting=$bib-sorting$, backend=biber, maxcitenames=2, useprefix,
+doi=true, isbn=true, dashed=false, uniquename=false]{biblatex}
+%-----------------------------------------------------
+% More versatile and less restrictive version that lets users apply biblatex style options from the Yaml header in the index.Rmd file.
+% Uncomment and copy the YAML part below in the YAML header of your Index file.
+% \usepackage[style=$bib-style$, sorting=$bib-sorting$, backend=biber, maxcitenames=$max-authors$, useprefix,
+% doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=$bib-isbn$, dashed=$bib-dashed$, uniquename=false]{biblatex}
 
-% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
-\renewcommand*{\bibfont}{\raggedright\small}
+% Copy the part below in your YAML header to set the options from there manually.
+% bibliography: bib/references.bib #Set your bibliography file here.
+% packagebibliography: bib/packages.bib #Sets the automatically generated R-Package Bibliography.
+% bibliography-heading-in-pdf: References
+% bib-style: authoryear # See https://www.overleaf.com/learn/latex/biblatex_citation_styles for a list of the commonly used built-in citations styles of biblatex.
+% bib-sorting: nyt #See https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX for different bibliography sorting options.
+% max-authors: 2 # This sets the maximum of author names that are displayed before an et.al kicks in.
+% doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography.
+% bib-isbn: true #Set to true if you want the ISBN to be displayed
+% bib-dashed: false #Set to true if you want dashed entries instead of repeaded author names if your bibliography contains two entries of the same author.
+% bib-smallfont: false #Set to true if you want a small fontsize for your bibliography.
+% citeall: true #Set this to true if you want all elements in your .bib file to appear in your bibliography (i.e. all R-packages you used).
+%-----------------------------------------------------
 
 % Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
 \addbibresource{$bibliography$}
+\addbibresource{bib/packages.bib}
 
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newenvironment{cslreferences}%
-  {\setlength{\parindent}{0pt}%
-  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
-  {\par}
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+\renewcommand*{\bibfont}{\raggedright$if(bib-smallfont)$\small$endif$}
+
+% Cites all the entries in the various bibliography files
+$if(citeall)$
+\nocite{*}
+$endif$
 
 % Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
 %\numberwithin{equation}{subsection}
@@ -138,7 +150,7 @@ $endif$
 
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
-\title{$title$}
+\title{$doctitle$}
 \author{$author$}
 
 % JEM: Lengths for single spacing (ie separate abstract, captions), front matter (abstract,
@@ -330,7 +342,7 @@ $if(phd)$
 \begin{titlepage}
 \vspace*{5cm}
 
-\centering\Large\sffamily\textbf{$title$}
+\centering\Large\sffamily\textbf{$doctitle$}
 
 \vspace*{10cm}
 
@@ -502,7 +514,7 @@ $body$
 
 % \setlength{\baselineskip}{0pt} % JEM: Single-space References
 % 
-% {\renewcommand*\MakeUppercase[1]{#1}%
-% \printbibliography[heading=bibintoc,title={References}]}
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=bibintoc,title={References}]}
 
 \end{document}
