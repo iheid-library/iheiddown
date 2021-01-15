@@ -42,14 +42,9 @@ mini-lof: false  # mini-list of figures by start of each chapter?
 ## Bibliography   ##
 ####################
 bibliography: bib/references.bib #Set your bibliography file here.
-packagebibliography: bib/packages.bib #Sets the automatically generated R-Package Bibliography.
 bibliography-heading-in-pdf: References
 bib-style: authoryear # See https://www.overleaf.com/learn/latex/biblatex_citation_styles for a list of the commonly used built-in citations styles of biblatex.
 bib-sorting: nyt #See https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX for different bibliography sorting options.
-doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography.
-bib-isbn: true #Set to true if you want the ISBN to be displayed
-bib-dashed: false #Set to true if you want dashed entries instead of repeaded author names if your bibliography contains two entries of the same author.
-bib-smallfont: false #Set to true if you want a small fontsize for your bibliography.
 citeall: true #Set this to true if you want all elements in your .bib file to appear in your bibliography (i.e. all R-packages you used).
 
 #####################
