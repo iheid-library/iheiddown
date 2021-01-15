@@ -5,6 +5,12 @@
 * Fixed #42 where the `chapter_pdf()` function displayed placeholder text and headers for other unpreviewed chapters when knitting. 
 * Closed #26 by adding an automatic package citations function to the thesis template.
 * Updated the README to signal that new projects must be named "00-ProjectTitle" to avoid issues when merging Rmd files together.
+- Closed #45 by changing the bibliography management tool to `{biblatex}` and implemented a series of macros in the YAML header of the index file. 
+- Closed #46 by adding an appendix file.
+- Closed #47 by tweaking the draft macro to display page numbers properly when activated.
+- Fixed #49  by changing the "title" macro to "doctitle" to avoid an issue with Pandoc conversion to Latex on MacOS.
+- Closed #39 by adding the `{ggplot2}` theme `theme_iheid()`
+  - Fixed #50 by adding tests for `theme_iheid()`
 
 ## Thesis
 
