@@ -1,0 +1,119 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "<large>Author Name</large>"
+# institute: "<small>Graduate Institute Geneva</small>" # uncomment to include
+# date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
+output:
+  xaringan::moon_reader:
+    css: ["default", "https://cdn.githubraw.com/jhollway/iheidmyninja/7b9e9101/iheid-xaringan-style.css", "https://cdn.jsdelivr.net/gh/jhollway/iheidmyninja@4ff709f/iheid-xaringan-style.css"]
+    # css: ["default", "iheid-xaringan-style.css"]
+    # css: [default, metropolis, metropolis-fonts]
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js # For offline
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      beforeInit: "macros.js"
+      countIncrementalSlides: false
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>`
+---
+class: center, middle
+
+# With this template, it is very easy to build good looking slides
+
+## and you can centre everything for title/section/other slides
+
+```{r setup, include=FALSE}
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(theme_iheid())
+```
+
+---
+class: middle, inverse, iheid-red
+
+## You can colour the background and add images using straightforward markdown syntax
+
+.center[
+.polaroid[![](https://graduateinstitute.ch/sites/default/files/styles/medium/public/2019-01/James%20Hollway.jpg?itok=1Yw0keum)]
+
+James Hollway (Instructor)
+]
+
+---
+## You can also pull images (or text) to the left or right to build columns
+
+.pull-left[
+.polaroid[![](https://graduateinstitute.ch/sites/default/files/styles/medium/public/2019-01/James%20Hollway.jpg?itok=1Yw0keum)]
+
+James Hollway (Instructor)
+]
+
+.pull-right[
+I can add paragraphs of extra information...
+
+or a bullet list...
+
+- one
+- two
+- three
+
+or a numbered list...
+
+1. one
+1. two
+4. three
+]
+
+---
+## You can build a step-by-step reveal
+
+--
+
+By using double dashes `--` to separate lines of text or code,
+we can build a slide up gradually.
+--
+
+For example here is some more text...
+--
+
+Or here is an example of some math...
+
+$$ X = \sum_i^n x_i $$
+
+--
+
+Or here is a quick plot built (and cached) when the Rmarkdown document is run:
+
+```{r, fig.height=4}
+plot(iris)
+```
+
+---
+class: center, middle
+## Or you can highlight which section of your presentation you are up to...
+
+.pull-1[.circleoff[![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/NYCS-bull-trans-1.svg/1024px-NYCS-bull-trans-1.svg.png)]]
+.pull-1[.circleon[![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png)]]
+.pull-1[.circleoff[![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NYCS-bull-trans-3.svg/1200px-NYCS-bull-trans-3.svg.png)]]
+
+---
+class: left, middle
+
+.blockquote[You can add unquotable quotes
+
+~ Some person]
+
+---
+background-image: url(https://media1.giphy.com/media/xT0BKiK5sOCVdBUhiM/giphy.gif)
+background-size: contain
+# And finally, you can add gifs!
+
