@@ -6,11 +6,13 @@ author: "<large>Author Name</large>"
 # date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
 output:
   xaringan::moon_reader:
-    css: ["default", "https://cdn.githubraw.com/jhollway/iheidmyninja/7b9e9101/iheid-xaringan-style.css", "https://cdn.jsdelivr.net/gh/jhollway/iheidmyninja@4ff709f/iheid-xaringan-style.css"]
-    # css: ["default", "iheid-xaringan-style.css"]
-    # css: [default, metropolis, metropolis-fonts]
-    lib_dir: libs
-    chakra: libs/remark-latest.min.js # For offline
+    css: ["default", "https://cdn.jsdelivr.net/gh/jhollway/iheidmyninja@4ff709f/iheid-xaringan-style.css"]
+    chakra: "https://remarkjs.com/downloads/remark-latest.min.js"
+    # if you want to work offline, run the following command...
+    # xaringan::summon_remark()
+    # ...and then comment out lines 10-13 and uncomment lines 14-15:
+    # lib_dir: libs
+    # chakra: libs/remark-latest.min.js # For offline
     nature:
       ratio: '16:9'
       highlightStyle: github
