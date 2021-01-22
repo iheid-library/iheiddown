@@ -155,7 +155,7 @@ output:
 This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
 -->
 
-## Output 
+## Output
 
 All your front matter and chapters of your thesis will be compiled
 and the complete product can be found under the project folder "versions/".
@@ -167,8 +167,11 @@ The word, gitbook and epub versions might be developed at a later time.
 ## Feedback
 
 Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this repo
-if you encounter any bugs or if you have any suggestions,
-or [get in touch with me](https://jameshollway.com) if you want to contribute.
+if you encounter any bugs or if you have any feature requests.
+You can also vote on existing issues that you would like to see addressed soon.
+If you would like to contribute to the repo,
+please fork this repository and open a pull request when your changes are ready,
+or [get in touch with me](https://jameshollway.com) directly.
 
 <sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you have the latest MiKTeX version installed on you computer. From the MiKTeX console, you should regularly check for updates as "MiKTeX user mode", this will prevent issues when generating your pdf document from your Markdown template.    
 <sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.

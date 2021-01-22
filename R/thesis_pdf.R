@@ -32,17 +32,19 @@ thesis_pdf <- function(..., author){
 #' @param ... Instructions passed to the function from a correctly specified .Rmd document
 #' @param author The surname of the author, passed to the function by a correctly specified .Rmd document
 #' @param chapter The chapter number (or title) of the dissertation, passed to the function by a correctly specified .Rmd document
+#' @param in_context Whether to embed the chapter in the existing table of contents for the thesis.
+#' By default FALSE.
 #' @importFrom bookdown preview_chapter
 #' @importFrom rmarkdown pdf_document
-#' @export
-#'
+#' @import crayon
 #' @return A modified \code{pdf_document} based on the IHEID Thesis LaTeX
 #'   template
 #' @examples
 #' \dontrun{
 #' knit: iheiddown::chapter_pdf
 #' }
-chapter_pdf <- function(..., author, chapter, in_context){
+#' @export
+chapter_pdf <- function(..., author, chapter, in_context = FALSE){
   
   if(in_context){
     bookdown::preview_chapter(...,

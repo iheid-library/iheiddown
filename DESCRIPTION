@@ -1,29 +1,34 @@
 Package: iheiddown
 Title: A package for writing IHEID documents in RMarkdown
-Date: 2020-12-19
-Version: 0.7.4
+Date: 2021-01-22
+Version: 0.8.0
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
            role = c("aut", "cre"),
            email = "james.hollway@graduateinstitute.ch",
            comment = c(ORCID = "0000-0002-8361-9647")))
+URL: https://github.com/jhollway/iheiddown
+BugReports: https://github.com/jhollway/iheiddown/issues
+Depends: R (>= 3.5.0)
 Description: This package supports writing dissertations, theses, and syllabi
     according to the Graduate Institute of International and Development Studies 
     regulations.
-License: MIT
+License: MIT + file LICENSE
 Imports: 
     bookdown,
     tidyverse,
     roxygen2,
     covr,
     ggplot2,
-    crayon,
-    rmarkdown
+    rmarkdown,
+    xaringan,
+    xaringanExtra,
+    crayon
 Remotes: crsh/citr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat, kableExtra, ggantrify
+    testthat, kableExtra, ganttrify
