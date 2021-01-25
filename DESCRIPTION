@@ -23,9 +23,10 @@ Imports:
     ggplot2,
     rmarkdown,
     xaringan,
-    xaringanExtra,
     crayon
-Remotes: crsh/citr
+Remotes: 
+    crsh/citr,
+    gadenbuie/xaringanExtra
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
