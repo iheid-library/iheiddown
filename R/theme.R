@@ -26,7 +26,7 @@ theme_iheid <- function(){
     #This leaves the caption text element empty, because it is set elsewhere in the finalise plot function
     
     #Legend format
-    #This sets the position and alignment of the legend, removes a title and backround for it and sets the requirements for any text within the legend. The legend may often need some more manual tweaking when it comes to its exact position based on the plot coordinates.
+    #This sets the position and alignment of the legend, removes a title and background for it and sets the requirements for any text within the legend. The legend may often need some more manual tweaking when it comes to its exact position based on the plot coordinates.
     legend.position = "top",
     legend.text.align = 0,
     legend.background = ggplot2::element_blank(),
