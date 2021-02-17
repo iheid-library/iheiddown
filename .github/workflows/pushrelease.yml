@@ -33,13 +33,13 @@ jobs:
           r-version: ${{ matrix.config.r }}
       - uses: r-lib/actions/setup-pandoc@master
 
-#      - name: Setup tinytex
-#        uses: r-lib/actions/setup-tinytex@master
+     - name: Setup tinytex
+       uses: r-lib/actions/setup-tinytex@master
 
-#      - name: Setup pandoc
-#        uses: r-lib/actions/setup-pandoc@v1
-#        with:
-#          pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
+     - name: Setup pandoc
+       uses: r-lib/actions/setup-pandoc@v1
+       with:
+         pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
 
       - name: Query dependencies
         run: |
@@ -86,6 +86,10 @@ jobs:
         with:
           name: ${{ matrix.config.asset_name }}
           path: build/
+      
+      - name: Render output samples
+        if: runner.os == 'Windows' # Only run on Linux is enough
+        run: Rscript R/_render.R
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
