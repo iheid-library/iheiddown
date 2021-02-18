@@ -16,7 +16,7 @@ output: github_document
 
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
-Institut de hautes ?tudes internationales et du d?veloppement (IHEID)
+Institut de Hautes Etudes Internationales et du Développement (IHEID)
 in (R) markdown.
 
 The main use case for `{iheiddown}` is for writing
