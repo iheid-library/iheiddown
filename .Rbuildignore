@@ -1,3 +1,6 @@
+^.github$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^working$
+^R\_render.R

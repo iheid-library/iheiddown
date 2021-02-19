@@ -1,8 +1,8 @@
 on:
   push:
-    branches: 
+    branches:
       - main
-      
+
 name: Binary creation
 
 jobs:
@@ -22,24 +22,15 @@ jobs:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        
+
       - name: Setup R
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
-      - uses: r-lib/actions/setup-pandoc@master
-        
-#      - name: Setup tinytex
-#        uses: r-lib/actions/setup-tinytex@master
-
-#      - name: Setup pandoc
-#        uses: r-lib/actions/setup-pandoc@v1
-#        with:
-#          pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.      
 
       - name: Query dependencies
         run: |
@@ -80,16 +71,54 @@ jobs:
           dir.create("build")
           file.copy(binary, "build")
         shell: Rscript {0}
-    
+
       - name: Save binary artifact
         uses: actions/upload-artifact@v1
         with:
           name: ${{ matrix.config.asset_name }}
           path: build/
-          
+
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
-          
+        
+  render:
+    name: Update Thesis Example and README files
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - name: Setup tinytex
+        uses: r-lib/actions/setup-tinytex@master
+
+      - name: Setup pandoc
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+         pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
+
+      - name: install required packages
+        run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
+        
+      - name: install iheiddown package
+        run: Rscript -e 'remotes::install_github("jhollway/iheiddown")'
+
+      - name: render README
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+        
+      - name: commit rendered README
+        run: |
+          git add README.md
+          git commit -m "Re-build README.md" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
+        
+      - name: Render output samples
+        run: Rscript R/_render.R
+        
+      - name: commit rendered Thesis Example
+        run: |
+          git add inst/rmarkdown/templates/thesis/skeleton/versions/IHEIDThesisExample.pdf
+          git commit -m "Re-build Thesis Example" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
+        
+
   release:
     name: Bump version and release
     needs: build
@@ -119,15 +148,15 @@ jobs:
           release_name: Release ${{ steps.newtag.outputs.tag }}
           draft: false
           prerelease: false
-          
+
       - name: Download binaries
         uses: actions/download-artifact@v2
-        
+
       - name: Display structure of downloaded files
         run: ls -R
 
       - name: Rename Mac release
-        run: mv ./macOS/*.tgz iheiddown_macOS.tgz 
+        run: mv ./macOS/*.tgz iheiddown_macOS.tgz
 
       - name: Upload Mac binary
         id: upload-mac
@@ -141,7 +170,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Rename Linux release
-        run: mv ./linuxOS/*.tar.gz iheiddown_linuxOS.tar.gz 
+        run: mv ./linuxOS/*.tar.gz iheiddown_linuxOS.tar.gz
 
       - name: Upload Linux binary
         id: upload-lin
@@ -155,7 +184,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Rename Windows release
-        run: mv ./winOS/*.zip iheiddown_winOS.zip 
+        run: mv ./winOS/*.zip iheiddown_winOS.zip
 
       - name: Upload Windows binary
         id: upload-win
@@ -167,4 +196,3 @@ jobs:
           asset_path: iheiddown_winOS.zip
           asset_name: iheiddown_winOS.zip
           asset_content_type: application/zip
-          

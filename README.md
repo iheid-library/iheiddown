@@ -1,141 +1,160 @@
-# iheiddown <img src="inst/iheiddown.png" align="right" width="150"/>
+
+# Iheiddown <img src="man/figures/iheiddown.png" align="right" width="220"/>
 
 <!-- badges: start -->
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
-![GitHub Release Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
-![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
+
+![GitHub release (latest by
+date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
+![GitHub Release
+Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
+![GitHub
+issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
 <!-- [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown) -->
-[![Codecov test coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=main)
+[![Codecov test
+coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main)](https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
 `{iheiddown}` is a package that provides templates for writing documents
-in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
-Institut de hautes études internationales et du développement (IHEID)
-in (R) markdown.
+in styles consistent with the Graduate Institute of International and
+Development Studies in Geneva/ Institut de hautes ?tudes internationales
+et du d?veloppement (IHEID) in (R) markdown.
 
-The main use case for `{iheiddown}` is for writing
-a **Masters or PhD Dissertation at IHEID**,
-as it offers a user-friendly, simple, and straightforward way
-to write a well-formatted and consistent dissertation
-that weaves together argument, evidence, and interpretation.
+The main use case for `{iheiddown}` is for writing a **Masters or PhD
+Dissertation at IHEID**, as it offers a user-friendly, simple, and
+straightforward way to write a well-formatted and consistent
+dissertation that weaves together argument, evidence, and
+interpretation.
 
 ## Features
 
-The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
-which offers versus common word processors: 
-- less prone to corruption or crashing
-- more internal consistency
-- ensured consistency with the IHEID dissertation and other guidelines, e.g. dedication, abstract, abbreviations, 
-tables of contents, figures, and tables
-- automatic figure and table referencing
-- automatic compilation of your references and bibliography (under different styles)
-- compilation chapter-by-chapter (for sending to your supervisor) or whole dissertation (for submission)
-- cross-referencing
-- smaller files
-- automatic versioning
-- and much more!
+The package is built upon the [IHEID LaTeX dissertation
+template](https://github.com/jhollway/iheidmytex), which offers versus
+common word processors: - less prone to corruption or crashing - more
+internal consistency - ensured consistency with the IHEID dissertation
+and other guidelines, e.g. dedication, abstract, abbreviations, tables
+of contents, figures, and tables - automatic figure and table
+referencing - automatic compilation of your references and bibliography
+(under different styles) - compilation chapter-by-chapter (for sending
+to your supervisor) or whole dissertation (for submission) -
+cross-referencing - smaller files - automatic versioning - and much
+more!
 
-Though you may have never had problems using Word in the past, 
-the size and structure of most theses tax Word's capabilities. 
+Though you may have never had problems using Word in the past, the size
+and structure of most theses tax Word’s capabilities.
 
-However, `{iheiddown}` helps you avoid the need to (learn how to) write in LaTeX.
-LaTeX can be daunting for first time users, 
-and many users often feel it would only pay off if they were writing very complex dissertations.
-`{iheiddown}` allows students to write their dissertations in _RMarkdown_.
-[_Markdown_](https://www.markdownguide.org) is a simple and easy-to-use way to 'markup' parts of plain text as headings, **bold** or *italics*
-(and much more) in ways that remain very readable and thus editable as you write.
-`{iheiddown}`, R, and LaTeX do the work to turn this into a beautiful dissertation.
-You write in minimally marked-up plan text and you get a correctly-formatted dissertation out at the end.
+However, `{iheiddown}` helps you avoid the need to (learn how to) write
+in LaTeX. LaTeX can be daunting for first time users, and many users
+often feel it would only pay off if they were writing very complex
+dissertations. `{iheiddown}` allows students to write their
+dissertations in *RMarkdown*.
+[*Markdown*](https://www.markdownguide.org) is a simple and easy-to-use
+way to ‘markup’ parts of plain text as headings, **bold** or *italics*
+(and much more) in ways that remain very readable and thus editable as
+you write. `{iheiddown}`, R, and LaTeX do the work to turn this into a
+beautiful dissertation. You write in minimally marked-up plan text and
+you get a correctly-formatted dissertation out at the end.
 
-But wait, there's more!
-Because `{iheiddown}` is an **R** package,
-it especially shines for those who are analysing data.
-[R](https://www.r-project.org) is a *free* statistical programme and language 
-that has a *huge* range of packages available for most current methods of analysis and visualisation.
-[RStudio](https://rstudio.com) is a typical frontend that makes working in **R**
-and especially with `{iheiddown}` easy.
-So though `{iheiddown}` is especially attractive to those writing dissertations with many tables and figures,
-the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
+But wait, there’s more! Because `{iheiddown}` is an **R** package, it
+especially shines for those who are analysing data.
+[R](https://www.r-project.org) is a *free* statistical programme and
+language that has a *huge* range of packages available for most current
+methods of analysis and visualisation. [RStudio](https://rstudio.com) is
+a typical frontend that makes working in **R** and especially with
+`{iheiddown}` easy. So though `{iheiddown}` is especially attractive to
+those writing dissertations with many tables and figures, the
+user-friendly nature and pretty output should make it of great benefit
+to nearly anyone writing a thesis project.
 
 You can see an example of the kind of dissertation output you can expect
 [here](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/jhollway/iheiddown/main/inst/rmarkdown/templates/thesis/skeleton/versions/IHEIDThesisExample.pdf).
 
+Not quite done yet, there is even more! With release 0.8.0 of the
+`{iheiddown}` package, you are now able to create beautiful IHEID-themed
+presentations to make your work shine during your presentations. This
+feature is based on the great `{xaringan}` package available
+[here](https://github.com/yihui/xaringan).
+
 ## Installing iheiddown
 
-1. Install [R](https://cran.rstudio.com), [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and [LaTeX](https://www.latex-project.org/get/), or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup> on your system.<sup>[2](#myfootnote2)</sup>
-1. Open RStudio and click on the `Packages` tab of the bottom right pane of the window (by default).
-Click `Install` at the top left of that tab and type "remotes" into the text box. Hit enter.
-1. Next type (or copy) `remotes::install_github("jhollway/iheiddown")` into the prompt in the `Console` tab in the bottom left pane. Hit enter.
+1.  Install [R](https://cran.rstudio.com), [RStudio version 1.2 or
+    higher](https://www.rstudio.com/products/rstudio/download/#download),
+    and [LaTeX](https://www.latex-project.org/get/), or
+    [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup>
+    on your system.<sup>[2](#myfootnote2)</sup>
+2.  Open RStudio and click on the `Packages` tab of the bottom right
+    pane of the window (by default). Click `Install` at the top left of
+    that tab and type “remotes” into the text box. Hit enter.
+3.  Next type (or copy) `remotes::install_github("jhollway/iheiddown")`
+    into the prompt in the `Console` tab in the bottom left pane. Hit
+    enter.
 
-That's it! `iheiddown` is now installed and ready to go.
+That’s it! `iheiddown` is now installed and ready to go.
 
-Note that you can always rerun `remotes::install_github("jhollway/iheiddown")` -- if there's a newer version, it'll install that.
+Note that you can always rerun
+`remotes::install_github("jhollway/iheiddown")` – if there’s a newer
+version, it’ll install that.
 
 ## Getting started
 
-`iheiddown` sets up a thesis template that you can then modify for your dissertation.
-It's very easy to get started.
+`iheiddown` sets up a thesis template that you can then modify for your
+dissertation. It’s very easy to get started.
 
-1. Open RStudio (if it is not already).
-1. Click the new document symbol at the very top left and choose `R Markdown...`. 
-1. Then from the options on the left `From Template`. 
-1. Scroll down through the options on the right until you find `Thesis   {iheiddown}`.
-1. Name your thesis project by using the following format: 00-NameOfYourProject (for example: 00-MyThesisTitle).
-1. Select where the project should be saved on your harddrive.
+1.  Open RStudio (if it is not already).
+2.  Click the new document symbol at the very top left and choose
+    `R Markdown...`.
+3.  Then from the options on the left `From Template`.
+4.  Scroll down through the options on the right until you find
+    `Thesis   {iheiddown}`.
+5.  Name your thesis project by using the following format:
+    00-NameOfYourProject (for example: 00-MyThesisTitle).
+6.  Select where the project should be saved on your harddrive.
 
 Congratulations! You have now set up a thesis project.
 
 ## Writing your thesis
 
-When you create the template for the first time, 
-the main document you have created (e.g. 'Untitled.Rmd') will automatically open in RStudio.
-In this document you can enter in key details about yourself and your dissertation
-between the \-\-\- and \-\-\-.
-Note that any text after hashtags, \#, are comments only and are not computed. 
+When you create the template for the first time, the main document you
+have created (e.g. ‘Untitled.Rmd’) will automatically open in RStudio.
+In this document you can enter in key details about yourself and your
+dissertation between the --- and ---. Note that any text after hashtags,
+\#, are comments only and are not computed.
 
-The \#metadata\# section should be fairly self-explanatory.
-The \#front matter\# section includes pointers to various front matter elements,
-such as dedications, acknowledgements (thank you), abbreviations, and your abstract.
-Note that it points to files in a folder created by the template 
-called "front-and-back-matter/".
-If you look in this folder, you will find placeholders for your own
-abstract and acknowledgements.
-You can simply edit these and the 
-edited versions will be used when the thesis is compiled.
-This section also includes various options for 
+The \#metadata\# section should be fairly self-explanatory. The \#front
+matter\# section includes pointers to various front matter elements,
+such as dedications, acknowledgements (thank you), abbreviations, and
+your abstract. Note that it points to files in a folder created by the
+template called “front-and-back-matter/”. If you look in this folder,
+you will find placeholders for your own abstract and acknowledgements.
+You can simply edit these and the edited versions will be used when the
+thesis is compiled. This section also includes various options for
 toggling lists of figures, tables, etc, in the final version.
 
 The \#bibliography\# section points to where the bibtex file (.bib) with
-all your bibliographic information resides.
-You can also just call your .bib file "references.bib" and replace the
-template version in the bib/ folder.
-Lastly, the \#formatting\# section offers options for changing the format
-ready for printing.
-You can mostly ignore the \#output\# section, for now.
+all your bibliographic information resides. You can also just call your
+.bib file “references.bib” and replace the template version in the bib/
+folder. Lastly, the \#formatting\# section offers options for changing
+the format ready for printing. You can mostly ignore the \#output\#
+section, for now.
 
-Below the second \-\-\- is some example text that will become 
-the preface of the thesis when it is compiled.
-So where is the real content of the dissertation?
+Below the second --- is some example text that will become the preface
+of the thesis when it is compiled. So where is the real content of the
+dissertation?
 
-Just as the abstract and acknowledgements, etc,
-were kept in a "front-matter/" folder,
-so too are the individual chapters of your dissertation
-kept in a "chapters/" folder.
-The placeholder text is designed to take you through the
-basic syntax and more complicated options available when
-using _RMarkdown_,
-but once you feel comfortable and have created your own
-examples, feel free to delete the placeholder text
-(or even the files) and create your own in its place.
+Just as the abstract and acknowledgements, etc, were kept in a
+“front-matter/” folder, so too are the individual chapters of your
+dissertation kept in a “chapters/” folder. The placeholder text is
+designed to take you through the basic syntax and more complicated
+options available when using *RMarkdown*, but once you feel comfortable
+and have created your own examples, feel free to delete the placeholder
+text (or even the files) and create your own in its place.
 
-_Markdown_ is easy to read as well as write,
-so there's no need for endless compilation.
-But when it comes time to compile the document,
-just turn to your main .Rmd file ('Untitled.Rmd' in our case)
-and either click the `Knit` button at the top
-or use the keyboard shortcut `Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
+*Markdown* is easy to read as well as write, so there’s no need for
+endless compilation. But when it comes time to compile the document,
+just turn to your main .Rmd file (‘Untitled.Rmd’ in our case) and either
+click the `Knit` button at the top or use the keyboard shortcut
+`Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
 
 <!-- 
 ## Knitting individual chapters
@@ -155,21 +174,35 @@ output:
 This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
 -->
 
-## Output 
+## Output
 
-All your front matter and chapters of your thesis will be compiled
-and the complete product can be found under the project folder "versions/".
-A date is automatically appended to the filename to assist with tracking versions.
+All your front matter and chapters of your thesis will be compiled and
+the complete product can be found under the project folder “versions/”.
+A date is automatically appended to the filename to assist with tracking
+versions.
 
-The PDF version is fully functional. 
-The word, gitbook and epub versions might be developed at a later time.
+The PDF version is fully functional. The word, gitbook and epub versions
+might be developed at a later time.
 
 ## Feedback
 
-Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this repo
-if you encounter any bugs or if you have any suggestions,
-or [get in touch with me](https://jameshollway.com) if you want to contribute.
+Please [raise an issue](https://github.com/jhollway/iheiddown/issues)
+for this repo if you encounter any bugs or if you have any feature
+requests. You can also vote on existing issues that you would like to
+see addressed soon. If you would like to contribute to the repo, please
+fork this repository and open a pull request when your changes are
+ready, or [get in touch with me](https://jameshollway.com) directly.
 
-<sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you have the latest MiKTeX version installed on you computer. From the MiKTeX console, you should regularly check for updates as "MiKTeX user mode", this will prevent issues when generating your pdf document from your Markdown template.    
-<sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons, Yihui Xie's [TinyTeX](https://yihui.name/tinytex/) is causing trouble. Try `tinytex::uninstall_tinytex()` and install a local copy. Unfortunately, full LaTeX installations are *large*.
+<sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you
+have the latest MiKTeX version installed on you computer. From the
+MiKTeX console, you should regularly check for updates as “MiKTeX user
+mode”, this will prevent issues when generating your pdf document from
+your Markdown template.  
+<sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons,
+Yihui Xie’s [TinyTeX](https://yihui.name/tinytex/) is causing trouble.
+Try `tinytex::uninstall_tinytex()` and install a local copy.
+Unfortunately, full LaTeX installations are *large*.
 
+## Timeline of the Releases:
+
+![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->

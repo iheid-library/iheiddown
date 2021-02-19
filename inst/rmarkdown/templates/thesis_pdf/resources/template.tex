@@ -37,9 +37,10 @@ $if(draft)$
 $endif$
 
 %%%%% FONTS
+\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
+\RequirePackage{droidserif} % Droid Serif font for body
 \RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
 %\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
-\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
 \RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
 % For the headings we will use Helvetica
 \RequirePackage{helvet}
@@ -48,11 +49,11 @@ $endif$
 \usepackage{sectsty}
 \DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
 \allsectionsfont{\sffamily}
-% For the main text and equations we will use Baskerville and Palatino
-\RequirePackage{mathpazo}
-\RequirePackage{baskervald}
+% For the main text and equations we will use Baskerville and Palatino (Old version)
+% \RequirePackage{mathpazo}
+% \RequirePackage{baskervald}
 % For formatting code or package names, we will use Lucida Console
-\RequirePackage{zi4}
+\RequirePackage{zi4} %Lucida console TypeWriter Font
 % Enable strikethrough
 \usepackage[normalem]{ulem}
 
@@ -82,7 +83,7 @@ $highlighting-macros$
 }
 $endif$
 
-%UL 2 Dec 2018 reduce whitespace around verbatim environments
+%UL 2 Dec 2018 reduce whitespace around verbatim (code) environments
 \usepackage{etoolbox}
 \makeatletter
 \preto{\@verbatim}{\topsep=0pt \partopsep=0pt }

@@ -2,7 +2,7 @@ on:
   pull_request:
     branches:
       - main
-      
+
 name: Binary creation
 
 jobs:
@@ -22,15 +22,15 @@ jobs:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      
+
     steps:
       - uses: actions/checkout@v2
-        
+
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
       - uses: r-lib/actions/setup-pandoc@master
-        
+
       - name: Query dependencies
         run: |
           install.packages('remotes')
@@ -70,6 +70,6 @@ jobs:
           dir.create("build")
           file.copy(binary, "build")
         shell: Rscript {0}
-    
+
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"

@@ -1,3 +1,20 @@
+# iheiddown 0.8.0
+
+## Presentations
+
+- Closed #23 by adding a `{xaringan}` presentation template with a custom IHEID CSS file
+  - Please use `xaringan::summon_remark()` to install required libs locally if working offline
+
+## Thesis
+
+- Closed #27 with a new selection of fonts for thesis: Helvetica, Droid Serif, Lucida Console
+- Closed #53 by saving all Markdown files with the `WINDOWS-1252` default encoding
+  - Please use `WINDOWS-1252` as the default encoding on Windows machines instead of Unicode
+- Closed #55 by adding thesis pdf artifacts automatically to each release via a new `_render.R` file (included in the buildignore)
+
+## Miscellaneous:
+- Added a new `README.Rmd` file with an interactive plot that visualizes releases of the package on a timeline
+
 # iheiddown 0.7.4
 
 ## Package
