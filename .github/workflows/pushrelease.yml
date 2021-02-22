@@ -84,8 +84,18 @@ jobs:
   render:
     name: Update Thesis Example and README files
     needs: build
-    runs-on: windows-latest
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+        
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+      
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
 
@@ -94,11 +104,13 @@ jobs:
         with:
          pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
 
-      - name: install required packages
-        run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
-        
-      - name: install iheiddown package
-        run: Rscript -e 'remotes::install_github("jhollway/iheiddown")'
+      - name: Install rmarkdown, remotes, and the local package
+        run: |
+          install.packages("remotes")
+          remotes::install_local(".")
+          remotes::install_cran("rmarkdown")
+          remotes::install_github("globalgov/qData")
+        shell: Rscript {0}
 
       - name: render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
