@@ -2,7 +2,7 @@
 
 # Automatic rendering of thesis_pdf will run on a Windows VM
 #Step 1 Create an example project
-rmarkdown::draft(file = "00-Example", template = "thesis",
+rmarkdown::draft(file = "00-Example", template = "Thesis",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("00-Example") # Since we can only knit from the WD
 #Step 2 render the example project and replace in template folder
