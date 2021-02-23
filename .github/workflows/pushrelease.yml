@@ -31,6 +31,15 @@ jobs:
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
+          
+      - name: Setup tinytex
+        uses: r-lib/actions/setup-tinytex@master
+upload as artifact and then download 
+
+      - name: Setup pandoc
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+         pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
 
       - name: Query dependencies
         run: |
@@ -77,59 +86,22 @@ jobs:
         with:
           name: ${{ matrix.config.asset_name }}
           path: build/
+          
+      - name: Render output samples
+        if: runner.os == 'macOS-latest'
+        run: Rscript R/_render.R
+        
+      - name: Save output samples artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Thesis_sample_artifact
+          path: 00-Example/versions/IHEIDThesisExample.pdf
+          
+      - name: Clean-up unecessary files
+        run: Rscript -e 'unlink("00-Example", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
-        
-  render:
-    name: Update Thesis Example and README files
-    needs: build
-    runs-on: macOS-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-        
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v1
-      
-      - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@master
-
-      - name: Setup pandoc
-        uses: r-lib/actions/setup-pandoc@v1
-        with:
-         pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
-
-      - name: Install rmarkdown, remotes, and the local package
-        run: |
-          install.packages("remotes")
-          remotes::install_local(".")
-          remotes::install_cran("rmarkdown")
-          remotes::install_github("globalgov/qData")
-        shell: Rscript {0}
-
-      - name: render README
-        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
-        
-      - name: commit rendered README
-        run: |
-          git add README.md
-          git commit -m "Re-build README.md" || echo "No changes to commit"
-          git push origin master || echo "No changes to commit"
-        
-      - name: Render output samples
-        run: Rscript R/_render.R
-        
-      - name: commit rendered Thesis Example
-        run: |
-          git add inst/rmarkdown/templates/thesis/skeleton/versions/IHEIDThesisExample.pdf
-          git commit -m "Re-build Thesis Example" || echo "No changes to commit"
-          git push origin master || echo "No changes to commit"
-        
 
   release:
     name: Bump version and release
@@ -140,6 +112,7 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: '0'
+          
       - name: Bump version and push tag
         id: newtag
         uses: anothrNick/github-tag-action@1.17.2
@@ -148,6 +121,16 @@ jobs:
           WITH_V: true
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: main
+          
+      - name: render README
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+        
+      - name: commit rendered README
+        run: |
+          git add README.md
+          git commit -m "Re-build README.md" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
+        
       - name: Checkout two
         uses: actions/checkout@v2
       - name: Create Release
@@ -166,6 +149,18 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -R
+      
+      - name: Upload Thesis Example Asset
+        id: upload-thesis-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: IHEIDThesisExample.pdf
+          asset_name: IHEIDThesisExample.pdf
+          asset_content_type: application/pdf
+          
 
       - name: Rename Mac release
         run: mv ./macOS/*.tgz iheiddown_macOS.tgz
