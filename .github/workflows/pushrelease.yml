@@ -87,18 +87,18 @@ jobs:
           path: build/
 
       - name: Render output samples
-        if: runner.os == 'macOS-latest'
+        if: runner.os == 'macOS'
         run: Rscript R/_render.R
 
       - name: Save output samples artifact
-        if: runner.os == 'macOS-latest'
+        if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
         with:
           name: IHEIDThesisExample.pdf
           path: 00-Example/versions/IHEIDThesisExample.pdf
 
       - name: Clean-up unnecessary files
-        if: runner.os == 'macOS-latest'
+        if: runner.os == 'macOS'
         run: Rscript -e 'unlink("00-Example", recursive = TRUE)'
 
       - name: Calculate code coverage
@@ -208,9 +208,13 @@ jobs:
       # install packages needed
       - name: install required packages
         run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
+        
+      # Install qData
+      - name: install qData
+        run: Rscript -e 'remotes::install_github("globalgov/qData")'
 
       # install qData
-      - name: install qData package
+      - name: install IHEIDDOWN package
         run: Rscript -e 'remotes::install_github("jhollway/iheiddown")'
 
       # Render README.md using rmarkdown
