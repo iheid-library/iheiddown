@@ -86,18 +86,20 @@ upload as artifact and then download
         with:
           name: ${{ matrix.config.asset_name }}
           path: build/
-          
+
       - name: Render output samples
         if: runner.os == 'macOS-latest'
         run: Rscript R/_render.R
-        
+
       - name: Save output samples artifact
+        if: runner.os == 'macOS-latest'
         uses: actions/upload-artifact@v2
         with:
-          name: Thesis_sample_artifact
+          name: IHEIDThesisExample.pdf
           path: 00-Example/versions/IHEIDThesisExample.pdf
-          
-      - name: Clean-up unecessary files
+
+      - name: Clean-up unnecessary files
+        if: runner.os == 'macOS-latest'
         run: Rscript -e 'unlink("00-Example", recursive = TRUE)'
 
       - name: Calculate code coverage
@@ -112,7 +114,7 @@ upload as artifact and then download
         uses: actions/checkout@master
         with:
           fetch-depth: '0'
-          
+
       - name: Bump version and push tag
         id: newtag
         uses: anothrNick/github-tag-action@1.17.2
@@ -121,15 +123,6 @@ upload as artifact and then download
           WITH_V: true
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: main
-          
-      - name: render README
-        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
-        
-      - name: commit rendered README
-        run: |
-          git add README.md
-          git commit -m "Re-build README.md" || echo "No changes to commit"
-          git push origin master || echo "No changes to commit"
 
       - name: Checkout two
         uses: actions/checkout@v2
@@ -202,3 +195,32 @@ upload as artifact and then download
           asset_path: iheiddown_winOS.zip
           asset_name: iheiddown_winOS.zip
           asset_content_type: application/zip
+
+  render:
+    name: Update README.md and push
+    needs: build
+    runs-on: macOS-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      # install packages needed
+      - name: install required packages
+        run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
+
+      # install qData
+      - name: install qData package
+        run: Rscript -e 'remotes::install_github("jhollway/iheiddown")'
+
+      # Render README.md using rmarkdown
+      - name: render README
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+
+      - name: commit rendered README
+        run: |
+          git add README.md
+          git commit -m "Re-build README.md" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
+
