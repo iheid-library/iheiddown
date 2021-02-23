@@ -16,7 +16,7 @@ output: github_document
 
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
-Institut de Hautes Etudes Internationales et du Développement (IHEID)
+Institut de Hautes Etudes Internationales et du Developpement (IHEID)
 in (R) markdown.
 
 The main use case for `{iheiddown}` is for writing
@@ -28,7 +28,8 @@ that weaves together argument, evidence, and interpretation.
 ## Features
 
 The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
-which offers versus common word processors: 
+which offers versus common word processors:
+
 - less prone to corruption or crashing
 - more internal consistency
 - ensured consistency with the IHEID dissertation and other guidelines, e.g. dedication, abstract, abbreviations, 
