@@ -97,6 +97,7 @@ jobs:
 
       # Install ganttrify
       - name: install ganttrify
+        if: runner.os == 'macOS'
         run: Rscript -e 'remotes::install_github("giocomai/ganttrify")'
 
       - name: Render output samples
