@@ -163,7 +163,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: IHEIDThesisExample.pdf
+          asset_path: ./IHEIDThesisExample.pdf
           asset_name: IHEIDThesisExample.pdf
           asset_content_type: application/pdf
 
@@ -211,8 +211,8 @@ jobs:
 
   render:
     name: Update README.md and push
-    needs: build
-    runs-on: macOS-latest
+    needs: [build, release]
+    runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -240,4 +240,3 @@ jobs:
           git add README.md
           git commit -m "Re-build README.md" || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
-
