@@ -90,6 +90,15 @@ jobs:
         if: runner.os == 'macOS'
         run: R CMD INSTALL .
 
+      # install packages needed
+      - name: install required packages
+        if: runner.os == 'macOS'
+        run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
+
+      # Install ganttrify
+      - name: install ganttrify
+        run: Rscript -e 'remotes::install_github("giocomai/ganttrify")'
+
       - name: Render output samples
         if: runner.os == 'macOS'
         run: Rscript R/_render.R
