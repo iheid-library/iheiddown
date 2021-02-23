@@ -34,7 +34,6 @@ jobs:
           
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
-upload as artifact and then download
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v1
