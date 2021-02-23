@@ -86,6 +86,10 @@ jobs:
           name: ${{ matrix.config.asset_name }}
           path: build/
 
+      - name: Install package
+        if: runner.os == 'macOS'
+        run: R CMD INSTALL .
+
       - name: Render output samples
         if: runner.os == 'macOS'
         run: Rscript R/_render.R
