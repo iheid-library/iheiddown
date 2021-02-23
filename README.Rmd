@@ -108,11 +108,11 @@ Note that any text after hashtags, \#, are comments only and are not computed.
 
 The \#metadata\# section should be fairly self-explanatory.
 The \#front matter\# section includes pointers to various front matter elements,
-such as dedications, acknowledgements (thank you), abbreviations, and your abstract.
+such as dedications, acknowledgments (thank you), abbreviations, and your abstract.
 Note that it points to files in a folder created by the template 
 called "front-and-back-matter/".
 If you look in this folder, you will find placeholders for your own
-abstract and acknowledgements.
+abstract and acknowledgments.
 You can simply edit these and the 
 edited versions will be used when the thesis is compiled.
 This section also includes various options for 
