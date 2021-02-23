@@ -16,7 +16,7 @@ output: github_document
 
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
-Institut de Hautes Etudes Internationales et du Développement (IHEID)
+Institut de Hautes Etudes Internationales et du Developpement (IHEID)
 in (R) markdown.
 
 The main use case for `{iheiddown}` is for writing
@@ -28,7 +28,8 @@ that weaves together argument, evidence, and interpretation.
 ## Features
 
 The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
-which offers versus common word processors: 
+which offers versus common word processors:
+
 - less prone to corruption or crashing
 - more internal consistency
 - ensured consistency with the IHEID dissertation and other guidelines, e.g. dedication, abstract, abbreviations, 
@@ -63,12 +64,14 @@ and especially with `{iheiddown}` easy.
 So though `{iheiddown}` is especially attractive to those writing dissertations with many tables and figures,
 the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.
 
-You can see an example of the kind of dissertation output you can expect
-[here](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/jhollway/iheiddown/main/inst/rmarkdown/templates/thesis/skeleton/versions/IHEIDThesisExample.pdf).
+You can see an example of the kind of dissertation output you can expect attached to the latest release.
+
+## Additional features
 
 Not quite done yet, there is even more!
-With release 0.8.0 of the `{iheiddown}` package, you are now able to create beautiful IHEID-themed presentations to make your
-work shine during your presentations. This feature is based on the great `{xaringan}` package available [here](https://github.com/yihui/xaringan).
+
+- Create IHEID-styled syllabi
+- Create IHEID-styled presentations based on the great [`{xaringan}`](https://github.com/yihui/xaringan) package.
 
 ## Installing iheiddown
 
