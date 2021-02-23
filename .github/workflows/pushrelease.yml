@@ -34,7 +34,7 @@ jobs:
           
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
-upload as artifact and then download 
+upload as artifact and then download
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v1
@@ -130,7 +130,7 @@ upload as artifact and then download
           git add README.md
           git commit -m "Re-build README.md" || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
-        
+
       - name: Checkout two
         uses: actions/checkout@v2
       - name: Create Release
@@ -149,7 +149,7 @@ upload as artifact and then download
 
       - name: Display structure of downloaded files
         run: ls -R
-      
+
       - name: Upload Thesis Example Asset
         id: upload-thesis-example
         uses: actions/upload-release-asset@v1.0.2
@@ -160,7 +160,6 @@ upload as artifact and then download
           asset_path: IHEIDThesisExample.pdf
           asset_name: IHEIDThesisExample.pdf
           asset_content_type: application/pdf
-          
 
       - name: Rename Mac release
         run: mv ./macOS/*.tgz iheiddown_macOS.tgz
