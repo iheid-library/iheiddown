@@ -223,10 +223,6 @@ jobs:
       - name: install required packages
         run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
         
-      # Install qData
-      - name: install qData
-        run: Rscript -e 'remotes::install_github("globalgov/qData")'
-
       # install qData
       - name: install IHEIDDOWN package
         run: Rscript -e 'remotes::install_github("jhollway/iheiddown")'
