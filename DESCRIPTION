@@ -1,6 +1,6 @@
 Package: iheiddown
 Title: A package for writing IHEID documents in RMarkdown
-Date: 2021-02-18
+Date: 2021-02-24
 Version: 0.8.0
 Authors@R: 
     c(person(given = "James",
@@ -23,7 +23,7 @@ Description: This package supports writing dissertations, theses, and syllabi
 License: MIT + file LICENSE
 Imports: 
     bookdown,
-    tidyverse,
+    dplyr,
     roxygen2,
     covr,
     ggplot2,
