@@ -109,7 +109,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: IHEIDThesisExample
-          path: 00-Example/versions/IHEIDThesisExample.pdf
+          path: 00-Example/versions/
 
       - name: Clean-up unnecessary files
         if: runner.os == 'macOS'
