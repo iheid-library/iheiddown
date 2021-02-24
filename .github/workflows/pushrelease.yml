@@ -221,12 +221,8 @@ jobs:
 
       # install packages needed
       - name: install required packages
-        run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
+        run: Rscript -e 'install.packages(c("rmarkdown"))'
         
-      # install qData
-      - name: install IHEIDDOWN package
-        run: Rscript -e 'remotes::install_github("jhollway/iheiddown")'
-
       # Render README.md using rmarkdown
       - name: render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
