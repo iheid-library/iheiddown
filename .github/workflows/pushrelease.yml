@@ -31,7 +31,7 @@ jobs:
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
-          
+
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
 

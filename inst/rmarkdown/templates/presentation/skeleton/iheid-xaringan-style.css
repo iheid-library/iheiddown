@@ -456,7 +456,7 @@ slides > slide {
   border-radius: 15px;
   margin: 0 0 15px;
   overflow: hidden;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px;
   width: 100%;
 }
 .content-box-blue { background-color: #F0F8FF; }
