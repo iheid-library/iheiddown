@@ -36,7 +36,7 @@ class: center, middle
 # it doesn't appear, because the include argument above is FALSE...
 options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
 knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
-old <- ggplot2::theme_set(theme_iheid())
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
 ```
 
 ---
