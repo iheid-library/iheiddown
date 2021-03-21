@@ -13,3 +13,4 @@ inst/rmarkdown/templates/thesis/skeleton/_bookdown_files/*
 pres/*
 00-Untitled/*
 working/
+inst/doc
