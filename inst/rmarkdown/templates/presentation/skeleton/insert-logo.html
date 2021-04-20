@@ -1,0 +1,38 @@
+<!-- 
+This script includes style information and a little JS macro to implement
+custom logos on every slide but the ones with the following classes
+.title-slide, .inverse, .hide-logo. For the curious minds out there, this was
+sourced from this excellent blogpost: 
+https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/
+-->
+
+<style>
+.logo {
+  background-image: url(Logos/IHEID/Logo_IHEID_couleur.png); 
+  /* this can contain a weblink or an image saved in the logos folder */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* Use bottom, top, left, right to position the logo*/
+  bottom: -2.5em;
+  right: 1em;
+  width: 165px;
+  height: 192px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g. ':not(.inverse)'
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+  // Might be worth implementing the "inverse version" of the given logo
+</script>
