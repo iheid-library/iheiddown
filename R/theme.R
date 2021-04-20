@@ -7,8 +7,7 @@
 #' geom_point() + ggtitle("Example Plot") + theme_iheid()
 #' }
 #' @export
-theme_iheid <- function(){
-  font <- "sans"
+theme_iheid <- function(font = "sans"){
   
   ggplot2::theme(
     
