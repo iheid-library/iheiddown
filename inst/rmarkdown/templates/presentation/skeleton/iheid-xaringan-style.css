@@ -371,8 +371,29 @@ a {
    word-wrap: break-word;      /* IE */
 }
 
+/* Progressive slide controls from https://www.garrickadenbuie.com/blog/better-progressive-xaringan/?panelset2=slides3&panelset=slides */
+.highlight-last-item > ul > li, 
+.highlight-last-item > ol > li {
+  opacity: 0.5;
+}
+.highlight-last-item > ul > li:last-of-type,
+.highlight-last-item > ol > li:last-of-type {
+  opacity: 1;
+}
 
+/* Make the last element of the list bold instead of making the n-1 elements
+more transparent. Uncomment to use and add the class .bold-last-item to the
+beginning of the slide.*/
+/*
+.bold-last-item > ul > li:last-of-type,
+.bold-last-item > ol > li:last-of-type {
+  font-weight: bold;
+}
+*/
 
+/* Render only last code result*/
+.show-only-last-code-result pre + pre:not(:last-of-type) code[class="remark-code"] {
+    display: none;
 
 /******************
  * Slide scrolling

@@ -100,6 +100,52 @@ plot(iris)
 ```
 
 ---
+class: highlight-last-item
+
+## Add progressive lists
+
+Adding the class `highlight-last-item` allows you to highlight the last element
+of a progressive list.
+
+- First item
+
+--
+
+- Second item
+
+--
+
+-  For more options, see the `iheid-xaringan-style.css` file and search for
+"progressive slides". This feature was based on [this great article](https://www.garrickadenbuie.com/blog/better-progressive-xaringan/?panelset2=r-markdown3&panelset=r-markdown&panelset1=slides2).
+
+---
+class: show-only-last-code-result
+
+## Showing only the last code result
+
+Adding the class `show-only-last-code-result` allows you to render only the last
+code result.
+
+```{r}
+runif(5)
+```
+--
+
+```{r}
+rnorm(5)
+```
+--
+
+```{r}
+rbinom(5, 1, 0.5)
+```
+--
+
+```{r}
+rcauchy(5)
+```
+
+---
 class: center, middle
 ## Or you can highlight which section of your presentation you are up to...
 
