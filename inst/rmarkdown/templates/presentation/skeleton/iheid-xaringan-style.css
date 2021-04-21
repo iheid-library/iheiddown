@@ -722,3 +722,29 @@ blockquote, .blockquote {
 /* References: many customisations adapted from the examples here:
 https://github.com/yihui/xaringan/tree/master/inst/rmarkdown/templates/xaringan/resources
 */
+
+
+/* Logos */
+.with-logo::before {
+	content: '';
+	width: 110px;
+	height: 126px;
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.logo-iheid::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/Logo_IHEID_couleur.png);
+}
+.logo-cies::before {
+	background-image: url(https://github.com/rstudio/hex-stickers/raw/develop/inst/logos/logo_CIES_rvb.png);
+}
+.logo-ctei::before {
+	background-image: url(https://github.com/rstudio/hex-stickers/raw/develop/inst/logos/logo_CTEI_rvb.png);
+}
+.logo-ggc::before {
+	background-image: url(https://github.com/rstudio/hex-stickers/raw/develop/inst/logos/logo_GGC_RVB.png);
+}
+
