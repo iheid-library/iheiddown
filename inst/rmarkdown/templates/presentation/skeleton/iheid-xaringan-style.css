@@ -739,12 +739,35 @@ https://github.com/yihui/xaringan/tree/master/inst/rmarkdown/templates/xaringan/
 	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/Logo_IHEID_couleur.png);
 }
 .logo-cies::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/develop/inst/logos/logo_CIES_rvb.png);
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_CIES_rvb.png);
 }
 .logo-ctei::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/develop/inst/logos/logo_CTEI_rvb.png);
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_CTEI_rvb.png);
 }
 .logo-ggc::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/develop/inst/logos/logo_GGC_RVB.png);
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_GGC_RVB.png);
 }
-
+.logo-ahcd::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_AHCD_RVB.png);
+}
+.logo-ccdp::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_CCPD_rvb.png);
+}
+.logo-cfd::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_CFD_rvb.png);
+}
+.logo-gender::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_GENDER_RVB.png);
+}
+.logo-ghc::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_GHC_rvb.png);
+}
+.logo-gmc::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/logo_GMC_rvb.png);
+}
+.logo-iheid_BW::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/Logo_IHEID_nb.png);
+}
+.logo-iheid_white::before {
+	background-image: url(https://github.com/jhollway/iheiddown/raw/develop/inst/logos/Logo_IHEID_couleur_tx_blanc.png);
+}

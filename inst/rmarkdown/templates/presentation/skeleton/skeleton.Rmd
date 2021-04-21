@@ -24,8 +24,6 @@ output:
           <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
           </div>
         </div>`
-    includes:
-      after_body: insert-logo.html # Script to add a custom logo
 ---
 class: center, middle
 
