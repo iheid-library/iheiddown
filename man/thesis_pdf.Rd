@@ -9,7 +9,8 @@ thesis_pdf(..., author)
 \arguments{
 \item{...}{Instructions passed to the function from a correctly specified .Rmd document}
 
-\item{author}{The surname of the author, passed to the function by a correctly specified .Rmd document}
+\item{author}{The surname of the author,
+passed to the function by a correctly specified .Rmd document}
 }
 \value{
 A modified \code{pdf_document} based on the IHEID Thesis LaTeX
