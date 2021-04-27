@@ -161,7 +161,18 @@ class: left, middle
 ~ Some person]
 
 ---
+class: with-logo logo-iheid
 
+## Add a nice looking logo to your presentation 
+
+.pull-left[Adding a nice looking logo to your presentation is easy. Simply
+define the `with-logo` class alongside the class of the logo itself
+(`logo-iheid` in this case) on every slide you want the logo to appear.
+
+See [the presentation vignette](https://github.com/jhollway/iheiddown) for a
+list of the included logos.]
+
+---
 ## Add some beautiful tables !
 
 With the addition of the excellent [`{xaringan_columns}`](https://github.com/emilyriederer/xaringan_columns) macros by Emily
