@@ -37,11 +37,9 @@ class: center, middle
 options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
 knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
 old <- ggplot2::theme_set(iheiddown::theme_iheid())
-
-# Showcasing useful packages
-install.packages(icons) # Adds icons package
-icons::download_fontawesome() # Need to download icons before using them
 ```
+
+
 
 ---
 class: middle, inverse, iheid-red
@@ -125,7 +123,7 @@ of a progressive list.
 ---
 class: show-only-last-code-result
 
-## Showing only the last code result
+## Progressive code
 
 Adding the class `show-only-last-code-result` allows you to render only the last
 code result.
@@ -167,17 +165,29 @@ class: left, middle
 ---
 class: with-logo logo-iheid
 
-## Add a nice looking logo to your presentation 
+## Add a logo to your presentation 
 
-.pull-left[Adding a nice looking logo to your presentation is easy. Simply
-define the `with-logo` class alongside the class of the logo itself
+.pull-left[Adding a nice looking logo to your presentation is easy. Simply 
+define the `with-logo` class alongside the class of the logo itself 
 (`logo-iheid` in this case) on every slide you want the logo to appear.
 
 See [the presentation vignette](https://github.com/jhollway/iheiddown) for a
 list of the included logos.]
 
 ---
-## Add some beautiful tables !
+
+## Add Maps
+
+```{r, fig.height=4, fig.width=10, fig.align='center', echo=TRUE}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  setView(6.1435, 46.2210, zoom = 17)
+```
+
+---
+
+## Add some tables !
 
 With the addition of the excellent [`{xaringan_columns}`](https://github.com/emilyriederer/xaringan_columns) macros by Emily
 Riederer, you can create nice looking multicolumn tables using clean markdown code.
@@ -194,24 +204,47 @@ Riederer, you can create nice looking multicolumn tables using clean markdown co
 ]
 
 ---
+
+## More tables; kable and kableExtra packages
+.pull-left[Kable: great features for displaying simple tables!
+```{r, fig.height = 4, fig.width=10, echo=TRUE}
+knitr::kable(head(mtcars[1:4], 5), format = 'html')
+```
+
+See [the knitr documentation](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+for additional options.
+]
+
+.pull-right[Want to get fancier? Use kableExtra!
+```{r, fig.height = 2, fig.width=2, echo=TRUE}
+head(mtcars[1:4], 3) %>% 
+  kableExtra::kbl()%>%
+  kableExtra::kable_material(c("hover", "striped", "condensed"), full_width = F)
+```
+
+See [the kableExtra documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+for additional options.
+]
+
+---
+
+## Interactive tables; DT package
+
+```{r, fig.height = 4, fig.width=10, echo=TRUE}
+library(DT)
+DT::datatable(head(mtcars, 10),
+  fillContainer = FALSE, options = list(pageLength = 4))
+```
+
+See the [DT package documentation](https://rstudio.github.io/DT/) for the
+additional options.
+---
 background-image: url(https://media1.giphy.com/media/xT0BKiK5sOCVdBUhiM/giphy.gif)
 background-size: contain
+
 # And finally, you can add gifs!
 
 ---
-class: inverse iheid-red center middle
-
-.pull-left[
-Made with iheiddown, the R-package for IHEID publications.
-]
-
-.pull-right[
-[`r icons::icon_style(fontawesome("github"), scale = 2, fill = "white")`](https://github.com/jhollway/iheiddown)
-]
-
----
-class: inverse iheid-red center middle with-logo logo-iheid_BW
-
 class: inverse iheid-red center middle with-logo logo-iheid_BW
 
 .pull-left[
@@ -223,4 +256,3 @@ Made with `{iheiddown}`, the R-package for IHEID publications.
 
 [`r icons::icon_style(icons::fontawesome("link"), scale = 1.5, fill = "white")`](https://jameshollway.com/)
 ]
-
