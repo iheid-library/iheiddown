@@ -37,6 +37,10 @@ class: center, middle
 options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
 knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
 old <- ggplot2::theme_set(iheiddown::theme_iheid())
+
+# Showcasing useful packages
+install.packages(icons) # Adds icons package
+icons::download_fontawesome() # Need to download icons before using them
 ```
 
 ---
@@ -193,4 +197,30 @@ Riederer, you can create nice looking multicolumn tables using clean markdown co
 background-image: url(https://media1.giphy.com/media/xT0BKiK5sOCVdBUhiM/giphy.gif)
 background-size: contain
 # And finally, you can add gifs!
+
+---
+class: inverse iheid-red center middle
+
+.pull-left[
+Made with iheiddown, the R-package for IHEID publications.
+]
+
+.pull-right[
+[`r icons::icon_style(fontawesome("github"), scale = 2, fill = "white")`](https://github.com/jhollway/iheiddown)
+]
+
+---
+class: inverse iheid-red center middle with-logo logo-iheid_BW
+
+class: inverse iheid-red center middle with-logo logo-iheid_BW
+
+.pull-left[
+Made with `{iheiddown}`, the R-package for IHEID publications.
+]
+
+.pull-right[
+[`r icons::icon_style(icons::fontawesome("github"), scale = 2, fill = "white")`](https://github.com/jhollway/iheiddown)
+
+[`r icons::icon_style(icons::fontawesome("link"), scale = 1.5, fill = "white")`](https://jameshollway.com/)
+]
 
