@@ -1,19 +1,271 @@
 ---
-title: "presentation"
+title: "Presentation"
+author: "Bernhard Bieri"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{presentation}
+  %\VignetteIndexEntry{Presentation}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r global.options, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.align = 'center',
+  fig.width=6,
+  fig.height=4
 )
 ```
 
-```{r setup}
+```{r setup, include=FALSE}
 library(iheiddown)
+library(tidyverse)
 ```
+
+`{iheiddown}` not only allows its users to create scholarly documents but also
+provides them with a simple way to create great presentations to share the
+contents of their research effectively. This article will help you get started
+from the ground up and help you create your very own first presentation.
+
+## Installation
+
+The presentation theme is based on Yihui Xie's excellent
+[`{xaringan}`](https://github.com/yihui/xaringan) package. Hence the first thing
+to do is to install the necessary components as well as `{iheiddown}` itself.
+Note that we are installing the package from GitHub instead of CRAN since it is
+not available on there yet.
+
+```{r, eval = F, echo = T}
+# Install the required packages
+remotes::install_github("jhollway/iheiddown")
+remotes::install_github("yihui/xaringan")
+install.packages("servr") # This will allow us to see the slides we are editing
+
+# Load the packages in your session
+pkgs <- c("iheiddown", "xaringan", "servr")
+lapply(pkgs, library, character.only = TRUE)
+```
+
+Before we go any further, we should introduce
+[`{xaringan}`](https://github.com/yihui/xaringan) a bit more since you'll be
+working with when creating presentations with the `{iheiddown}` theme.
+The first thing to know is that there are many ways to create presentations in
+(R-)Markdown and that there is not one solution that fulfills all needs.
+However, after careful consideration (and reading
+[this blog post](https://yihui.org/en/2017/08/why-xaringan-remark-js/)) we
+settled on `{xaringan}`to develop our presentation template for.
+
+If you want to know more about `{xaringan}` and other presentation packages for
+R, check out
+[this excellent book](https://bookdown.org/yihui/rmarkdown/xaringan.html).
+
+## Create your first presentation
+
+Creating your first presentation is easy! Let's look at how it is done. Before
+we begin, we have to create a new R project by clicking on the file tab in the
+top of the RStudio window and following the instructions of the prompt that
+appears. Now that we have created an R project for our presentation, we can open
+a new R-Markdown file. To do this click on the "plus file" logo in the top left
+corner and then on "R-Markdown".
+
+![Step 1: open a new project](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/presentation/0-Open_Project.png){width="80%"}
+
+After you have done this, a little pop-up helper will appear. The first thing we
+will do is to select the `{iheiddown}` template for our presentation. To do so,
+click on the "From Template" option on the left and select the
+"Presentation {iheiddown}" template. Now give your presentation a name and click
+on "OK".
+
+![Step 2: select the template](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/presentation/1-Select_Template.png){width="80%"}
+
+Congrats! You just created your first presentation!
+
+Hold on, this doesn't look anything like slides!? To see your slides,
+you have to "knit" the code by clicking on the little "knit" button on the
+presentation.Rmd file. This will run all the code chunks and convert
+the markdown code to an HTML presentation that you will be able to share with
+your audience.
+
+Take a moment to flick through the slides to get acquainted with the
+`{R-markdown}` syntax and to get a feel of the possibilities of `{xaringan}` and
+the `{iheiddown}` theme. These slides are as much a tutorial as this vignette!
+
+
+## Edit your presentation
+
+This section will focus on giving you an overview of what a `{xaringan}`
+presentation is comprised of and give you a few tips and tricks to edit your
+presentations.
+
+### Your first edit
+
+As you may have noticed by now, `{xaringan}` presentations are not quite like
+more traditional WYSIWYG (what you see is what you get) presentation tools like
+PowerPoint. In short, you write in the markdown file, define style classes in
+the CSS files and create macros in the JavaScript file. This is all a bit
+confusing isn't it? Thankfully, there is a solution for this!
+
+```{r, eval=FALSE, echo=TRUE}
+# Install/Load the servr package if you haven't done it already
+install.packages("servr")
+library(servr)
+
+# Serve your {xaringan} presentation to see live updates when you edit
+xaringan::inf_mr()
+
+# Close the connection to the live rendering when you're done
+servr::daemon_stop(1)
+```
+
+`{xaringan}` includes a handy function called `inf_mr()` which will work in
+concert with the `{servr}` package to render your sites locally and update them
+as soon as you save your markdown document. This makes it a lot easier to edit!
+Once you're done editing your slides, simply stop the daemon. 
+
+### The different elements of a `{xaringan}` presentation
+
+`{xaringan}` presentations are comprised of three main components:
+
+- The main .Rmd file for raw content
+- The CSS file for style and layout options
+- The macros.js file for handy functions
+
+The main .Rmd file will be the core of your presentation, since it is where you
+will write the text, run R code chunks, and [display gifs](https://www.bbc.com/culture/article/20170825-how-the-gif-won-the-internet)
+to entertain your audience.
+
+The CSS file contains all the styling options that will be used to display the
+the content of the `.Rmd` file in a nice manner. This file contains the
+definitions of all the classes we use in the presentation.
+
+Finally, the `macros.js` file specifies small functions used for specific cases.
+An example of a macro would be the inclusion of
+[Emily Riederer's `xaringan_columns` macros](https://github.com/emilyriederer/xaringan_columns).
+
+Note that editing the CSS and the macros files is not recommended for beginner
+users as the point of having a theme is to avoid having to fiddle with these
+files. Advanced users who wish to contribute a feature should [open an issue on
+Github](https://github.com/jhollway/iheiddown/issues) to suggest the additional
+features.
+
+### Tips and tricks for editing your presentations 
+
+#### Tables and dataframes
+
+There are essentially three main ways to integrate tables into your
+presentation: `knitr::kable()`, `kableExtra::kbl()`, and `DT::datatable()`.
+
+```{r, echo=TRUE}
+knitr::kable(head(mtcars, 5))
+```
+
+[`knitr::kable()`](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+produces simple, straightforward tables. This is especially useful when you
+don't need too much styling options. What if you want a bit more flexibility
+though?
+
+```{r, echo=TRUE}
+# Written with pipes
+head(mtcars[1:4], 5) %>%
+  kableExtra::kbl() %>%
+  kableExtra::kable_material(html_font = "helvetica")
+```
+
+[`{kableExtra}`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+provides lots of options to style your tables the way you see fit! Want to use
+a material design theme or a scrollable box in HTML? `{kableExtra}` has got you
+covered! 
+
+Now if you want to go even further, you can use the
+[`{DT package}`](https://rstudio.github.io/DT/). This package will allow you to
+create interactive tables.
+
+```{r, echo=TRUE}
+# Written with pipes
+head(mtcars[1:4], 15)%>%
+  DT::datatable()
+```
+
+#### Graphs
+
+An IHEID theme would not be complete without its own `{ggplot}` theme. That's
+why we developed the `iheiddown::theme_iheid()` function to make your plots look
+as good as the presentation they are in!
+
+```{r, echo=T}
+ggplot(mtcars) +
+  geom_point(aes(x = wt, y = mpg)) +
+  labs(title = "Fuel economy declines as weight increases",
+       subtitle = "(1973-74)",
+       caption = "Data from the 1974 Motor Trend US magazine.",
+       x = "Weight (1000 lbs)",
+       y = "Fuel economy (mpg)")+
+  theme_iheid()
+```
+
+#### Maps
+
+Interactive maps can be included with the help of `{leaflet}` an interface to
+OpenStreetMap maps.
+
+```{r, echo=TRUE}
+m <- leaflet::leaflet() %>% 
+  leaflet::setView(lng = 6.14359868, lat = 46.22102176, zoom = 17)%>%
+  leaflet::addTiles()
+m
+```
+#### Icons
+
+Need to add icons to your social media profiles or your website? You can do this
+easily by using the [`{icons}`](https://github.com/mitchelloharawild/icons)
+package.
+
+```{r, echo = TRUE, eval = FALSE}
+# Install it from GitHub
+remotes::install_github("mitchelloharawild/icons")
+
+# Install the icon pack
+icons::download_fontawesome()
+```
+
+Now, use the icons inline. For example to link back to the `{iheiddown}` repo
+with a GitHub logo: [`r icons::fontawesome$brands$github`](https://github.com/jhollway/iheiddown)
+
+## Presenting
+
+After creating your presentation, it is time to share it with the world!
+To do so, simply open the HTML file that was created in your project folder
+after you knitted it.
+
+`{xaringan}` provides you with nifty shortcuts to toggle presenter mode (p) or
+duplicate the slides (c) to present them on a second screen. Clicking "h" will
+pull up the entire list of shortcuts.
+
+## Additional resources
+
+### Logos
+
+Including logos in your slides is easy. Just add the `with-logo` class as well
+as the corresponding `logo-` class in the slide you want your logo to appear.
+The following table lists all the included logo classes:
+
+```{r, echo=FALSE}
+name <- c("IHEID", "IHEID B&W", "IHEID white", "CIES", "CTEI", "GGC", "AHCD", "CCDP", "CFD", "Gender", "GHC", "GMC")
+class <- c(".logo-iheid", ".logo-iheid_BW", ".logo-iheid_white", ".logo-cies", ".logo-ctei", ".logo-ggc", ".logo-ahcd", ".logo-ccdp", ".logo-cfd", ".logo-gender", ".logo-ghc", ".logo-gmc")
+logos <- data.frame(Name=name, Class=class)
+kableExtra::kbl(logos) %>%
+  kableExtra::scroll_box(width = "70%", height = "400px")
+```
+
+### A non-exhaustive list of additional readings and extensions 
+
+- Readings
+  - [`{Xaringan}` documentation](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+  - [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  - [Garrick Aden-Buie's website](https://www.garrickadenbuie.com/)
+- Extensions:
+  - [`{xaringanExtra}`](https://github.com/gadenbuie/xaringanExtra)
+
