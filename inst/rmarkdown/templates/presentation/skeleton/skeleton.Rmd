@@ -6,7 +6,7 @@ author: "<large>Author Name</large>"
 # date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
 output:
   xaringan::moon_reader:
-    css: ["default", "https://cdn.jsdelivr.net/gh/jhollway/iheidmyninja@4ff709f/iheid-xaringan-style.css"]
+    css: ["default", "iheid-xaringan-style.css"]
     chakra: "https://remarkjs.com/downloads/remark-latest.min.js"
     # if you want to work offline, run the following command...
     # xaringan::summon_remark()
