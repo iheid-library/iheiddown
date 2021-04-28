@@ -195,7 +195,7 @@ why we developed the `iheiddown::theme_iheid()` function to make your plots look
 as good as the presentation they are in!
 
 ```{r, echo=T}
-ggplot(mtcars) +
+ggplot2::ggplot(mtcars) +
   geom_point(aes(x = wt, y = mpg)) +
   labs(title = "Fuel economy declines as weight increases",
        subtitle = "(1973-74)",
