@@ -41,6 +41,10 @@ color: red;
 color: blue;
 }
 
+.green {
+color: #3B7A57;
+}
+
 .grViz {
   margin-left:auto; margin-right:auto; display:block;
 }
