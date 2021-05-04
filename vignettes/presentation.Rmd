@@ -242,8 +242,69 @@ remotes::install_github("mitchelloharawild/icons")
 icons::download_fontawesome()
 ```
 
-Now, use the icons inline. For example to link back to the `{iheiddown}` repo
-with a GitHub logo: [`r icons::fontawesome$brands$github`](https://github.com/jhollway/iheiddown)
+Now, use the icons inline with `icons::fontawesome$brands$github`.
+For example to link back to the `{iheiddown}` repo with a GitHub logo:
+[`r icons::fontawesome$brands$github`](https://github.com/jhollway/iheiddown)
+
+#### Citations and Bibliography
+
+We all stand on the shoulders of giants when we are conducting research. This
+is why we have implemented an easy way of generating citations and adding a
+bibliography to your presentation. 
+Note that this method uses the package `{RefManageR}` that you will need to
+install.
+
+``` {r, echo = TRUE, eval = F}
+install.packages("RefManageR")
+```
+
+The first step to adding a bibliography is to define its options in a code
+chunk at the very top of your `presentation.Rmd` file. 
+
+```{r, eval=FALSE, echo = TRUE}
+# Initializes the bibliography
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear", # Bibliography style
+           max.names = 3, # Max author names displayed in bibliography
+           sorting = "nyt", #Name, year, title sorting
+           cite.style = "authoryear", # citation style
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib("myBib.bib", check = FALSE)
+# Note: don't forget to clear the knitr cache to account for changes in the
+# bibliography.
+```
+
+The second step is to cite the papers you want to cite inline with `Citet()`,
+`Citep()`, `AutoCite()` or `NoCite()`. Here is an example:
+`Citet(myBib, "Entry_Name")`. Note that every element that you wish to put in
+the bibliography at the end must be cited. Hence, if you only want a
+bibliographical element to appear in the bibliography but not as a citation on
+one of your slides, use the `NoCite()` function.
+
+The third and final step is to print the full bibliography in the last slides
+of your presentation.
+
+````md
+```{r refs, echo=FALSE, results="asis"}`r ''`
+PrintBibliography(myBib)
+```
+````
+
+Finally, note that you can specify the number of references you want to print
+on each slide to avoid overfilling them. 
+
+````md
+```{r refs, echo=FALSE, results="asis"}`r ''`
+PrintBibliography(bib, start = 1, end = 7)
+```
+````
+
+For more in depth information about the integration of bibliographic
+information into your presentations, please visit
+[this wiki](https://github.com/yihui/xaringan/wiki/Bibliography-and-citations).
 
 ## Presenting
 
