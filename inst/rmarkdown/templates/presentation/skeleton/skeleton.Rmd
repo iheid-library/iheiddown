@@ -42,7 +42,21 @@ knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALS
 old <- ggplot2::theme_set(iheiddown::theme_iheid())
 ```
 
-
+```{r, load_refs, include=FALSE, cache=FALSE}
+# Initializes the bibliography
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear", # Bibliography style
+           max.names = 3, # Max author names displayed in bibliography
+           sorting = "nyt", #Name, year, title sorting
+           cite.style = "authoryear", # citation style
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib("myBib.bib", check = FALSE)
+# Note: don't forget to clear the knitr cache to account for changes in the
+# bibliography.
+```
 
 ---
 class: middle, inverse, iheid-red
@@ -265,7 +279,8 @@ background-size: contain
 class: inverse iheid-red center middle with-logo logo-iheid_BW
 
 .pull-left[
-Made with `{iheiddown}`, the R-package for IHEID publications.
+Made with `{iheiddown}`, the R-package for IHEID publications
+`r Cite(myBib, "iheiddown")`.
 ]
 
 .pull-right[
@@ -273,3 +288,11 @@ Made with `{iheiddown}`, the R-package for IHEID publications.
 
 [`r icons::icon_style(icons::fontawesome("link"), scale = 1.5, fill = "white")`](https://jameshollway.com/)
 ]
+
+---
+
+# References
+
+```{r refs, echo=FALSE, results="asis"}
+RefManageR::PrintBibliography(myBib)
+```
