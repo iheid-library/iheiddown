@@ -27,6 +27,7 @@ Imports:
     roxygen2,
     covr,
     ggplot2,
+    magrittr,
     rmarkdown,
     xaringan,
     crayon

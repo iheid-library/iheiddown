@@ -20,8 +20,9 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup, include=FALSE}
-library(iheiddown)
-library(tidyverse)
+pkgs <- c("iheiddown", "magrittr", "ggplot2", "leaflet", "knitr", "kableExtra",
+          "DT")
+lapply(pkgs, library, character.only = TRUE)
 ```
 
 `{iheiddown}` not only allows its users to create scholarly documents but also
@@ -151,6 +152,17 @@ Github](https://github.com/jhollway/iheiddown/issues) to suggest the additional
 features.
 
 ### Tips and tricks for editing your presentations 
+
+#### Slide transitions
+
+For ease of use, we have included the
+[`{animate.style}`](https://animate.style/) library of CSS animations. This
+allows us to easily animate our slides with the addition of the CSS class
+`animate__animated` and the desired animation e.g. `animate__slideInRight` on
+the desired slide.
+
+For a full list of the available animations and further options, check out
+[animate.style](https://animate.style/). 
 
 #### Tables and dataframes
 
