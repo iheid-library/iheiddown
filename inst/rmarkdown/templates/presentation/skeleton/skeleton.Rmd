@@ -6,7 +6,10 @@ author: "<large>Author Name</large>"
 # date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
 output:
   xaringan::moon_reader:
-    css: ["default", "iheid-xaringan-style.css"]
+    css: 
+      - "default"
+      - "iheid-xaringan-style.css"
+      - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     chakra: "https://remarkjs.com/downloads/remark-latest.min.js"
     # if you want to work offline, run the following command...
     # xaringan::summon_remark()
@@ -238,6 +241,20 @@ DT::datatable(head(mtcars, 10),
 
 See the [DT package documentation](https://rstudio.github.io/DT/) for the
 additional options.
+
+---
+class: animate__animated, animate__slideInRight
+
+## Add slide transitions to  your slides
+
+Simply add the class `animate__animated` and the class corresponding to the
+desired animation such as `animate__slideInRight`, et voilà!
+
+For a complete list of the available animations and further options, visit
+[animate.style](https://animate.style/).
+
+.center[![Animation GIF](https://i.giphy.com/media/Oo6GWyiWEDgtO/giphy.webp)]
+
 ---
 background-image: url(https://media1.giphy.com/media/xT0BKiK5sOCVdBUhiM/giphy.gif)
 background-size: contain
