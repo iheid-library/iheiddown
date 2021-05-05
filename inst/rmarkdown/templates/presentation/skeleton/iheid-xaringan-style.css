@@ -451,7 +451,7 @@ beginning of the slide.*/
 /* Render only last code result*/
 .show-only-last-code-result pre + pre:not(:last-of-type) code[class="remark-code"] {
     display: none;
-
+}
 /******************
  * Slide scrolling
  * (non-functional)
