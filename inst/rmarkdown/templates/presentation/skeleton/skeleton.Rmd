@@ -8,7 +8,7 @@ output:
   xaringan::moon_reader:
     css: 
       - "default"
-      - "iheid-xaringan-style.css"
+      - "assets/iheid-xaringan-style.css"
       - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     chakra: "https://remarkjs.com/downloads/remark-latest.min.js"
     # if you want to work offline, run the following command...
@@ -20,7 +20,7 @@ output:
       ratio: '16:9'
       highlightStyle: github
       highlightLines: true
-      beforeInit: "macros.js"
+      beforeInit: "assets/macros.js"
       countIncrementalSlides: false
       slideNumberFormat: |
         <div class="progress-bar-container">
@@ -53,7 +53,7 @@ BibOptions(check.entries = FALSE,
            style = "markdown",
            hyperlink = FALSE,
            dashed = FALSE)
-myBib <- ReadBib("myBib.bib", check = FALSE)
+myBib <- ReadBib("assets/myBib.bib", check = FALSE)
 # Note: don't forget to clear the knitr cache to account for changes in the
 # bibliography.
 ```
