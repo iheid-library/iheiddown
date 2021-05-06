@@ -16,7 +16,7 @@
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
 #' @param ticks ticks if `TRUE` add ticks
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' library(ggplot2)
 #' library(dplyr)
 #'
@@ -27,7 +27,7 @@
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_ipsum()
+#'   theme_iheid()
 #'
 #' # seminal bar chart
 #'
@@ -41,9 +41,8 @@
 #'        title="Seminal ggplot2 bar chart example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_ipsum(grid="Y") +
+#'   theme_iheid(grid="Y") +
 #'   theme(axis.text.y=element_blank())
-#' }
 #' @export
 theme_iheid <- function(base_family="sans", base_size = 11.5,
                         plot_title_family=base_family, plot_title_size = 18,
