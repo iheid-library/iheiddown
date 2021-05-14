@@ -30,7 +30,8 @@ Imports:
     magrittr,
     rmarkdown,
     xaringan,
-    crayon
+    crayon,
+    rlang
 Remotes: 
     crsh/citr,
     gadenbuie/xaringanExtra
