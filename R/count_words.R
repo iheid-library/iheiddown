@@ -61,8 +61,8 @@ remove_inline_code <- function(x) {
 
 # Helper function to remove HTML comments (lines starting with "<!--" and "-->")
 remove_html_comment <- function(x) {
-  mutate(x, start_comment = cumsum(grepl("^<!--", .data$value)),
-         end_comment = cumsum(grepl("^-->", .data$value))) %>%
+  mutate(x, start_comment = cumsum(grepl("^<!-- ", .data$value)),
+         end_comment = cumsum(grepl(" -->", .data$value))) %>%
     group_by(.data$start_comment, .data$end_comment) %>%
     mutate(start_end = lag(.data$start_comment, 1)) %>%
     ungroup() %>%
