@@ -7,6 +7,10 @@
 #' @param file A path to a .Rmd file
 #' @import dplyr
 #' @importFrom rlang .data
+#' @importFrom readr read_lines
+#' @importFrom tibble as_tibble
+#' @importFrom rstudioapi getSourceEditorContext
+#' @importFrom tidytext unnest_tokens
 #' @examples
 #' # count_words("test.Rmd")
 #' @export

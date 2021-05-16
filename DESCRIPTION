@@ -32,7 +32,11 @@ Imports:
     xaringan,
     crayon,
     rlang,
-    servr
+    servr,
+    readr,
+    rstudioapi,
+    tibble,
+    tidytext
 Remotes: 
     crsh/citr,
     gadenbuie/xaringanExtra
