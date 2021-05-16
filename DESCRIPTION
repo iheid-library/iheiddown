@@ -43,5 +43,7 @@ Suggests:
     testthat,
     kableExtra,
     ganttrify,
-    knitr
+    knitr,
+    DT,
+    leaflet
 VignetteBuilder: knitr
