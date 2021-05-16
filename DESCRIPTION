@@ -31,7 +31,8 @@ Imports:
     rmarkdown,
     xaringan,
     crayon,
-    rlang
+    rlang,
+    servr
 Remotes: 
     crsh/citr,
     gadenbuie/xaringanExtra
