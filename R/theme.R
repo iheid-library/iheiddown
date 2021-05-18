@@ -31,8 +31,6 @@
 #'
 #' # seminal bar chart
 #'
-#' update_geom_font_defaults()
-#'
 #' count(mpg, class) %>%
 #'   ggplot(aes(class, n)) +
 #'   geom_col() +
