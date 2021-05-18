@@ -1,10 +1,10 @@
 ---
-title: "Presentation"
+title: "Presentations"
 author: "Bernhard Bieri"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Presentation}
+  %\VignetteIndexEntry{Presentations}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,8 +20,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup, include=FALSE}
-pkgs <- c("iheiddown", "magrittr", "ggplot2", "leaflet", "knitr", "kableExtra",
-          "DT")
+pkgs <- c("iheiddown", "magrittr", "ggplot2")
 lapply(pkgs, library, character.only = TRUE)
 ```
 
@@ -104,9 +103,10 @@ presentations.
 
 As you may have noticed by now, `{xaringan}` presentations are not quite like
 more traditional WYSIWYG (what you see is what you get) presentation tools like
-PowerPoint. In short, you write in the markdown file, define style classes in
+PowerPoint. In short, you write in the R-markdown file, define style classes in
 the CSS files and create macros in the JavaScript file. This is all a bit
-confusing isn't it? Thankfully, there is a solution for this!
+confusing isn't it? Thankfully, there is a way to vizualise your edits easily in
+real time!
 
 ```{r, eval=FALSE, echo=TRUE}
 # Install/Load the servr package if you haven't done it already
@@ -114,16 +114,17 @@ install.packages("servr")
 library(servr)
 
 # Serve your {xaringan} presentation to see live updates when you edit
-xaringan::inf_mr()
+iheiddown::preview_realtime()
 
 # Close the connection to the live rendering when you're done
-servr::daemon_stop(1)
+iheiddown::preview_stop()
 ```
 
 `{xaringan}` includes a handy function called `inf_mr()` which will work in
 concert with the `{servr}` package to render your sites locally and update them
-as soon as you save your markdown document. This makes it a lot easier to edit!
-Once you're done editing your slides, simply stop the daemon. 
+as soon as you save your markdown document. We simply wrapped these functions
+inside the more convenient `{iheiddown}` versions: `preview_realtime()` and
+`preview_stop()`. This makes it a lot easier to edit your slides!
 
 ### The different elements of a `{xaringan}` presentation
 
@@ -153,6 +154,10 @@ features.
 
 ### Tips and tricks for editing your presentations 
 
+The following sections cover additional tips and tricks that are not mentionned
+in the slides. You'll discover how to animate your slides and how to include a
+bibliography.
+
 #### Slide transitions
 
 For ease of use, we have included the
@@ -163,88 +168,6 @@ the desired slide.
 
 For a full list of the available animations and further options, check out
 [animate.style](https://animate.style/). 
-
-#### Tables and dataframes
-
-There are essentially three main ways to integrate tables into your
-presentation: `knitr::kable()`, `kableExtra::kbl()`, and `DT::datatable()`.
-
-```{r, echo=TRUE}
-knitr::kable(head(mtcars, 5))
-```
-
-[`knitr::kable()`](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
-produces simple, straightforward tables. This is especially useful when you
-don't need too much styling options. What if you want a bit more flexibility
-though?
-
-```{r, echo=TRUE}
-# Written with pipes
-head(mtcars[1:4], 5) %>%
-  kableExtra::kbl() %>%
-  kableExtra::kable_material(html_font = "helvetica")
-```
-
-[`{kableExtra}`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
-provides lots of options to style your tables the way you see fit! Want to use
-a material design theme or a scrollable box in HTML? `{kableExtra}` has got you
-covered! 
-
-Now if you want to go even further, you can use the
-[`{DT package}`](https://rstudio.github.io/DT/). This package will allow you to
-create interactive tables.
-
-```{r, echo=TRUE}
-# Written with pipes
-head(mtcars[1:4], 15)%>%
-  DT::datatable()
-```
-
-#### Graphs
-
-An IHEID theme would not be complete without its own `{ggplot}` theme. That's
-why we developed the `iheiddown::theme_iheid()` function to make your plots look
-as good as the presentation they are in!
-
-```{r, echo=T}
-ggplot2::ggplot(mtcars) +
-  geom_point(aes(x = wt, y = mpg)) +
-  labs(title = "Fuel economy declines as weight increases",
-       subtitle = "(1973-74)",
-       caption = "Data from the 1974 Motor Trend US magazine.",
-       x = "Weight (1000 lbs)",
-       y = "Fuel economy (mpg)")+
-  theme_iheid()
-```
-
-#### Maps
-
-Interactive maps can be included with the help of `{leaflet}` an interface to
-OpenStreetMap maps.
-
-```{r, echo=TRUE}
-m <- leaflet::leaflet() %>% 
-  leaflet::setView(lng = 6.14359868, lat = 46.22102176, zoom = 17)%>%
-  leaflet::addTiles()
-m
-```
-#### Icons
-
-Need to add icons to your social media profiles or your website? You can do this
-easily by using the [`{icons}`](https://github.com/mitchelloharawild/icons)
-package.
-
-```{r, echo = TRUE, eval = FALSE}
-# Install it from GitHub
-remotes::install_github("mitchelloharawild/icons")
-
-# Install the icon pack
-icons::download_fontawesome()
-```
-
-Now, use the icons inline with `icons::fontawesome$brands$github`.
-For example to link back to the `{iheiddown}` repo with a GitHub logo:
-[`r icons::fontawesome$brands$github`](https://github.com/jhollway/iheiddown)
 
 #### Citations and Bibliography
 
@@ -314,23 +237,9 @@ after you knitted it.
 
 `{xaringan}` provides you with nifty shortcuts to toggle presenter mode (p) or
 duplicate the slides (c) to present them on a second screen. Clicking "h" will
-pull up the entire list of shortcuts.
+pull up the entire list of shortcuts. Present away!
 
 ## Additional resources
-
-### Logos
-
-Including logos in your slides is easy. Just add the `with-logo` class as well
-as the corresponding `logo-` class in the slide you want your logo to appear.
-The following table lists all the included logo classes:
-
-```{r, echo=FALSE}
-name <- c("IHEID", "IHEID B&W", "IHEID white", "CIES", "CTEI", "GGC", "AHCD", "CCDP", "CFD", "Gender", "GHC", "GMC")
-class <- c(".logo-iheid", ".logo-iheid_BW", ".logo-iheid_white", ".logo-cies", ".logo-ctei", ".logo-ggc", ".logo-ahcd", ".logo-ccdp", ".logo-cfd", ".logo-gender", ".logo-ghc", ".logo-gmc")
-logos <- data.frame(Name=name, Class=class)
-kableExtra::kbl(logos) %>%
-  kableExtra::scroll_box(width = "70%", height = "400px")
-```
 
 ### A non-exhaustive list of additional readings and extensions 
 
@@ -339,6 +248,6 @@ kableExtra::kbl(logos) %>%
   - [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
   - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
   - [Garrick Aden-Buie's website](https://www.garrickadenbuie.com/)
-- Extensions:
+- Extensions
   - [`{xaringanExtra}`](https://github.com/gadenbuie/xaringanExtra)
 
