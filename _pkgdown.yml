@@ -36,6 +36,8 @@ navbar:
       menu:
       - text: Presentations
         href: articles/presentations.html
+      - text: Thesis
+        href: articles/thesis.html
     news:
       text: News
       href: news/index.html
