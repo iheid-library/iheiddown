@@ -1,0 +1,41 @@
+url: https://jhollway.github.io/iheiddown
+development:
+    mode: auto
+home:
+  title: The R Package for IHEID related publications
+  description: Write your thesis, outline your syllabus or create IHEID themed presentations.
+template:
+  params:
+    bootswatch: flatly
+    opengraph:
+    image:
+      src: man/figures/OpenGraphImage.png
+      alt: "The R Package for IHEID related publications."
+authors:
+  James Hollway:
+      href: https://jameshollway.com
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - tutorials
+    - news
+    right: github
+  components:
+    home:
+      icon: fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: Articles
+      menu:
+      - text: Presentations
+        href: articles/presentations.html
+    news:
+      text: News
+      href: news/index.html

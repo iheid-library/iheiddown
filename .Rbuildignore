@@ -9,3 +9,5 @@
 ^README_files$
 ^docs$
 ^Meta$
+^_pkgdown\.yml$
+^pkgdown$
