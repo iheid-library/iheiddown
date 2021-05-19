@@ -61,14 +61,14 @@ corner and then on "R-Markdown".
 ![Step 1: open a new project](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/presentation/0-Open_Project.png){width="80%"}
 
 After you have done this, a little pop-up helper will appear. The first thing we
-will do is to select the `{iheiddown}` template for our presentation. To do so,
+will do is to select the `{iheiddown}` template for our thesis. To do so,
 click on the "From Template" option on the left and select the
-"Thesis {iheiddown}" template. Now give your presentation a name and click
+"Thesis {iheiddown}" template. Now give your thesis a name and click
 on "OK".
 
 Important note! Give your thesis project a name that starts with `00-` like
 `00-MyThesis.Rmd`. This makes sure that the first knitted file is the main
-thesis file and one of the chapters.
+thesis file and not one of the chapters.
 
 ![Step 2: select the template](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/thesis/1-Create_Thesis.png){width="80%"}
 
@@ -102,9 +102,9 @@ thesis. It is also the backbone of your thesis in the sense that this is where
 you will want to knit your whole thesis from.
 
 The YAML header is the place where the main options, metadata and formatting
-options are set. You can set the title of your presentation here, add your name,
-change the front matter of your thesis (abstract, acknowledgments, table of
-content, etc.).
+parameters are set. You can set the title of your presentation here, add your
+name, change the front matter of your thesis (abstract, acknowledgments, table
+of content, etc.).
 
 The second element in this file is the preface. The only crucial thing to know
 here is that in order to create your package bibliography (the software you use
@@ -133,7 +133,7 @@ These files are a bit special as you might notice when you open them.
 
 The `99-references.Rmd` file generates the bibliography. This happens
 automatically, so you will most likely not need to alter this file. Just know
-that you can set the title of the references section in the first line.
+that you can set the title of the reference section in the first line.
 
 The `98-appendix.Rmd` file allows you to showcase code, additional outputs and
 more in a separate section to avoid unnecessarily cluttering the main body of
@@ -144,9 +144,10 @@ and printing the computations you did in your R chunks or by adding new ones.
 
 The `_bookdown.yml` file contains additional information for the YAML header
 of the main `.Rmd` file. A standard user should not have to edit it. If for some
-eason or another you still feel like you need to know that you can set
+reason or another you still feel like it, you need to know that you can set
 additional `.Rmd` subdirectories, set another output file than the standard
-`\versions` file, and toggle the deletion of merged files.
+`\versions` file, and toggle the deletion of merged files after the knitting
+process ended here.
 
 #### The `\bib` folder
 
@@ -176,10 +177,14 @@ file you got from the secretariat as `SecretariatDocument.pdf`. Otherwise
 
 The front matter folder contains the front matter of your thesis. This is where
 you will be able to edit the abbreviations part in the corresponding Latex file,
-the acknowledgments or the abstract of your thesis in their respective `.Rmd`
-files.
+the acknowledgments section or the abstract of your thesis in their
+respective `.Rmd` files.
 
 #### The `\versions` folder
 
 This is where you will find the pdf file after your thesis has been knitted by
 `{iheiddown}`.
+
+## Additional resources
+
+Here is a list of additional links that will help you get familiar with 
