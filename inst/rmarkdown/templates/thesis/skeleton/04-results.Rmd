@@ -84,7 +84,7 @@ You'll see their use below.
 
 You don't need to number figures in _RMarkdown_; it'll do it automatically.
 And captioning a figure is awfully easy too.
-In the **R** chunk below, we will load in a picture that is stored as `iheid.eps` in our `figures` directory.
+In the **R** chunk below, we will load in a picture that is stored as `iheid.png` in our `figures` directory.
 The `include_graphics()` function is from the `{knitr}` package, that does most of the heavy lifting here.
 We'll label the chunk 'iheidlogo' so that we can refer back to it later,
 and give the figure the caption "IHEID logo".
@@ -92,7 +92,7 @@ You will see that here you do not need to include the parameter `echo=FALSE`,
 as the code including the figure is hidden by default.
 
 ```{r iheidlogo, fig.cap="IHEID logo"}
-include_graphics(path = "figures/iheid.eps")
+include_graphics(path = "figures/iheid.png")
 ```
 
 ### Referencing figures
