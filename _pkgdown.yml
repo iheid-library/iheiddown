@@ -38,6 +38,8 @@ navbar:
         href: articles/presentations.html
       - text: Thesis
         href: articles/thesis.html
+      - text: Syllabus
+        href: articles/syllabus.html
     news:
       text: News
       href: news/index.html
