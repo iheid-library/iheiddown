@@ -585,6 +585,29 @@ slides > slide {
   height: 230px;
   margin: 10px;
   }
+  
+.squareon img {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #ff0000;
+  width: 220px;
+  height: 220px;
+  margin: 10px;
+  }
+
+.squareoff img {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #ff0000;
+  opacity: 0.2;
+  width: 230px;
+  height: 230px;
+  margin: 10px;
+  }
+
+/* Check out https://github.com/BBieri/Design_Misc for square logos */
 
 /***********
  Changed CSS
