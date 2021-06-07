@@ -10,6 +10,7 @@ output:
       - "default"
       - "assets/iheid-xaringan-style.css"
       - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      - "ninjutsu"
     chakra: "https://remarkjs.com/downloads/remark-latest.min.js"
     # if you want to work offline, run the following command...
     # xaringan::summon_remark()
@@ -93,6 +94,41 @@ or a numbered list...
 1. two
 4. three
 ]
+
+---
+class: split-four, center
+
+# Present your team by slicing the slide up with ninjutsu!
+
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Prof. Smith*
+
+Principal Investigator
+
+]]
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Dr. Jones*
+
+Doctoral Research Assistant
+
+]]
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Ms. Dupont*
+
+Research Assistant
+
+]]
+
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Mr. Dupond*
+
+Research Assistant
+
+]]
 
 ---
 ## You can build a step-by-step reveal
