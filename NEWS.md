@@ -1,3 +1,19 @@
+# iheiddown 0.8.1
+
+## Presentations
+
+- Closed #56 by adding xaringan_columns JS macro for presentation
+- Closed #70 by implementing progressive slides that highlight the last item
+- Closed #57 by allowing users to add installed or remote logos on their slides
+- Closed #69 By rewriting the `theme_iheid()` function based on hrbrthemes structure
+- Closed #79 by implementing citations with RefManageR
+- Closed #81 by adding initial `count_words()` function
+- Added slide animations from the `animate.css` library
+
+## Vignettes
+
+- Closed #54 by adding tutorial vignettes to get users started with each template (syllabus, thesis, presentation)
+
 # iheiddown 0.8.0
 
 ## Presentations
