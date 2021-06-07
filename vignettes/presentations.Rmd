@@ -239,6 +239,16 @@ after you knitted it.
 duplicate the slides (c) to present them on a second screen. Clicking "h" will
 pull up the entire list of shortcuts. Present away!
 
+## Printing the slides
+
+There are two main ways to print slides.
+
+- Print the slides that you rendered after opening them in your browser just like you would print a normal Web page.
+  - Works best in the Google Chrome browser
+- Use `pagedown::chrome_print()` when viewing your Rmarkdown file
+
+However printing slides can be tricky in some cases, especially when one has interactive elements integrated into them such as multiple panels on the same slide. In that case, check out [this article for advanced printing options](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/).
+
 ## Additional resources
 
 ### A non-exhaustive list of additional readings and extensions 
