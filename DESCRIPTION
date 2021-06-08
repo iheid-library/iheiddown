@@ -39,7 +39,8 @@ Imports:
     tidytext
 Remotes: 
     crsh/citr,
-    gadenbuie/xaringanExtra
+    gadenbuie/xaringanExtra,
+    giocomai/ganttrify
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
