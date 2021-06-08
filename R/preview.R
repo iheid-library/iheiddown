@@ -5,13 +5,12 @@
 #' @name preview
 #' @param file_path The input Rmd file path (if missing and in RStudio, the current
 #'   active document is used).
-#' @param root_dir The root directory of the server.
 #' @param ... Passed to \code{rmarkdown::\link[rmarkdown]{render}()}.
 #' @references xaringan
 #' @importFrom xaringan inf_mr
 #' @export
-preview_start <- function(file_path, root_dir, ...){
-  xaringan::inf_mr(moon = file_path, cast_from = root_dir, ...)
+preview_start <- function(file_path, ...){
+  xaringan::inf_mr(moon = file_path, ...)
 }
 
 #' @rdname preview
