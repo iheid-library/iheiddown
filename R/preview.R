@@ -10,7 +10,7 @@
 #' @references xaringan
 #' @importFrom xaringan inf_mr
 #' @export
-preview_realtime <- function(file_path, root_dir, ...){
+preview_start <- function(file_path, root_dir, ...){
   xaringan::inf_mr(moon = file_path, cast_from = root_dir, ...)
 }
 
