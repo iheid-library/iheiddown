@@ -104,16 +104,38 @@ jobs:
         if: runner.os == 'macOS'
         run: Rscript R/_render.R
 
-      - name: Save output samples artifact
+      - name: Save Thesis Sample as artifact
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
         with:
           name: examples
           path: 00-Example/versions/
 
-      - name: Clean-up unnecessary files
+      - name: Save Presentation Sample as artifact
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v2
+        with:
+          name: SyllabusExample
+          path: Untitled/
+
+      - name: Save Syllabus Sample as artifact
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v2
+        with:
+          name: PresentationExample
+          path: index/
+
+      - name: Remove Thesis project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("00-Example", recursive = TRUE)'
+
+      - name: Remove Presentation project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("index", recursive = TRUE)'
+
+      - name: Remove Syllabus project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("Untitled", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
@@ -166,6 +188,28 @@ jobs:
           asset_path: examples/IHEIDThesisExample.pdf
           asset_name: IHEIDThesisExample.pdf
           asset_content_type: application/pdf
+
+      - name: Upload Syllabus Example Asset
+        id: upload-syllabus-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: SyllabusExample/IHEIDSyllabusExample.pdf
+          asset_name: IHEIDSyllabusExample.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload Presentation Example Asset
+        id: upload-presentation-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: PresentationExample/
+          asset_name: PresentationExample
+          asset_content_type: text/html
 
       - name: Rename Mac release
         run: mv ./macOS/*.tgz iheiddown_macOS.tgz
