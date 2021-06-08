@@ -21,7 +21,7 @@ navbar:
     - intro
     - reference
     - articles
-    - tutorials
+    - examples
     - news
     right: github
   components:
@@ -40,6 +40,15 @@ navbar:
         href: articles/thesis.html
       - text: Syllabus
         href: articles/syllabus.html
+    examples:
+      text: Examples
+      menu:
+      - text: Presentation
+        href: sample_output/index.html
+      - text: Thesis
+        href: sample_output/IHEIDThesisExample.pdf
+      - text: Syllabus
+        href: sample_output/IHEIDSyllabusExample.pdf
     news:
       text: News
       href: news/index.html
