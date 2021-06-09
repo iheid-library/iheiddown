@@ -3,8 +3,6 @@
 #' This is a function called in output in the YAML of the driver Rmd file
 #' to specify using the IHEID Thesis LaTeX template file.
 #' @param ... Instructions passed to the function from a correctly specified .Rmd document
-#' @param author The surname of the author, 
-#' passed to the function by a correctly specified .Rmd document
 #' @return A modified \code{pdf_document} based on the IHEID Thesis LaTeX
 #'   template
 #' @examples
@@ -13,10 +11,10 @@
 #' }
 #' @importFrom bookdown render_book pdf_book
 #' @export
-thesis_pdf <- function(..., author){
+thesis_pdf <- function(...){
   options(bookdown.render.file_scope = FALSE)
   bookdown::render_book(..., 
-                        output_file = paste0(author, "_", "Thesis_", Sys.Date()), 
+                        output_file = paste0("Thesis_", Sys.Date()), 
                         output_format = bookdown::pdf_book(latex_engine = "xelatex",
                                                         template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex',
                                                                                package = 'iheiddown'), citation_package = "biblatex"))
