@@ -6,13 +6,23 @@
 - Closed #70 by implementing progressive slides that highlight the last item
 - Closed #57 by allowing users to add installed or remote logos on their slides
 - Closed #69 By rewriting the `theme_iheid()` function based on hrbrthemes structure
-- Closed #79 by implementing citations with RefManageR
-- Closed #81 by adding initial `count_words()` function
-- Added slide animations from the `animate.css` library
+- Closed #74 by implementing citations with RefManageR
+- Closed #77 by adding square on/off section elements
+- Closed #80 by adding the ninjutsu CSS slide slicing tools for better positioning
+- Closed #79 by removing hidden dependencies in the presentation vignette
+- Closed #75 by adding slide animations from the `animate.css` library
 
 ## Vignettes
 
 - Closed #54 by adding tutorial vignettes to get users started with each template (syllabus, thesis, presentation)
+
+## Package
+
+- Closed #78 by reducing subdirectory size for CRAN submission
+- Closed #68 by fixing error message indicating that the output format was not of class rmarkdown_output_format
+- Closed #81 by adding initial `count_words()` function
+- Closed #60 by expanding automatic rendering script for syllabi and presentation templates
+- 
 
 # iheiddown 0.8.0
 
