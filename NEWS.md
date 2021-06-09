@@ -22,7 +22,6 @@
 - Closed #68 by fixing error message indicating that the output format was not of class rmarkdown_output_format
 - Closed #81 by adding initial `count_words()` function
 - Closed #60 by expanding automatic rendering script for syllabi and presentation templates
-- 
 
 # iheiddown 0.8.0
 
