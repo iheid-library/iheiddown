@@ -4,7 +4,7 @@
 \alias{thesis_pdf}
 \title{Creates an R Markdown PDF Thesis document}
 \usage{
-thesis_pdf(...)
+thesis_pdf(input = ".", ...)
 }
 \arguments{
 \item{...}{Instructions passed to the function from a correctly specified .Rmd document}

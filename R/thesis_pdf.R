@@ -11,10 +11,15 @@
 #' }
 #' @importFrom bookdown render_book pdf_book
 #' @export
-thesis_pdf <- function(...){
+thesis_pdf <- function(input = ".", ...){
   options(bookdown.render.file_scope = FALSE)
+  
+  author <- readLines(input)
+  author <- author[grepl("^lastnames:", author)]
+  author <- strsplit(author, " ")[[1]][2]
+  
   bookdown::render_book(..., 
-                        output_file = paste0("Thesis_", Sys.Date()), 
+                        output_file = paste0("Thesis_", author, "_", Sys.Date()), 
                         output_format = bookdown::pdf_book(latex_engine = "xelatex",
                                                         template = system.file('rmarkdown', 'templates', 'thesis_pdf', 'resources', 'template.tex',
                                                                                package = 'iheiddown'), citation_package = "biblatex"))
