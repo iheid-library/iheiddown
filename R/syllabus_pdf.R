@@ -17,9 +17,13 @@
 #'     input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
 #' }
 syllabus_pdf <- function(input, ...){
+  
+  code <- readLines(input)
+  code <- code[grepl("^code:", code)]
+  code <- strsplit(code, " ")[[1]][2]
+  
   rmarkdown::render(input,
-                    output_file = paste0(Sys.Date(), "_Syllabus_", strsplit(basename(input), "[.]")[[1]][1]
-                    ), # = paste(rmarkdown::metadata$code,'.pdf'),
+                    output_file = paste0(code, "_Syllabus_", Sys.Date()),
                     ...,
                     output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
                      template = system.file('rmarkdown', 'templates', 'syllabus_pdf', 'resources', 'template.tex',
