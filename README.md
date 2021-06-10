@@ -18,8 +18,8 @@ coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)]
 
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and
-Development Studies in Geneva/ Institut de hautes ?tudes internationales
-et du d?veloppement (IHEID) in (R) markdown.
+Development Studies in Geneva/ Institut de Hautes Etudes Internationales
+et du Developpement (IHEID) in (R) markdown.
 
 The main use case for `{iheiddown}` is for writing a **Masters or PhD
 Dissertation at IHEID**, as it offers a user-friendly, simple, and
@@ -31,15 +31,22 @@ interpretation.
 
 The package is built upon the [IHEID LaTeX dissertation
 template](https://github.com/jhollway/iheidmytex), which offers versus
-common word processors: - less prone to corruption or crashing - more
-internal consistency - ensured consistency with the IHEID dissertation
-and other guidelines, e.g. dedication, abstract, abbreviations, tables
-of contents, figures, and tables - automatic figure and table
-referencing - automatic compilation of your references and bibliography
-(under different styles) - compilation chapter-by-chapter (for sending
-to your supervisor) or whole dissertation (for submission) -
-cross-referencing - smaller files - automatic versioning - and much
-more!
+common word processors:
+
+-   less prone to corruption or crashing
+-   more internal consistency
+-   ensured consistency with the IHEID dissertation and other
+    guidelines, e.g. dedication, abstract, abbreviations, tables of
+    contents, figures, and tables
+-   automatic figure and table referencing
+-   automatic compilation of your references and bibliography (under
+    different styles)
+-   compilation chapter-by-chapter (for sending to your supervisor) or
+    whole dissertation (for submission)
+-   cross-referencing
+-   smaller files
+-   automatic versioning
+-   and much more!
 
 Though you may have never had problems using Word in the past, the size
 and structure of most theses tax Word’s capabilities.
@@ -68,13 +75,15 @@ user-friendly nature and pretty output should make it of great benefit
 to nearly anyone writing a thesis project.
 
 You can see an example of the kind of dissertation output you can expect
-[here](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/jhollway/iheiddown/main/inst/rmarkdown/templates/thesis/skeleton/versions/IHEIDThesisExample.pdf).
+attached to the latest release.
 
-Not quite done yet, there is even more! With release 0.8.0 of the
-`{iheiddown}` package, you are now able to create beautiful IHEID-themed
-presentations to make your work shine during your presentations. This
-feature is based on the great `{xaringan}` package available
-[here](https://github.com/yihui/xaringan).
+## Additional features
+
+Not quite done yet, there is even more!
+
+-   Create IHEID-styled syllabi
+-   Create IHEID-styled presentations based on the great
+    [`{xaringan}`](https://github.com/yihui/xaringan) package.
 
 ## Installing iheiddown
 
@@ -107,9 +116,9 @@ dissertation. It’s very easy to get started.
 3.  Then from the options on the left `From Template`.
 4.  Scroll down through the options on the right until you find
     `Thesis   {iheiddown}`.
-5.  Name your thesis project by using the following format:
-    00-NameOfYourProject (for example: 00-MyThesisTitle).
-6.  Select where the project should be saved on your harddrive.
+5.  Name your thesis project `index`, i.e. your main `.Rmd` should be
+    named `index.Rmd`
+6.  Select where the project should be saved on your hard drive.
 
 Congratulations! You have now set up a thesis project.
 
@@ -123,10 +132,10 @@ dissertation between the --- and ---. Note that any text after hashtags,
 
 The \#metadata\# section should be fairly self-explanatory. The \#front
 matter\# section includes pointers to various front matter elements,
-such as dedications, acknowledgements (thank you), abbreviations, and
+such as dedications, acknowledgments (thank you), abbreviations, and
 your abstract. Note that it points to files in a folder created by the
 template called “front-and-back-matter/”. If you look in this folder,
-you will find placeholders for your own abstract and acknowledgements.
+you will find placeholders for your own abstract and acknowledgments.
 You can simply edit these and the edited versions will be used when the
 thesis is compiled. This section also includes various options for
 toggling lists of figures, tables, etc, in the final version.
@@ -202,7 +211,3 @@ your Markdown template.
 Yihui Xie’s [TinyTeX](https://yihui.name/tinytex/) is causing trouble.
 Try `tinytex::uninstall_tinytex()` and install a local copy.
 Unfortunately, full LaTeX installations are *large*.
-
-## Timeline of the Releases:
-
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
