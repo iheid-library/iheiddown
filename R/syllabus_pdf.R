@@ -18,7 +18,8 @@
 #' }
 syllabus_pdf <- function(input, ...){
   rmarkdown::render(input,
-                    output_file = paste0("Syllabus_", Sys.Date()), # = paste(rmarkdown::metadata$code,'.pdf'),
+                    output_file = paste0(Sys.Date(), "_Syllabus_", strsplit(basename(input), "[.]")[[1]][1]
+                    ), # = paste(rmarkdown::metadata$code,'.pdf'),
                     ...,
                     output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
                      template = system.file('rmarkdown', 'templates', 'syllabus_pdf', 'resources', 'template.tex',
