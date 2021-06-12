@@ -66,9 +66,10 @@ click on the "From Template" option on the left and select the
 "Thesis {iheiddown}" template. Now give your thesis a name and click
 on "OK".
 
-Important note! Give your thesis project a name that starts with `00-` like
-`00-MyThesis.Rmd`. This makes sure that the first knitted file is the main
-thesis file and not one of the chapters.
+Important note! Name your project `index`. This makes sure that the main Rmd
+file is called `index.Rmd` which is required to render your thesis with
+our `{bookdown}` based rendering function. Don't worry though, you can rename
+the folder to your project name after creating it.
 
 ![Step 2: select the template](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/thesis/1-Create_Thesis.png){width="80%"}
 
