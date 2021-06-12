@@ -1,6 +1,9 @@
 ---
 title: Theory
-author: "Author"
+author: Author
+chapter: 2
+in_context: False
+knit: iheiddown::chapter_pdf
 abstract: |
   This is an example of a chapter abstract.
   Ordinarily this would only be used for paper-based dissertations.
@@ -8,12 +11,7 @@ abstract: |
   and fill it in with your (paper) abstract.
   It is currently ignored when the entire dissertation is compiled,
   but is printed when just the chapter is compiled.
-output:
-  iheiddown::chapter_pdf:
-    input: "02-theory.Rmd" # Replace with whatever the name of this file is
-    author: "Author"
-    chapter: "2"
-    in_context: false
+output: iheiddown::chapter_pdf
 ---
 
 \setcounter{chapter}{1}

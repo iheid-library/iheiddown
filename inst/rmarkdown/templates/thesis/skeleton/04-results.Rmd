@@ -1,12 +1,10 @@
 ---
 title: Results
-author: "Author"
-output:
-  iheiddown::chapter_pdf:
-    input: "04-results.Rmd" # Replace with whatever the name of this file is
-    author: "Author"
-    chapter: "4"
-    in_context: false
+author: Author
+chapter: 4
+in_context: False
+knit: iheiddown::chapter_pdf
+output: iheiddown::chapter_pdf
 ---
 
 \setcounter{chapter}{3}
