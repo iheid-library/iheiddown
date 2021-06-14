@@ -163,10 +163,6 @@ div.remark-slide-container h3 {
 
 /* Slide numbering */
 
-.title-slide .remark-slide-number {
-  display: none;
-}
-
 .remark-slide-number {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
@@ -216,7 +212,6 @@ div.remark-slide-container .fullscale p {
 	text-shadow: 0 0 0 #333;
 
 }
-
 
 /***********
  Slide margins and spacings
