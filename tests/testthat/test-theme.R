@@ -35,6 +35,23 @@ test_that("theme_iheid() caption style is correct", {
   expect_identical(p[["theme"]][["plot.caption"]][["size"]], 9)
 })
 
+test_that("theme_iheid() strip style is correct", {
+  library(ggplot2)
+  p <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + ggtitle("Test") + geom_point() + theme_iheid()
+  expect_identical(p[["theme"]][["strip.text"]][["family"]], "sans")
+  expect_identical(p[["theme"]][["strip.text"]][["size"]], 12)
+  expect_identical(p[["theme"]][["strip.text"]][["face"]], "plain")
+})
+
+test_that("theme_iheid() subtitle style is correct", {
+  library(ggplot2)
+  p <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + ggtitle("Test") + geom_point() + theme_iheid()
+  expect_identical(p[["theme"]][["plot.subtitle"]][["family"]], "sans")
+  expect_identical(p[["theme"]][["plot.subtitle"]][["size"]], 12)
+  expect_identical(p[["theme"]][["plot.subtitle"]][["face"]], "plain")
+  expect_identical(p[["theme"]][["plot.subtitle"]][["colour"]][["IHEIDBlack"]], "#5c666f")
+})
+
 test_that("theme_iheid() caption style is correct", {
   library(ggplot2)
   p <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + ggtitle("Test") + geom_point() + theme_iheid()
