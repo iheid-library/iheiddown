@@ -21,6 +21,7 @@
 #' library(dplyr)
 #'
 #' # seminal scatterplot
+#' 
 #' ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
 #'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
