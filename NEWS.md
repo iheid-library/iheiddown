@@ -19,7 +19,8 @@
 ## Package
 
 - Closed #78 by reducing subdirectory size for CRAN submission
-- Closed #68 by fixing error message indicating that the output format was not of class rmarkdown_output_format
+- Closed #68 by fixing the error message indicating that the output format was not of class rmarkdown_output_format
+- Closed #84 by adding input argument to chapter_pdf() function
 - Closed #81 by adding initial `count_words()` function
 - Closed #60 by expanding automatic rendering script for syllabi and presentation templates
 
