@@ -58,8 +58,9 @@ chapter_pdf <- function(input, ...){
     chapter <- readLines(input)
     chapter <- chapter[grepl("^chapter:", chapter)]
     chapter <- strsplit(chapter, " ")[[1]][2]
+    message("In-context rendering")
     #Render chapter
-    bookdown::preview_chapter(...,
+    bookdown::preview_chapter(input = input, ...,
                               output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
                               output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
                                                                       template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
@@ -75,8 +76,9 @@ chapter_pdf <- function(input, ...){
     chapter <- readLines(input)
     chapter <- chapter[grepl("^chapter:", chapter)]
     chapter <- strsplit(chapter, " ")[[1]][2]
+    message("Out of context rendering")
     #Render chapter
-    rmarkdown::render(input,...,
+    rmarkdown::render(input ,...,
                       output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
                       output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
                                                               template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
