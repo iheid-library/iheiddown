@@ -13,6 +13,7 @@
 #' @export
 preview_start <- function(file_path, ...){
   xaringan::inf_mr(moon = file_path, ...)
+  message("Preview started")
 }
 
 #' @rdname preview
@@ -24,4 +25,5 @@ preview_start <- function(file_path, ...){
 preview_stop <- function(which = NULL){
   if(is.null(which)) which <- servr::daemon_list()
   servr::daemon_stop(which)
+  message("Preview stopped")
 }
