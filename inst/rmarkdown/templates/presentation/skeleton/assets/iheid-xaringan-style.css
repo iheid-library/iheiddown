@@ -190,7 +190,7 @@ div.remark-slide-container h3 {
 
 .inverse {
     color: ff0000;
-    text-shadow: 0 0 0px #333;
+    text-shadow: 0 0 0 #333;
 }
 
 div.remark-slide-container .fullscale {
@@ -207,16 +207,13 @@ div.remark-slide-container .fullscale p {
 	color: #000;
 
 }
-.remark-slide-content {
-	font-size: 24px;
-	text-shadow: 0 0 0 #333;
-
-}
 
 /***********
  Slide margins and spacings
  ***********/
 .remark-slide-content {
+  font-size: 24px;
+	text-shadow: 0 0 0 #333;
   padding-top: 25px;
   padding-left: 50px;
   padding-right: 50px;
