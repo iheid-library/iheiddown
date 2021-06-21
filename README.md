@@ -67,12 +67,13 @@ But wait, there’s more! Because `{iheiddown}` is an **R** package, it
 especially shines for those who are analysing data.
 [R](https://www.r-project.org) is a *free* statistical programme and
 language that has a *huge* range of packages available for most current
-methods of analysis and visualisation. [RStudio](https://rstudio.com) is
-a typical frontend that makes working in **R** and especially with
-`{iheiddown}` easy. So though `{iheiddown}` is especially attractive to
-those writing dissertations with many tables and figures, the
-user-friendly nature and pretty output should make it of great benefit
-to nearly anyone writing a thesis project.
+methods of analysis and visualisation.
+[RStudio](https://www.rstudio.com) is a typical frontend that makes
+working in **R** and especially with `{iheiddown}` easy. So though
+`{iheiddown}` is especially attractive to those writing dissertations
+with many tables and figures, the user-friendly nature and pretty output
+should make it of great benefit to nearly anyone writing a thesis
+project.
 
 You can see an example of the kind of dissertation output you can expect
 attached to the latest release.
@@ -87,7 +88,7 @@ Not quite done yet, there is even more!
 
 ## Installing iheiddown
 
-1.  Install [R](https://cran.rstudio.com), [RStudio version 1.2 or
+1.  Install [R](https://cran.r-project.org), [RStudio version 1.2 or
     higher](https://www.rstudio.com/products/rstudio/download/#download),
     and [LaTeX](https://www.latex-project.org/get/), or
     [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup>
@@ -208,6 +209,6 @@ MiKTeX console, you should regularly check for updates as “MiKTeX user
 mode”, this will prevent issues when generating your pdf document from
 your Markdown template.  
 <sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons,
-Yihui Xie’s [TinyTeX](https://yihui.name/tinytex/) is causing trouble.
+Yihui Xie’s [TinyTeX](https://yihui.org/tinytex/) is causing trouble.
 Try `tinytex::uninstall_tinytex()` and install a local copy.
 Unfortunately, full LaTeX installations are *large*.
