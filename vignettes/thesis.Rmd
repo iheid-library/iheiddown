@@ -62,7 +62,7 @@ appears. Now that we have created an R project for our presentation, we can open
 a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
-![Step 1: open a new project](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/presentation/0-Open_Project.png){width="80%"}
+![Step 1: open a new project](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/presentation/0-Open_Project.PNG){width="80%"}
 
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our thesis. To do so,
@@ -75,7 +75,7 @@ file is called `index.Rmd` which is required to render your thesis with
 our `{bookdown}` based rendering function. Don't worry though, you can rename
 the folder to your project name after creating it.
 
-![Step 2: select the template](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/thesis/1-Create_Thesis.png){width="80%"}
+![Step 2: select the template](https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/vignettes/thesis/1-Create_Thesis.PNG){width="80%"}
 
 Congrats! You just created your first thesis project!
 
