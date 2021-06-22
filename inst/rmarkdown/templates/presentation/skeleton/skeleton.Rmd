@@ -6,7 +6,11 @@ author: "<large>Author Name</large>"
 # date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
 output:
   xaringan::moon_reader:
-    css: ["default", "https://cdn.jsdelivr.net/gh/jhollway/iheidmyninja@4ff709f/iheid-xaringan-style.css"]
+    css: 
+      - "default"
+      - "assets/iheid-xaringan-style.css"
+      - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      - "ninjutsu"
     chakra: "https://remarkjs.com/downloads/remark-latest.min.js"
     # if you want to work offline, run the following command...
     # xaringan::summon_remark()
@@ -17,7 +21,7 @@ output:
       ratio: '16:9'
       highlightStyle: github
       highlightLines: true
-      beforeInit: "macros.js"
+      beforeInit: "assets/macros.js"
       countIncrementalSlides: false
       slideNumberFormat: |
         <div class="progress-bar-container">
@@ -36,7 +40,23 @@ class: center, middle
 # it doesn't appear, because the include argument above is FALSE...
 options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
 knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
-old <- ggplot2::theme_set(theme_iheid())
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+# Initializes the bibliography
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear", # Bibliography style
+           max.names = 3, # Max author names displayed in bibliography
+           sorting = "nyt", #Name, year, title sorting
+           cite.style = "authoryear", # citation style
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib("assets/myBib.bib", check = FALSE)
+# Note: don't forget to clear the knitr cache to account for changes in the
+# bibliography.
 ```
 
 ---
@@ -76,6 +96,41 @@ or a numbered list...
 ]
 
 ---
+class: split-four, center
+
+# Present your team by slicing the slide up with ninjutsu!
+
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Prof. Smith*
+
+Principal Investigator
+
+]]
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Dr. Jones*
+
+Doctoral Research Assistant
+
+]]
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Ms. Dupont*
+
+Research Assistant
+
+]]
+
+.column[.pull-down[![:scale 75%](https://www.seekpng.com/png/detail/143-1435868_headshot-silhouette-person-placeholder.png)
+
+*Mr. Dupond*
+
+Research Assistant
+
+]]
+
+---
 ## You can build a step-by-step reveal
 
 --
@@ -100,6 +155,52 @@ plot(iris)
 ```
 
 ---
+class: highlight-last-item
+
+## Add progressive lists
+
+Adding the class `highlight-last-item` allows you to highlight the last element
+of a progressive list.
+
+- First item
+
+--
+
+- Second item
+
+--
+
+-  For more options, see the `iheid-xaringan-style.css` file and search for
+"progressive slides". This feature was based on [this great article](https://www.garrickadenbuie.com/blog/better-progressive-xaringan/?panelset2=r-markdown3&panelset=r-markdown&panelset1=slides2).
+
+---
+class: show-only-last-code-result
+
+## Progressive code
+
+Adding the class `show-only-last-code-result` allows you to render only the last
+code result.
+
+```{r}
+runif(5)
+```
+--
+
+```{r}
+rnorm(5)
+```
+--
+
+```{r}
+rbinom(5, 1, 0.5)
+```
+--
+
+```{r}
+rcauchy(5)
+```
+
+---
 class: center, middle
 ## Or you can highlight which section of your presentation you are up to...
 
@@ -115,7 +216,119 @@ class: left, middle
 ~ Some person]
 
 ---
+class: with-logo logo-iheid
+
+## Add a logo to your presentation 
+
+.pull-left[Adding a nice looking logo to your presentation is easy. Simply 
+define the `with-logo` class alongside the class of the logo itself 
+(`logo-iheid` in this case) on every slide you want the logo to appear.
+
+See [the presentation vignette](https://github.com/jhollway/iheiddown) for a
+list of the included logos.]
+
+---
+
+## Add Maps
+
+```{r, fig.height=4, fig.width=10, fig.align='center', echo=TRUE}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  setView(6.1435, 46.2210, zoom = 17)
+```
+
+---
+
+## Add some tables !
+
+With the addition of the excellent [`{xaringan_columns}`](https://github.com/emilyriederer/xaringan_columns) macros by Emily
+Riederer, you can create nice looking multicolumn tables using clean markdown code.
+
+![:col_header Header 1, Header 2, Header 3, Header 4, Header 5]
+![:col_list You can add rows with bulletted lists, item2, item3, hello, more content]
+![:col_list item4, item5, Or normal chunks of text (see below), la la la, tra la la]
+![:col_row 
+    More text,
+    More text,
+    .,
+    More text,
+    More text
+]
+
+---
+
+## More tables; kable and kableExtra packages
+.pull-left[Kable: great features for displaying simple tables!
+```{r, fig.height = 4, fig.width=10, echo=TRUE}
+knitr::kable(head(mtcars[1:4], 5), format = 'html')
+```
+
+See [the knitr documentation](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+for additional options.
+]
+
+.pull-right[Want to get fancier? Use kableExtra!
+```{r, fig.height = 2, fig.width=2, echo=TRUE}
+head(mtcars[1:4], 3) %>% 
+  kableExtra::kbl()%>%
+  kableExtra::kable_material(c("hover", "striped", "condensed"), full_width = F)
+```
+
+See [the kableExtra documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+for additional options.
+]
+
+---
+
+## Interactive tables; DT package
+
+```{r, fig.height = 4, fig.width=10, echo=TRUE}
+library(DT)
+DT::datatable(head(mtcars, 10),
+  fillContainer = FALSE, options = list(pageLength = 4))
+```
+
+See the [DT package documentation](https://rstudio.github.io/DT/) for the
+additional options.
+
+---
+class: animate__animated, animate__slideInRight
+
+## Add slide transitions to  your slides
+
+Simply add the class `animate__animated` and the class corresponding to the
+desired animation such as `animate__slideInRight`, et voilà!
+
+For a complete list of the available animations and further options, visit
+[animate.style](https://animate.style/).
+
+.center[![Animation GIF](https://i.giphy.com/media/Oo6GWyiWEDgtO/giphy.webp)]
+
+---
 background-image: url(https://media1.giphy.com/media/xT0BKiK5sOCVdBUhiM/giphy.gif)
 background-size: contain
+
 # And finally, you can add gifs!
 
+---
+class: inverse iheid-red center middle with-logo logo-iheid_BW
+
+.pull-left[
+Made with `{iheiddown}`, the R-package for IHEID publications
+`r Cite(myBib, "iheiddown")`.
+]
+
+.pull-right[
+[`r icons::icon_style(icons::fontawesome("github"), scale = 2, fill = "white")`](https://github.com/jhollway/iheiddown)
+
+[`r icons::icon_style(icons::fontawesome("link"), scale = 1.5, fill = "white")`](https://jameshollway.com/)
+]
+
+---
+
+# References
+
+```{r refs, echo=FALSE, results="asis"}
+RefManageR::PrintBibliography(myBib)
+```

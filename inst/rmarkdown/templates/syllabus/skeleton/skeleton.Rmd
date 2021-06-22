@@ -4,7 +4,7 @@
 ####################
 title: |
   Transfiguration
-code: &code MINT001
+code: MINT001
 credits: 12
 year: 2020--2021
 semester: Fall
@@ -71,15 +71,18 @@ policies: |
 bibliography: references.bib
 csl: geneva-syllabus.csl
 
+##########################
+## Define Knit function ##
+##########################
+knit: iheiddown::syllabus_pdf
+
 #####################
 ## Output Options  ##
 #####################
-output:
-  iheiddown::syllabus_pdf:
-    input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
-    output_file: *code
+output: iheiddown::syllabus_pdf
 link-citations: true
 draft: true
+documentclass: article
 ---
 
 ```{r, echo = FALSE}

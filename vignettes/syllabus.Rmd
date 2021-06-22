@@ -1,0 +1,107 @@
+---
+title: "Writing your syllabus"
+author: "Bernhard Bieri"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Writing your syllabus}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r global.options, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = 'center',
+  fig.width=6,
+  fig.height=4
+)
+```
+
+```{r setup, include=FALSE}
+pkgs <- c("iheiddown", "magrittr", "ggplot2")
+lapply(pkgs, library, character.only = TRUE)
+```
+
+`{iheiddown}` is not only a tool for students to write their thesis in. It can
+also be of use for teaching activities at IHEID as it harbors a great looking
+template for course syllabi. This short article will walk you through the
+workflow of writing your very own syllabus in R.
+
+## Installation
+
+The installation process is the same than for the thesis template. You'll need
+the following software:
+
+1. Install [R](https://cran.r-project.org) and [R-Studio](https://www.rstudio.com/)
+2. Install a LATEX distribution:
+    - [For MacOS](http://www.tug.org/mactex/)
+    - [For Windows](https://miktex.org/)
+    - [For Linux](https://www.tug.org/texlive/)
+3. Install `{iheiddown}` by typing the following command
+`remotes::install_github("jhollway/iheiddown")` in the R-Studio console. 
+
+Note: typing `remotes::install_github("jhollway/iheiddown")` again will update
+the package to the latest released version.
+
+## Create your first syllabus 
+
+Creating your first syllabus is easy! Let's look at how it is done. Before
+we begin, we have to create a new R project by clicking on the file tab in the
+top of the RStudio window and following the instructions of the prompt that
+appears. Now that we have created an R project for our presentation, we can open
+a new R-Markdown file. To do this click on the "plus file" logo in the top left
+corner and then on "R-Markdown".
+
+![Step 1: open a new project](images/syllabus/0-Open_Project.PNG){width="80%"}
+
+After you have done this, a little pop-up helper will appear. The first thing we
+will do is to select the `{iheiddown}` template for our presentation. To do so,
+click on the "From Template" option on the left and select the
+"Thesis {iheiddown}" template. Now give your presentation a name and click
+on "OK".
+
+![Step 2: select the template](images/syllabus/1-Create_Syllabus.PNG){width="80%"}
+
+Congrats! You just created your first syllabus! Now, the first thing we will do
+is to set the correct `input:` file name in the YAML header. The option is
+located near the bottom of the YAML header in the output options. Just replace
+the file name by the one that you chose when creating the syllabus.
+
+Now that we have set the correct name for our syllabus in the output options,
+we are ready to render our syllabus. This is done by simply clicking the "knit
+button" while viewing the `MySyllabus.Rmd` pane. Et voilà! You have already
+successfully generated your first syllabus with R.
+
+Take a moment to read through the generated syllabus to get acquainted with the
+`{R-markdown}` syntax and to get a feel of the possibilities of the
+`{iheiddown}` theme. It will help you understand the structure of the file.
+
+## Edit your syllabus
+
+This section will focus on giving you an overview of the workflow of creating
+your syllabus in `{iheiddown}`.
+
+### Set YAML options
+
+The general options are set in the YAML header. You can define the contact
+information of the instructor and the teaching assistant as well as give a
+general course description or set evaluation policies. 
+
+You can also set bibliographic options such as the `.bib` file you want to draw
+your references from (`references.bib` by default) and the style of the
+bibliographic entries by altering the `.csl` file.
+
+### Setting the start-date of your course
+
+The second step is to set the correct start date of your course in the main
+`MySyllabus.Rmd` file. This is done simply by editing the `startdate` variable
+in the first code chunk.
+
+### Editing your course description
+
+The third and last step is to edit the main body of the syllabus. To do this,
+simply write the title of each week's session, a description if necessary and
+add citations of the weeks material with the id of the reference in the bib file
+preceded by "@" e.g. `@Darwin1958`.

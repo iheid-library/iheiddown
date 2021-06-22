@@ -1,12 +1,10 @@
 ---
 title: Results
-author: "Author"
-output:
-  iheiddown::chapter_pdf:
-    input: "04-results.Rmd" # Replace with whatever the name of this file is
-    author: "Author"
-    chapter: "4"
-    in_context: false
+author: Author
+chapter: 4
+in_context: False
+knit: iheiddown::chapter_pdf
+output: iheiddown::chapter_pdf
 ---
 
 \setcounter{chapter}{3}
@@ -84,15 +82,15 @@ You'll see their use below.
 
 You don't need to number figures in _RMarkdown_; it'll do it automatically.
 And captioning a figure is awfully easy too.
-In the **R** chunk below, we will load in a picture that is stored as `iheid.eps` in our `figures` directory.
+In the **R** chunk below, we will load in a picture that is stored as `iheid.png` in our `figures` directory.
 The `include_graphics()` function is from the `{knitr}` package, that does most of the heavy lifting here.
 We'll label the chunk 'iheidlogo' so that we can refer back to it later,
 and give the figure the caption "IHEID logo".
 You will see that here you do not need to include the parameter `echo=FALSE`,
 as the code including the figure is hidden by default.
 
-```{r iheidlogo, fig.cap="IHEID logo"}
-include_graphics(path = "figures/iheid.eps")
+```{r iheidlogo, fig.cap="IHEID logo", out.width="50%", fig.align='center'}
+include_graphics(path = "figures/iheid.png")
 ```
 
 ### Referencing figures
@@ -251,15 +249,15 @@ which then passes this on up.
 The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
 The last two options make Table \@ref(tab:maxdelays) a little easier-to-read.^[Note that we can create references/links to tables using a very similar syntax here to that with figures above. We can preface the reference with "Table" or "Tab." or so, and then create the reference with the format `\@ref(tab:chunk-label)`.]
 
-We can further look into the properties of the largest value here for American Airlines Inc.
-To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original `flights` dataset.
-We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth.  
+We can further look into the properties of the largest value here for Alaska Airlines Inc.
+To do so, we can isolate the row corresponding to the arrival delay of 70 minutes for Alaskan in our original `flights` dataset.
+We see that the flight occurred on January 1st and departed a little after 1:30 am on its way to Anchorage.  
 
 ```{r max_props}
 flights %>%
   dplyr::filter(
-    arr_delay == 1539,
-    carrier_name == "American Airlines Inc."
+    arr_delay == 70,
+    carrier_name == "Alaska Airlines Inc."
   ) %>%
   select(-c(
     month, day, carrier, dest_name, hour,

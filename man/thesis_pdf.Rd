@@ -4,12 +4,12 @@
 \alias{thesis_pdf}
 \title{Creates an R Markdown PDF Thesis document}
 \usage{
-thesis_pdf(..., author)
+thesis_pdf(input = ".", ...)
 }
 \arguments{
-\item{...}{Instructions passed to the function from a correctly specified .Rmd document}
+\item{input}{Rmd input file that will be processed by the function.}
 
-\item{author}{The surname of the author, passed to the function by a correctly specified .Rmd document}
+\item{...}{Instructions passed to the function from a correctly specified .Rmd document}
 }
 \value{
 A modified \code{pdf_document} based on the IHEID Thesis LaTeX

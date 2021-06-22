@@ -1,0 +1,202 @@
+---
+title: "Writing your thesis"
+author: "Bernhard Bieri"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Writing your thesis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r global.options, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = 'center',
+  fig.width=6,
+  fig.height=4
+)
+```
+
+```{r setup, include=FALSE}
+pkgs <- c("iheiddown", "magrittr", "ggplot2")
+lapply(pkgs, library, character.only = TRUE)
+```
+
+`{iheiddown}`'s primary feature is to enable students of the Institute to write
+their thesis in R-Markdown. It takes care of the annoying formatting process and
+automates the most repetitive tasks a student faces when writing scholarly
+documents. In short, `{iheiddown}` allows its users to focus on the *content*
+rather than the *formatting* of a thesis.
+
+This guide will show you how to get up and running and start writing your thesis
+in R while providing you with helpful tips and tricks to make you familiar with
+the workflow of writing your very own scholarly documents in R.
+
+## Installation
+
+To use `{iheiddown}`'s template you'll need the following software:
+
+1. Install [R](https://cran.r-project.org) and [R-Studio](https://www.rstudio.com/)
+2. Install a LATEX distribution:
+    - [For MacOS](http://www.tug.org/mactex/)
+    - [For Windows](https://miktex.org/)
+    - [For Linux](https://www.tug.org/texlive/)
+3. Install `{iheiddown}` by typing the following command
+`remotes::install_github("jhollway/iheiddown")` in the R-Studio console.
+  - The package will soon be made available on CRAN. This will enable you to
+  install the package even faster by simply typing
+  `install.packages("iheiddown")`. We will update the vignette when this is the
+  case.
+
+Note: typing `remotes::install_github("jhollway/iheiddown")` again will update
+the package to the latest released version.
+
+## Create your first thesis project
+
+Creating your first thesis is easy! Let's look at how it is done. Before
+we begin, we have to create a new R project by clicking on the file tab in the
+top of the RStudio window and following the instructions of the prompt that
+appears. Now that we have created an R project for our presentation, we can open
+a new R-Markdown file. To do this click on the "plus file" logo in the top left
+corner and then on "R-Markdown".
+
+![Step 1: open a new project](images/thesis/0-Open_Project.PNG){width="80%"}
+
+After you have done this, a little pop-up helper will appear. The first thing we
+will do is to select the `{iheiddown}` template for our thesis. To do so,
+click on the "From Template" option on the left and select the
+"Thesis {iheiddown}" template. Now give your thesis a name and click
+on "OK".
+
+Important note! Name your project `index`. This makes sure that the main Rmd
+file is called `index.Rmd` which is required to render your thesis with
+our `{bookdown}` based rendering function. Don't worry though, you can rename
+the folder to your project name after creating it.
+
+![Step 2: select the template](images/thesis/1-Create_Thesis.PNG){width="80%"}
+
+Congrats! You just created your first thesis project!
+
+Hold on, this doesn't look anything like a Word processor!? To see your thesis,
+you have to "knit" the code by clicking on the little "knit" button while 
+viewing the `00-MyThesis.Rmd` file. This will run all the code chunks in every
+chapter and convert the Markdown code to a correctly formatted PDF document that
+you will find in the `\versions` folder of your project.
+
+Take a moment to read through the generated PDF to get acquainted with the
+`{R-Markdown}` syntax and to get a feel of the possibilities of `{iheiddown}`'s
+thesis template. This first document is as much a tutorial as this vignette!
+
+
+## Edit your thesis
+
+This section will focus on giving you an overview of the elements of an
+`{iheiddown}` thesis and give you a few tips and tricks to edit it.
+
+### The different elements of a `{iheiddown}` thesis
+
+After this initial preview, let's look at how the thesis project is structured
+to better understand how to edit it. 
+
+#### The index file
+
+The index file contains two things: the YAML header and the preface of your
+thesis. It is also the backbone of your thesis in the sense that this is where
+you will want to knit your whole thesis from.
+
+The YAML header is the place where the main options, metadata and formatting
+parameters are set. You can set the title of your presentation here, add your
+name, change the front matter of your thesis (abstract, acknowledgments, table
+of content, etc.).
+
+The second element in this file is the preface. The only crucial thing to know
+here is that in order to create your package bibliography (the software you use
+to render your thesis) you need to leave the first code chunk there.
+
+#### The chapters
+
+The chapters contain the meat of your thesis, this is where you will outline
+your idea, run your analyses and draw your conclusions.
+
+Chapters are structured in a similar way, so let us open the
+`01-introduction.Rmd` chapter. In it, you will first find a YAML header that
+where you can set various chapter level metadata and options.
+
+Note that if for some reason you rename the chapter, you will need to specify
+the new name in the YAML header too under the `input` option. Once you have done
+this you can write away!
+
+The last thing to know about individual chapters is that you can knit them
+individually. This comes in handy when you want to generate only one part of
+your thesis for preview purposes.
+
+#### The appendix and the references files
+
+These files are a bit special as you might notice when you open them. 
+
+The `99-references.Rmd` file generates the bibliography. This happens
+automatically, so you will most likely not need to alter this file. Just know
+that you can set the title of the reference section in the first line.
+
+The `98-appendix.Rmd` file allows you to showcase code, additional outputs and
+more in a separate section to avoid unnecessarily cluttering the main body of
+your thesis. This can be done by [referencing code chunks](https://bookdown.org/yihui/rmarkdown-cookbook/reuse-chunks.html)
+from your main body and printing the computations you did in your R chunks or 
+by adding new ones.
+
+#### The `_bookdown.yml` file
+
+The `_bookdown.yml` file contains additional information for the YAML header
+of the main `.Rmd` file. A standard user should not have to edit it. If for some
+reason or another you still feel like it, you need to know that you can set
+additional `.Rmd` subdirectories, set another output file than the standard
+`\versions` file, and toggle the deletion of merged files after the knitting
+process ended here.
+
+#### The `\bib` folder
+
+The bibliography folder contains two files; `packages.bib` and `references.bib`.
+The former is automatically generated by the first code chunk in the `index.Rmd`
+file and cites the packages you have loaded when running your code chunks.
+You will not need to alter this.
+
+On the other hand, the `references.bib` file is the place to dump the bibtex
+citations that you will cite in your thesis.
+
+#### The `\data` folder
+
+The data folder is the place to put all the data that you use in the code chunk
+of your analysis. Remember to keep it tidy so you can easily link data to
+outputs down the line such as graphs and tables.
+
+#### The `\figures` folder
+
+The figures folder will contain all the graphical elements that you may want to
+include in your thesis e.g. figures, graphs, or images. It also contains a file
+named `SecretariatDocument.pdf` that you will need to replace with the one that
+was handed to you by the PhD or Master's secretariat. Remember to rename the
+file you got from the secretariat as `SecretariatDocument.pdf`. Otherwise
+`{iheiddown}` will not recognize it.
+
+#### The `\front-matter` folder
+
+The front matter folder contains the front matter of your thesis. This is where
+you will be able to edit the abbreviations part in the corresponding Latex file,
+the acknowledgments section or the abstract of your thesis in their
+respective `.Rmd` files.
+
+#### The `\versions` folder
+
+This is where you will find the pdf file after your thesis has been knitted by
+`{iheiddown}`.
+
+## Additional resources
+
+Here is a list of additional links that will help you get familiar with our
+`{iheiddown}` thesis template, `{bookdown}` and `Markdown` syntax.
+
+- [R-Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+- [Bookdown book](https://bookdown.org/yihui/bookdown/)
+- [Markdown guide](https://www.markdownguide.org/)

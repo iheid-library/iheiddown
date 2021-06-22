@@ -8,7 +8,7 @@ doctitle: |
   For the Graduate Institute Geneva \
   in R Markdown
 firstnames: Author
-lastnames: &author Name
+lastnames: Name
 thesisno: 12345
 phd: true # Or: false for Masters
 department: Your Department
@@ -55,14 +55,11 @@ page-layout: oneside #'oneside' for PDF output (equal margins),
 # or 'twoside' for two-sided binding (mirror margins and blank pages) 
 hidelinks: false #if false, the PDF output highlights clickable links with a colored border 
 # you will probably want to set this to true for PDF version you wish to physically print
-
+knit: iheiddown::thesis_pdf
 #####################
 ## Output Options  ##
 #####################
-output:
-  iheiddown::thesis_pdf:
-    input: "00-Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "mythesis.Rmd"
-    author: *author
+output: iheiddown::thesis_pdf
 link-citations: true
 documentclass: book
 ---

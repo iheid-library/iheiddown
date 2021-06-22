@@ -3,4 +3,13 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^working$
-^R\_render.R
+^R/_render.R$
+^Untitled$
+^README.Rmd$
+^README_files$
+^docs$
+^Meta$
+^_pkgdown\.yml$
+^pkgdown$
+^cran-comments\.md$
+^CRAN-RELEASE$

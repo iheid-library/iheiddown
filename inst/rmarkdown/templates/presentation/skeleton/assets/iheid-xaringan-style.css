@@ -41,6 +41,10 @@ color: red;
 color: blue;
 }
 
+.green {
+color: #3B7A57;
+}
+
 .grViz {
   margin-left:auto; margin-right:auto; display:block;
 }
@@ -60,6 +64,59 @@ color: blue;
   text-align: right;
   font-size: 80%;
 }
+
+/* Logos */
+
+/*NB: Logos need to be specified near the top of the CSS file to avoid being
+hidden behind other background information.*/
+
+.with-logo::before {
+	content: '';
+	width: 220px;
+	height: 252px;
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.logo-iheid::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/Logo_IHEID_couleur.png);
+}
+.logo-cies::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_CIES_rvb.png);
+}
+.logo-ctei::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_CTEI_rvb.png);
+}
+.logo-ggc::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_GGC_RVB.png);
+}
+.logo-ahcd::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_AHCD_RVB.png);
+}
+.logo-ccdp::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_CCDP_rvb.png);
+}
+.logo-cfd::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_CFD_rvb.png);
+}
+.logo-gender::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_GENDER_RVB.png);
+}
+.logo-ghc::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_GHC_rvb.png);
+}
+.logo-gmc::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_GMC_rvb.png);
+}
+.logo-iheid_BW::before {
+	  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/Logo_IHEID_nb.png);
+}
+.logo-iheid_white::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IHEID_couleur_tx_blanc.png);
+}
+
 /* Tables */
 
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: none }
@@ -76,14 +133,6 @@ font-size: 48px;
 a, a > code {
   color: #e10020;
   text-decoration: none;
-}
-
-.inverse h1 {
-    line-height: 1em;
-}
-
-.title-slide h1 {
-	margin-top: -130px;
 }
 
 div.remark-slide-container h2 {
@@ -105,32 +154,23 @@ div.remark-slide-container h3 {
   background-image: url(https://wp.unil.ch/ssmtp4sd/files/2014/10/Education_IHEID_logo.png);
   background-position: 95% 95%;
 	background-size: 30%;
-  background-color: #fff;
-  background-color: #e64626;
+  background-color: #FFFFFF;
 	text-align:left;
   vertical-align: top;
   text-shadow: none;
-	border-bottom: 0px solid  #522D80;
+	border-bottom: 0 solid  #522D80;
 }
 
 /* Slide numbering */
-
-.title-slide .remark-slide-number {
-  display: none;
-}
 
 .remark-slide-number {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #522D80;
+	position: inherit;
 }
 
 /* Okay, now let's add a progress bar https://github.com/yihui/xaringan/wiki/Progressbar */ 
-
-
-.remark-slide-number {
-  position: inherit;
-}
 
 .remark-slide-number .progress-bar-container {
   position: absolute;
@@ -150,7 +190,7 @@ div.remark-slide-container h3 {
 
 .inverse {
     color: ff0000;
-    text-shadow: 0 0 0px #333;
+    text-shadow: 0 0 0 #333;
 }
 
 div.remark-slide-container .fullscale {
@@ -167,17 +207,13 @@ div.remark-slide-container .fullscale p {
 	color: #000;
 
 }
-.remark-slide-content {
-	font-size: 24px;
-	text-shadow: 0 0 0px #333;
-
-}
-
 
 /***********
  Slide margins and spacings
  ***********/
 .remark-slide-content {
+  font-size: 24px;
+	text-shadow: 0 0 0 #333;
   padding-top: 25px;
   padding-left: 50px;
   padding-right: 50px;
@@ -257,13 +293,6 @@ pre {
   bottom: 50px;
 }
 
-/* Change default inverse background colour */
-.inverse {
-  background-color: #fff;
-  /* background-color: #0148A4;
-  background-color: .writing-grey;
-  text-shadow: 0 0 20px #333; */
-}
 .inverse .remark-slide-number {
   display: none;
 }
@@ -358,12 +387,6 @@ a {
     clear: both;
 }
 
-/*Optional: Color header boxes*/
-.multicolhead {
-    background-color:#FF0000;
-    color: #FFFFFF;
-}
-
 .wordwrap { 
    white-space: pre-wrap;      /* CSS3 */   
    white-space: -moz-pre-wrap; /* Firefox */   
@@ -371,9 +394,30 @@ a {
    word-wrap: break-word;      /* IE */
 }
 
+/* Progressive slide controls from https://www.garrickadenbuie.com/blog/better-progressive-xaringan/?panelset2=slides3&panelset=slides */
+.highlight-last-item > ul > li, 
+.highlight-last-item > ol > li {
+  opacity: 0.5;
+}
+.highlight-last-item > ul > li:last-of-type,
+.highlight-last-item > ol > li:last-of-type {
+  opacity: 1;
+}
 
+/* Make the last element of the list bold instead of making the n-1 elements
+more transparent. Uncomment to use and add the class .bold-last-item to the
+beginning of the slide.*/
+/*
+.bold-last-item > ul > li:last-of-type,
+.bold-last-item > ol > li:last-of-type {
+  font-weight: bold;
+}
+*/
 
-
+/* Render only last code result*/
+.show-only-last-code-result pre + pre:not(:last-of-type) code[class="remark-code"] {
+    display: none;
+}
 /******************
  * Slide scrolling
  * (non-functional)
@@ -456,7 +500,7 @@ slides > slide {
   border-radius: 15px;
   margin: 0 0 15px;
   overflow: hidden;
-  padding: 0px 20px 0px 20px;
+  padding: 0 20px;
   width: 100%;
 }
 .content-box-blue { background-color: #F0F8FF; }
@@ -468,7 +512,6 @@ slides > slide {
 .content-box-red { background-color: #ffcccc; }
 .content-box-yellow { background-color: #fef5c4; }
 .content-box-orange { background-color: #ffa500; }
-.content-box-blue .remark-inline-code,
 .content-box-blue .remark-inline-code,
 .content-box-gray .remark-inline-code,
 .content-box-grey .remark-inline-code,
@@ -507,6 +550,29 @@ slides > slide {
   height: 230px;
   margin: 10px;
   }
+  
+.squareon img {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #ff0000;
+  width: 220px;
+  height: 220px;
+  margin: 10px;
+  }
+
+.squareoff img {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #ff0000;
+  opacity: 0.2;
+  width: 230px;
+  height: 230px;
+  margin: 10px;
+  }
+
+/* Check out https://github.com/BBieri/Design_Misc for square logos */
 
 /***********
  Changed CSS
@@ -588,6 +654,17 @@ slides > slide {
   }
 }
 
+/* xaringan_columns CSS Styling*/
+
+/*Optional: Color header boxes*/
+.multicolhead {
+    background-color:#4B9CD3;
+    color: #FFFFFF;
+}
+
+.multicolcol {
+  min-height: 1px;
+}
 
 
 /*~~~~~~~~~~~~~~~~*/
@@ -625,7 +702,7 @@ slides > slide {
   font-size: 35px;
   padding-left: 20px;
   padding-bottom: 10px;
-  margin-top: 0px;
+  margin-top: 0;
   text-align: left;
   vertical-align: middle;
 }
@@ -636,7 +713,7 @@ slides > slide {
   font-weight: normal;
   color: black;
   padding-left: 20px;
-  margin: 0px;
+  margin: 0;
   line-height: 1;
   text-align: left;
   vertical-align: middle;

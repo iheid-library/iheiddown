@@ -31,7 +31,7 @@ jobs:
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
-          
+
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
 
@@ -67,6 +67,9 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("pkgbuild")
+          remotes::install_github("crsh/citr")
+          remotes::install_github("gadenbuie/xaringanExtra")
+          remotes::install_github("giocomai/ganttrify")
         shell: Rscript {0}
 
       - name: Document
@@ -104,16 +107,38 @@ jobs:
         if: runner.os == 'macOS'
         run: Rscript R/_render.R
 
-      - name: Save output samples artifact
+      - name: Save Thesis Sample as artifact
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
         with:
           name: examples
           path: 00-Example/versions/
 
-      - name: Clean-up unnecessary files
+      - name: Save Presentation Sample as artifact
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v2
+        with:
+          name: SyllabusExample
+          path: Untitled/
+
+      - name: Save Syllabus Sample as artifact
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v2
+        with:
+          name: PresentationExample
+          path: index/
+
+      - name: Remove Thesis project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("00-Example", recursive = TRUE)'
+
+      - name: Remove Presentation project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("index", recursive = TRUE)'
+
+      - name: Remove Syllabus project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("Untitled", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
@@ -166,6 +191,28 @@ jobs:
           asset_path: examples/IHEIDThesisExample.pdf
           asset_name: IHEIDThesisExample.pdf
           asset_content_type: application/pdf
+
+      - name: Upload Syllabus Example Asset
+        id: upload-syllabus-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: SyllabusExample/IHEIDSyllabusExample.pdf
+          asset_name: IHEIDSyllabusExample.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload Presentation Example Asset
+        id: upload-presentation-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: PresentationExample/
+          asset_name: PresentationExample
+          asset_content_type: text/html
 
       - name: Rename Mac release
         run: mv ./macOS/*.tgz iheiddown_macOS.tgz
@@ -232,3 +279,46 @@ jobs:
           git add README.md
           git commit -m "Re-build README.md" || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
+          
+  pkgdown:
+    name: Build and deploy website
+    needs: release
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@v1
+
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+        shell: Rscript {0}
+
+      - name: Cache R packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install dependencies
+        run: |
+          remotes::install_deps(dependencies = TRUE)
+          install.packages("pkgdown", type = "binary")
+        shell: Rscript {0}
+
+      - name: Install package
+        run: R CMD INSTALL .
+
+      - name: Deploy package
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
+

@@ -1,0 +1,263 @@
+---
+title: "Presentations"
+author: "Bernhard Bieri"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Presentations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r global.options, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = 'center',
+  fig.width=6,
+  fig.height=4
+)
+```
+
+```{r setup, include=FALSE}
+pkgs <- c("iheiddown", "magrittr", "ggplot2")
+lapply(pkgs, library, character.only = TRUE)
+```
+
+`{iheiddown}` not only allows its users to create scholarly documents but also
+provides them with a simple way to create great presentations to share the
+contents of their research effectively. This article will help you get started
+from the ground up and help you create your very own first presentation.
+
+## Installation
+
+The presentation theme is based on Yihui Xie's excellent
+[`{xaringan}`](https://github.com/yihui/xaringan) package. Hence the first thing
+to do is to install the necessary components as well as `{iheiddown}` itself.
+Note that we are installing the package from GitHub instead of CRAN since it is
+not available on there yet.
+
+```{r, eval = F, echo = T}
+# Install the required packages
+remotes::install_github("jhollway/iheiddown")
+remotes::install_github("yihui/xaringan")
+install.packages("servr") # This will allow us to see the slides we are editing
+
+# Load the packages in your session
+pkgs <- c("iheiddown", "xaringan", "servr")
+lapply(pkgs, library, character.only = TRUE)
+```
+
+Before we go any further, we should introduce
+[`{xaringan}`](https://github.com/yihui/xaringan) a bit more since you'll be
+working with when creating presentations with the `{iheiddown}` theme.
+The first thing to know is that there are many ways to create presentations in
+(R-)Markdown and that there is not one solution that fulfills all needs.
+However, after careful consideration (and reading
+[this blog post](https://yihui.org/en/2017/08/why-xaringan-remark-js/)) we
+settled on `{xaringan}`to develop our presentation template for.
+
+If you want to know more about `{xaringan}` and other presentation packages for
+R, check out
+[this excellent book](https://bookdown.org/yihui/rmarkdown/xaringan.html).
+
+## Create your first presentation
+
+Creating your first presentation is easy! Let's look at how it is done. Before
+we begin, we have to create a new R project by clicking on the file tab in the
+top of the RStudio window and following the instructions of the prompt that
+appears. Now that we have created an R project for our presentation, we can open
+a new R-Markdown file. To do this click on the "plus file" logo in the top left
+corner and then on "R-Markdown".
+
+![Step 1: open a new project](images/presentations/0_Open_Project.PNG){width="80%"}
+
+After you have done this, a little pop-up helper will appear. The first thing we
+will do is to select the `{iheiddown}` template for our presentation. To do so,
+click on the "From Template" option on the left and select the
+"Presentation {iheiddown}" template. Now give your presentation a name and click
+on "OK".
+
+![Step 2: select the template](images/presentations/1_Select_Template.PNG){width="80%"}
+
+Congrats! You just created your first presentation!
+
+Hold on, this doesn't look anything like slides!? To see your slides,
+you have to "knit" the code by clicking on the little "knit" button on the
+presentation.Rmd file. This will run all the code chunks and convert
+the markdown code to an HTML presentation that you will be able to share with
+your audience.
+
+Take a moment to flick through the slides to get acquainted with the
+`{R-markdown}` syntax and to get a feel of the possibilities of `{xaringan}` and
+the `{iheiddown}` theme. These slides are as much a tutorial as this vignette!
+
+
+## Edit your presentation
+
+This section will focus on giving you an overview of what a `{xaringan}`
+presentation is comprised of and give you a few tips and tricks to edit your
+presentations.
+
+### Your first edit
+
+As you may have noticed by now, `{xaringan}` presentations are not quite like
+more traditional WYSIWYG (what you see is what you get) presentation tools like
+PowerPoint. In short, you write in the R-markdown file, define style classes in
+the CSS files and create macros in the JavaScript file. This is all a bit
+confusing isn't it? Thankfully, there is a way to vizualise your edits easily in
+real time!
+
+```{r, eval=FALSE, echo=TRUE}
+# Install/Load the servr package if you haven't done it already
+install.packages("servr")
+library(servr)
+
+# Serve your {xaringan} presentation to see live updates when you edit
+iheiddown::preview_realtime()
+
+# Close the connection to the live rendering when you're done
+iheiddown::preview_stop()
+```
+
+`{xaringan}` includes a handy function called `inf_mr()` which will work in
+concert with the `{servr}` package to render your sites locally and update them
+as soon as you save your markdown document. We simply wrapped these functions
+inside the more convenient `{iheiddown}` versions: `preview_realtime()` and
+`preview_stop()`. This makes it a lot easier to edit your slides!
+
+### The different elements of a `{xaringan}` presentation
+
+`{xaringan}` presentations are comprised of three main components:
+
+- The main .Rmd file for raw content
+- The CSS file for style and layout options
+- The macros.js file for handy functions
+
+The main .Rmd file will be the core of your presentation, since it is where you
+will write the text, run R code chunks, and [display gifs](https://www.bbc.com/culture/article/20170825-how-the-gif-won-the-internet)
+to entertain your audience.
+
+The CSS file contains all the styling options that will be used to display the
+the content of the `.Rmd` file in a nice manner. This file contains the
+definitions of all the classes we use in the presentation.
+
+Finally, the `macros.js` file specifies small functions used for specific cases.
+An example of a macro would be the inclusion of
+[Emily Riederer's `xaringan_columns` macros](https://github.com/emilyriederer/xaringan_columns).
+
+Note that editing the CSS and the macros files is not recommended for beginner
+users as the point of having a theme is to avoid having to fiddle with these
+files. Advanced users who wish to contribute a feature should [open an issue on
+Github](https://github.com/jhollway/iheiddown/issues) to suggest the additional
+features.
+
+### Tips and tricks for editing your presentations 
+
+The following sections cover additional tips and tricks that are not mentionned
+in the slides. You'll discover how to animate your slides and how to include a
+bibliography.
+
+#### Slide transitions
+
+For ease of use, we have included the
+[`{animate.style}`](https://animate.style/) library of CSS animations. This
+allows us to easily animate our slides with the addition of the CSS class
+`animate__animated` and the desired animation e.g. `animate__slideInRight` on
+the desired slide.
+
+For a full list of the available animations and further options, check out
+[animate.style](https://animate.style/). 
+
+#### Citations and Bibliography
+
+We all stand on the shoulders of giants when we are conducting research. This
+is why we have implemented an easy way of generating citations and adding a
+bibliography to your presentation. 
+Note that this method uses the package `{RefManageR}` that you will need to
+install.
+
+``` {r, echo = TRUE, eval = F}
+install.packages("RefManageR")
+```
+
+The first step to adding a bibliography is to define its options in a code
+chunk at the very top of your `presentation.Rmd` file. 
+
+```{r, eval=FALSE, echo = TRUE}
+# Initializes the bibliography
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear", # Bibliography style
+           max.names = 3, # Max author names displayed in bibliography
+           sorting = "nyt", #Name, year, title sorting
+           cite.style = "authoryear", # citation style
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib("myBib.bib", check = FALSE)
+# Note: don't forget to clear the knitr cache to account for changes in the
+# bibliography.
+```
+
+The second step is to cite the papers you want to cite inline with `Citet()`,
+`Citep()`, `AutoCite()` or `NoCite()`. Here is an example:
+`Citet(myBib, "Entry_Name")`. Note that every element that you wish to put in
+the bibliography at the end must be cited. Hence, if you only want a
+bibliographical element to appear in the bibliography but not as a citation on
+one of your slides, use the `NoCite()` function.
+
+The third and final step is to print the full bibliography in the last slides
+of your presentation.
+
+````md
+```{r refs, echo=FALSE, results="asis"}`r ''`
+PrintBibliography(myBib)
+```
+````
+
+Finally, note that you can specify the number of references you want to print
+on each slide to avoid overfilling them. 
+
+````md
+```{r refs, echo=FALSE, results="asis"}`r ''`
+PrintBibliography(bib, start = 1, end = 7)
+```
+````
+
+For more in depth information about the integration of bibliographic
+information into your presentations, please visit
+[this wiki](https://github.com/yihui/xaringan/wiki/Bibliography-and-citations).
+
+## Presenting
+
+After creating your presentation, it is time to share it with the world!
+To do so, simply open the HTML file that was created in your project folder
+after you knitted it.
+
+`{xaringan}` provides you with nifty shortcuts to toggle presenter mode (p) or
+duplicate the slides (c) to present them on a second screen. Clicking "h" will
+pull up the entire list of shortcuts. Present away!
+
+## Printing the slides
+
+There are two main ways to print slides.
+
+- Print the slides that you rendered after opening them in your browser just like you would print a normal Web page.
+  - Works best in the Google Chrome browser
+- Use `pagedown::chrome_print()` when viewing your Rmarkdown file
+
+However printing slides can be tricky in some cases, especially when one has interactive elements integrated into them such as multiple panels on the same slide. In that case, check out [this article for advanced printing options](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/).
+
+## Additional resources
+
+### A non-exhaustive list of additional readings and extensions 
+
+- Readings
+  - [`{Xaringan}` documentation](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+  - [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  - [Garrick Aden-Buie's website](https://www.garrickadenbuie.com/)
+- Extensions
+  - [`{xaringanExtra}`](https://github.com/gadenbuie/xaringanExtra)
+
