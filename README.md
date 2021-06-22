@@ -25,9 +25,12 @@ The main use case for `{iheiddown}` is for writing a **Masters or PhD
 Dissertation at IHEID**, as it offers a user-friendly, simple, and
 straightforward way to write a well-formatted and consistent
 dissertation that weaves together argument, evidence, and
-interpretation.
+interpretation. However, it also integrates templates for creating IHEID
+themed presentations powered by
+[`{xaringan}`](https://github.com/yihui/xaringan) as well as a template
+for IHEID course syllabi.
 
-## Features
+## Write your dissertation
 
 The package is built upon the [IHEID LaTeX dissertation
 template](https://github.com/jhollway/iheidmytex), which offers versus
@@ -60,7 +63,7 @@ dissertations in *RMarkdown*.
 way to ‘markup’ parts of plain text as headings, **bold** or *italics*
 (and much more) in ways that remain very readable and thus editable as
 you write. `{iheiddown}`, R, and LaTeX do the work to turn this into a
-beautiful dissertation. You write in minimally marked-up plan text and
+beautiful dissertation. You write in minimally marked-up plain text and
 you get a correctly-formatted dissertation out at the end.
 
 But wait, there’s more! Because `{iheiddown}` is an **R** package, it
@@ -75,14 +78,15 @@ with many tables and figures, the user-friendly nature and pretty output
 should make it of great benefit to nearly anyone writing a thesis
 project.
 
-You can see an example of the kind of dissertation output you can expect
-attached to the latest release.
+You can see an example of the kind of dissertation output on the package
+website.
 
-## Additional features
+## Write syllabi and presentations in *RMarkdown*
 
 Not quite done yet, there is even more!
 
--   Create IHEID-styled syllabi
+-   Create IHEID-styled syllabi with our template.
+
 -   Create IHEID-styled presentations based on the great
     [`{xaringan}`](https://github.com/yihui/xaringan) package.
 
@@ -106,7 +110,7 @@ Note that you can always rerun
 `remotes::install_github("jhollway/iheiddown")` – if there’s a newer
 version, it’ll install that.
 
-## Getting started
+## Getting started with your thesis
 
 `iheiddown` sets up a thesis template that you can then modify for your
 dissertation. It’s very easy to get started.
@@ -121,7 +125,9 @@ dissertation. It’s very easy to get started.
     named `index.Rmd`
 6.  Select where the project should be saved on your hard drive.
 
-Congratulations! You have now set up a thesis project.
+Congratulations! You have now set up a thesis project. For a more
+detailed walkthrough, please check out the presentation article on the
+package webiste.
 
 ## Writing your thesis
 
@@ -165,6 +171,10 @@ endless compilation. But when it comes time to compile the document,
 just turn to your main .Rmd file (‘Untitled.Rmd’ in our case) and either
 click the `Knit` button at the top or use the keyboard shortcut
 `Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
+
+Finally, please check out the package website’s thesis article for a
+more detailed look at the contents of your thesis project and a step by
+step guide on how to generate one.
 
 <!-- 
 ## Knitting individual chapters
