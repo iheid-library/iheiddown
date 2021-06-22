@@ -10,11 +10,12 @@ rmarkdown::draft(file = "00-Example", template = "Thesis",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("00-Example") # Since we can only knit from the WD
 #Step 2 render the example project and replace in template folder
-iheiddown::thesis_pdf("00-Example.Rmd")
+file.rename("00-Example.Rmd", "index.Rmd")
+iheiddown::thesis_pdf("index.Rmd")
 #Come back to the original WD and copy the output while also renaming it
 setwd("..")
 date <- Sys.Date()
-name <- paste0("Thesis_", date,".pdf")
+name <- paste0("Thesis_Name_", date,".pdf")
 target_path <- "00-Example/versions"
 file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
 
@@ -32,7 +33,7 @@ iheiddown::syllabus_pdf("Untitled.Rmd")
 #Come back to the original WD and copy the output while also renaming it
 setwd("..")
 date <- Sys.Date()
-name <- paste0("Syllabus_", date,".pdf")
+name <- paste0("MINT001_Syllabus_", date,".pdf")
 target_path <- "Untitled"
 file.rename(file.path(target_path, name), file.path(target_path, "IHEIDSyllabusExample.pdf"))
 
