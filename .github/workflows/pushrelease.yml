@@ -284,7 +284,7 @@ jobs:
           git add README.md
           git commit -m "Re-build README.md" || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
-          
+
   pkgdown:
     name: Build and deploy website
     needs: release
