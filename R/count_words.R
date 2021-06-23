@@ -11,8 +11,12 @@
 #' @importFrom tibble as_tibble
 #' @importFrom rstudioapi getSourceEditorContext
 #' @importFrom tidytext unnest_tokens
+#' @return A scalar representing the number of words in the document.
 #' @examples
-#' # count_words("test.Rmd")
+#' rmarkdown::draft(file = "test", template = "html_vignette",
+#' package = "rmarkdown", create_dir = TRUE, edit = FALSE)
+#' iheiddown::count_words("test/test.Rmd")
+#' unlink("test", recursive = TRUE)
 #' @export
 count_words <- function(file) {
   # Get currently viewed panel in RStudio if file is not specified

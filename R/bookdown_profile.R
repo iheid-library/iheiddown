@@ -4,6 +4,7 @@
 #' users to edit. If the file doesn't exists, it will create one.
 #' 
 #' @importFrom utils file.edit
+#' @return Opens or creates a bookdown profile YAML file for the current thesis.
 #' @export
 bookdown_profile <- function() {
   profile_file <- getOption("_bookdown.yml", "~/_bookdown.yml")

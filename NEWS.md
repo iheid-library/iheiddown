@@ -1,12 +1,19 @@
+# iheiddown 0.8.2
+
+- This release attends to the changes requested by CRAN:
+  - value tags have been added for `advdate`, `bookdown_profile`,
+  `count_words`, `preview`, and `theme_iheid`.
+  - a running example has been added to `count_words.Rd`.
+
 # iheiddown 0.8.1
 
 ## Presentations
 
-- Closed #56 by adding xaringan_columns JS macro for presentation
+- Closed #56 by adding `xaringan_columns` JS macro for presentation
 - Closed #70 by implementing progressive slides that highlight the last item
 - Closed #57 by allowing users to add installed or remote logos on their slides
 - Closed #69 By rewriting the `theme_iheid()` function based on hrbrthemes structure
-- Closed #74 by implementing citations with RefManageR
+- Closed #74 by implementing citations with `{RefManageR}`
 - Closed #77 by adding square on/off section elements
 - Closed #80 by adding the ninjutsu CSS slide slicing tools for better positioning
 - Closed #79 by removing hidden dependencies in the presentation vignette
@@ -19,8 +26,8 @@
 ## Package
 
 - Closed #78 by reducing subdirectory size for CRAN submission
-- Closed #68 by fixing the error message indicating that the output format was not of class rmarkdown_output_format
-- Closed #84 by adding input argument to chapter_pdf() function
+- Closed #68 by fixing the error message indicating that the output format was not of class `rmarkdown_output_format`
+- Closed #84 by adding input argument to `chapter_pdf()` function
 - Closed #81 by adding initial `count_words()` function
 - Closed #60 by expanding automatic rendering script for syllabi and presentation templates
 
