@@ -7,4 +7,7 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This release attends to the changes requested by Gregor Seyer:
+  * value tags have been added for `advdate`, `bookdown_profile`,
+  `count_words`, `preview`, and `theme_iheid`.
+  * a running example has been added to `count_words.Rd`
