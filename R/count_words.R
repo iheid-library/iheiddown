@@ -11,6 +11,7 @@
 #' @importFrom tibble as_tibble
 #' @importFrom rstudioapi getSourceEditorContext
 #' @importFrom tidytext unnest_tokens
+#' @return A scalar representing the number of words in the document.
 #' @examples
 #' # count_words("test.Rmd")
 #' @export

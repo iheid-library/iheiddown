@@ -10,6 +10,7 @@
 #' \code{rmarkdown::\link[rmarkdown]{render}()}.
 #' @references xaringan
 #' @importFrom xaringan inf_mr
+#' @return Starts serving the current files to RStudio's Viewer pane.
 #' @export
 preview_start <- function(file_path, ...){
   xaringan::inf_mr(moon = file_path, ...)
@@ -21,6 +22,7 @@ preview_start <- function(file_path, ...){
 #' by default, IDs of all existing servers in the current R session obtained 
 #' from `daemon_list()`, i.e., all daemon servers will be stopped by default.
 #' @importFrom servr daemon_stop daemon_list
+#' @return Stops serving the current files to RStudio's Viewer pane.
 #' @export
 preview_stop <- function(which = NULL){
   if(is.null(which)) which <- servr::daemon_list()

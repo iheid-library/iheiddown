@@ -15,7 +15,7 @@
 #' @param axis_text_size font size of axis text
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
 #' @param ticks ticks if `TRUE` add ticks
-#' @export
+#' @return Themes the current ggplot to current IHEID guidelines.
 #' @examples
 #' library(ggplot2)
 #' library(dplyr)
