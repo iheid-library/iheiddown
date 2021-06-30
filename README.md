@@ -1,9 +1,12 @@
 
-# Iheiddown <img src="man/figures/iheiddown.png" align="right" width="220"/>
+# iheiddown <img src="man/figures/iheiddown.png" align="right" width="220"/>
 
 <!-- badges: start -->
 
-![GitHub release (latest by
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+![CRAN/METACRAN](https://img.shields.io/cran/v/iheiddown) ![GitHub
+release (latest by
 date)](https://img.shields.io/github/v/release/jhollway/iheiddown)
 ![GitHub Release
 Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
@@ -30,7 +33,7 @@ themed presentations powered by
 [`{xaringan}`](https://github.com/yihui/xaringan) as well as a template
 for IHEID course syllabi.
 
-## Write your dissertation
+### Write your dissertation
 
 The package is built upon the [IHEID LaTeX dissertation
 template](https://github.com/jhollway/iheidmytex), which offers versus
@@ -81,7 +84,7 @@ project.
 You can see an example of the kind of dissertation output on the package
 website.
 
-## Write syllabi and presentations in *RMarkdown*
+### Write syllabi and presentations in *RMarkdown* too!
 
 Not quite done yet, there is even more!
 
@@ -90,27 +93,62 @@ Not quite done yet, there is even more!
 -   Create IHEID-styled presentations based on the great
     [`{xaringan}`](https://github.com/yihui/xaringan) package.
 
-## Installing iheiddown
+## Installation
 
-1.  Install [R](https://cran.r-project.org), [RStudio version 1.2 or
+### Setup
+
+You will first need to install on your
+system<sup>[2](#myfootnote2)</sup>:
+
+-   [R](https://cran.r-project.org)
+-   [RStudio version 1.2 or
     higher](https://www.rstudio.com/products/rstudio/download/#download),
-    and [LaTeX](https://www.latex-project.org/get/), or
+    and
+-   [LaTeX](https://www.latex-project.org/get/) or
     [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup>
-    on your system.<sup>[2](#myfootnote2)</sup>
-2.  Open RStudio and click on the `Packages` tab of the bottom right
-    pane of the window (by default). Click `Install` at the top left of
-    that tab and type “remotes” into the text box. Hit enter.
-3.  Next type (or copy) `remotes::install_github("jhollway/iheiddown")`
-    into the prompt in the `Console` tab in the bottom left pane. Hit
-    enter.
+
+### Stable
+
+The easiest way to install the latest stable version of `{iheiddown}` is
+via CRAN. Simply open the R console and enter:
+
+`install.packages('iheiddown')`
+
+You can then begin to use `{iheiddown}` by loading the package:
+
+`library(iheiddown)`
 
 That’s it! `iheiddown` is now installed and ready to go.
 
-Note that you can always rerun
-`remotes::install_github("jhollway/iheiddown")` – if there’s a newer
-version, it’ll install that.
+### Development
 
-## Getting started with your thesis
+For the latest development version, for slightly earlier access to new
+features or for testing, you may wish to download and install the
+binaries from Github or install from source locally.
+
+Binaries for all major OSes – Windows, Mac, and Linux – can be found by
+clicking on the latest release
+[here](https://github.com/jhollway/iheiddown/releases/latest). Download
+the appropriate binary for your operating system, and install using an
+adapted version of the following commands:
+
+-   For Windows:
+    `install.packages("~/Downloads/iheiddown_winOS.zip", repos = NULL)`
+-   For Mac:
+    `install.packages("~/Downloads/iheiddown_macOS.tgz", repos = NULL)`
+-   For Unix:
+    `install.packages("~/Downloads/iheiddown_linuxOS.tar.gz", repos = NULL)`
+
+To install from source the latest main version of `{iheiddown}` from
+Github, please install the `{remotes}` package from CRAN and then enter
+into the console:
+
+-   For latest stable version:
+    `remotes::install_github("jhollway/iheiddown")`
+-   For latest development version:
+    `remotes::install_github("jhollway/iheiddown@develop")`
+
+## Getting started
 
 `iheiddown` sets up a thesis template that you can then modify for your
 dissertation. It’s very easy to get started.
@@ -129,7 +167,7 @@ Congratulations! You have now set up a thesis project. For a more
 detailed walkthrough, please check out the presentation article on the
 package webiste.
 
-## Writing your thesis
+### Writing your thesis
 
 When you create the template for the first time, the main document you
 have created (e.g. ‘Untitled.Rmd’) will automatically open in RStudio.
@@ -194,7 +232,7 @@ output:
 This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
 -->
 
-## Output
+### Output
 
 All your front matter and chapters of your thesis will be compiled and
 the complete product can be found under the project folder “versions/”.
