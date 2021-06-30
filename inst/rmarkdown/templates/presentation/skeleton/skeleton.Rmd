@@ -314,21 +314,8 @@ background-size: contain
 ---
 class: inverse iheid-red center middle with-logo logo-iheid_BW
 
-.pull-left[
 Made with `{iheiddown}`, the R-package for IHEID publications
 `r Cite(myBib, "iheiddown")`.
-]
-
-```{r, echo=FALSE}
-install.packages("remotes")
-remotes::install_github("mitchelloharawild/icons")
-```
-
-.pull-right[
-[`r icons::icon_style(icons::fontawesome("github"), scale = 2, fill = "white")`](https://github.com/jhollway/iheiddown)
-
-[`r icons::icon_style(icons::fontawesome("link"), scale = 1.5, fill = "white")`](https://jameshollway.com/)
-]
 
 ---
 
