@@ -1,4 +1,4 @@
-# N.B. This is for internal use and not distributed with the Iheiddown package
+# N.B. This is for internal use and not distributed with the iheiddown package
 
 ############
 # Thesis
