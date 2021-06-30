@@ -9,8 +9,8 @@ Description: A set of tools to support writing various documents
     and, for course instructors, also the ability to create a syllabus as a PDF.
     The package includes additional functions for institutional color palettes
     and an institutional 'ggplot' theme, as well as a function for word counts.
-Date: 2021-06-23
-Version: 0.8.3
+Date: 2021-06-24
+Version: 0.8.2
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
