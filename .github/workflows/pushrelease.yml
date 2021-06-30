@@ -121,19 +121,12 @@ jobs:
           name: examples
           path: 00-Example/versions/
 
-      - name: Save Presentation Sample as artifact
+      - name: Save Syllabus Sample as artifact
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
         with:
           name: SyllabusExample
           path: Untitled/
-
-      - name: Save Syllabus Sample as artifact
-        if: runner.os == 'macOS'
-        uses: actions/upload-artifact@v2
-        with:
-          name: PresentationExample
-          path: index/
 
       - name: Remove Thesis project
         if: runner.os == 'macOS'
@@ -209,17 +202,6 @@ jobs:
           asset_path: SyllabusExample/IHEIDSyllabusExample.pdf
           asset_name: IHEIDSyllabusExample.pdf
           asset_content_type: application/pdf
-
-      - name: Upload Presentation Example Asset
-        id: upload-presentation-example
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: PresentationExample/
-          asset_name: PresentationExample
-          asset_content_type: text/html
 
       - name: Rename Mac release
         run: mv ./macOS/*.tgz iheiddown_macOS.tgz
