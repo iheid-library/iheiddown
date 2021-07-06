@@ -30,10 +30,7 @@ License: MIT + file LICENSE
 Imports: 
     bookdown,
     dplyr,
-    roxygen2,
-    covr,
     ggplot2,
-    magrittr,
     rmarkdown,
     xaringan,
     crayon,
