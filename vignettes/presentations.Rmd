@@ -260,4 +260,9 @@ However printing slides can be tricky in some cases, especially when one has int
   - [Garrick Aden-Buie's website](https://www.garrickadenbuie.com/)
 - Extensions
   - [`{xaringanExtra}`](https://github.com/gadenbuie/xaringanExtra)
+    - A collection of neat extensions to make your presentation even prettier/
+    more functional
+  - [`{flipbookr}`](https://evamaerey.github.io/flipbookr/)
+    - `{flipbookr}` aims to remove some of the confusion that might arise when
+    showcasing large chunks of code by taking a step by step approach.
 
