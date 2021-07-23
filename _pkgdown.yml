@@ -64,6 +64,7 @@ reference:
       - advdate
       - count_words
       - bookdown_profile
+      - bibstats
   - title: "Theming functions"
     contents:
       - starts_with("iheid_palette")
