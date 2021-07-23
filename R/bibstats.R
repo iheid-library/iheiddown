@@ -42,3 +42,14 @@ mean_pages <- function(bib_file){
   print(paste0("Average number of pages: ", round(mean(pages))))
 }
 
+#' @rdname bibstats
+#' @export
+total_pages <- function(bib_file){
+  pages <- suppressWarnings(bib2df::bib2df(bib_file)$PAGES)
+  pages <- na.omit(pages)
+  pages <- stringr::str_split(pages, "--")
+  pages <- sapply(pages, function(x){
+    if(length(x)==2) as.numeric(x[[2]])-as.numeric(x[[1]]) else as.numeric(x)
+  })
+  print(paste0("Total number of pages: ", round(sum(pages))))
+}
