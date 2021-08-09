@@ -34,12 +34,12 @@ from the ground up and help you create your very own first presentation.
 The presentation theme is based on Yihui Xie's excellent
 [`{xaringan}`](https://github.com/yihui/xaringan) package. Hence the first thing
 to do is to install the necessary components as well as `{iheiddown}` itself.
-Note that we are installing the package from GitHub instead of CRAN since it is
-not available on there yet.
+Note that we can also install the latest version of the package from GitHub
+directly by using `remotes::install_github("jhollway/iheiddown")`.
 
 ```{r, eval = F, echo = T}
 # Install the required packages
-remotes::install_github("jhollway/iheiddown")
+install.packages("iheiddown")
 remotes::install_github("yihui/xaringan")
 install.packages("servr") # This will allow us to see the slides we are editing
 
