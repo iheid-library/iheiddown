@@ -79,6 +79,8 @@ Not quite done yet, there is even more!
 
 - Create IHEID-styled presentations based on the great [`{xaringan}`](https://github.com/yihui/xaringan) package.
 
+- Write your weekly problem sets easily with our template! :star2: :new: :star2:
+
 ## Installation
 
 ### Setup
