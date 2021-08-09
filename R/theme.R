@@ -56,7 +56,7 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
                         axis_title_family = subtitle_family, axis_title_size = 9,
                         axis_title_face = "plain", axis_title_just = "rt",
                         plot_margin = margin(30, 30, 30, 30),
-                        grid_col = iheid_palette("IHEID")["IHEIDBlack"],
+                        grid_col = "grey85",
                         grid = TRUE,
                         axis_col = iheid_palette("IHEID")["IHEIDBlack"],
                         axis = FALSE, ticks = FALSE) {
