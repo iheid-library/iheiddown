@@ -40,6 +40,8 @@ navbar:
         href: articles/thesis.html
       - text: Syllabus
         href: articles/syllabus.html
+      - text: Problem Set
+        href: articles/problemset.html
     examples:
       text: Examples
       menu:
@@ -49,6 +51,8 @@ navbar:
         href: sample_output/IHEIDThesisExample.pdf
       - text: Syllabus
         href: sample_output/IHEIDSyllabusExample.pdf
+      - text: Problem Set
+        href: sample_output/IHEIDProblemSetExample.pdf
     news:
       text: News
       href: news/index.html
