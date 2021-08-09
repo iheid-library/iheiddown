@@ -44,12 +44,12 @@ thesis_pdf <- function(input = ".", ...){
 #' knit: iheiddown::chapter_pdf
 #' }
 #' @export
-chapter_pdf <- function(input, ...){
+chapter_pdf <- function(input, ...) {
   # Extract metadata to check whether to knit in context or not.
   in_context <- readLines(input)
   in_context <- in_context[grepl("^in_context:", in_context)]
   in_context <- strsplit(in_context, " ")[[1]][2]
-  if(in_context){
+  if (in_context) {
     # Extract metadata to name output file without running into annoying 
     # bookdown error
     author <- readLines(input)
@@ -63,10 +63,10 @@ chapter_pdf <- function(input, ...){
     bookdown::preview_chapter(input = input, ...,
                               output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
                               output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
-                                                                      template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
-                                                                                             package = 'iheiddown')))
-    file.remove(c(list.files(pattern='.*.maf', recursive=TRUE),
-                  list.files(pattern='.*.mtc', recursive=TRUE)))
+                                                                      template = system.file("rmarkdown", "templates", "chapter_pdf", "resources", "template.tex",
+                                                                                             package = "iheiddown")))
+    file.remove(c(list.files(pattern = '.*.maf', recursive = TRUE),
+                  list.files(pattern = '.*.mtc', recursive = TRUE)))
   } else {
     # Extract metadata to name output file without running into annoying 
     # bookdown error
@@ -78,12 +78,10 @@ chapter_pdf <- function(input, ...){
     chapter <- strsplit(chapter, " ")[[1]][2]
     message("Out of context rendering")
     #Render chapter
-    rmarkdown::render(input ,...,
+    rmarkdown::render(input, ...,
                       output_file = paste0("versions/", author, "_", "Chapter_", chapter, "_", Sys.Date()), 
                       output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
-                                                              template = system.file('rmarkdown', 'templates', 'chapter_pdf', 'resources', 'template.tex',
-                                                                                     package = 'iheiddown')))
+                                                              template = system.file("rmarkdown", "templates", "chapter_pdf", "resources", "template.tex",
+                                                                                     package = "iheiddown")))
   }
-  
-  
 }

@@ -20,8 +20,7 @@
 #' @export
 count_words <- function(file) {
   # Get currently viewed panel in RStudio if file is not specified
-  if(missing(file)) file <- rstudioapi::getSourceEditorContext()$path
-  
+  if (missing(file)) file <- rstudioapi::getSourceEditorContext()$path
   wc <- readr::read_lines(file) %>%
     tibble::as_tibble() %>%
     remove_front_matter() %>%

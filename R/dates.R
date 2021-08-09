@@ -12,7 +12,7 @@
 #' advdate("2021-06-23", 1:3)
 #' @export
 advdate <- function(startdate, week) {
-  zadv <- as.Date(startdate) + 7*(week-1)
-  tmp <- paste0("(", trimws(format(zadv, format="%e %b")), ")")
+  zadv <- as.Date(startdate) + 7 * (week - 1)
+  tmp <- paste0("(", trimws(format(zadv, format = "%e %b")), ")")
   return(tmp)
 }
