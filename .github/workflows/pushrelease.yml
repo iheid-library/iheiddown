@@ -127,6 +127,13 @@ jobs:
         with:
           name: SyllabusExample
           path: Untitled/
+          
+      - name: Save problem set sample as artifact
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v2
+        with:
+          name: ProblemSetExample
+          path: UntitledPS/
 
       - name: Remove Thesis project
         if: runner.os == 'macOS'
@@ -139,6 +146,10 @@ jobs:
       - name: Remove Syllabus project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("Untitled", recursive = TRUE)'
+        
+      - name: Remove problem set project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPS", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
@@ -201,6 +212,17 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: SyllabusExample/IHEIDSyllabusExample.pdf
           asset_name: IHEIDSyllabusExample.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload problem set Example Asset
+        id: upload-PS-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ProblemSetExample/IHEIDProblemSetExample.pdf
+          asset_name: IHEIDProblemSetExample.pdf
           asset_content_type: application/pdf
 
       - name: Rename Mac release
