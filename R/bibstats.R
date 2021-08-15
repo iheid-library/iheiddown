@@ -11,13 +11,23 @@ NULL
 
 #' @rdname bibstats
 #' @export
-percent_female <- function(bib_file) {
-  authors <- suppressWarnings(bib2df::bib2df(bib_file)$AUTHOR)
-  authors <- lapply(authors, function(x) stringr::str_remove_all(x, " and"))
-  authors <- lapply(authors, function(x) stringr::str_replace_all(x,
-                                                                  "[\\w\\s]+, ",
-                                                                  ""))
-  authors <- lapply(authors, function(x) stringr::str_extract_all(x, "^\\w+"))
+percent_female <- function(bib_file, rmd_file) {
+  if(missing(bib_file)) bib_file <- find_bib()
+  if(missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
+  bib <- suppressMessages(bib2df::bib2df(bib_file))
+  if(!missing(rmd_file)){
+    used <- get_used_bib(bib_file, rmd_file)
+    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+  } 
+  authors <- bib$AUTHOR
+  authors <- lapply(authors, function(x) stringr::str_remove_all(x, "^.+, \\{"))
+  authors <- lapply(authors, function(x) stringr::str_remove_all(x, "\\}"))
+  authors <- lapply(authors, function(x) stringr::str_split(x, " ")[[1]][1])
+  # authors <- lapply(authors, function(x) stringr::str_remove_all(x, " and"))
+  # authors <- lapply(authors, function(x) stringr::str_replace_all(x,
+  #                                                                 "[\\w\\s]+, ",
+  #                                                                 ""))
+  # authors <- lapply(authors, function(x) stringr::str_extract_all(x, "^\\w+"))
   authors <- unlist(authors)
   if (!require("remotes")) install.packages("remotes")
   if (!require("genderdata")) remotes::install_github("lmullen/genderdata")
@@ -27,15 +37,29 @@ percent_female <- function(bib_file) {
 
 #' @rdname bibstats
 #' @export
-mean_year <- function(bib_file) {
-  years <- suppressWarnings(bib2df::bib2df(bib_file)$YEAR)
-  print(paste0("Average date of publication: ", round(mean(years))))
+mean_year <- function(bib_file, rmd_file) {
+  if(missing(bib_file)) bib_file <- find_bib()
+  if(missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
+  bib <- suppressMessages(bib2df::bib2df(bib_file))
+  if(!missing(rmd_file)){
+    used <- get_used_bib(bib_file, rmd_file)
+    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+  } 
+  years <- as.numeric(bib$YEAR)
+  print(paste0("Average date of publication: ", round(mean(years, na.rm = TRUE))))
 }
 
 #' @rdname bibstats
 #' @export
-mean_pages <- function(bib_file) {
-  pages <- suppressWarnings(bib2df::bib2df(bib_file)$PAGES)
+mean_pages <- function(bib_file, rmd_file) {
+  if(missing(bib_file)) bib_file <- find_bib()
+  if(missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
+  bib <- suppressMessages(bib2df::bib2df(bib_file))
+  if(!missing(rmd_file)){
+    used <- get_used_bib(bib_file, rmd_file)
+    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+  } 
+  pages <- bib$PAGES
   pages <- na.omit(pages)
   pages <- stringr::str_split(pages, "--")
   pages <- sapply(pages, function(x) {
@@ -47,8 +71,14 @@ mean_pages <- function(bib_file) {
 
 #' @rdname bibstats
 #' @export
-total_pages <- function(bib_file) {
-  pages <- suppressWarnings(bib2df::bib2df(bib_file)$PAGES)
+total_pages <- function(bib_file, rmd_file) {
+  if(missing(bib_file)) bib_file <- find_bib()
+  bib <- suppressMessages(bib2df::bib2df(bib_file))
+  if(!missing(rmd_file)){
+    used <- get_used_bib(bib_file, rmd_file)
+    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+  } 
+  pages <- bib$PAGES
   pages <- na.omit(pages)
   pages <- stringr::str_split(pages, "--")
   pages <- sapply(pages, function(x) {
@@ -56,4 +86,16 @@ total_pages <- function(bib_file) {
     else as.numeric(x)
   })
   print(paste0("Total number of pages: ", round(sum(pages))))
+}
+
+find_bib <- function(){
+  path <- rstudioapi::getSourceEditorContext()$path
+  dir <- fs::path_dir(path)
+  files <- list.files(dir)
+  if(length(files[stringr::str_detect(files, ".bib")][[1]])<1) 
+    stop("No bibliography found for current document. Please specify one.")
+  bib <- files[stringr::str_detect(files, ".bib")][[1]]
+  bib_file <- paste0(dir, "/", bib)
+  usethis::ui_info("Found .bib file `{bib}`")
+  bib_file
 }
