@@ -80,7 +80,8 @@ knit: iheiddown::syllabus_pdf
 ## Output Options  ##
 #####################
 output: iheiddown::syllabus_pdf
-link-citations: true
+# Set to true if you want anchors to the rendered bibliography
+link-citations: false 
 draft: true
 documentclass: article
 ---
