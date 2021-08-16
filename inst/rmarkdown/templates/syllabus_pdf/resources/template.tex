@@ -30,14 +30,21 @@
 \setlength{\parskip}{\baselineskip}
 \usepackage[
   colorlinks  = true,
-  urlcolor    = blue,
+  urlcolor    = red,
   citecolor   = red,
-  linkcolor   = black % Sets the color of the citations
+  linkcolor   = red % Sets the color of the citations
 ]{hyperref}
 \author{$prof$}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
 
 \begin{document}
 
