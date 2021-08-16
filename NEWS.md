@@ -1,3 +1,17 @@
+# iheiddown 0.8.3
+
+## Problem set template
+- Closed #94 by adding a problem set template to `{iheiddown}`
+
+## Thesis
+- Closed #76 by adding an option for line numbering for thesis output when the draft option is set to true
+
+## Package
+- Fixed #90 by solving the remaining issues of the package website deployment workflow
+- Closed #91 by removing unnecessary package dependencies following CRAN notes
+- Closed #93 by adding bibliography statistics family of functions
+
+
 # iheiddown 0.8.2
 
 - This release attends to the changes requested by CRAN:
