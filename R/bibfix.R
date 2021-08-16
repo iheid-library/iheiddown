@@ -1,6 +1,6 @@
 #' @export
-fix_bib <- function(bib_file){
-  if(missing(bib_file)) bib_file <- find_bib()
+fix_bib <- function(bib_file) {
+  if (missing(bib_file)) bib_file <- find_bib()
   bib <- suppressMessages(bib2df::bib2df(bib_file))
   bib$PAGES <- stringr::str_replace_all(bib$PAGES, stringr::fixed("{\\textendash}"), "--")
   bib$AUTHOR <- purrr::map(bib$AUTHOR, function(x){
@@ -21,8 +21,8 @@ fix_bib <- function(bib_file){
 
 #' @export
 get_used_bib <- function(bib_file, rmd_file){
-  if(missing(bib_file)) bib_file <- find_bib()
-  if(missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
+  if (missing(bib_file)) bib_file <- find_bib()
+  if (missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
   bib <- suppressMessages(bib2df::bib2df(bib_file))
   current_bibs <- readr::read_lines(rmd_file) %>%
     tibble::as_tibble() %>%
