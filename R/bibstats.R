@@ -23,7 +23,7 @@ percent_female <- function(bib_file, rmd_file) {
   bib <- suppressMessages(bib2df::bib2df(bib_file))
   if (!missing(rmd_file)){
     used <- get_used_bib(bib_file, rmd_file)
-    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+    bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   } 
   authors <- bib$AUTHOR
   authors <- lapply(authors, function(x) stringr::str_remove_all(x, "^.+, \\{"))
@@ -51,7 +51,7 @@ mean_year <- function(bib_file, rmd_file) {
   bib <- suppressMessages(bib2df::bib2df(bib_file))
   if (!missing(rmd_file)){
     used <- get_used_bib(bib_file, rmd_file)
-    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+    bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   } 
   years <- as.numeric(bib$YEAR)
   print(paste0("Average date of publication: ", round(mean(years, na.rm = TRUE))))
@@ -65,7 +65,7 @@ mean_pages <- function(bib_file, rmd_file) {
   bib <- suppressMessages(bib2df::bib2df(bib_file))
   if (!missing(rmd_file)) {
     used <- get_used_bib(bib_file, rmd_file)
-    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+    bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   } 
   pages <- bib$PAGES
   pages <- na.omit(pages)
@@ -88,7 +88,7 @@ total_pages <- function(bib_file, rmd_file) {
   bib <- suppressMessages(bib2df::bib2df(bib_file))
   if (!missing(rmd_file)) {
     used <- get_used_bib(bib_file, rmd_file)
-    bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
+    bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   } 
   pages <- bib$PAGES
   pages <- stats::na.omit(pages)
