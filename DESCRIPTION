@@ -6,7 +6,7 @@ Description: A set of tools to support writing various documents
     The most common use will be for writing and compiling theses or thesis chapters,
     as drafts or for examination with all the correct preamble content.
     However, the package also offers the creation of html presentation slides via 'xaringan',
-    and, for course instructors, also the ability to create a syllabus as a PDF.
+    and, for course instructors, the ability to create syllabi.
     The package includes additional functions for institutional color palettes
     and an institutional 'ggplot' theme, as well as a function for word counts.
 Date: 2021-08-17
@@ -39,7 +39,14 @@ Imports:
     readr,
     rstudioapi,
     tibble,
-    tidytext
+    tidytext,
+    bib2df,
+    purrr,
+    stringr,
+    fs,
+    usethis,
+    gender,
+    remotes
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

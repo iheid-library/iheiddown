@@ -1,11 +1,17 @@
-#' Printing bibliographic statistics
+#' Reporting bibliographic statistics
 #' 
 #' These functions are useful for calculating salient statistics
 #' on the bibliographies used for dissertations or syllabi.
 #' @name bibstats
-#' @param bib_file a .bib file for the project
+#' @param bib_file a .bib file for the project.
+#' If not given, the functions will search for a .bib file in the folder
+#' associated with the file the source editor has open.
+#' @param rmd_file a .rmd file
+#' If not given, the functions will check to see whether the
+#' current file open in the source editor is an .rmd file,
+#' and if so use that.
 #' @importFrom bib2df bib2df
-#' @importFrom gender gender
+#' @importFrom utils install.packages
 #' @return prints a summary statistic (e.g. mean or proportion)
 NULL
 
@@ -29,8 +35,10 @@ percent_female <- function(bib_file, rmd_file) {
   #                                                                 ""))
   # authors <- lapply(authors, function(x) stringr::str_extract_all(x, "^\\w+"))
   authors <- unlist(authors)
-  if (!require("remotes")) install.packages("remotes")
-  if (!require("genderdata")) remotes::install_github("lmullen/genderdata")
+  if (!requireNamespace("remotes", quietly = TRUE)) 
+    utils::install.packages("remotes")
+  if (!requireNamespace("genderdata", quietly = TRUE)) 
+    remotes::install_github("lmullen/genderdata")
   gender <- table(gender::gender(authors)$gender)
   print(paste0(round(gender[1] / sum(gender), 2) * 100, "% female authors"))
 }
@@ -70,6 +78,10 @@ mean_pages <- function(bib_file, rmd_file) {
 }
 
 #' @rdname bibstats
+#' @importFrom stats na.omit
+#' @importFrom stringr str_split str_detect
+#' @importFrom usethis ui_info
+#' @importFrom fs path_dir
 #' @export
 total_pages <- function(bib_file, rmd_file) {
   if (missing(bib_file)) bib_file <- find_bib()
@@ -79,7 +91,7 @@ total_pages <- function(bib_file, rmd_file) {
     bib <- dplyr::filter(bib, BIBTEXKEY %in% used)
   } 
   pages <- bib$PAGES
-  pages <- na.omit(pages)
+  pages <- stats::na.omit(pages)
   pages <- stringr::str_split(pages, "--")
   pages <- sapply(pages, function(x) {
     if (length(x) == 2) as.numeric(x[[2]]) - as.numeric(x[[1]])

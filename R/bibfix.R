@@ -1,3 +1,7 @@
+#' @rdname bibstats
+#' @importFrom stringr str_replace_all str_replace fixed
+#' @importFrom bib2df bib2df df2bib
+#' @importFrom purrr map
 #' @export
 fix_bib <- function(bib_file) {
   if (missing(bib_file)) bib_file <- find_bib()
@@ -18,7 +22,11 @@ fix_bib <- function(bib_file) {
   bib2df::df2bib(bib, bib_file)
 }
 
-
+#' @rdname bibstats
+#' @importFrom readr read_lines
+#' @importFrom tibble as_tibble
+#' @importFrom dplyr mutate filter
+#' @importFrom stringr str_remove
 #' @export
 get_used_bib <- function(bib_file, rmd_file){
   if (missing(bib_file)) bib_file <- find_bib()
