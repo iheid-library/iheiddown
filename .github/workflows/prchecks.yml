@@ -62,6 +62,7 @@ jobs:
           remotes::install_github("gadenbuie/xaringanExtra")
           remotes::install_github("giocomai/ganttrify")
           utils::install.packages("roxygen2")
+          utils::install.packages("covr")
         shell: Rscript {0}
 
       - name: Document
