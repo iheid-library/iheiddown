@@ -146,7 +146,7 @@ jobs:
       - name: Remove Syllabus project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("Untitled", recursive = TRUE)'
-        
+
       - name: Remove problem set project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("UntitledPS", recursive = TRUE)'
@@ -280,7 +280,7 @@ jobs:
       # install packages needed
       - name: install required packages
         run: Rscript -e 'install.packages(c("rmarkdown"))'
-        
+
       # Render README.md using rmarkdown
       - name: render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
@@ -331,7 +331,7 @@ jobs:
 
       - name: Build site # build pkgdown site in separate step
         run: Rscript -e 'pkgdown::build_site()'
-      
+
       - name: Deploy # deploy the docs folder to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
