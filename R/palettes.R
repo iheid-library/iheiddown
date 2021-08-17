@@ -3,10 +3,10 @@
 #' Use \code{\link{iheid_palette}} to construct palettes of desired length.
 #'
 #' @export
-iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020", 
-                                   "IHEIDBlack" = "#5c666f", 
+iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
+                                   "IHEIDBlack" = "#5c666f",
                                    "IHEIDGrey" = "#6f7072"),
-                       "Centres" = c("AHCD" = "#622550", 
+                       "Centres" = c("AHCD" = "#622550",
                                      "CFFD" = "#0094D8",
                                      "CIES" = "#268D2B",
                                      "CTEI" = "#008F92",
@@ -47,7 +47,8 @@ iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
 #'   to automatically interpolate between colours.
 #' @importFrom graphics rect par image text
 #' @return A vector of colours.
-#' @source Adapted from https://github.com/karthik/wesanderson/blob/master/R/colors.R
+#' @source Adapted from
+#' \url{https://github.com/karthik/wesanderson/blob/master/R/colors.R}
 #' @export
 #' @keywords colors
 #' @examples

@@ -6,14 +6,15 @@
 fix_bib <- function(bib_file) {
   if (missing(bib_file)) bib_file <- find_bib()
   bib <- suppressMessages(bib2df::bib2df(bib_file))
-  bib$PAGES <- stringr::str_replace_all(bib$PAGES, stringr::fixed("{\\textendash}"), "--")
-  bib$AUTHOR <- purrr::map(bib$AUTHOR, function(x){
+  bib$PAGES <- stringr::str_replace_all(bib$PAGES,
+                                        stringr::fixed("{\\textendash}"), "--")
+  bib$AUTHOR <- purrr::map(bib$AUTHOR, function(x) {
     x <- stringr::str_replace(x, "^", "{")
     x <- stringr::str_replace(x, "\\{\\{", "{")
     x <- stringr::str_replace(x, "$", "}")
     x <- stringr::str_replace(x, "\\}\\}", "}")
   })
-  bib$EDITOR <- purrr::map(bib$EDITOR, function(x){
+  bib$EDITOR <- purrr::map(bib$EDITOR, function(x) {
     x <- stringr::str_replace(x, "^", "{")
     x <- stringr::str_replace(x, "\\{\\{", "{")
     x <- stringr::str_replace(x, "$", "}")
@@ -28,7 +29,7 @@ fix_bib <- function(bib_file) {
 #' @importFrom dplyr mutate filter
 #' @importFrom stringr str_remove
 #' @export
-get_used_bib <- function(bib_file, rmd_file){
+get_used_bib <- function(bib_file, rmd_file) {
   if (missing(bib_file)) bib_file <- find_bib()
   if (missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
   bib <- suppressMessages(bib2df::bib2df(bib_file))
@@ -41,14 +42,15 @@ get_used_bib <- function(bib_file, rmd_file){
     remove_bullets() %>%
     get_biblines() %>%
     dplyr::mutate(value = stringr::str_remove(.data$value, "@")) %>%
-    select(.data$value) %>% c()
+    select(.data$value) %>%
+    as.vector()
   current_bibs$value
 }
 
-remove_bullets <- function(x){
+remove_bullets <- function(x) {
   dplyr::mutate(x, value = stringr::str_remove(.data$value, "^-[:space:]+"))
 }
 
-get_biblines <- function(x){
+get_biblines <- function(x) {
   dplyr::filter(x, grepl("@", .data$value))
 }

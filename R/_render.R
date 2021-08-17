@@ -55,8 +55,8 @@ setwd("..")
 date <- Sys.Date()
 name <- paste0("MINT001_ProblemSet_", date, ".pdf")
 target_path <- "UntitledPS"
-file.rename(file.path(target_path, name), file.path(target_path,
-                                                    "IHEIDProblemSetExample.pdf"))
+file.rename(file.path(target_path, name),
+            file.path(target_path, "IHEIDProblemSetExample.pdf"))
 
 ############
 # Presentation

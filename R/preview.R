@@ -6,7 +6,7 @@
 #' @name preview
 #' @param file_path The input Rmd file path (if missing and in RStudio, the
 #' current active document is used).
-#' @param ... Additional arguments passed to 
+#' @param ... Additional arguments passed to
 #' \code{rmarkdown::\link[rmarkdown]{render}()}.
 #' @references xaringan
 #' @importFrom xaringan inf_mr
@@ -18,8 +18,8 @@ preview_start <- function(file_path, ...) {
 }
 
 #' @rdname preview
-#' @param which An integer vector of the server IDs; 
-#' by default, IDs of all existing servers in the current R session obtained 
+#' @param which An integer vector of the server IDs;
+#' by default, IDs of all existing servers in the current R session obtained
 #' from `daemon_list()`, i.e., all daemon servers will be stopped by default.
 #' @importFrom servr daemon_stop daemon_list
 #' @return Stops serving the current files to RStudio's Viewer pane.

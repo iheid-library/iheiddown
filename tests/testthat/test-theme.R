@@ -55,7 +55,8 @@ test_that("theme_iheid() subtitle style is correct", {
   expect_identical(p[["theme"]][["plot.subtitle"]][["family"]], "sans")
   expect_identical(p[["theme"]][["plot.subtitle"]][["size"]], 12)
   expect_identical(p[["theme"]][["plot.subtitle"]][["face"]], "plain")
-  expect_identical(p[["theme"]][["plot.subtitle"]][["colour"]][["IHEIDBlack"]], "#5c666f")
+  expect_identical(p[["theme"]][["plot.subtitle"]][["colour"]][["IHEIDBlack"]],
+                   "#5c666f")
 })
 
 test_that("theme_iheid() caption style is correct", {

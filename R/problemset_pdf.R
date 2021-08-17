@@ -15,7 +15,8 @@
 #' \dontrun{
 #' output:
 #'   iheiddown::problemset_pdf:
-#'     input: "Untitled.Rmd" # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
+#'     input: "Untitled.Rmd"
+#'     # Replace with whatever the name of this file is, e.g. "MINT001.Rmd"
 #' }
 problemset_pdf <- function(input, ...) {
   code <- readLines(input)
@@ -24,7 +25,12 @@ problemset_pdf <- function(input, ...) {
   rmarkdown::render(input,
                     output_file = paste0(code, "_ProblemSet_", Sys.Date()),
                     ...,
-                    output_format = rmarkdown::pdf_document(latex_engine = "xelatex",
-                                                            template = system.file("rmarkdown", "templates", "problemset_pdf", "resources", "template.tex", package = "iheiddown")
-                    ))
+                    output_format = rmarkdown::pdf_document(
+                      latex_engine = "xelatex",
+                      template = system.file("rmarkdown",
+                                             "templates",
+                                             "problemset_pdf",
+                                             "resources",
+                                             "template.tex",
+                                             package = "iheiddown")))
 }
