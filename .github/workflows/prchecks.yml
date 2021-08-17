@@ -78,7 +78,3 @@ jobs:
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
-
-      - name: Lint
-        run: lintr::lint_package()
-        shell: Rscript {0}
