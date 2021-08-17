@@ -30,12 +30,17 @@ get_used_bib <- function(bib_file, rmd_file){
     remove_code_chunks() %>%
     remove_inline_code() %>%
     remove_html_comment() %>%
+    remove_bullets() %>%
     get_biblines() %>%
     dplyr::mutate(value = stringr::str_remove(value, "@")) %>%
     select(value) %>% c()
   current_bibs$value
 }
 
+remove_bullets <- function(x){
+  dplyr::mutate(x, value = stringr::str_remove(value, "^-[:space:]+"))
+}
+
 get_biblines <- function(x){
-  filter(x, grepl("@", .data$value))
+  dplyr::filter(x, grepl("@", .data$value))
 }
