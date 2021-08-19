@@ -10,6 +10,9 @@
 #' If not given, the functions will check to see whether the
 #' current file open in the source editor is an .rmd file,
 #' and if so use that.
+#' @param by a string in c("author", "publication") which determines if the
+#' percentage of female authors is computed across all authors of all papers,
+#' or by publication.
 #' @importFrom bib2df bib2df
 #' @importFrom utils install.packages
 #' @return prints a summary statistic (e.g. mean or proportion)
@@ -17,14 +20,16 @@ NULL
 
 #' @rdname bibstats
 #' @export
-percent_female <- function(bib_file, rmd_file, by = c("author", "publication")) {
+percent_female <- function(bib_file,
+                           rmd_file,
+                           by = c("author", "publication")) {
   
   if (missing(bib_file)) bib_file <- find_bib()
   if (missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
   by <- match.arg(by)
   
-  if (!requireNamespace("genderdata", quietly = TRUE)){
-    if (!requireNamespace("remotes", quietly = TRUE)){
+  if (!requireNamespace("genderdata", quietly = TRUE)) {
+    if (!requireNamespace("remotes", quietly = TRUE)) {
       utils::install.packages("remotes")
     }
     remotes::install_github("lmullen/genderdata")
@@ -36,19 +41,24 @@ percent_female <- function(bib_file, rmd_file, by = c("author", "publication")) 
     bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   }
   authors <- bib$AUTHOR
-  if (by = "author"){
+  if (by == "author") {
     authors <- unlist(authors)
     authors <- stringr::str_remove(authors, "^.+, \\{")
     authors <- stringr::str_remove(authors, "\\}")
     authors <- stringr::str_remove(authors, " .+$")
     gender <- table(gender::gender(authors)$gender)
     print(paste0(round(gender[1] / sum(gender), 2) * 100, "% female authors"))
-  } else if (by = "publication") {
-    authors <- lapply(authors, function(x) stringr::str_remove_all(x, "^.+, \\{"))
-    authors <- lapply(authors, function(x) stringr::str_remove_all(x, "\\}"))
-    authors <- lapply(authors, function(x) stringr::str_remove_all(x, " .+$"))
-    gender <- sapply(authors, function(x) any(gender::gender(x)$gender=="female"))
-    print(paste0(round(sum(gender) / length(gender), 2) * 100, "% female authors"))
+  } else if (by == "publication") {
+    authors <- lapply(authors,
+                      function(x) stringr::str_remove_all(x, "^.+, \\{"))
+    authors <- lapply(authors,
+                      function(x) stringr::str_remove_all(x, "\\}"))
+    authors <- lapply(authors,
+                      function(x) stringr::str_remove_all(x, " .+$"))
+    gender <- sapply(authors,
+                     function(x) any(gender::gender(x)$gender == "female"))
+    print(paste0(round(sum(gender) / length(gender), 2) * 100,
+                 "% female authors"))
   }
 
 }
