@@ -3,13 +3,15 @@ Title: For Writing Graduate Institute Geneva Documents
 Description: A set of tools to support writing various documents
     according to the Graduate Institute of International and Development Studies 
     conventions and regulations.
-    The most common use will be for writing and compiling theses or thesis chapters,
-    as drafts or for examination with all the correct preamble content.
-    However, the package also offers the creation of html presentation slides via 'xaringan',
-    and, for course instructors, the ability to create syllabi.
+    The most common use will be for writing and compiling theses or thesis
+    chapters, as drafts or for examination with all the correct preamble
+    content. However, the package also offers the creation of html presentation
+    slides via 'xaringan', the capacity to write problem sets and, for course
+    instructors, the ability to create syllabi.
     The package includes additional functions for institutional color palettes
-    and an institutional 'ggplot' theme, as well as a function for word counts.
-Date: 2021-08-17
+    and an institutional 'ggplot' theme, as well as a function for word counts
+    and a bibliographical analysis toolkit.
+Date: 2021-08-20
 Version: 0.8.3
 Authors@R: 
     c(person(given = "James",
