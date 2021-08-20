@@ -4,13 +4,22 @@
 - Closed #94 by adding a problem set template to `{iheiddown}`
 
 ## Thesis
-- Closed #76 by adding an option for line numbering for thesis output when the draft option is set to true
+- Closed #76 by adding an option for line numbering for thesis output when the
+draft option is set to true
 
 ## Package
-- Fixed #90 by solving the remaining issues of the package website deployment workflow
+- Fixed #90 by solving the remaining issues of the package website deployment
+workflow
 - Closed #91 by removing unnecessary package dependencies following CRAN notes
 - Closed #93 by adding bibliography statistics family of functions
-
+  - `percent_female()` displays the percentage of female authors in a `.bib`
+  file
+  - `mean_year()` displays the mean of the publication year of the items in a
+  given `.bib` file
+  - `mean_pages()` displays the mean of the page length of the items in a given
+  `.bib` file
+  - `total_pages()` displays the total number of pages of all items in a given
+  `.bib` file
 
 # iheiddown 0.8.2
 
