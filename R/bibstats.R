@@ -1,21 +1,34 @@
 #' Reporting bibliographic statistics
 #' 
 #' These functions are useful for calculating salient statistics
-#' on the bibliographies used for dissertations or syllabi.
+#' on the bibliographies used for dissertations or syllabi. They include the
+#' following functions/metrics:
+#' 
+#' \describe{
+#'   \item{`percent_female()`}{Displays the percentage of female authors in a
+#'   `.bib` file.}
+#'   \item{`mean_year()`}{Displays the mean of the publication year of the items
+#'   in a given `.bib` file.}
+#'   \item{`mean_pages()`}{Displays the mean of the page numbers of the items
+#'   in a given `.bib` file.}
+#'   \item{`total_pages()`}{Displays the total number of pages of all items
+#'   in a given `.bib` file.}
+#' }
 #' @name bibstats
-#' @param bib_file a .bib file for the project.
+#' @param bib_file A .bib file for the project.
 #' If not given, the functions will search for a .bib file in the folder
 #' associated with the file the source editor has open.
-#' @param rmd_file a .rmd file
+#' @param rmd_file A .rmd file
 #' If not given, the functions will check to see whether the
 #' current file open in the source editor is an .rmd file,
 #' and if so use that.
-#' @param by a string in c("author", "publication") which determines if the
+#' @param by A string in c("author", "publication") which determines if the
 #' percentage of female authors is computed across all authors of all papers,
 #' or by publication.
 #' @importFrom bib2df bib2df
 #' @importFrom utils install.packages
-#' @return prints a summary statistic (e.g. mean or proportion)
+#' @return Prints a summary statistic (e.g. mean or proportion)
+#' 
 NULL
 
 #' @rdname bibstats
