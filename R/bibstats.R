@@ -23,8 +23,8 @@
 #' current file open in the source editor is an .rmd file,
 #' and if so use that.
 #' @param by A string in c("author", "publication") which determines if the
-#' percentage of female authors is computed across all authors of all papers,
-#' or by publication.
+#' percentage of female authors is computed across all papers or the percentage
+#' represents the proportion of papers written by at least one woman.
 #' @importFrom bib2df bib2df
 #' @importFrom utils install.packages
 #' @return Prints a summary statistic (e.g. mean or proportion)
@@ -54,26 +54,31 @@ percent_female <- function(bib_file,
     bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   }
   authors <- bib$AUTHOR
+  # Total percentage of women
   if (by == "author") {
     authors <- unlist(authors)
     authors <- stringr::str_remove(authors, "^.+, \\{")
     authors <- stringr::str_remove(authors, "\\}")
-    authors <- stringr::str_remove(authors, " .+$")
+    authors <- stringr::str_remove(authors, ".*,[:blank:]")
     gender <- table(gender::gender(authors)$gender)
     print(paste0(round(gender[1] / sum(gender), 2) * 100, "% female authors"))
   } else if (by == "publication") {
-    authors <- lapply(authors,
-                      function(x) stringr::str_remove_all(x, "^.+, \\{"))
-    authors <- lapply(authors,
-                      function(x) stringr::str_remove_all(x, "\\}"))
-    authors <- lapply(authors,
-                      function(x) stringr::str_remove_all(x, " .+$"))
+    # Percentage of papers written by at least one women
+    for (i in 1:length(authors)) {
+      for (j in 1:length(authors[[i]])) {
+        authors[[i]][[j]] <- stringr::str_remove(authors[[i]][[j]],
+                                                 "^.+, \\{")
+        authors[[i]][[j]] <- stringr::str_remove(authors[[i]][[j]],
+                                                 "\\}")
+        authors[[i]][[j]] <- stringr::str_remove(authors[[i]][[j]],
+                                                 ".*,[:blank:]")
+      }
+    }
     gender <- sapply(authors,
                      function(x) any(gender::gender(x)$gender == "female"))
     print(paste0(round(sum(gender) / length(gender), 2) * 100,
                  "% female authors"))
   }
-
 }
 
 #' @rdname bibstats
