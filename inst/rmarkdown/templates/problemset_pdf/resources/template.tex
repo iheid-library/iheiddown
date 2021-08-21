@@ -10,10 +10,26 @@
 \allsectionsfont{\sffamily} % Set font of section
 
 \usepackage{calc}
-\usepackage[T1]{fontenc}
-\usepackage{fontspec} % Set fonts of the document
-\setmainfont{Latin Modern Roman}
-\setsansfont{Latin Modern Sans}
+%%%%% FONTS
+\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
+\RequirePackage{droidserif} % Droid Serif font for body
+\RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+%\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
+\RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
+% For the headings we will use Helvetica
+\RequirePackage{helvet}
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} % silence the warning
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
+\allsectionsfont{\sffamily}
+% For the main text and equations we will use Baskerville and Palatino (Old version)
+% \RequirePackage{mathpazo}
+% \RequirePackage{baskervald}
+% For formatting code or package names, we will use Lucida Console
+\RequirePackage{zi4} %Lucida console TypeWriter Font
+% Enable strikethrough
+\usepackage[normalem]{ulem}
 % \setmainfont{Arial}
 %\usepackage{lmodern}
 %\usepackage{ebgaramond}
