@@ -5,11 +5,11 @@
 #' following functions/metrics:
 #' 
 #' \describe{
-#'   \item{`percent_female()`}{Displays the percentage of female authors in a
-#'   `.bib` file.}
-#'   \item{`mean_year()`}{Displays the mean of the publication year of the items
+#'   \item{`percent_female()`}{Displays the percentage of authors in a
+#'   `.bib` file that are female. See the `{gender}` package for more details.}
+#'   \item{`mean_year()`}{Displays the average year of publication of the items
 #'   in a given `.bib` file.}
-#'   \item{`mean_pages()`}{Displays the mean of the page numbers of the items
+#'   \item{`mean_pages()`}{Displays the average number of pages of the items
 #'   in a given `.bib` file.}
 #'   \item{`total_pages()`}{Displays the total number of pages of all items
 #'   in a given `.bib` file.}
