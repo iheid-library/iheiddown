@@ -23,12 +23,7 @@ fix_bib <- function(bib_file) {
   bib2df::df2bib(bib, bib_file)
 }
 
-#' @rdname bibstats
-#' @importFrom readr read_lines
-#' @importFrom tibble as_tibble
-#' @importFrom dplyr mutate filter
-#' @importFrom stringr str_remove
-#' @export
+
 get_used_bib <- function(bib_file, rmd_file) {
   if (missing(bib_file)) bib_file <- find_bib()
   if (missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
