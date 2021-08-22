@@ -1,50 +1,14 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[top=1.3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
-\usepackage[immediate]{silence}
-\WarningFilter[temp]{latex}{Command} % silence the warning
-\usepackage{sectsty}
-\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
-\sectionfont{\fontsize{12}{15}\selectfont}
-\subsectionfont{\fontsize{10}{12}\selectfont}
-\allsectionsfont{\sffamily} % Set font of section
-
 \usepackage{calc}
-%%%%% FONTS
-\RequirePackage{microtype} % this makes fonts almost imperceptibly smoother
-\RequirePackage{droidserif} % Droid Serif font for body
-\RequirePackage[T1]{fontenc} % requires XeLatex or LuaTex (remove to use pdfLaTex)
-%\RequirePackage[utf8]{inputenc} % ignored when using XeLaTex or LuaTex (uncomment when using pdfLaTex)
-\RequirePackage{fontspec} % requires XeLatex or LuaTex (remove to use pdfLaTex)
-% For the headings we will use Helvetica
-\RequirePackage{helvet}
-\usepackage[immediate]{silence}
-\WarningFilter[temp]{latex}{Command} % silence the warning
-\usepackage{sectsty}
-\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
-\allsectionsfont{\sffamily}
-% For the main text and equations we will use Baskerville and Palatino (Old version)
-% \RequirePackage{mathpazo}
-% \RequirePackage{baskervald}
-% For formatting code or package names, we will use Lucida Console
-\RequirePackage{zi4} %Lucida console TypeWriter Font
-% Enable strikethrough
-\usepackage[normalem]{ulem}
-% \setmainfont{Arial}
-%\usepackage{lmodern}
-%\usepackage{ebgaramond}
-%\usepackage{amsmath}
-%\usepackage{amsfonts}
-%\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{longtable}
 \usepackage{hanging}
-\usepackage[english]{babel}
+\usepackage[english]{babel} % Language package
 \usepackage{tikz} % Draw things
 \usepackage{ltablex} % Multipage tables
 \usepackage{float} % Positioning figures
-\usepackage{subcaption}
 \usepackage{wrapfig} % Wraps text around figures
 \usepackage{array}
 % \usepackage{booktabs}
@@ -55,10 +19,10 @@
 \usepackage{booktabs}
 \usepackage{csquotes}
 \usepackage{biblatex}
-\usepackage{mathtools}
+\usepackage{mathtools} % More math tools, goes with amsmath below
 \usepackage[normalem]{ulem}
 \usepackage{enumitem}
-\usepackage{amssymb,amsmath}
+\usepackage{amssymb,amsmath} %MAthematical symbols in latex
 \usepackage[
   colorlinks  = true,
   urlcolor    = blue,
@@ -72,8 +36,8 @@
 \lhead{$authors$}
 \rhead{$course$: $title$}
 \addbibresource{$bibliography$} % Set path to bibfile
-\setlength{\parindent}{4em} %Identation paragraphes
-\setlength{\parskip}{1em} % Interligne paragraphes
+\setlength{\parindent}{4em} %Identation paragraphs
+\setlength{\parskip}{1em} % Paragraph spacing
 \renewcommand{\baselinestretch}{1.0} %Interligne
 \interfootnotelinepenalty=10000 %% Completely prevent breaking of footnotes
 \setlength{\headheight}{25pt} % Headheight
@@ -102,6 +66,7 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
+% Print whole bibliography
 \nocite{*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
