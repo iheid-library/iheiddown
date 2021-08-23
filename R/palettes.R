@@ -3,10 +3,10 @@
 #' Use \code{\link{iheid_palette}} to construct palettes of desired length.
 #'
 #' @export
-iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020", 
-                                   "IHEIDBlack" = "#5c666f", 
+iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
+                                   "IHEIDBlack" = "#5c666f",
                                    "IHEIDGrey" = "#6f7072"),
-                       "Centres" = c("AHCD" = "#622550", 
+                       "Centres" = c("AHCD" = "#622550",
                                      "CFFD" = "#0094D8",
                                      "CIES" = "#268D2B",
                                      "CTEI" = "#008F92",
@@ -36,8 +36,9 @@ iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
 #' An IHEID palette generator
 #'
 #' These are a few color palettes useful for members of the Graduate Institute.
-#' This function calls one of three official palettes in \code{\link{iheid_palette}}:
-#' for the Institute, for the Centres, and for the SDGs.
+#' This function calls one of three official palettes in
+#' \code{\link{iheid_palette}}: for the Institute, for the Centres, and for the
+#' SDGs.
 #'
 #' @param n Number of colors desired. If omitted, uses all colours.
 #' @param name Name of desired palette. Current choices are:
@@ -46,7 +47,8 @@ iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
 #'   to automatically interpolate between colours.
 #' @importFrom graphics rect par image text
 #' @return A vector of colours.
-#' @source Adapted from https://github.com/karthik/wesanderson/blob/master/R/colors.R
+#' @source Adapted from
+#' \url{https://github.com/karthik/wesanderson/blob/master/R/colors.R}
 #' @export
 #' @keywords colors
 #' @examples
@@ -61,19 +63,15 @@ iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
 #' image(volcano, col = pal)
 iheid_palette <- function(name, n, type = c("discrete", "continuous")) {
   type <- match.arg(type)
-  
   pal <- iheid_palettes[[name]]
   if (is.null(pal))
     stop("Palette not found.")
-  
   if (missing(n)) {
     n <- length(pal)
   }
-  
   if (type == "discrete" && n > length(pal)) {
     stop("Number of requested colors greater than what palette can offer")
   }
-  
   out <- switch(type,
                 continuous = grDevices::colorRampPalette(pal)(n),
                 discrete = pal[1:n]
@@ -88,10 +86,8 @@ print.palette <- function(x, ...) {
   n <- length(x)
   old <- par(mar = c(0.5, 0.5, 0.5, 0.5))
   on.exit(par(old))
-  
   image(1:n, 1, as.matrix(1:n), col = x,
         ylab = "", xaxt = "n", yaxt = "n", bty = "n")
-  
   rect(0, 0.9, n + 1, 1.1, col = rgb(1, 1, 1, 0.8), border = NA)
   text((n + 1) / 2, 1, labels = attr(x, "name"), cex = 1, family = "serif")
 }

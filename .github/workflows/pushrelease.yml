@@ -127,6 +127,13 @@ jobs:
         with:
           name: SyllabusExample
           path: Untitled/
+          
+      - name: Save problem set sample as artifact
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v2
+        with:
+          name: ProblemSetExample
+          path: UntitledPS/
 
       - name: Remove Thesis project
         if: runner.os == 'macOS'
@@ -139,6 +146,10 @@ jobs:
       - name: Remove Syllabus project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("Untitled", recursive = TRUE)'
+
+      - name: Remove problem set project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPS", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
@@ -203,6 +214,17 @@ jobs:
           asset_name: IHEIDSyllabusExample.pdf
           asset_content_type: application/pdf
 
+      - name: Upload problem set Example Asset
+        id: upload-PS-example
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ProblemSetExample/IHEIDProblemSetExample.pdf
+          asset_name: IHEIDProblemSetExample.pdf
+          asset_content_type: application/pdf
+
       - name: Rename Mac release
         run: mv ./macOS/*.tgz iheiddown_macOS.tgz
 
@@ -258,7 +280,7 @@ jobs:
       # install packages needed
       - name: install required packages
         run: Rscript -e 'install.packages(c("rmarkdown"))'
-        
+
       # Render README.md using rmarkdown
       - name: render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
@@ -277,6 +299,8 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false # add for deployment to work correctly
 
       - uses: r-lib/actions/setup-r@v1
 
@@ -305,9 +329,13 @@ jobs:
       - name: Install package
         run: R CMD INSTALL .
 
-      - name: Deploy package
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
+      - name: Build site # build pkgdown site in separate step
+        run: Rscript -e 'pkgdown::build_site()'
 
+      - name: Deploy # deploy the docs folder to gh-pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs
+          CLEAN: true

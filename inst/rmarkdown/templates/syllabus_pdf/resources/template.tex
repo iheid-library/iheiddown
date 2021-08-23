@@ -24,16 +24,29 @@
 \usepackage{xcolor}
 \usepackage{longtable}
 \usepackage{hanging}
+\usepackage{quotes}
 
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{\baselineskip}
-\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[
+  colorlinks  = true,
+  urlcolor    = red,
+  citecolor   = red,
+  linkcolor   = red % Sets the color of the citations
+]{hyperref}
 \author{$prof$}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\begin{document}	
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
+
+\begin{document}
 
 \hspace*{-1.25cm}
 \includegraphics[width=0.3\linewidth]{iheid.png}

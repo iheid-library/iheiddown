@@ -1,7 +1,7 @@
 #' A function for counting words in an Rmarkdown document.
 #'
-#' This function takes a path to a .Rmd file and returns a word count. 
-#' For best results each sentence should start on a new line. 
+#' This function takes a path to a .Rmd file and returns a word count.
+#' For best results each sentence should start on a new line.
 #' Inline code chunks should also start on a new line.
 #'
 #' @param file A path to a .Rmd file
@@ -20,8 +20,7 @@
 #' @export
 count_words <- function(file) {
   # Get currently viewed panel in RStudio if file is not specified
-  if(missing(file)) file <- rstudioapi::getSourceEditorContext()$path
-  
+  if (missing(file)) file <- rstudioapi::getSourceEditorContext()$path
   wc <- readr::read_lines(file) %>%
     tibble::as_tibble() %>%
     remove_front_matter() %>%

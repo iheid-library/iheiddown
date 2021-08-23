@@ -36,7 +36,8 @@ the workflow of writing your very own scholarly documents in R.
 
 ## Installation
 
-To use `{iheiddown}`'s template you'll need the following software:
+The installation process is the same than for the thesis template. You'll need
+the following software:
 
 1. Install [R](https://cran.r-project.org) and [R-Studio](https://www.rstudio.com/)
 2. Install a LATEX distribution:
@@ -44,14 +45,10 @@ To use `{iheiddown}`'s template you'll need the following software:
     - [For Windows](https://miktex.org/)
     - [For Linux](https://www.tug.org/texlive/)
 3. Install `{iheiddown}` by typing the following command
-`remotes::install_github("jhollway/iheiddown")` in the R-Studio console.
-  - The package will soon be made available on CRAN. This will enable you to
-  install the package even faster by simply typing
-  `install.packages("iheiddown")`. We will update the vignette when this is the
-  case.
+`install.packages("iheiddown") ` in the R-Studio console. 
 
-Note: typing `remotes::install_github("jhollway/iheiddown")` again will update
-the package to the latest released version.
+Note: typing `remotes::install_github("jhollway/iheiddown")` will provide you
+with the latest version from GitHub.
 
 ## Create your first thesis project
 
