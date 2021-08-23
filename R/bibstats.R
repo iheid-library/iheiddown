@@ -64,8 +64,8 @@ percent_female <- function(bib_file,
     print(paste0(round(gender[1] / sum(gender), 2) * 100, "% female authors"))
   } else if (by == "publication") {
     # Percentage of papers written by at least one women
-    for (i in 1:length(authors)) {
-      for (j in 1:length(authors[[i]])) {
+    for (i in seq_len(length(authors))) {
+      for (j in seq_len(length(authors[[i]]))) {
         authors[[i]][[j]] <- stringr::str_remove(authors[[i]][[j]],
                                                  "^.+, \\{")
         authors[[i]][[j]] <- stringr::str_remove(authors[[i]][[j]],
