@@ -67,6 +67,8 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("pkgbuild")
+          utils::install.packages("roxygen2")
+          utils::install.packages("covr")
         shell: Rscript {0}
 
       - name: Document
