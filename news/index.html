@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">iheiddown</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.3</span>
       </span>
     </div>
 
@@ -102,6 +102,9 @@
     <li>
       <a href="../articles/syllabus.html">Syllabus</a>
     </li>
+    <li>
+      <a href="../articles/problemset.html">Problem Set</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -119,6 +122,9 @@
     </li>
     <li>
       <a href="../sample_output/IHEIDSyllabusExample.pdf">Syllabus</a>
+    </li>
+    <li>
+      <a href="../sample_output/IHEIDProblemSetExample.pdf">Problem Set</a>
     </li>
   </ul>
 </li>
@@ -150,6 +156,46 @@
       <small>Source: <a href='https://github.com/jhollway/iheiddown/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="iheiddown-083" class="section level1">
+<h1 class="page-header" data-toc-text="0.8.3">
+<a href="#iheiddown-083" class="anchor"></a>iheiddown 0.8.3<small> Unreleased </small>
+</h1>
+<div id="problem-set-template" class="section level2">
+<h2 class="hasAnchor">
+<a href="#problem-set-template" class="anchor"></a>Problem set template</h2>
+<ul>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/94'>#94</a> by adding a problem set template to <a href="https://github.com/jhollway/iheiddown">iheiddown</a>
+</li>
+</ul>
+</div>
+<div id="thesis" class="section level2">
+<h2 class="hasAnchor">
+<a href="#thesis" class="anchor"></a>Thesis</h2>
+<ul>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/76'>#76</a> by adding an option for line numbering for thesis output when the draft option is set to true</li>
+</ul>
+</div>
+<div id="package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package" class="anchor"></a>Package</h2>
+<ul>
+<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/90'>#90</a> by solving the remaining issues of the package website deployment workflow</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/91'>#91</a> by removing unnecessary package dependencies following CRAN notes</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/93'>#93</a> by adding bibliography statistics family of functions
+<ul>
+<li>
+<code>percent_female()</code> displays the percentage of female authors in a <code>.bib</code> file</li>
+<li>
+<code>mean_year()</code> displays the mean of the publication year of the items in a given <code>.bib</code> file</li>
+<li>
+<code>mean_pages()</code> displays the mean of the page length of the items in a given <code>.bib</code> file</li>
+<li>
+<code>total_pages()</code> displays the total number of pages of all items in a given <code>.bib</code> file</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
     <div id="iheiddown-082" class="section level1">
 <h1 class="page-header" data-toc-text="0.8.2">
 <a href="#iheiddown-082" class="anchor"></a>iheiddown 0.8.2<small> 2021-06-24 </small>
@@ -190,9 +236,9 @@
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/54'>#54</a> by adding tutorial vignettes to get users started with each template (syllabus, thesis, presentation)</li>
 </ul>
 </div>
-<div id="package" class="section level2">
+<div id="package-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#package" class="anchor"></a>Package</h2>
+<a href="#package-1" class="anchor"></a>Package</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/78'>#78</a> by reducing subdirectory size for CRAN submission</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/68'>#68</a> by fixing the error message indicating that the output format was not of class <code>rmarkdown_output_format</code>
@@ -218,9 +264,9 @@
 </li>
 </ul>
 </div>
-<div id="thesis" class="section level2">
+<div id="thesis-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis" class="anchor"></a>Thesis</h2>
+<a href="#thesis-1" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/27'>#27</a> with a new selection of fonts for thesis: Helvetica, Droid Serif, Lucida Console</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/53'>#53</a> by saving all Markdown files with the <code>WINDOWS-1252</code> default encoding
@@ -236,9 +282,9 @@
 <h1 class="page-header" data-toc-text="0.7.4">
 <a href="#iheiddown-074" class="anchor"></a>iheiddown 0.7.4<small> Unreleased </small>
 </h1>
-<div id="package-1" class="section level2">
+<div id="package-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#package-1" class="anchor"></a>Package</h2>
+<a href="#package-2" class="anchor"></a>Package</h2>
 <ul>
 <li>Updated README to inform users that new theses must be named “00-ProjectTitle” to avoid issues when merging Rmd files together</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/39'>#39</a> by adding the <a href="https://ggplot2.tidyverse.org">ggplot2</a> theme <code>theme_iheid()</code>
@@ -249,9 +295,9 @@
 </li>
 </ul>
 </div>
-<div id="thesis-1" class="section level2">
+<div id="thesis-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-1" class="anchor"></a>Thesis</h2>
+<a href="#thesis-2" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/32'>#32</a> by changing lorem ipsum to LOTR references</li>
 <li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/49'>#49</a> by changing the “title” macro to “doctitle” to avoid an issue with Pandoc conversion to Latex on MacOS</li>
@@ -277,16 +323,16 @@
 <h1 class="page-header" data-toc-text="0.7.3">
 <a href="#iheiddown-073" class="anchor"></a>iheiddown 0.7.3<small> Unreleased </small>
 </h1>
-<div id="package-2" class="section level2">
+<div id="package-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#package-2" class="anchor"></a>Package</h2>
+<a href="#package-3" class="anchor"></a>Package</h2>
 <ul>
 <li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/38'>#38</a> by adding <code>iheid_palettes</code> and <code>iheid_palette()</code> for accessing IHEID and SDG color palettes</li>
 </ul>
 </div>
-<div id="thesis-2" class="section level2">
+<div id="thesis-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-2" class="anchor"></a>Thesis</h2>
+<a href="#thesis-3" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/22'>#22</a> by adding example of how to create a Gantt plot including call to <code>iheid_palette()</code>
 </li>
@@ -297,9 +343,9 @@
 <h1 class="page-header" data-toc-text="0.7.2">
 <a href="#iheiddown-072" class="anchor"></a>iheiddown 0.7.2<small> Unreleased </small>
 </h1>
-<div id="thesis-3" class="section level2">
+<div id="thesis-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-3" class="anchor"></a>Thesis</h2>
+<a href="#thesis-4" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/28'>#28</a> by adding more details to filenames
 <ul>
@@ -327,9 +373,9 @@
 </li>
 </ul>
 </div>
-<div id="package-3" class="section level2">
+<div id="package-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#package-3" class="anchor"></a>Package</h2>
+<a href="#package-4" class="anchor"></a>Package</h2>
 <ul>
 <li>Release individual packages</li>
 <li>More colourful load</li>
@@ -341,18 +387,18 @@
 <h1 class="page-header" data-toc-text="0.7.1">
 <a href="#iheiddown-071" class="anchor"></a>iheiddown 0.7.1<small> Unreleased </small>
 </h1>
-<div id="thesis-4" class="section level2">
+<div id="thesis-5" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-4" class="anchor"></a>Thesis</h2>
+<a href="#thesis-5" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Rescaled <code>{citr}</code> image in chapter 2 of template</li>
 <li>Added <code>{Equatiomatic}</code> option to chapter 3 of thesis template</li>
 <li>Added IHEIDThesisExample.pdf for demonstration purposes</li>
 </ul>
 </div>
-<div id="package-4" class="section level2">
+<div id="package-5" class="section level2">
 <h2 class="hasAnchor">
-<a href="#package-4" class="anchor"></a>Package</h2>
+<a href="#package-5" class="anchor"></a>Package</h2>
 <ul>
 <li>Updated README</li>
 <li>Added info on load</li>
@@ -363,9 +409,9 @@
 <h1 class="page-header" data-toc-text="0.7.0">
 <a href="#iheiddown-070" class="anchor"></a>iheiddown 0.7.0<small> Unreleased </small>
 </h1>
-<div id="thesis-5" class="section level2">
+<div id="thesis-6" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-5" class="anchor"></a>Thesis</h2>
+<a href="#thesis-6" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Added <code>chapter_pdf()</code> knit function for previewing chapters (closes <a href='https://github.com/jhollway/iheiddown/issues/19'>#19</a>)</li>
 <li>Added <code>bookdown_profile</code> addin for RStudio to improve access to the bookdown profile</li>
