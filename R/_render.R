@@ -44,11 +44,11 @@ file.rename(file.path(target_path, name), file.path(target_path,
 ##############
 
 # Automatic rendering of problemset_pdf will run on a Windows VM
-#Step 1 Create an example project
+# Step 1 Create an example project
 rmarkdown::draft(file = "UntitledPS", template = "problemset",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("UntitledPS") # Since we can only knit from the WD
-#Step 2 render the example project and replace in template folder
+# Step 2 render the example project and replace in template folder
 iheiddown::problemset_pdf("UntitledPS.Rmd")
 #Come back to the original WD and copy the output while also renaming it
 setwd("..")
