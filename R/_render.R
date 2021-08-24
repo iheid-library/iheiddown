@@ -6,7 +6,7 @@
 
 # Automatic rendering of thesis_pdf will run on a Windows VM
 #Step 1 Create an example project
-rmarkdown::draft(file = "00-Example", template = "Thesis",
+rmarkdown::draft(file = "00-Example", template = "thesis",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("00-Example") # Since we can only knit from the WD
 #Step 2 render the example project and replace in template folder
@@ -26,7 +26,7 @@ file.rename(file.path(target_path, name), file.path(target_path,
 
 # Automatic rendering of syllabus_pdf will run on a Windows VM
 #Step 1 Create an example project
-rmarkdown::draft(file = "Untitled", template = "Syllabus",
+rmarkdown::draft(file = "Untitled", template = "syllabus",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("Untitled") # Since we can only knit from the WD
 #Step 2 render the example project and replace in template folder
@@ -45,7 +45,7 @@ file.rename(file.path(target_path, name), file.path(target_path,
 
 # Automatic rendering of problemset_pdf will run on a Windows VM
 #Step 1 Create an example project
-rmarkdown::draft(file = "UntitledPS", template = "Problem_Set",
+rmarkdown::draft(file = "UntitledPS", template = "problemset",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("UntitledPS") # Since we can only knit from the WD
 #Step 2 render the example project and replace in template folder
@@ -64,7 +64,7 @@ file.rename(file.path(target_path, name),
 
 # Automatic rendering of thesis_pdf will run on a Windows VM
 #Step 1 Create an example project
-rmarkdown::draft(file = "index", template = "Presentation",
+rmarkdown::draft(file = "index", template = "presentation",
                  package = "iheiddown", create_dir = TRUE, edit = FALSE)
 setwd("index") # Since we can only knit from the WD
 #Step 2 render the example project and replace in template folder

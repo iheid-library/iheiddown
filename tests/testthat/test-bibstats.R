@@ -1,5 +1,5 @@
 test_that("Bibstats works properly", {
-  rmarkdown::draft(file = "test", template = "Syllabus",
+  rmarkdown::draft(file = "test", template = "syllabus",
                    package = "iheiddown", create_dir = TRUE, edit = FALSE)
   expect_equal(percent_female(bib_file = "test/references.bib",
                          rmd_file = "test/test.Rmd",
@@ -22,12 +22,9 @@ test_that("Bibstats works properly", {
 })
 
 test_that("Bibfix works properly", {
-  rmarkdown::draft(file = "test", template = "Syllabus",
+  rmarkdown::draft(file = "test", template = "syllabus",
                    package = "iheiddown", create_dir = TRUE, edit = FALSE)
   expect_equal(fix_bib(bib_file = "test/references.bib"),
                "test/references.bib")
-  expect_equal(get_used_bib(bib_file = "test/references.bib",
-                            rmd_file = "test/test.Rmd"),
-               c("Darwin1859", "iheiddown2020", "Satchell2009" ))
   unlink("test", recursive = TRUE)
 })
