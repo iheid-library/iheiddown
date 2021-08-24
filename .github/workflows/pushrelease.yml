@@ -67,6 +67,8 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("pkgbuild")
+          utils::install.packages("roxygen2")
+          utils::install.packages("covr")
         shell: Rscript {0}
 
       - name: Document
@@ -91,17 +93,17 @@ jobs:
         run: R CMD INSTALL .
 
       # install packages needed
-      - name: install required packages
+      - name: Install required packages
         if: runner.os == 'macOS'
         run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
 
       # Install ganttrify
-      - name: install ganttrify
+      - name: Install ganttrify
         if: runner.os == 'macOS'
         run: Rscript -e 'remotes::install_github("giocomai/ganttrify")'
       
       #Install other non-CRAN packages for sample output generation
-      - name: install non CRAN packages to render sample output
+      - name: Install non CRAN packages to render sample output
         if: runner.os == 'macOS'
         run: |
           remotes::install_github("crsh/citr")
@@ -175,6 +177,7 @@ jobs:
 
       - name: Checkout two
         uses: actions/checkout@v2
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
