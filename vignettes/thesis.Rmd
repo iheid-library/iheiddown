@@ -59,7 +59,9 @@ appears. Now that we have created an R project for our presentation, we can open
 a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
-![Step 1: open a new project](images/thesis/0-Open_Project.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
+  knitr::include_graphics("images/thesis/0-Open_Project.PNG", dpi = 144)
+```
 
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our thesis. To do so,
@@ -72,7 +74,9 @@ file is called `index.Rmd` which is required to render your thesis with
 our `{bookdown}` based rendering function. Don't worry though, you can rename
 the folder to your project name after creating it.
 
-![Step 2: select the template](images/thesis/1-Create_Thesis.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
+  knitr::include_graphics("images/thesis/1-Create_Thesis.PNG", dpi = 144)
+```
 
 Congrats! You just created your first thesis project!
 

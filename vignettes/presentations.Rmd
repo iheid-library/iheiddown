@@ -1,10 +1,10 @@
 ---
-title: "Presentations"
+title: "Creating presentations"
 author: "Bernhard Bieri"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Presentations}
+  %\VignetteIndexEntry{Creating presentations}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -70,7 +70,9 @@ appears. Now that we have created an R project for our presentation, we can open
 a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
-![Step 1: open a new project](images/presentations/0_Open_Project.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
+  knitr::include_graphics("images/presentations/0-Open_Project.PNG", dpi = 144)
+```
 
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our presentation. To do so,
@@ -78,7 +80,9 @@ click on the "From Template" option on the left and select the
 "Presentation {iheiddown}" template. Now give your presentation a name and click
 on "OK".
 
-![Step 2: select the template](images/presentations/1_Select_Template.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
+  knitr::include_graphics("images/presentations/1-Select_Template.PNG", dpi = 144)
+```
 
 Congrats! You just created your first presentation!
 
