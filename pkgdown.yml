@@ -1,4 +1,4 @@
-pandoc: 2.7.3
+pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
@@ -6,7 +6,7 @@ articles:
   problemset: problemset.html
   syllabus: syllabus.html
   thesis: thesis.html
-last_built: 2021-08-24T15:04Z
+last_built: 2021-09-06T09:05Z
 urls:
   reference: https://jhollway.github.io/iheiddown/reference
   article: https://jhollway.github.io/iheiddown/articles

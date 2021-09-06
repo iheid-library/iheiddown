@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Page not found (404) • iheiddown</title>
+<title>Creates an R Markdown PDF Syllabus document — syllabus_pdf • iheiddown</title>
 
 
 <!-- jquery -->
@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="https://jhollway.github.io/iheiddown/bootstrap-toc.css">
-<script src="https://jhollway.github.io/iheiddown/bootstrap-toc.js"></script>
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -33,13 +33,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="https://jhollway.github.io/iheiddown/pkgdown.css" rel="stylesheet">
-<script src="https://jhollway.github.io/iheiddown/pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Page not found (404)" />
+<meta property="og:title" content="Creates an R Markdown PDF Syllabus document — syllabus_pdf" />
+<meta property="og:description" content="This is a function called in output in the YAML of the driver Rmd file
+to specify using the IHEID Syllabus LaTeX template file." />
 
 
 
@@ -58,7 +60,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-title-body">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -70,7 +72,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="https://jhollway.github.io/iheiddown/index.html">iheiddown</a>
+        <a class="navbar-link" href="../index.html">iheiddown</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.3</span>
       </span>
     </div>
@@ -78,13 +80,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -94,16 +96,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/presentations.html">Presentations</a>
+      <a href="../articles/presentations.html">Presentations</a>
     </li>
     <li>
-      <a href="articles/thesis.html">Thesis</a>
+      <a href="../articles/thesis.html">Thesis</a>
     </li>
     <li>
-      <a href="articles/syllabus.html">Syllabus</a>
+      <a href="../articles/syllabus.html">Syllabus</a>
     </li>
     <li>
-      <a href="articles/problemset.html">Problem Set</a>
+      <a href="../articles/problemset.html">Problem Set</a>
     </li>
   </ul>
 </li>
@@ -115,21 +117,21 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="sample_output/index.html">Presentation</a>
+      <a href="../sample_output/index.html">Presentation</a>
     </li>
     <li>
-      <a href="sample_output/IHEIDThesisExample.pdf">Thesis</a>
+      <a href="../sample_output/IHEIDThesisExample.pdf">Thesis</a>
     </li>
     <li>
-      <a href="sample_output/IHEIDSyllabusExample.pdf">Syllabus</a>
+      <a href="../sample_output/IHEIDSyllabusExample.pdf">Syllabus</a>
     </li>
     <li>
-      <a href="sample_output/IHEIDProblemSetExample.pdf">Problem Set</a>
+      <a href="../sample_output/IHEIDProblemSetExample.pdf">Problem Set</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="news/index.html">News</a>
+  <a href="../news/index.html">News</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -150,23 +152,54 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Page not found (404)</h1>
+    <h1>Creates an R Markdown PDF Syllabus document</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jhollway/iheiddown/blob/master/R/syllabus_pdf.R'><code>R/syllabus_pdf.R</code></a></small>
+    <div class="hidden name"><code>syllabus_pdf.Rd</code></div>
     </div>
 
-Content not found. Please use links in the navbar.
+    <div class="ref-description">
+    <p>This is a function called in output in the YAML of the driver Rmd file
+to specify using the IHEID Syllabus LaTeX template file.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>syllabus_pdf</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>input</th>
+      <td><p>The name of the .Rmd file to serve as input.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Instructions passed to the function from a correctly specified
+.Rmd document</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A modified <code>pdf_document</code> based on the IHEID Syllabus LaTeX
+template, automatically named by course and date.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>output</span><span class='op'>:</span>
+  <span class='fu'>iheiddown</span><span class='fu'>::</span><span class='va'>syllabus_pdf</span><span class='op'>:</span>
+    <span class='va'>input</span><span class='op'>:</span> <span class='st'>"Untitled.Rmd"</span> 
+    <span class='co'># Replace with whatever the name of this file is, e.g. "MINT001.Rmd"</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
-
 
 
       <footer>
