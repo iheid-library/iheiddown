@@ -1,0 +1,5 @@
+"0","flights2 <- flights %>%"
+"0","  select(carrier_name, arr_delay)"
+"0","max_delays <- flights2 %>%"
+"0","  group_by(carrier_name) %>%"
+"0","  summarize(max_arr_delay = max(arr_delay, na.rm = TRUE))"

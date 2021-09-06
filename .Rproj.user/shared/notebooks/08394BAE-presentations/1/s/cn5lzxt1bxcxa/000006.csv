@@ -1,0 +1,8 @@
+"0","ggplot2::ggplot(mtcars) +"
+"0","  geom_point(aes(x = wt, y = mpg)) +"
+"0","  labs(title = ""Fuel economy declines as weight increases"","
+"0","       subtitle = ""(1973-74)"","
+"0","       caption = ""Data from the 1974 Motor Trend US magazine."","
+"0","       x = ""Weight (1000 lbs)"","
+"0","       y = ""Fuel economy (mpg)"")+"
+"0","  theme_iheid()"

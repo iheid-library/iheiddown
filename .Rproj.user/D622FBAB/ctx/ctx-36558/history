@@ -1,0 +1,512 @@
+iheiddown::thesis_pdf("00-Example.Rmd", author = "John Smith")
+setwd("..")
+date <- Sys.Date()
+name <- paste0("John Smith_Thesis_", date,".pdf")
+target_path <- "00-Example/versions"
+file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+#Step 1 Create an example project
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+rmarkdown::draft(file = "00-Example", template = "thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("00-Example") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+iheiddown::thesis_pdf("00-Example.Rmd", author = "John Smith")
+#Come back to the original WD and copy the output while also renaming it
+setwd("..")
+date <- Sys.Date()
+name <- paste0("John Smith_Thesis_", date,".pdf")
+target_path <- "00-Example/versions"
+file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
+?bookdown.render.file_scope
+?options
+iheiddown::thesis_pdf("00-Example.Rmd", author = "John Smith")
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("00-Example") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+iheiddown::thesis_pdf("00-Example.Rmd", author = "John Smith")
+#Come back to the original WD and copy the output while also renaming it
+setwd("..")
+date <- Sys.Date()
+name <- paste0("John Smith_Thesis_", date,".pdf")
+target_path <- "00-Example/versions"
+file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("00-Example")
+iheiddown::thesis_pdf("00-Example.Rmd", author = "John Smith")
+iheiddown::thesis_pdf("00-Example.Rmd", author = "JohnSmith")
+# N.B. This is for internal use and not distributed with the Iheiddown package
+# Automatic rendering of thesis_pdf will run on a Windows VM
+#Step 1 Create an example project
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("00-Example") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+iheiddown::thesis_pdf("00-Example.Rmd", author = "JohnSmith")
+#Come back to the original WD and copy the output while also renaming it
+setwd("..")
+date <- Sys.Date()
+name <- paste0("JohnSmith_Thesis_", date,".pdf")
+target_path <- "00-Example/versions"
+file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
+# In the future: Add automatic rendering for syllabus and presentation templates
+# Automatic rendering of thesis_pdf will run on a Windows VM
+#Step 1 Create an example project
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("00-Example") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+iheiddown::thesis_pdf("00-Example.Rmd", author = "JohnSmith")
+#Come back to the original WD and copy the output while also renaming it
+setwd("..")
+date <- Sys.Date()
+name <- paste0("JohnSmith_Thesis_", date,".pdf")
+target_path <- "00-Example/versions"
+file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
+library(iheiddown)
+rmarkdown::draft(file = "00-Example", template = "Thesis",
+package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("00-Example") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+iheiddown::thesis_pdf("00-Example.Rmd", author = "JohnSmith")
+#Come back to the original WD and copy the output while also renaming it
+setwd("..")
+date <- Sys.Date()
+name <- paste0("JohnSmith_Thesis_", date,".pdf")
+target_path <- "00-Example/versions"
+file.rename(file.path(target_path, name), file.path(target_path, "IHEIDThesisExample.pdf"))
+# In the future: Add automatic rendering for syllabus and presentation templates
+?inherits
+?bookdown::pdf_book
+? output_format
+?bookdown::pdf_book
+? output_format
+?inherits
+?bookdown.render.file_scope
+?options
+library(iheiddown)
+library(iheiddown)
+knit_with_parameters('~/GitHub/iheiddown/Untitled/Untitled.Rmd')
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(theme_iheid())
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(theme_iheid())
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(
+fig.retina = 3,
+message = FALSE,
+warning = FALSE,
+autodep = TRUE,
+cache = TRUE
+)
+old <- ggplot2::theme_set(theme_iheid())
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(
+fig.retina = 3,
+message = FALSE,
+warning = FALSE,
+autodep = TRUE,
+cache = TRUE
+)
+old <- ggplot2::theme_set(theme_iheid())
+plot(iris)
+library(iheiddown)
+?download.file
+?sprintf
+?before_init
+library(iheiddown)
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>",
+purl = NOT_CRAN,
+eval = NOT_CRAN
+)
+library(iheiddown)
+library(rmarkdown)
+?includes
+library(iheiddown)
+library(iheiddown)
+library(iheiddown)
+library(iheiddown)
+?output_format
+?render_book
+?pdf_book
+library(iheiddown)
+library(iheiddown)
+library(iheiddown)
+?render_book
+install.packages("reprex")
+library(iheiddown)
+library(iheiddown)
+?html_document
+library(iheiddown)
+library(iheiddown)
+library(iheiddown)
+thesis_pdf()
+thesis_pdf(input="00-Untitled.Rmd")
+thesis_pdf(input="00-Untitled.Rmd", author = "Benrhard")
+thesis_pdf(input="00-Untitled.Rmd", author = "Bernhard")
+thesis_pdf(input="00-Untitled.Rmd", author = "Bernhard", delete_merged_file=TRUE)
+xaringan::inf_mr()
+run servr::daemon_stop(1)
+servr::daemon_stop(1)
+xaringan::inf_mr()
+run servr::daemon_stop(2)
+servr::daemon_stop(2)
+xaringan::inf_mr()
+servr::daemon_stop(3)
+xaringan::inf_mr()
+install.packages("gcookbook")
+library(tidyverse)
+library(iheiddown)
+xaringan::inf_mr()
+library(iheiddown)
+xaringan::inf_mr()
+xaringan::inf_mr()
+library(iheiddown)
+library(iheiddown)
+xaringan::inf_mr()
+library(iheiddown)
+library(xaringan)
+inf_mr()
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme_iheid()
+servr::daemon_stop(1)
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'")
+windowsFonts()
+windowsFont()
+windowsFont("TT Arial Nova")
+?windowsFont
+library(iheiddown)
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'")
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'")
+library(extrafont)
+font_import()
+font_import()
+library(iheiddown)
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'")
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme_iheid(plot.title = ggplot2::element_text(family="Comic Sans MS",
+size=28,
+face="bold",
+color=iheid_palette("IHEID")["IHEIDRed"]))
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme(plot.title = ggplot2::element_text(family="Comic Sans MS",
+size=28,
+face="bold",
+color=iheid_palette("IHEID")["IHEIDRed"]))
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme(plot.title = ggplot2::element_text(family="TT Arial Nova",
+size=28,
+face="bold",
+color=iheid_palette("IHEID")["IHEIDRed"]))
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme(plot.title = ggplot2::element_text(family="TT Arial Narrow",
+size=28,
+face="bold",
+color=iheid_palette("IHEID")["IHEIDRed"]))
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme(plot.title = ggplot2::element_text(family="Arial Narrow",
+size=28,
+face="bold",
+color=iheid_palette("IHEID")["IHEIDRed"]))
+library(iheiddown)
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme(plot.title = ggplot2::element_text(family="Arial Narrow",
+size=28,
+face="bold",
+color=iheid_palette("IHEID")["IHEIDRed"]))
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme()
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+geom_line() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme()
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+geom_smooth() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme()
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+geom_smooth() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme()
+library(iheiddown)
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+geom_smooth() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme()
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+geom_smooth() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'") +
+theme_iheid(font = "Arial Narrow")
+library(gcookbook) #data repo for examples
+ggplot(mtcars, aes(mpg, wt)) +
+geom_point() +
+geom_smooth() +
+labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+title="Seminal ggplot2 scatterplot example",
+subtitle="A plot that is only useful for demonstration purposes",
+caption="Brought to you by the letter 'g'")
+inf_mr()
+servr::daemon_stop()
+servr::daemon_stop(1)
+devtools::install_github("gadenbuie/rsthemes")
+rsthemes::install_rsthemes()
+rsthemes::try_rsthemes("dark")
+rsthemes::list_rsthemes()
+rstudioapi::applyTheme("Material Ocean {rsthemes}")
+rstudioapi::applyTheme("Material Palenight {rsthemes}")
+install.packages("pkgdown")
+library(iheiddown)
+library(xaringan)
+inf_mr()
+servr::daemon_stop(1)
+xaringan::inf_mr()
+servr::daemon_stop(1)
+library(xaringan)
+library(tidyverse)
+inf_mr()
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+plot(iris)
+servr::daemon_stop(1)
+rsthemes::try_rsthemes("light")
+rsthemes::try_rsthemes("light")
+xaringan::inf_mr
+xaringan::inf_mr()
+remotes::install_github("mitchelloharawild/icons")
+library("icons")
+download_google_material()
+download_fontawesome()
+library(icons)
+icon_find("github")
+servr::daemon_stop(1)
+xaringan::inf_mr()
+icons::icon_find("browser")
+icon_find("open in new")
+icons::icon_find("open-in-new")
+icons::icon_find("github")
+icons::icon_installed("gh")
+library(icons)
+download_google_material()
+icon_installed(google_material())
+icon_installed(google_material)
+download_octicons()
+library(dt)
+library(DT)
+servr::daemon_stop(1)
+# don't mind this code chunk, it just sets up a few things for the rest
+# it doesn't appear, because the include argument above is FALSE...
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+knitr::opts_chunk$set(cache=TRUE, autodep = TRUE, fig.retina = 3, message = FALSE, warning = FALSE)
+old <- ggplot2::theme_set(iheiddown::theme_iheid())
+names <- list.files("inst/logos/")
+library(iheiddown)
+name <- c("IHEID", "IHEID B&W", "IHEID white", "CIES", "CTEI", "GGC", "AHCD", "CCDP", "CFD", "Gender", "GHC", "GMC")
+class <- c(".logo-iheid", ".logo-iheid_BW", ".logo-iheid_white", ".logo-cies", ".logo-ctei", ".logo-ggc", ".logo-ahcd", ".logo-ccdp", ".logo-cfd", ".logo-gender", ".logo-ghc", ".logo-gmc")
+logos <- data.frame(Name=name, Class=class)
+kableExtra::kbl(logos) %>%
+kableExtra::kable_material()%>%
+kableExtra::scroll_box(width = "50%")
+name <- c("IHEID", "IHEID B&W", "IHEID white", "CIES", "CTEI", "GGC", "AHCD", "CCDP", "CFD", "Gender", "GHC", "GMC")
+class <- c(".logo-iheid", ".logo-iheid_BW", ".logo-iheid_white", ".logo-cies", ".logo-ctei", ".logo-ggc", ".logo-ahcd", ".logo-ccdp", ".logo-cfd", ".logo-gender", ".logo-ghc", ".logo-gmc")
+logos <- data.frame(Name=name, Class=class)
+kableExtra::kbl(logos) %>%
+kableExtra::kable_material()%>%
+kableExtra::scroll_box(width = "70%")
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>",
+fig.align = 'center'
+)
+library(iheiddown)
+library(tidyverse)
+library(kableExtra)
+name <- c("IHEID", "IHEID B&W", "IHEID white", "CIES", "CTEI", "GGC", "AHCD", "CCDP", "CFD", "Gender", "GHC", "GMC")
+class <- c(".logo-iheid", ".logo-iheid_BW", ".logo-iheid_white", ".logo-cies", ".logo-ctei", ".logo-ggc", ".logo-ahcd", ".logo-ccdp", ".logo-cfd", ".logo-gender", ".logo-ghc", ".logo-gmc")
+logos <- data.frame(Name=name, Class=class)
+kableExtra::kbl(logos) %>%
+kableExtra::kable_material()%>%
+kableExtra::scroll_box(width = "70%", height = "400px")
+servr::daemon_stop()
+servr::daemon_list()
+servr::browse_last()
+servr::daemon_stop(servr::daemon_list())
+library(leaflet)
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(46.22104235903037, 6.143562874924635,
+zoom = 17)
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(46.2210, 6.1435,
+zoom = 15)
+library(leaflet)
+leaflet() %>%
+addTiles() %>%
+setView(46.2210, 6.1435, zoom = 15)
+library(leaflet)
+leaflet() %>%
+addTiles() %>%
+setView(6.1435, 46.2210, zoom = 15)
+library(leaflet)
+leaflet() %>%
+addTiles() %>%
+setView(6.1435, 46.2210, zoom = 17)
+library(leaflet)
+leaflet() %>%
+addTiles() %>%
+setView(6.1435, 46.2210, zoom = 17)
+knitr::kable(head(auto), format = 'html')
+auto
+knitr::kable(head(mtcars), format = 'html')
+knitr::kable(head(mtcars), format = 'html')
+library(DT)
+datatable(head(mtcars, 10),
+fillContainer = FALSE, options = list(pageLength = 4))
+xaringan::inf_mr()
+install.packages("sparkline")
+sparkline::sparkline(0)
+servr::daemon_stop(1)
+xaringan::inf_mr()
+servr::daemon_stop()
