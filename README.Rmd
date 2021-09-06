@@ -71,15 +71,19 @@ the user-friendly nature and pretty output should make it of great benefit to ne
 
 You can see an example of the kind of dissertation output on the package website.
 
-### Write syllabi and presentations in _RMarkdown_ too!
+### Hold on, there is more!
 
-Not quite done yet, there is even more!
+Not quite done yet, there is even more! Take a look at the following table for
+all available templates:
 
-- Create IHEID-styled syllabi with our template.
+| Templates        | Format                       | Status             |
+| ---------------- | ---------------------------- | ------------------ |
+| Thesis           | PDF                          | :thumbsup: |
+| Syllabus         | PDF                          | :thumbsup: |
+| [`{xaringan}`](https://github.com/yihui/xaringan) presentations    | HTML (can be printed to PDF) | :thumbsup: |
+| Problem set      | PDF                          | :star2: :new: :star2: |
+| *Your idea*      | *Open a PR!*                          | :sparkles: |
 
-- Create IHEID-styled presentations based on the great [`{xaringan}`](https://github.com/yihui/xaringan) package.
-
-- Write your weekly problem sets easily with our template! :star2: :new: :star2:
 
 ## Installation
 
