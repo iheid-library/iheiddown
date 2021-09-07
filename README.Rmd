@@ -2,7 +2,16 @@
 output: github_document
 ---
 
-# iheiddown <img src="man/figures/iheiddown.png" align="right" width="220"/>
+# iheiddown 
+<img src="man/figures/iheiddown.png" align="right" width="220"/>
+
+```{r setup, include=FALSE} 
+# Sources the render_toc() function from Garrick Aden Buie
+# Note: Headers must be definded with hashtags for correct parsing
+knitr::opts_chunk$set(echo = TRUE)
+devtools::source_gist("c83e078bf8c81b035e32c3fc0cf04ee8", 
+                      filename = 'render_toc.R')
+```
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
@@ -15,6 +24,12 @@ output: github_document
 [![CodeFactor](https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main)](https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
+
+## Table of Contents
+
+```{r toc, echo=FALSE} 
+render_toc("README.Rmd", base_level = 1, toc_depth = 3)
+```
 
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
@@ -30,7 +45,7 @@ integrates templates for creating IHEID themed presentations powered by
 [`{xaringan}`](https://github.com/yihui/xaringan) as well as a template for
 IHEID course syllabi.
 
-### Write your dissertation 
+## Write your dissertation 
 
 The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
 which offers versus common word processors:
@@ -71,7 +86,7 @@ the user-friendly nature and pretty output should make it of great benefit to ne
 
 You can see an example of the kind of dissertation output on the package website.
 
-### Hold on, there is more!
+## But not only !
 
 Not quite done yet, there is even more! Take a look at the following table for
 all available templates:

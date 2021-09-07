@@ -1,5 +1,7 @@
 
-# iheiddown <img src="man/figures/iheiddown.png" align="right" width="220"/>
+# iheiddown
+
+<img src="man/figures/iheiddown.png" align="right" width="220"/>
 
 <!-- badges: start -->
 
@@ -19,6 +21,21 @@ coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)]
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
+## Table of Contents
+
+-   [iheiddown](#iheiddown)
+    -   [Write your dissertation](#write-your-dissertation)
+    -   [But not only !](#but-not-only-!)
+    -   [Installation](#installation)
+        -   [Setup](#setup)
+        -   [Stable](#stable)
+        -   [Development](#development)
+    -   [Getting started](#getting-started)
+        -   [Writing your thesis](#writing-your-thesis)
+    -   [Knitting individual chapters](#knitting-individual-chapters)
+        -   [Output](#output)
+    -   [Feedback](#feedback)
+
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and
 Development Studies in Geneva/ Institut de Hautes Etudes Internationales
@@ -33,7 +50,7 @@ themed presentations powered by
 [`{xaringan}`](https://github.com/yihui/xaringan) as well as a template
 for IHEID course syllabi.
 
-### Write your dissertation
+## Write your dissertation
 
 The package is built upon the [IHEID LaTeX dissertation
 template](https://github.com/jhollway/iheidmytex), which offers versus
@@ -84,7 +101,7 @@ project.
 You can see an example of the kind of dissertation output on the package
 website.
 
-### Hold on, there is more!
+## But not only !
 
 Not quite done yet, there is even more! Take a look at the following
 table for all available templates:
