@@ -118,7 +118,7 @@ install.packages("servr")
 library(servr)
 
 # Serve your {xaringan} presentation to see live updates when you edit
-iheiddown::preview_realtime()
+iheiddown::preview_start()
 
 # Close the connection to the live rendering when you're done
 iheiddown::preview_stop()
