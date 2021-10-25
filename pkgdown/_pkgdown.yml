@@ -6,7 +6,7 @@ home:
   description: Write your thesis, outline your syllabus or create IHEID themed presentations.
 template:
   params:
-    bootswatch: flatly
+    bootswatch: paper
     opengraph:
     image:
       src: man/figures/OpenGraphImage.png
