@@ -94,4 +94,11 @@ file.copy("index/index_files", target_dir, recursive = TRUE, overwrite = TRUE)
 file.copy("index/assets", target_dir, recursive = TRUE, overwrite = TRUE)
 
 # Note, the directories generated will be erased further down the GitHub
-# workflow
+# workflow. Uncomment the next few lines if you're running the code manually.
+# 
+# unlink("00-Example", recursive = TRUE)
+# unlink("Untitled", recursive = TRUE)
+# unlink("UntitledPS", recursive = TRUE)
+# unlink("index", recursive = TRUE)
+
+
