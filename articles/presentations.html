@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,13 +109,13 @@
 
       
 
-      </header><script src="presentations_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
+      </header><script src="presentations_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Creating presentations</h1>
                         <h4 class="author">Bernhard Bieri</h4>
             
-            <h4 class="date">2021-09-07</h4>
+            <h4 class="date">2021-10-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jhollway/iheiddown/blob/master/vignettes/presentations.Rmd"><code>vignettes/presentations.Rmd</code></a></small>
       <div class="hidden name"><code>presentations.Rmd</code></div>
@@ -174,11 +174,11 @@ Step 2: Select a template
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/yihui/servr">servr</a></span><span class="op">)</span>
 
 <span class="co"># Serve your {xaringan} presentation to see live updates when you edit</span>
-<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu">preview_realtime</span><span class="op">(</span><span class="op">)</span>
+<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu"><a href="../reference/preview.html">preview_start</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># Close the connection to the live rendering when you're done</span>
-<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu">preview_stop</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><a href="https://github.com/yihui/xaringan">xaringan</a> includes a handy function called <code>inf_mr()</code> which will work in concert with the <a href="https://github.com/yihui/servr">servr</a> package to render your sites locally and update them as soon as you save your markdown document. We simply wrapped these functions inside the more convenient <a href="https://github.com/jhollway/iheiddown">iheiddown</a> versions: <code>preview_realtime()</code> and <code>preview_stop()</code>. This makes it a lot easier to edit your slides!</p>
+<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu"><a href="../reference/preview.html">preview_stop</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><a href="https://github.com/yihui/xaringan">xaringan</a> includes a handy function called <code>inf_mr()</code> which will work in concert with the <a href="https://github.com/yihui/servr">servr</a> package to render your sites locally and update them as soon as you save your markdown document. We simply wrapped these functions inside the more convenient <a href="https://github.com/jhollway/iheiddown">iheiddown</a> versions: <code>preview_realtime()</code> and <code><a href="../reference/preview.html">preview_stop()</a></code>. This makes it a lot easier to edit your slides!</p>
 </div>
 <div id="the-different-elements-of-a-xaringan-presentation" class="section level3">
 <h3 class="hasAnchor">
