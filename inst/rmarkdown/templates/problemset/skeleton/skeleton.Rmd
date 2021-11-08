@@ -40,7 +40,7 @@ knitr::opts_chunk$set(eval = TRUE, echo = FALSE,
                       fig.align = "center",
                       fig.asp = 0.7,
                       dpi = 300,
-                      out.width = '\\textwidth',
+                      out.width = "80%",
                       fig.pos = "!H",
                       out.extra = "")
 ```
