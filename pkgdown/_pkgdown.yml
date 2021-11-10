@@ -44,8 +44,6 @@ navbar:
         href: articles/syllabus.html
       - text: Problem Set
         href: articles/problemset.html
-      - text: Print complex slides
-        href: articles/printslides.html
     examples:
       text: Examples
       menu:
