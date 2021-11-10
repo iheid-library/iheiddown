@@ -10,6 +10,7 @@
 - Closed #108  by adding a table of contents to the README
 - Closed #111 fixed `{genderdata}` dependency issue by relying on a different source for name comparisons
 - Closed #109 by adding an extended printing function
+- Closed #110 by adding missing logos and creating a table listing available logos and their selectors on the presentation vignette.
 
 # iheiddown 0.8.3
 
