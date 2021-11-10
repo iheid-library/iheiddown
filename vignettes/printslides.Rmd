@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 ```
 
 Printing slides created with the `{iheiddown}` presentation template works
-fine in 90% of the time with an internet browser's print function. However,
+fine 90% of the time with an internet browser's print function. However,
 for more complex layouts, such as revealing slides, one may want greater
 control over the printing output. This article, and the function below,
 aim at solving this issue.
