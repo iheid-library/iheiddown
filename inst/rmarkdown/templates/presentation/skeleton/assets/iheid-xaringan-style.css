@@ -116,9 +116,6 @@ hidden behind other background information.*/
 .logo-iheid_white::before {
   	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IHEID_couleur_tx_blanc.png);
 }
-.logo-ggc::before {
-  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_GGC_rvb.png);
-}
 .logo-ee::before {
   	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_EE_rvb_2.png);
 }
