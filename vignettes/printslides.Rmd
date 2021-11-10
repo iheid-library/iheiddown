@@ -1,3 +1,56 @@
+---
+title: "Print complex `{xaringan}` slides"
+author: "Bernhard Bieri"
+date: "`r Sys.Date()`"
+
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Print complex `{xaringan}` slides}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r global.options, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = 'center',
+  fig.width=6,
+  fig.height=4
+)
+```
+
+Printing slides created with the `{iheiddown}` presentation template works
+fine in 90% of the time with an internet browser's print function. However,
+for more complex layouts, such as revealing slides, one may want greater
+control over the printing output. This article, and the function below,
+aim at solving this issue.
+
+The function itself is borrowed from Garrick Aden Buie's excellent
+[blog](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/) and
+leverages `{chromote}`, a headless version of the Chrome web browser to flick
+through every slide automatically and print them out one by one.
+
+Note that this function is not included into `{iheiddown}` package as it relies
+on the following packages (some of which are not on CRAN yet): `{chromote}`,
+`{progress}`, `{jsonlite}`, `{pdftools}`, and `{digest}`.
+
+## The workflow:
+
+1. Open RStudio and the HTML version of the xaringan presentation
+
+2. Copy paste the function below into your session and add it to your global
+    environment
+
+3. Run `xaringan_to_pdf()` with the path to your original HTML presentation
+    and specify an `output_file` path where you want the PDF version of your
+    presentation to be printed.
+
+4. Wait for the function to flick through all the slides and check out the
+   result!
+
+
+```{r PrintFunction, eval=FALSE}
 #' Print xaringan slides to PDF
 #'
 #' Prints xaringan slides to a PDF file, even complicated slides
@@ -176,3 +229,4 @@ xaringan_to_pdf <- function(
   
   invisible(output_file)
 }
+```
