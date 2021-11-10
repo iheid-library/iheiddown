@@ -250,6 +250,8 @@ There are two main ways to print slides.
 - Print the slides that you rendered after opening them in your browser just like you would print a normal Web page.
   - Works best in the Google Chrome browser
 - Use `pagedown::chrome_print()` when viewing your Rmarkdown file
+- Use `xaringan_to_pdf()` from this vignette to print more complex slide decks.
+  You can find this function in [this dedicated vignette.](https://jhollway.github.io/iheiddown/articles/printslides.html)
 
 However printing slides can be tricky in some cases, especially when one has interactive elements integrated into them such as multiple panels on the same slide. In that case, check out [this article for advanced printing options](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/).
 
