@@ -12,7 +12,7 @@ Description: A set of tools to support writing various documents
     and an institutional 'ggplot' theme, as well as a function for word counts
     and a bibliographical analysis toolkit.
 Date: 2021-08-21
-Version: 0.8.3
+Version: 0.8.4
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
