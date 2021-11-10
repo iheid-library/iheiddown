@@ -171,7 +171,34 @@ allows us to easily animate our slides with the addition of the CSS class
 the desired slide.
 
 For a full list of the available animations and further options, check out
-[animate.style](https://animate.style/). 
+[animate.style](https://animate.style/).
+
+#### Adding IHEID logos
+
+We implemented an easy way of including logos from the institute in the top
+right corner of your presentation. Simply add the `with-logo` CSS class along
+the specific logo's class at the top of a given slide! Here is a list of
+the logos currently available in the package.
+
+| Logo                | Selector          |
+| ------------------- |:-----------------:|
+| IHEID               | logo-iheid        |
+| IHEID (white text)  | logo-iheid_white  |
+| IHEID (BW)          | logo-iheid_BW     |
+| Executive Education | logo-ee           |
+| AHCD                | logo-ahcd         |
+| CCDP                | logo-ccdp         |
+| CFD                 | logo-cfd          |
+| CIES                | logo-cies         |
+| CTEI                | logo-ctei         |
+| GENDER              | logo-gender       |
+| GGC                 | logo-ggc          |
+| GHC                 | logo-ghc          |
+| GMC                 | logo-gmc          |
+
+If you think of an IHEID related logo that you would like to add to this
+collection, feel free to [raise an issue](https://github.com/jhollway/iheiddown/issues)
+and link to the logo resource.
 
 #### Citations and Bibliography
 
@@ -252,8 +279,7 @@ There are two main ways to print slides.
 - Use `pagedown::chrome_print()` when viewing your Rmarkdown file
 - Use `xaringan_to_pdf()` from this vignette to print more complex slide decks.
   You can find this function in [this dedicated vignette.](https://jhollway.github.io/iheiddown/articles/printslides.html)
-
-However printing slides can be tricky in some cases, especially when one has interactive elements integrated into them such as multiple panels on the same slide. In that case, check out [this article for advanced printing options](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/).
+  which is based on [this great article](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/).
 
 ## Additional resources
 
