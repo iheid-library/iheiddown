@@ -331,7 +331,7 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
           install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
-      
+
        # install packages needed
       - name: Install rmarkdown
         run: Rscript -e 'install.packages("rmarkdown")'
@@ -339,7 +339,7 @@ jobs:
       # Install ganttrify
       - name: Install ganttrify
         run: Rscript -e 'remotes::install_github("giocomai/ganttrify")'
-      
+
       #Install other non-CRAN packages for sample output generation
       - name: Install packages to render sample output
         run: |
@@ -357,7 +357,7 @@ jobs:
 
       - name: Build site # build pkgdown site in separate step
         run: Rscript -e 'pkgdown::build_site()'
-        
+
       - name: Render output samples # Render output samples after that
         if: runner.os == 'macOS'
         run: Rscript R/_render.R
