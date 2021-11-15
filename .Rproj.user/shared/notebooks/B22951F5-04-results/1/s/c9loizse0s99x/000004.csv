@@ -1,7 +1,0 @@
-"0","kable(max_delays,"
-"0","  col.names = c(""Airline"", ""Max Arrival Delay""),"
-"0","  caption = ""Maximum Delays by Airline"","
-"0","  caption.short = ""Max Delays by Airline"","
-"0","  longtable = TRUE,"
-"0","  booktabs = TRUE"
-"0",")"

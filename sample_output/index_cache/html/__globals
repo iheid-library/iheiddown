@@ -5,6 +5,6 @@ unnamed-chunk-4	rbinom
 unnamed-chunk-5	rcauchy
 unnamed-chunk-6	%>%	addTiles	leaflet	library	setView
 unnamed-chunk-7	::	head	mtcars
-unnamed-chunk-8	%>%	::	c	F	head	mtcars
+unnamed-chunk-8	::	%>%	c	F	head	mtcars
 unnamed-chunk-9	::	head	library	list	mtcars
 refs	::	myBib

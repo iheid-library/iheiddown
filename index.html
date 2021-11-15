@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">iheiddown</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.5</span>
       </span>
     </div>
 
@@ -127,26 +127,9 @@
 <ul>
 <li><a href="#write-your-dissertation">Write your dissertation</a></li>
 <li><a href="#but-not-only-!">But not only !</a></li>
-<li>
-<a href="#installation">Installation</a>
-<ul>
-<li><a href="#setup">Setup</a></li>
-<li><a href="#stable">Stable</a></li>
-<li><a href="#development">Development</a></li>
-</ul>
-</li>
-<li>
-<a href="#getting-started">Getting started</a>
-<ul>
-<li><a href="#writing-your-thesis">Writing your thesis</a></li>
-</ul>
-</li>
-<li>
-<a href="#knitting-individual-chapters">Knitting individual chapters</a>
-<ul>
-<li><a href="#output">Output</a></li>
-</ul>
-</li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#quick-start-guide">Quick start guide</a></li>
+<li><a href="#knitting-individual-chapters">Knitting individual chapters</a></li>
 <li><a href="#feedback">Feedback</a></li>
 </ul>
 </li>
@@ -220,9 +203,9 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div id="setup" class="section level3">
+<div id="prerequisites" class="section level3">
 <h3 class="hasAnchor">
-<a href="#setup" class="anchor"></a>Setup</h3>
+<a href="#prerequisites" class="anchor"></a>Prerequisites</h3>
 <p>You will first need to install on your system<sup><a href="#myfootnote2">2</a></sup>:</p>
 <ul>
 <li><a href="https://cran.r-project.org">R</a></li>
@@ -233,41 +216,42 @@
 </li>
 </ul>
 </div>
-<div id="stable" class="section level3">
+<div id="stable-version" class="section level3">
 <h3 class="hasAnchor">
-<a href="#stable" class="anchor"></a>Stable</h3>
+<a href="#stable-version" class="anchor"></a>Stable version</h3>
 <p>The easiest way to install the latest stable version of <a href="https://github.com/jhollway/iheiddown">iheiddown</a> is via CRAN. Simply open the R console and enter:</p>
-<p><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages('iheiddown')</a></code></p>
+<p><code>install.packages('iheiddown')</code></p>
 <p>You can then begin to use <a href="https://github.com/jhollway/iheiddown">iheiddown</a> by loading the package:</p>
 <p><code><a href="https://github.com/jhollway/iheiddown">library(iheiddown)</a></code></p>
 <p>That’s it! <code>iheiddown</code> is now installed and ready to go.</p>
 </div>
-<div id="development" class="section level3">
+<div id="development-version" class="section level3">
 <h3 class="hasAnchor">
-<a href="#development" class="anchor"></a>Development</h3>
-<p>For the latest development version, for slightly earlier access to new features or for testing, you may wish to download and install the binaries from Github or install from source locally.</p>
+<a href="#development-version" class="anchor"></a>Development version</h3>
+<p>To get access to the latest features, you may want to install the latest development version of the package.</p>
 <p>Binaries for all major OSes – Windows, Mac, and Linux – can be found by clicking on the latest release <a href="https://github.com/jhollway/iheiddown/releases/latest">here</a>. Download the appropriate binary for your operating system, and install using an adapted version of the following commands:</p>
 <ul>
-<li>For Windows: <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("~/Downloads/iheiddown_winOS.zip", repos = NULL)</a></code>
+<li>For Windows: <code>install.packages("~/Downloads/iheiddown_winOS.zip", repos = NULL)</code>
 </li>
-<li>For Mac: <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("~/Downloads/iheiddown_macOS.tgz", repos = NULL)</a></code>
+<li>For Mac: <code>install.packages("~/Downloads/iheiddown_macOS.tgz", repos = NULL)</code>
 </li>
-<li>For Unix: <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("~/Downloads/iheiddown_linuxOS.tar.gz", repos = NULL)</a></code>
+<li>For Unix: <code>install.packages("~/Downloads/iheiddown_linuxOS.tar.gz", repos = NULL)</code>
 </li>
 </ul>
-<p>To install from source the latest main version of <a href="https://github.com/jhollway/iheiddown">iheiddown</a> from Github, please install the <a href="https://remotes.r-lib.org">remotes</a> package from CRAN and then enter into the console:</p>
+<p>An easier way of getting access to the development version is to install the latest main version of <a href="https://github.com/jhollway/iheiddown">iheiddown</a> from Github. To do that, please install the <a href="https://remotes.r-lib.org">remotes</a> package from CRAN and then enter the following commands into the console:</p>
 <ul>
-<li>For latest stable version: <code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("jhollway/iheiddown")</a></code>
+<li>For latest stable version: <code>remotes::install_github("jhollway/iheiddown")</code>
 </li>
-<li>For latest development version: <code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("jhollway/iheiddown@develop")</a></code>
+<li>For latest development version: <code>remotes::install_github("jhollway/iheiddown@develop")</code>
 </li>
 </ul>
 </div>
 </div>
-<div id="getting-started" class="section level2">
+<div id="quick-start-guide" class="section level2">
 <h2 class="hasAnchor">
-<a href="#getting-started" class="anchor"></a>Getting started</h2>
-<p><code>iheiddown</code> sets up a thesis template that you can then modify for your dissertation. It’s very easy to get started.</p>
+<a href="#quick-start-guide" class="anchor"></a>Quick start guide</h2>
+<p><a href="https://github.com/jhollway/iheiddown">iheiddown</a>, among other things, sets up a thesis template that you can then modify for your dissertation. It’s very easy to get started!</p>
+<p>Since the process is similar for theses, presentations, problem sets and syllabi let us take a look at how to set up a thesis project.</p>
 <ol>
 <li>Open RStudio (if it is not already).</li>
 <li>Click the new document symbol at the very top left and choose <code>R Markdown...</code>.</li>
@@ -277,17 +261,65 @@
 </li>
 <li>Select where the project should be saved on your hard drive.</li>
 </ol>
-<p>Congratulations! You have now set up a thesis project. For a more detailed walkthrough, please check out the presentation article on the package webiste.</p>
-<div id="writing-your-thesis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#writing-your-thesis" class="anchor"></a>Writing your thesis</h3>
-<p>When you create the template for the first time, the main document you have created (e.g. ‘Untitled.Rmd’) will automatically open in RStudio. In this document you can enter in key details about yourself and your dissertation between the — and —. Note that any text after hashtags, #, are comments only and are not computed.</p>
-<p>The #metadata# section should be fairly self-explanatory. The #front matter# section includes pointers to various front matter elements, such as dedications, acknowledgments (thank you), abbreviations, and your abstract. Note that it points to files in a folder created by the template called “front-and-back-matter/”. If you look in this folder, you will find placeholders for your own abstract and acknowledgments. You can simply edit these and the edited versions will be used when the thesis is compiled. This section also includes various options for toggling lists of figures, tables, etc, in the final version.</p>
-<p>The #bibliography# section points to where the bibtex file (.bib) with all your bibliographic information resides. You can also just call your .bib file “references.bib” and replace the template version in the bib/ folder. Lastly, the #formatting# section offers options for changing the format ready for printing. You can mostly ignore the #output# section, for now.</p>
-<p>Below the second — is some example text that will become the preface of the thesis when it is compiled. So where is the real content of the dissertation?</p>
-<p>Just as the abstract and acknowledgements, etc, were kept in a “front-matter/” folder, so too are the individual chapters of your dissertation kept in a “chapters/” folder. The placeholder text is designed to take you through the basic syntax and more complicated options available when using <em>RMarkdown</em>, but once you feel comfortable and have created your own examples, feel free to delete the placeholder text (or even the files) and create your own in its place.</p>
-<p><em>Markdown</em> is easy to read as well as write, so there’s no need for endless compilation. But when it comes time to compile the document, just turn to your main .Rmd file (‘Untitled.Rmd’ in our case) and either click the <code>Knit</code> button at the top or use the keyboard shortcut <code>Shift-Cmd-K</code> (Mac) or <code>Shift-Ctrl-K</code> (Windows).</p>
-<p>Finally, please check out the package website’s thesis article for a more detailed look at the contents of your thesis project and a step by step guide on how to generate one.</p>
+<p>Congratulations! You have now set up your first thesis project. For a more detailed walkthrough of the different functionalities and how to get started with each one, please check out the different articles on the <a href="https://jhollway.github.io/iheiddown/">package website</a>.</p>
+<!--
+Commented this out since it is a duplicate of the information we have already
+on the website in the vignette. A quick start guide should suffice on the
+landing page. What do you think ?
+### Writing your thesis
+
+When you create the template for the first time, 
+the main document you have created (e.g. 'Untitled.Rmd') will automatically open in RStudio.
+In this document you can enter in key details about yourself and your dissertation
+between the \-\-\- and \-\-\-.
+Note that any text after hashtags, \#, are comments only and are not computed. 
+
+The \#metadata\# section should be fairly self-explanatory.
+The \#front matter\# section includes pointers to various front matter elements,
+such as dedications, acknowledgments (thank you), abbreviations, and your abstract.
+Note that it points to files in a folder created by the template 
+called "front-and-back-matter/".
+If you look in this folder, you will find placeholders for your own
+abstract and acknowledgments.
+You can simply edit these and the 
+edited versions will be used when the thesis is compiled.
+This section also includes various options for 
+toggling lists of figures, tables, etc, in the final version.
+
+The \#bibliography\# section points to where the bibtex file (.bib) with
+all your bibliographic information resides.
+You can also just call your .bib file "references.bib" and replace the
+template version in the bib/ folder.
+Lastly, the \#formatting\# section offers options for changing the format
+ready for printing.
+You can mostly ignore the \#output\# section, for now.
+
+Below the second \-\-\- is some example text that will become 
+the preface of the thesis when it is compiled.
+So where is the real content of the dissertation?
+
+Just as the abstract and acknowledgements, etc,
+were kept in a "front-matter/" folder,
+so too are the individual chapters of your dissertation
+kept in a "chapters/" folder.
+The placeholder text is designed to take you through the
+basic syntax and more complicated options available when
+using _RMarkdown_,
+but once you feel comfortable and have created your own
+examples, feel free to delete the placeholder text
+(or even the files) and create your own in its place.
+
+_Markdown_ is easy to read as well as write,
+so there's no need for endless compilation.
+But when it comes time to compile the document,
+just turn to your main .Rmd file ('Untitled.Rmd' in our case)
+and either click the `Knit` button at the top
+or use the keyboard shortcut `Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
+
+Finally, please check out the package website's thesis article for a more
+detailed look at the contents of your thesis project and a step by step guide
+on how to generate one.
+-->
 <!-- 
 ## Knitting individual chapters
 
@@ -304,14 +336,17 @@ output:
     template: templates/iheiddiss.tex
 ```
 This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
+
+
+### Output
+
+All your front matter and chapters of your thesis will be compiled
+and the complete product can be found under the project folder "versions/".
+A date is automatically appended to the filename to assist with tracking versions.
+
+The PDF version is fully functional. 
+The word, gitbook and epub versions might be developed at a later time.
 -->
-</div>
-<div id="output" class="section level3">
-<h3 class="hasAnchor">
-<a href="#output" class="anchor"></a>Output</h3>
-<p>All your front matter and chapters of your thesis will be compiled and the complete product can be found under the project folder “versions/”. A date is automatically appended to the filename to assist with tracking versions.</p>
-<p>The PDF version is fully functional. The word, gitbook and epub versions might be developed at a later time.</p>
-</div>
 </div>
 <div id="feedback" class="section level2">
 <h2 class="hasAnchor">

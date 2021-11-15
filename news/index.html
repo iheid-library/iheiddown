@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">iheiddown</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.5</span>
       </span>
     </div>
 
@@ -158,6 +158,54 @@
       <small>Source: <a href='https://github.com/jhollway/iheiddown/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="iheiddown-085" class="section level1">
+<h1 class="page-header" data-toc-text="0.8.5">
+<a href="#iheiddown-085" class="anchor"></a>iheiddown 0.8.5<small> Unreleased </small>
+</h1>
+<div id="minor-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#minor-fixes" class="anchor"></a>Minor fixes</h2>
+<ul>
+<li>Fixed workflow issue in README rendering job and Website rendering job</li>
+<li>Fixed CRAN flagged issues:
+<ul>
+<li>Invalid link in README</li>
+<li>Path issues to images used in the problem set vignette</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+    <div id="iheiddown-084" class="section level1">
+<h1 class="page-header" data-toc-text="0.8.4">
+<a href="#iheiddown-084" class="anchor"></a>iheiddown 0.8.4<small> Unreleased </small>
+</h1>
+<div id="changed-the-website-theme" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changed-the-website-theme" class="anchor"></a>Changed the website theme:</h2>
+<ul>
+<li>Added a new CSS theme to the website</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/107'>#107</a> By fixing the rendering issues of the website</li>
+</ul>
+</div>
+<div id="other-minor-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#other-minor-fixes" class="anchor"></a>Other minor fixes:</h2>
+<ul>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/108'>#108</a> by adding a table of contents to the README</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/111'>#111</a> fixed <code>{genderdata}</code> dependency issue by relying on a different source for name comparisons</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/109'>#109</a> by adding an extended printing function</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/110'>#110</a> by adding missing logos and creating a table listing available logos and their selectors on the presentation vignette.</li>
+</ul>
+</div>
+<div id="thesis" class="section level2">
+<h2 class="hasAnchor">
+<a href="#thesis" class="anchor"></a>Thesis</h2>
+<ul>
+<li>Added a second word count function, <code>count_words2()</code>, that obtains a more accurate word count estimate from the compiled PDF</li>
+</ul>
+</div>
+</div>
     <div id="iheiddown-083" class="section level1">
 <h1 class="page-header" data-toc-text="0.8.3">
 <a href="#iheiddown-083" class="anchor"></a>iheiddown 0.8.3<small> Unreleased </small>
@@ -170,9 +218,9 @@
 </li>
 </ul>
 </div>
-<div id="thesis" class="section level2">
+<div id="thesis-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis" class="anchor"></a>Thesis</h2>
+<a href="#thesis-1" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/76'>#76</a> by adding an option for line numbering for thesis output when the draft option is set to true</li>
 </ul>
@@ -186,13 +234,13 @@
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/93'>#93</a> by adding bibliography statistics family of functions
 <ul>
 <li>
-<code><a href="../reference/fix_bib.html">percent_female()</a></code> displays the percentage of female authors in a <code>.bib</code> file</li>
+<code>percent_female()</code> displays the percentage of female authors in a <code>.bib</code> file</li>
 <li>
-<code><a href="../reference/fix_bib.html">mean_year()</a></code> displays the mean of the publication year of the items in a given <code>.bib</code> file</li>
+<code>mean_year()</code> displays the mean of the publication year of the items in a given <code>.bib</code> file</li>
 <li>
-<code><a href="../reference/fix_bib.html">mean_pages()</a></code> displays the mean of the page length of the items in a given <code>.bib</code> file</li>
+<code>mean_pages()</code> displays the mean of the page length of the items in a given <code>.bib</code> file</li>
 <li>
-<code><a href="../reference/fix_bib.html">total_pages()</a></code> displays the total number of pages of all items in a given <code>.bib</code> file</li>
+<code>total_pages()</code> displays the total number of pages of all items in a given <code>.bib</code> file</li>
 </ul>
 </li>
 </ul>
@@ -222,7 +270,7 @@
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/56'>#56</a> by adding <code>xaringan_columns</code> JS macro for presentation</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/70'>#70</a> by implementing progressive slides that highlight the last item</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/57'>#57</a> by allowing users to add installed or remote logos on their slides</li>
-<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/69'>#69</a> By rewriting the <code><a href="../reference/theme_iheid.html">theme_iheid()</a></code> function based on hrbrthemes structure</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/69'>#69</a> By rewriting the <code>theme_iheid()</code> function based on hrbrthemes structure</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/74'>#74</a> by implementing citations with <a href="https://docs.ropensci.org/RefManageR">RefManageR</a>
 </li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/77'>#77</a> by adding square on/off section elements</li>
@@ -245,8 +293,8 @@
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/78'>#78</a> by reducing subdirectory size for CRAN submission</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/68'>#68</a> by fixing the error message indicating that the output format was not of class <code>rmarkdown_output_format</code>
 </li>
-<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/84'>#84</a> by adding input argument to <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> function</li>
-<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/81'>#81</a> by adding initial <code><a href="../reference/count_words.html">count_words()</a></code> function</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/84'>#84</a> by adding input argument to <code>chapter_pdf()</code> function</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/81'>#81</a> by adding initial <code>count_words()</code> function</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/60'>#60</a> by expanding automatic rendering script for syllabi and presentation templates</li>
 </ul>
 </div>
@@ -266,9 +314,9 @@
 </li>
 </ul>
 </div>
-<div id="thesis-1" class="section level2">
+<div id="thesis-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-1" class="anchor"></a>Thesis</h2>
+<a href="#thesis-2" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/27'>#27</a> with a new selection of fonts for thesis: Helvetica, Droid Serif, Lucida Console</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/53'>#53</a> by saving all Markdown files with the <code>WINDOWS-1252</code> default encoding
@@ -289,22 +337,22 @@
 <a href="#package-2" class="anchor"></a>Package</h2>
 <ul>
 <li>Updated README to inform users that new theses must be named “00-ProjectTitle” to avoid issues when merging Rmd files together</li>
-<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/39'>#39</a> by adding the <a href="https://ggplot2.tidyverse.org">ggplot2</a> theme <code><a href="../reference/theme_iheid.html">theme_iheid()</a></code>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/39'>#39</a> by adding the <a href="https://ggplot2.tidyverse.org">ggplot2</a> theme <code>theme_iheid()</code>
 <ul>
-<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/50'>#50</a> by adding tests for <code><a href="../reference/theme_iheid.html">theme_iheid()</a></code>
+<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/50'>#50</a> by adding tests for <code>theme_iheid()</code>
 </li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="thesis-2" class="section level2">
+<div id="thesis-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-2" class="anchor"></a>Thesis</h2>
+<a href="#thesis-3" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/32'>#32</a> by changing lorem ipsum to LOTR references</li>
 <li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/49'>#49</a> by changing the “title” macro to “doctitle” to avoid an issue with Pandoc conversion to Latex on MacOS</li>
 <li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/47'>#47</a> by tweaking the draft macro to display page numbers properly when activated</li>
-<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/42'>#42</a> where the <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> function displayed placeholder text and headers for other unpreviewed chapters when knitting</li>
+<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/42'>#42</a> where the <code>chapter_pdf()</code> function displayed placeholder text and headers for other unpreviewed chapters when knitting</li>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/26'>#26</a> by adding an automatic package citations function to the thesis template.
 <ul>
 <li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/45'>#45</a> by changing the bibliography management tool to <code>{biblatex}</code> and implemented a series of macros in the YAML header of the index file</li>
@@ -329,14 +377,14 @@
 <h2 class="hasAnchor">
 <a href="#package-3" class="anchor"></a>Package</h2>
 <ul>
-<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/38'>#38</a> by adding <code>iheid_palettes</code> and <code><a href="../reference/iheid_palette.html">iheid_palette()</a></code> for accessing IHEID and SDG color palettes</li>
+<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/38'>#38</a> by adding <code>iheid_palettes</code> and <code>iheid_palette()</code> for accessing IHEID and SDG color palettes</li>
 </ul>
 </div>
-<div id="thesis-3" class="section level2">
+<div id="thesis-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-3" class="anchor"></a>Thesis</h2>
+<a href="#thesis-4" class="anchor"></a>Thesis</h2>
 <ul>
-<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/22'>#22</a> by adding example of how to create a Gantt plot including call to <code><a href="../reference/iheid_palette.html">iheid_palette()</a></code>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/22'>#22</a> by adding example of how to create a Gantt plot including call to <code>iheid_palette()</code>
 </li>
 </ul>
 </div>
@@ -345,31 +393,31 @@
 <h1 class="page-header" data-toc-text="0.7.2">
 <a href="#iheiddown-072" class="anchor"></a>iheiddown 0.7.2<small> Unreleased </small>
 </h1>
-<div id="thesis-4" class="section level2">
+<div id="thesis-5" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-4" class="anchor"></a>Thesis</h2>
+<a href="#thesis-5" class="anchor"></a>Thesis</h2>
 <ul>
 <li>Closed <a href='https://github.com/jhollway/iheiddown/issues/28'>#28</a> by adding more details to filenames
 <ul>
 <li>Added author details to <code><a href="../reference/thesis_pdf.html">thesis_pdf()</a></code> output</li>
-<li>Added author details to <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> output</li>
-<li>Added chapter details to <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> output</li>
+<li>Added author details to <code>chapter_pdf()</code> output</li>
+<li>Added chapter details to <code>chapter_pdf()</code> output</li>
 </ul>
 </li>
 <li>Paused minitoc
 <ul>
 <li>
-<code><a href="../reference/thesis_pdf.html">thesis_pdf()</a></code> and <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> clean up <code>*.maf</code> and <code>*.mtc</code> files afterward</li>
+<code><a href="../reference/thesis_pdf.html">thesis_pdf()</a></code> and <code>chapter_pdf()</code> clean up <code>*.maf</code> and <code>*.mtc</code> files afterward</li>
 </ul>
 </li>
 <li>
-<code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> now exports to <code>versions/</code>
+<code>chapter_pdf()</code> now exports to <code>versions/</code>
 <ul>
-<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/33'>#33</a> as <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> prints chapter abstract and chapter table of contents</li>
+<li>Closed <a href='https://github.com/jhollway/iheiddown/issues/33'>#33</a> as <code>chapter_pdf()</code> prints chapter abstract and chapter table of contents</li>
 <li>Added manual <code>\setcounter{}</code> to example chapters</li>
 </ul>
 </li>
-<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/34'>#34</a> cslreferences bug in <code><a href="../reference/thesis_pdf.html">thesis_pdf()</a></code> and <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code>
+<li>Fixed <a href='https://github.com/jhollway/iheiddown/issues/34'>#34</a> cslreferences bug in <code><a href="../reference/thesis_pdf.html">thesis_pdf()</a></code> and <code>chapter_pdf()</code>
 </li>
 <li>Replaced deprecated <code>\over</code> use in equations in chapter 3 example with <code>\frac{}{}</code>
 </li>
@@ -381,7 +429,7 @@
 <ul>
 <li>Release individual packages</li>
 <li>More colourful load</li>
-<li>Fixed <code>{citr}</code> dependency</li>
+<li>Fixed <a href="https://github.com/crsh/citr">citr</a> dependency</li>
 </ul>
 </div>
 </div>
@@ -389,11 +437,11 @@
 <h1 class="page-header" data-toc-text="0.7.1">
 <a href="#iheiddown-071" class="anchor"></a>iheiddown 0.7.1<small> Unreleased </small>
 </h1>
-<div id="thesis-5" class="section level2">
+<div id="thesis-6" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-5" class="anchor"></a>Thesis</h2>
+<a href="#thesis-6" class="anchor"></a>Thesis</h2>
 <ul>
-<li>Rescaled <code>{citr}</code> image in chapter 2 of template</li>
+<li>Rescaled <a href="https://github.com/crsh/citr">citr</a> image in chapter 2 of template</li>
 <li>Added <code>{Equatiomatic}</code> option to chapter 3 of thesis template</li>
 <li>Added IHEIDThesisExample.pdf for demonstration purposes</li>
 </ul>
@@ -411,11 +459,11 @@
 <h1 class="page-header" data-toc-text="0.7.0">
 <a href="#iheiddown-070" class="anchor"></a>iheiddown 0.7.0<small> Unreleased </small>
 </h1>
-<div id="thesis-6" class="section level2">
+<div id="thesis-7" class="section level2">
 <h2 class="hasAnchor">
-<a href="#thesis-6" class="anchor"></a>Thesis</h2>
+<a href="#thesis-7" class="anchor"></a>Thesis</h2>
 <ul>
-<li>Added <code><a href="../reference/chapter_pdf.html">chapter_pdf()</a></code> knit function for previewing chapters (closes <a href='https://github.com/jhollway/iheiddown/issues/19'>#19</a>)</li>
+<li>Added <code>chapter_pdf()</code> knit function for previewing chapters (closes <a href='https://github.com/jhollway/iheiddown/issues/19'>#19</a>)</li>
 <li>Added <code>bookdown_profile</code> addin for RStudio to improve access to the bookdown profile</li>
 <li>Overhaul of chapter 4 of skeleton:
 <ul>
@@ -442,11 +490,11 @@
 </h1>
 <ul>
 <li>Set up <code>testthat</code> for package</li>
-<li>Added <code><a href="../reference/advdate.html">advdate()</a></code> for incrementing dates by week
+<li>Added <code>advdate()</code> for incrementing dates by week
 <ul>
-<li>Updated syllabus template for <code><a href="../reference/advdate.html">advdate()</a></code>
+<li>Updated syllabus template for <code>advdate()</code>
 </li>
-<li>Added test for <code><a href="../reference/advdate.html">advdate()</a></code>
+<li>Added test for <code>advdate()</code>
 </li>
 </ul>
 </li>
@@ -519,7 +567,7 @@
 <code><a href="../reference/thesis_pdf.html">thesis_pdf()</a></code> now a wrapper for <code><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html">bookdown::render_book()</a></code> rather than <code><a href="https://pkgs.rstudio.com/bookdown/reference/pdf_book.html">bookdown::pdf_book()</a></code>
 </li>
 <li>
-<code><a href="../reference/syllabus_pdf.html">syllabus_pdf()</a></code> now a wrapper for <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html">rmarkdown::render()</a></code> rather than <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html">rmarkdown::pdf_document()</a></code>
+<code>syllabus_pdf()</code> now a wrapper for <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html">rmarkdown::render()</a></code> rather than <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html">rmarkdown::pdf_document()</a></code>
 </li>
 <li>Note that this is a breaking change compared to older scripts</li>
 </ul>
@@ -569,7 +617,7 @@
 <a href="#iheiddown-030" class="anchor"></a>iheiddown 0.3.0<small> Unreleased </small>
 </h1>
 <ul>
-<li>Added <code><a href="../reference/syllabus_pdf.html">syllabus_pdf()</a></code> function</li>
+<li>Added <code>syllabus_pdf()</code> function</li>
 <li>Added syllabus template
 <ul>
 <li>Required sections: title, code, credits, year, semester, program, professor and TA details, course description</li>

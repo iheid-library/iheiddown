@@ -1,6 +1,4 @@
 base
-iheiddown
-pkgdown
 dplyr
 ggplot2
 knitr
@@ -11,4 +9,3 @@ gt
 RefManageR
 leaflet
 DT
-sp
