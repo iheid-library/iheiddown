@@ -3,7 +3,8 @@
 #' This function takes a path to a .Rmd file and returns a word count.
 #' For best results each sentence should start on a new line.
 #' Inline code chunks should also start on a new line.
-#'
+#' 
+#' @name countwords
 #' @param file A path to a .Rmd file
 #' @import dplyr
 #' @importFrom rlang .data
@@ -18,6 +19,10 @@
 #' package = "rmarkdown", create_dir = TRUE, edit = FALSE)
 #' iheiddown::count_words("test/test.Rmd")
 #' unlink("test", recursive = TRUE)
+#'
+NULL
+
+#' @rdname countwords
 #' @export
 count_words <- function(file) {
   # Get currently viewed panel in RStudio if file is not specified
@@ -33,10 +38,11 @@ count_words <- function(file) {
   return(wc)
 }
 
+#' @rdname countwords
 #' @export
 count_words2 <- function(file) {
   # Get currently viewed panel in RStudio if file is not specified
-  if (missing(file)){
+  if (missing(file)) {
     file <- rstudioapi::getSourceEditorContext()$path
     file <- stringr::str_replace(file, ".Rmd", ".pdf")
   } 
