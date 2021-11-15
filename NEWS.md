@@ -1,3 +1,21 @@
+# iheiddown 0.8.4
+
+## Changed the website theme:
+
+- Added a new CSS theme to the website
+- Closed #107 By fixing the rendering issues of the website
+
+## Other minor fixes:
+
+- Closed #108  by adding a table of contents to the README
+- Closed #111 fixed `{genderdata}` dependency issue by relying on a different source for name comparisons
+- Closed #109 by adding an extended printing function
+- Closed #110 by adding missing logos and creating a table listing available logos and their selectors on the presentation vignette.
+
+## Thesis
+
+- Added a second word count function, `count_words2()`, that obtains a more accurate word count estimate from the compiled PDF
+
 # iheiddown 0.8.3
 
 ## Problem set template

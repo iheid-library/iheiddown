@@ -34,6 +34,17 @@ link-citations: true
 documentclass: article
 ---
 
+```{r, echo=FALSE}
+# Set initial knitr options
+knitr::opts_chunk$set(eval = TRUE, echo = FALSE,
+                      fig.align = "center",
+                      fig.asp = 0.7,
+                      dpi = 300,
+                      out.width = "80%",
+                      fig.pos = "!H",
+                      out.extra = "")
+```
+
 # Problem 1: Escaping the Shire
 
 Solving problem sets will be a weekly ritual at IHEID if you are taking
@@ -74,9 +85,13 @@ dat <- read.csv(url)
 # Creating a list of the different models
 models <- list(
   "OLS 1"     = lm(Donations ~ Literacy + Clergy, data = dat),
-  "Poisson 1" = glm(Donations ~ Literacy + Commerce, family = poisson, data = dat),
+  "Poisson 1" = glm(Donations ~ Literacy + Commerce,
+                    family = poisson,
+                    data = dat),
   "OLS 2"     = lm(Crime_pers ~ Literacy + Clergy, data = dat),
-  "Poisson 2" = glm(Crime_pers ~ Literacy + Commerce, family = poisson, data = dat),
+  "Poisson 2" = glm(Crime_pers ~ Literacy + Commerce,
+                    family = poisson,
+                    data = dat),
   "OLS 3"     = lm(Crime_prop ~ Literacy + Clergy, data = dat)
 )
 

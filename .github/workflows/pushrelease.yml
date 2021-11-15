@@ -332,13 +332,34 @@ jobs:
           install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
 
+       # install packages needed
+      - name: Install rmarkdown
+        run: Rscript -e 'install.packages("rmarkdown")'
+
+      #Install other non-CRAN packages for sample output generation
+      - name: Install packages to render sample output
+        run: |
+          remotes::install_github("giocomai/ganttrify")
+          remotes::install_github("crsh/citr")
+          remotes::install_github("gadenbuie/xaringanExtra")
+          remotes::install_github("mitchelloharawild/icons")
+          remotes::install_github("ropensci/RefManageR")
+          utils::install.packages("modelsummary")
+          utils::install.packages("kableExtra")
+          utils::install.packages("gt")
+        shell: Rscript {0}
+
       - name: Install package
         run: R CMD INSTALL .
 
       - name: Build site # build pkgdown site in separate step
         run: Rscript -e 'pkgdown::build_site()'
 
-      - name: Deploy # deploy the docs folder to gh-pages
+      - name: Render output samples # Render output samples after that
+        if: runner.os == 'macOS'
+        run: Rscript R/_render.R
+
+      - name: Deploy # deploy the docs folder to gh-pages with output samples
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

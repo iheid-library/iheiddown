@@ -1,9 +1,12 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[top=1.3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage[top=1.3cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
 
 \usepackage{calc}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{multirow}
 \usepackage{hanging}
 \usepackage[english]{babel} % Language package
 \usepackage{tikz} % Draw things
@@ -47,6 +50,8 @@
 \renewcommand{\headrulewidth}{0.5pt} % Line delemiting the header
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecfont}{\itshape}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % Define CSL environment
 \newlength{\cslhangindent}

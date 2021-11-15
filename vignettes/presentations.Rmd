@@ -1,10 +1,10 @@
 ---
-title: "Presentations"
+title: "Creating presentations"
 author: "Bernhard Bieri"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Presentations}
+  %\VignetteIndexEntry{Creating presentations}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -70,7 +70,9 @@ appears. Now that we have created an R project for our presentation, we can open
 a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
-![Step 1: open a new project](images/presentations/0_Open_Project.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
+  knitr::include_graphics("images/presentations/0-Open_Project.PNG", dpi = 144)
+```
 
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our presentation. To do so,
@@ -78,7 +80,9 @@ click on the "From Template" option on the left and select the
 "Presentation {iheiddown}" template. Now give your presentation a name and click
 on "OK".
 
-![Step 2: select the template](images/presentations/1_Select_Template.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
+  knitr::include_graphics("images/presentations/1-Select_Template.PNG", dpi = 144)
+```
 
 Congrats! You just created your first presentation!
 
@@ -114,7 +118,7 @@ install.packages("servr")
 library(servr)
 
 # Serve your {xaringan} presentation to see live updates when you edit
-iheiddown::preview_realtime()
+iheiddown::preview_start()
 
 # Close the connection to the live rendering when you're done
 iheiddown::preview_stop()
@@ -167,7 +171,34 @@ allows us to easily animate our slides with the addition of the CSS class
 the desired slide.
 
 For a full list of the available animations and further options, check out
-[animate.style](https://animate.style/). 
+[animate.style](https://animate.style/).
+
+#### Adding IHEID logos
+
+We implemented an easy way of including logos from the institute in the top
+right corner of your presentation. Simply add the `with-logo` CSS class along
+the specific logo's class at the top of a given slide! Here is a list of
+the logos currently available in the package.
+
+| Logo                | Selector          |
+| ------------------- |:-----------------:|
+| IHEID               | logo-iheid        |
+| IHEID (white text)  | logo-iheid_white  |
+| IHEID (BW)          | logo-iheid_BW     |
+| Executive Education | logo-ee           |
+| AHCD                | logo-ahcd         |
+| CCDP                | logo-ccdp         |
+| CFD                 | logo-cfd          |
+| CIES                | logo-cies         |
+| CTEI                | logo-ctei         |
+| GENDER              | logo-gender       |
+| GGC                 | logo-ggc          |
+| GHC                 | logo-ghc          |
+| GMC                 | logo-gmc          |
+
+If you think of an IHEID related logo that you would like to add to this
+collection, feel free to [raise an issue](https://github.com/jhollway/iheiddown/issues)
+and link to the logo resource.
 
 #### Citations and Bibliography
 
@@ -246,8 +277,10 @@ There are two main ways to print slides.
 - Print the slides that you rendered after opening them in your browser just like you would print a normal Web page.
   - Works best in the Google Chrome browser
 - Use `pagedown::chrome_print()` when viewing your Rmarkdown file
-
-However printing slides can be tricky in some cases, especially when one has interactive elements integrated into them such as multiple panels on the same slide. In that case, check out [this article for advanced printing options](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/).
+- Use `xaringan_to_pdf()` an extended printing function that works especially
+  well for complex slide decks. You can find this function in
+  [this great blog article](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/)
+  by Garrick Aden Buie.
 
 ## Additional resources
 

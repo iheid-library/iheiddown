@@ -2,7 +2,16 @@
 output: github_document
 ---
 
-# iheiddown <img src="man/figures/iheiddown.png" align="right" width="220"/>
+# iheiddown 
+<img src="man/figures/iheiddown.png" align="right" width="220"/>
+
+```{r setup, include=FALSE} 
+# Sources the render_toc() function from Garrick Aden Buie
+# Note: Headers must be definded with hashtags for correct parsing
+knitr::opts_chunk$set(echo = TRUE)
+devtools::source_gist("c83e078bf8c81b035e32c3fc0cf04ee8", 
+                      filename = 'render_toc.R')
+```
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
@@ -15,6 +24,12 @@ output: github_document
 [![CodeFactor](https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main)](https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
+
+## Table of Contents
+
+```{r toc, echo=FALSE} 
+render_toc("README.Rmd", base_level = 1, toc_depth = 2)
+```
 
 `{iheiddown}` is a package that provides templates for writing documents
 in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
@@ -30,7 +45,7 @@ integrates templates for creating IHEID themed presentations powered by
 [`{xaringan}`](https://github.com/yihui/xaringan) as well as a template for
 IHEID course syllabi.
 
-### Write your dissertation 
+## Write your dissertation 
 
 The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
 which offers versus common word processors:
@@ -71,19 +86,23 @@ the user-friendly nature and pretty output should make it of great benefit to ne
 
 You can see an example of the kind of dissertation output on the package website.
 
-### Write syllabi and presentations in _RMarkdown_ too!
+## But not only !
 
-Not quite done yet, there is even more!
+Not quite done yet, there is even more! Take a look at the following table for
+all available templates:
 
-- Create IHEID-styled syllabi with our template.
+| Templates        | Format                       | Status             |
+| ---------------- | ---------------------------- | ------------------ |
+| Thesis           | PDF                          | :thumbsup: |
+| Syllabus         | PDF                          | :thumbsup: |
+| [`{xaringan}`](https://github.com/yihui/xaringan) presentations    | HTML (can be printed to PDF) | :thumbsup: |
+| Problem set      | PDF                          | :star2: :new: :star2: |
+| *Your idea*      | *Open a PR!*                          | :sparkles: |
 
-- Create IHEID-styled presentations based on the great [`{xaringan}`](https://github.com/yihui/xaringan) package.
-
-- Write your weekly problem sets easily with our template! :star2: :new: :star2:
 
 ## Installation
 
-### Setup
+### Prerequisites
 
 You will first need to install on your system<sup>[2](#myfootnote2)</sup>:
 
@@ -91,7 +110,7 @@ You will first need to install on your system<sup>[2](#myfootnote2)</sup>:
 - [RStudio version 1.2 or higher](https://www.rstudio.com/products/rstudio/download/#download), and 
 - [LaTeX](https://www.latex-project.org/get/) or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup>
 
-### Stable
+### Stable version
 
 The easiest way to install the latest stable version of `{iheiddown}` is via CRAN.
 Simply open the R console and enter:
@@ -104,15 +123,21 @@ You can then begin to use `{iheiddown}` by loading the package:
 
 That's it! `iheiddown` is now installed and ready to go.
 
-### Development
+### Development version
 
-For the latest development version, 
-for slightly earlier access to new features or for testing,
-you may wish to download and install the binaries from Github
-or install from source locally.
+To get access to the latest features, you may want to install the latest
+development version of the package.
 
-Binaries for all major OSes -- Windows, Mac, and Linux -- 
-can be found by clicking on the latest release [here](https://github.com/jhollway/iheiddown/releases/latest).
+An easy way of getting access to this version is to install the
+latest main version of `{iheiddown}` from Github.
+To do that, please install the `{remotes}` package from CRAN and then enter the
+following commands into the console:
+
+- For latest stable version: `remotes::install_github("jhollway/iheiddown")`
+- For latest development version: `remotes::install_github("jhollway/iheiddown@develop")`
+
+Alternatively, you can find the binaries for all major OSes -- Windows, Mac, and Linux -- 
+by looking up the latest release of the package [here](https://github.com/jhollway/iheiddown/releases/latest).
 Download the appropriate binary for your operating system,
 and install using an adapted version of the following commands:
 
@@ -120,16 +145,13 @@ and install using an adapted version of the following commands:
 - For Mac: `install.packages("~/Downloads/iheiddown_macOS.tgz", repos = NULL)`
 - For Unix: `install.packages("~/Downloads/iheiddown_linuxOS.tar.gz", repos = NULL)`
 
-To install from source the latest main version of `{iheiddown}` from Github, 
-please install the `{remotes}` package from CRAN and then enter into the console:
+## Quick start guide
 
-- For latest stable version: `remotes::install_github("jhollway/iheiddown")`
-- For latest development version: `remotes::install_github("jhollway/iheiddown@develop")`
+`{iheiddown}`, among other things, sets up a thesis template that you can
+then modify for your dissertation. It's very easy to get started!
 
-## Getting started
-
-`iheiddown` sets up a thesis template that you can then modify for your dissertation.
-It's very easy to get started.
+Since the process is similar for theses, presentations, problem sets and syllabi
+let us take a look at how to set up a thesis project.
 
 1. Open RStudio (if it is not already).
 1. Click the new document symbol at the very top left and choose `R Markdown...`. 
@@ -138,9 +160,17 @@ It's very easy to get started.
 1. Name your thesis project `index`, i.e. your main `.Rmd` should be named `index.Rmd`
 1. Select where the project should be saved on your hard drive.
 
-Congratulations! You have now set up a thesis project. For a more detailed
-walkthrough, please check out the presentation article on the package webiste.
+Congratulations! You have now set up your first thesis project. For a more
+detailed walkthrough of the different functionalities and how to get started
+with each one, please check out the different articles on the
+[package website](https://jhollway.github.io/iheiddown/).
 
+
+
+<!--
+Commented this out since it is a duplicate of the information we have already
+on the website in the vignette. A quick start guide should suffice on the
+landing page. What do you think ?
 ### Writing your thesis
 
 When you create the template for the first time, 
@@ -194,6 +224,7 @@ or use the keyboard shortcut `Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
 Finally, please check out the package website's thesis article for a more
 detailed look at the contents of your thesis project and a step by step guide
 on how to generate one.
+-->
 
 <!-- 
 ## Knitting individual chapters
@@ -211,7 +242,7 @@ output:
     template: templates/iheiddiss.tex
 ```
 This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
--->
+
 
 ### Output
 
@@ -221,7 +252,7 @@ A date is automatically appended to the filename to assist with tracking version
 
 The PDF version is fully functional. 
 The word, gitbook and epub versions might be developed at a later time.
-
+-->
 ## Feedback
 
 Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this repo

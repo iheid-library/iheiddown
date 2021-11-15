@@ -39,14 +39,14 @@ percent_female <- function(bib_file,
   
   if (missing(bib_file)) bib_file <- find_bib()
   if (missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
-  by <- match.arg(by)
+  by <- match.arg(by, c("author", "publication"))
   
-  if (!requireNamespace("genderdata", quietly = TRUE)) {
-    if (!requireNamespace("remotes", quietly = TRUE)) {
-      utils::install.packages("remotes")
-    }
-    remotes::install_github("lmullen/genderdata")
-  }
+  # if (!requireNamespace("genderdata", quietly = TRUE)) {
+  #   if (!requireNamespace("remotes", quietly = TRUE)) {
+  #     utils::install.packages("remotes")
+  #   }
+  #   remotes::install_github("lmullen/genderdata")
+  # }
   
   bib <- suppressWarnings(bib2df::bib2df(bib_file))
   if (!missing(rmd_file)) {
@@ -60,8 +60,10 @@ percent_female <- function(bib_file,
     authors <- stringr::str_remove(authors, "^.+, \\{")
     authors <- stringr::str_remove(authors, "\\}")
     authors <- stringr::str_remove(authors, ".*,[:blank:]")
-    gender <- table(gender::gender(authors)$gender)
-    print(paste0(round(gender[1] / sum(gender), 2) * 100, "% female authors"))
+    authors <- stringr::str_remove(authors, "\\s.*")
+    gender <- table(gender::gender(authors, method = "genderize")$gender)
+    print(paste0((1 - round(gender[2] / sum(gender), 2)) * 100,
+                 "% female authors"))
   } else if (by == "publication") {
     # Percentage of papers written by at least one women
     for (i in seq_len(length(authors))) {
@@ -75,7 +77,7 @@ percent_female <- function(bib_file,
       }
     }
     gender <- sapply(authors,
-                     function(x) any(gender::gender(x)$gender == "female"))
+                     function(x) any(gender::gender(x, method = "genderize")$gender == "female"))
     print(paste0(round(sum(gender) / length(gender), 2) * 100,
                  "% female authors"))
   }

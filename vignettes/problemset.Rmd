@@ -53,7 +53,9 @@ appears. Now that we have created an R project for our presentation, we can open
 a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
-![Step 1: open a new project](images/problemset/0-Open_Project.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
+  knitr::include_graphics("images/problemset/0-Open_Project.PNG", dpi = 144)
+```
 
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our presentation. To do so,
@@ -61,7 +63,9 @@ click on the "From Template" option on the left and select the
 "Problem Set {iheiddown}" template. Now give your presentation a name and click
 on "OK".
 
-![Step 2: select the template](images/problemset/1-Create_PS.PNG){width="80%"}
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
+  knitr::include_graphics("images/problemset/1-Create_PS.PNG", dpi = 144)
+```
 
 Congrats! You just created your first problem set! We can actually already
 render our problem set. This is done by simply clicking the "knit button"
