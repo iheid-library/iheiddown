@@ -1,3 +1,12 @@
+# iheiddown 0.8.5
+
+## Minor fixes
+
+- Fixed workflow issue in README rendering job and Website rendering job
+- Fixed CRAN flagged issues:
+  - Invalid link in README
+  - Path issues to images used in the problem set vignette
+
 # iheiddown 0.8.4
 
 ## Changed the website theme:
