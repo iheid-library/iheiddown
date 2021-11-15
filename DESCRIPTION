@@ -11,7 +11,7 @@ Description: A set of tools to support writing various documents
     The package includes additional functions for institutional color palettes
     and an institutional 'ggplot' theme, as well as a function for word counts
     and a bibliographical analysis toolkit.
-Date: 2021-11-10
+Date: 2021-11-15
 Version: 0.8.4
 Authors@R: 
     c(person(given = "James",

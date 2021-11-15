@@ -12,6 +12,10 @@
 - Closed #109 by adding an extended printing function
 - Closed #110 by adding missing logos and creating a table listing available logos and their selectors on the presentation vignette.
 
+## Thesis
+
+- Added a second word count function, `count_words2()`, that obtains a more accurate word count estimate from the compiled PDF
+
 # iheiddown 0.8.3
 
 ## Problem set template
