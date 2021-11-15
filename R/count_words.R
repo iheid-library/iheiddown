@@ -11,6 +11,7 @@
 #' @importFrom tibble as_tibble
 #' @importFrom rstudioapi getSourceEditorContext
 #' @importFrom tidytext unnest_tokens
+#' @importFrom pdftools pdf_text
 #' @return A scalar representing the number of words in the document.
 #' @examples
 #' rmarkdown::draft(file = "test", template = "html_vignette",
@@ -31,6 +32,21 @@ count_words <- function(file) {
     nrow()
   return(wc)
 }
+
+#' @export
+count_words2 <- function(file) {
+  # Get currently viewed panel in RStudio if file is not specified
+  if (missing(file)){
+    file <- rstudioapi::getSourceEditorContext()$path
+    file <- stringr::str_replace(file, ".Rmd", ".pdf")
+  } 
+  
+  pdf <- pdftools::pdf_text(file)
+  wc <- sum(unlist(lapply(wc, function(x) length(x))))
+
+  return(wc)
+}
+
 
 # Helper function for removing unwanted lines from count
 # Checks is value is odd.

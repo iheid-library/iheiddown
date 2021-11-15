@@ -6,10 +6,7 @@
 \usepackage{sectsty}
 \DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
 \sectionfont{\fontsize{12}{15}\selectfont}
-\subsectionfont{\fontsize{10}{12}\selectfont}
-
-\renewcommand{\thesection}{}% Remove section references...
-\renewcommand{\thesubsection}{Week \arabic{subsection}}%... from subsections
+\subsectionfont{\color{red}\fontsize{10}{12}\selectfont}
 
 \usepackage{calc}
 \usepackage[T1]{fontenc}
@@ -25,6 +22,9 @@
 \usepackage{longtable}
 \usepackage{hanging}
 \usepackage{quotes}
+
+\renewcommand{\thesection}{}% Remove section references...
+\renewcommand{\thesubsection}{\textcolor{red} Week \arabic{subsection}}%... from subsections
 
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{\baselineskip}
