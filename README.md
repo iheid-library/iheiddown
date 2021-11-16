@@ -16,7 +16,7 @@ Date](https://img.shields.io/github/release-date/jhollway/iheiddown)
 issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
 <!-- [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown) -->
 [![Codecov test
-coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://codecov.io/gh/jhollway/iheiddown?branch=main)
+coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://app.codecov.io/gh/jhollway/iheiddown?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main)](https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
@@ -141,8 +141,18 @@ That’s it! `iheiddown` is now installed and ready to go.
 To get access to the latest features, you may want to install the latest
 development version of the package.
 
-Binaries for all major OSes – Windows, Mac, and Linux – can be found by
-clicking on the latest release
+An easy way of getting access to this version is to install the latest
+main version of `{iheiddown}` from Github. To do that, please install
+the `{remotes}` package from CRAN and then enter the following commands
+into the console:
+
+-   For latest stable version:
+    `remotes::install_github("jhollway/iheiddown")`
+-   For latest development version:
+    `remotes::install_github("jhollway/iheiddown@develop")`
+
+Alternatively, you can find the binaries for all major OSes – Windows,
+Mac, and Linux – by looking up the latest release of the package
 [here](https://github.com/jhollway/iheiddown/releases/latest). Download
 the appropriate binary for your operating system, and install using an
 adapted version of the following commands:
@@ -153,16 +163,6 @@ adapted version of the following commands:
     `install.packages("~/Downloads/iheiddown_macOS.tgz", repos = NULL)`
 -   For Unix:
     `install.packages("~/Downloads/iheiddown_linuxOS.tar.gz", repos = NULL)`
-
-An easier way of getting access to the development version is to install
-the latest main version of `{iheiddown}` from Github. To do that, please
-install the `{remotes}` package from CRAN and then enter the following
-commands into the console:
-
--   For latest stable version:
-    `remotes::install_github("jhollway/iheiddown")`
--   For latest development version:
-    `remotes::install_github("jhollway/iheiddown@develop")`
 
 ## Quick start guide
 
