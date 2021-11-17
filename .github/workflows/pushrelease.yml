@@ -272,7 +272,7 @@ jobs:
   render:
     name: Update README.md and push
     needs: [build, release]
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
