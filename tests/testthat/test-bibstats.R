@@ -21,10 +21,10 @@ test_that("Bibstats works properly", {
   unlink("test", recursive = TRUE)
 })
 
-test_that("Bibfix works properly", {
-  rmarkdown::draft(file = "test", template = "syllabus",
-                   package = "iheiddown", create_dir = TRUE, edit = FALSE)
-  expect_equal(fix_bib(bib_file = "test/references.bib"),
-               "test/references.bib")
-  unlink("test", recursive = TRUE)
-})
+# test_that("Bibfix works properly", {
+#   rmarkdown::draft(file = "test", template = "syllabus",
+#                    package = "iheiddown", create_dir = TRUE, edit = FALSE)
+#   expect_equal(fix_bib(bib_file = "test/references.bib"),
+#                "test/references.bib")
+#   unlink("test", recursive = TRUE)
+# })
