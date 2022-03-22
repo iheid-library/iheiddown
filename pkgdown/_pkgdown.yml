@@ -5,8 +5,9 @@ home:
   title: The R Package for IHEID related publications
   description: Write your thesis, outline your syllabus or create IHEID themed presentations.
 template:
+  bootstrap: 5
   params:
-    bootswatch: paper
+    bootswatch: litera
     opengraph:
     image:
       src: man/figures/OpenGraphImage.png
@@ -25,7 +26,9 @@ navbar:
     - articles
     - examples
     - news
-    right: github
+    right:
+    - search
+    - github
   components:
     home:
       icon: fa-home fa-lg
