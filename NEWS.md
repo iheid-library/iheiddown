@@ -1,3 +1,16 @@
+# iheiddown 0.8.7
+
+# Package updates:
+
+- Closed #118 by commenting out function relying on problematic `{bib2df}` dependency.
+- Closed #119 by updating the Geneva Graduate Institute's logos
+- Switched references to the old name of the Geneva Graduate Institute to the new one.
+
+# Website
+
+- Updated pkgdown website to Bootstrap 5 theme and added search functionality.
+
+
 # iheiddown 0.8.6
 
 # Minor fix

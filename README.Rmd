@@ -32,7 +32,7 @@ render_toc("README.Rmd", base_level = 1, toc_depth = 2)
 ```
 
 `{iheiddown}` is a package that provides templates for writing documents
-in styles consistent with the Graduate Institute of International and Development Studies in Geneva/
+in styles consistent with the Geneva Graduate Institute/
 Institut de Hautes Etudes Internationales et du Developpement (IHEID)
 in (R) markdown.
 

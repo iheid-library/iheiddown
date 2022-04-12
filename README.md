@@ -32,9 +32,9 @@ coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)]
     -   [Feedback](#feedback)
 
 `{iheiddown}` is a package that provides templates for writing documents
-in styles consistent with the Graduate Institute of International and
-Development Studies in Geneva/ Institut de Hautes Etudes Internationales
-et du Developpement (IHEID) in (R) markdown.
+in styles consistent with the Geneva Graduate Institute/ Institut de
+Hautes Etudes Internationales et du Developpement (IHEID) in (R)
+markdown.
 
 The main use case for `{iheiddown}` is for writing a **Masters or PhD
 Dissertation at IHEID**, as it offers a user-friendly, simple, and

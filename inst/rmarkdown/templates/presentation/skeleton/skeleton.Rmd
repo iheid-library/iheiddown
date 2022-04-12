@@ -2,7 +2,7 @@
 title: "Title"
 subtitle: "Subtitle"
 author: "<large>Author Name</large>"
-# institute: "<small>Graduate Institute Geneva</small>" # uncomment to include
+# institute: "<small>Geneva Graduate Institute</small>" # uncomment to include
 # date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
 output:
   xaringan::moon_reader:
