@@ -116,8 +116,20 @@ hidden behind other background information.*/
 .logo-iheid_white::before {
   	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IHEID_couleur_tx_blanc.png);
 }
-.logo-ee::before {
-  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_EE_rvb_2.png);
+.logo-econ::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_INTL_ECO_engl_2022_RGB_color.png);
+}
+.logo-law::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_INTL_LAW_engl_2022_RGB_color.png);
+}
+.logo-history::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IHP_engl_2022_RGB_color.png);
+}
+.logo-irps::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IRPS_engl_2022_RGB_color.png);
+}
+.logo-mint::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_MINT_engl_2022_RGB_color.png);
 }
 
 /* Tables */
