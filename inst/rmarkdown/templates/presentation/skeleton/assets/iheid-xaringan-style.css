@@ -166,8 +166,8 @@ div.remark-slide-container h3 {
 }
 
 .title-slide {
-  background-image: url(https://wp.unil.ch/ssmtp4sd/files/2014/10/Education_IHEID_logo.png);
-  background-position: 95% 95%;
+  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/Logo_IHEID_couleur.png);
+  background-position: 95% 90%;
 	background-size: 30%;
   background-color: #FFFFFF;
 	text-align:left;
