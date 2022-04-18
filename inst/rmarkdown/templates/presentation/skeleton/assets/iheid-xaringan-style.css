@@ -64,6 +64,10 @@ color: #3B7A57;
 
 .footnote{font-size: 50%;}
 
+.smallcaps{
+  font-variant: small-caps;
+}
+
 .caption {
   text-align: center;
   font-size: 80%;
