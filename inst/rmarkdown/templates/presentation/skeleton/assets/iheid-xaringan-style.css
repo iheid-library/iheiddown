@@ -36,6 +36,15 @@ body { font-family: 'Garamond' }
 .small{font-size: 80%}
 
 .tiny{font-size: 40%}
+/*Centers non text objects in the middle of the slide*/
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
 .red {
 color: red;
