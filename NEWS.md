@@ -5,6 +5,12 @@
 - Closed #118 by commenting out function relying on problematic `{bib2df}` dependency
 - Closed #119 by updating the Geneva Graduate Institute's logos
 - Switched references to the old name of the Geneva Graduate Institute to the new one
+- Closed #117 by adding small caps support to all templates.
+
+## Presentation
+
+- Closed #30 by adding font-scaling relative to parent container for the
+presentation template
 
 ## Website
 
