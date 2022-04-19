@@ -95,11 +95,17 @@ documentclass: article
 startdate <- as.Date("2020-09-14")
 ```
 
-##  `r advdate(startdate, 1)`: Inheriting a Ring
+## `r advdate(startdate, 1)`: Inheriting a Ring
+
+Inheriting a ring can lead to a great adventure!
+
+*Required readings*
 
 @Darwin1859
 
-@iheiddown2020
+[*Additional readings*]{color="gray"}
+
+[@iheiddown2020]{color="gray"}
 
 ##  `r advdate(startdate, 2)`: Escaping the Shire
 
