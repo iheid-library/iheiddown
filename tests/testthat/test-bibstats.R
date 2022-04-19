@@ -4,14 +4,14 @@ test_that("Bibstats works properly", {
   expect_equal(percent_female(bib_file = "test/references.bib",
                          rmd_file = "test/test.Rmd",
                          by = "author"),
-               "25% female authors")
+               "33% female authors")
   expect_equal(percent_female(bib_file = "test/references.bib",
                               rmd_file = "test/test.Rmd",
                               by = "publication"),
-               "33% female authors")
+               "50% female authors")
   expect_equal(mean_year(bib_file = "test/references.bib",
                               rmd_file = "test/test.Rmd"),
-               "Average date of publication: 1963")
+               "Average date of publication: 1934")
   expect_equal(total_pages(bib_file = "test/references.bib",
                          rmd_file = "test/test.Rmd"),
                "Total number of pages: 7")
