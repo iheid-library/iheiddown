@@ -12,6 +12,11 @@
 - Closed #30 by adding font-scaling relative to parent container for the
 presentation template
 
+## Poster
+
+- Closed #73 by adding a three poster templates from the `{posterdown}` package
+  with an IHEID look.
+
 ## Website
 
 - Updated pkgdown website to Bootstrap 5 theme and added search functionality
