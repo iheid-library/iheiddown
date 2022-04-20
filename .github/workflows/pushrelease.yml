@@ -151,6 +151,18 @@ jobs:
       - name: Remove problem set project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("UntitledPS", recursive = TRUE)'
+      
+      - name: Remove poster project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPoster", recursive = TRUE)'
+        
+      - name: Remove poster betterland project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPosterBetterland", recursive = TRUE)'
+        
+      - name: Remove poster betterport project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPosterBetterport", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
