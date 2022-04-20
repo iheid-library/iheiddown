@@ -1,0 +1,141 @@
+---
+main_topsize: 0.2 #percent coverage of the poster
+main_bottomsize: 0.1
+#ESSENTIALS
+title: '**A Better Reproducible Poster Title**'
+author:
+  - name: '**Gandalf the Grey**'
+    affil: 1
+    main: true
+    orcid: '0000-0002-1825-0097'
+    twitter: IHEID
+    email: example@example.ch
+  - name: Frodo Baggins
+    affil: 2
+    main: true
+    email: 'ag.con@iheiddown.net'
+  - name: Bilbo
+    affil: 3
+affiliation:
+  - num: 1
+    address: Department of International Ring Study, Central University of Middle Earth
+  - num: 2
+    address: Department of Dragon Studies, Northern University of Middle Earth
+  - num: 3
+    address:  Department of Wraith-World Studies, Eastern University of Middle Earth
+main_findings:
+  - "Make **better posters** with RMarkdown + **{iheiddown}**."
+logoleft_name: https&#58;//raw.githubusercontent.com/jhollway/iheiddown/main/man/figures/iheiddown.png
+logoright_name: https&#58;//raw.githubusercontent.com/jhollway/iheiddown/main/man/figures/iheiddown.png
+logocenter_name: https&#58;//raw.githubusercontent.com/jhollway/iheiddown/main/man/figures/iheiddown.png
+output: 
+  iheiddown::iheiddown_betterport:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+bibliography: packages.bib
+link-citations: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+# Introduction
+
+This is the `iheiddown_betterport` template for the `{iheiddown}` [@iheiddown] package!
+Based on the great `{posterdown}` package, it provides the user with an IHEID
+version of the template by default. The original `{posterdown}` template was
+inspired by the twitter thread of
+[Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041).
+
+```{r, include=FALSE}
+# Writing the bibliography of the packages you're using to create the current
+# poster is a great way to give credit to the authors of the packages you're
+# using.
+knitr::write_bib(c('iheiddown',
+                   'rmarkdown',
+                   'posterdown',
+                   'iheiddown'),
+                 'packages.bib')
+```
+
+## Objectives
+
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Press `CTRL+K` and let `{iheiddown}` do its thing!
+
+Read the guide below (mostly identical to posterdown). It will make you
+familiar with the ways of creating a great poster.
+
+# Methods
+
+I will show here how to include poster elements that may be useful, such as an
+equation using mathjax:
+
+$$
+E = mc^2
+$$
+
+To reference a citation you can add your `.bib` file to the working directory
+and name it in the YAML metadata or generate an automated one as done here,
+then you only need to reference the label value in the `.bib` file. For example
+this package is built on top of the wonderful {pagedown} package and I will
+cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+
+To get a better understanding of how to include features like these please
+refer to the {iheiddown} [wiki](https://github.com/iheiddown/wiki).
+
+**_Now on to the results!_**
+
+# Results
+
+Here you may have some figures to show off, bellow I have made a scatterplot
+with the infamous Iris dataset and I can even reference to the figure
+automatically like this, `Figure \@ref(fig:irisfigure)`, Figure
+\@ref(fig:irisfigure).
+
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
+par(mar=c(2,2,0,1))
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
+     col = iris$Species, pch = 19, xlab = "Sepal Length",
+     ylab = "Sepal Width")
+```
+
+Maybe you want to show off some of that fancy code you spent so much time on
+to make that figure, well you can do that too! Just use the `echo=TRUE` option
+in the r code chunk options, Figure \@ref(fig:myprettycode)!
+
+```{r myprettycode, echo=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=6, out.width="80%"}
+#trim whitespace
+par(mar=c(2,2,0,0))
+#plot boxplots
+boxplot(iris$Sepal.Width~iris$Species,
+        col = "#ed2215", 
+        border = "#800000",
+        ylab = "Sepal Width (cm)",
+        xlab = "Species")
+```
+
+How about a neat table of data? See, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:15,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References

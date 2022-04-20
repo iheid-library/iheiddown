@@ -1,0 +1,122 @@
+---
+title: A Better Reproducible Poster Title
+author:
+  - name: Gandalf the Grey
+    affil: 1
+    twitter: Gandalf
+    email: GandalftheGrey@iheid.ch
+    orcid: "0000-0002-1825-0097"
+    main: true
+affiliation:
+  - num: 1
+    address: Department of International Ring Study, Central University of Middle Earth
+main_findings:
+  - "Make **better posters** with RMarkdown + **{iheiddown}**."
+  - '![](https://raw.githubusercontent.com/jhollway/iheiddown/main/man/figures/iheiddown.png){.main_pic}'
+logoleft_name: '![](https://raw.githubusercontent.com/jhollway/iheiddown/main/man/figures/iheiddown.png){.main-img-left}'
+logoright_name: '![](https://raw.githubusercontent.com/jhollway/iheiddown/main/man/figures/iheiddown.png){.main-img-right}'
+output: 
+  iheiddown::iheiddown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: packages.bib
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+```{r myplot, include=FALSE}
+svg('myplot.svg')
+plot(iris$Sepal.Length, iris$Sepal.Width)
+dev.off()
+```
+
+# Introduction
+
+This is the `iheiddown_betterport` template for the `{iheiddown}` [@iheiddown] package!
+Based on the great `{iheiddown}` package, it provides the user with an IHEID
+version of the template by default. The original `{iheiddown}` template was
+inspired by the twitter thread of
+[Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041).
+
+```{r, include=FALSE}
+knitr::write_bib(c('iheiddown', 'posterdown',
+                   'rmarkdown','pagedown'),
+                 'packages.bib')
+```
+
+## Objectives
+
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Let iheiddown do its thing!
+
+# Methods
+
+I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+
+$$
+E = mc^2
+$$
+
+To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentence using this in the rmd `[@R-pagedown]` [@R-pagedown].
+
+To get a better understanding of how to include features like these please refer to the {iheiddown} [wiki](https://github.com/iheiddown/wiki).
+
+**_Now on to the results!_**
+
+<br>
+
+# Results
+
+Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
+par(mar=c(2,2,0,1))
+plot(x = iris$Sepal.Length,
+     y = iris$Sepal.Width,
+     col = iris$Species,
+     pch = 19,
+     xlab = "Sepal Length",
+     ylab = "Sepal Width")
+```
+
+Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
+
+```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+#trim whitespace
+par(mar=c(2,2,0,0))
+#plot boxplots
+boxplot(iris$Sepal.Width~iris$Species,
+        col = "#ed2215", 
+        border = "#800000",
+        ylab = "Sepal Width (cm)",
+        xlab = "Species")
+```
+
+How about a neat table of data? See, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:8,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References
