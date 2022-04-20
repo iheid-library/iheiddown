@@ -73,6 +73,64 @@ rmarkdown::render("index.Rmd")
 #Come back to the original WD and copy the output
 setwd("..")
 
+
+############
+# Poster
+############
+
+# Automatic rendering of thesis_pdf will run on a Windows VM
+#Step 1 Create an example project
+rmarkdown::draft(file = "UntitledPoster", template = "iheiddown_poster",
+                 package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("UntitledPoster") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+# Create output dir
+rmarkdown::render("UntitledPoster.Rmd")
+#Come back to the original WD and copy the output
+setwd("..")
+target_path <- "UntitledPoster"
+name <- "UntitledPoster.html"
+file.rename(file.path(target_path, name), file.path(target_path,
+                                                    "IHEID_poster.html"))
+
+###################
+# Poster betterland
+###################
+
+# Automatic rendering of thesis_pdf will run on a Windows VM
+#Step 1 Create an example project
+rmarkdown::draft(file = "UntitledPosterBetterland", template = "iheiddown_betterland",
+                 package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("UntitledPosterBetterland") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+# Create output dir
+rmarkdown::render("UntitledPosterBetterland.Rmd")
+#Come back to the original WD and copy the output
+setwd("..")
+target_path <- "UntitledPosterBetterland"
+name <- "UntitledPosterBetterland.html"
+file.rename(file.path(target_path, name), file.path(target_path,
+                                                    "IHEID_poster_better_land.html"))
+
+###################
+# Poster Betterport
+###################
+
+# Automatic rendering of thesis_pdf will run on a Windows VM
+#Step 1 Create an example project
+rmarkdown::draft(file = "UntitledPosterBetterport", template = "iheiddown_betterport",
+                 package = "iheiddown", create_dir = TRUE, edit = FALSE)
+setwd("UntitledPosterBetterport") # Since we can only knit from the WD
+#Step 2 render the example project and replace in template folder
+# Create output dir
+rmarkdown::render("UntitledPosterBetterport.Rmd")
+#Come back to the original WD and copy the output
+setwd("..")
+target_path <- "UntitledPosterBetterport"
+name <- "UntitledPosterBetterport.html"
+file.rename(file.path(target_path, name), file.path(target_path,
+                                                    "IHEID_poster_better_port.html"))
+
 ################################################################################
 
 # Deploy examples on the website as well by copying them to /docs
@@ -92,6 +150,23 @@ file.copy("index/index.html", target_dir, overwrite = TRUE)
 file.copy("index/index_cache", target_dir, recursive = TRUE, overwrite = TRUE)
 file.copy("index/index_files", target_dir, recursive = TRUE, overwrite = TRUE)
 file.copy("index/assets", target_dir, recursive = TRUE, overwrite = TRUE)
+# Poster
+file.copy("UntitledPoster/UntitledPoster_files",
+          target_dir, recursive = TRUE, overwrite = TRUE)
+file.copy("UntitledPoster/UntitledPoster.html",
+          target_dir, overwrite = TRUE)
+# Posterbetterland
+file.copy("UntitledPosterBetterland/myplot.svg", target_dir, overwrite = TRUE)
+file.copy("UntitledPosterBetterland/UntitledPosterBetterland_files",
+          target_dir, recursive = TRUE, overwrite = TRUE)
+file.copy("UntitledPosterBetterland/UntitledPosterBetterland.html",
+          target_dir, overwrite = TRUE)
+# Posterbetterport
+file.copy("UntitledPosterBetterport/UntitledPosterBetterport_files",
+          target_dir, recursive = TRUE, overwrite = TRUE)
+file.copy("UntitledPosterBetterport/UntitledPosterBetterport.html",
+          target_dir, overwrite = TRUE)
+
 
 # Note, the directories generated will be erased further down the GitHub
 # workflow. Uncomment the next few lines if you're running the code manually.
@@ -100,5 +175,6 @@ file.copy("index/assets", target_dir, recursive = TRUE, overwrite = TRUE)
 # unlink("Untitled", recursive = TRUE)
 # unlink("UntitledPS", recursive = TRUE)
 # unlink("index", recursive = TRUE)
-
-
+# unlink("UntitledPoster", recursive = TRUE)
+# unlink("UntitledPosterBetterland", recursive = TRUE)
+# unlink("UntitledPosterBetterport", recursive = TRUE)
