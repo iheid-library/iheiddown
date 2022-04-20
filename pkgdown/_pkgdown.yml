@@ -58,6 +58,12 @@ navbar:
         href: sample_output/IHEIDSyllabusExample.pdf
       - text: Problem Set
         href: sample_output/IHEIDProblemSetExample.pdf
+      - text: Poster
+        href: sample_output/IHEID_poster.html
+      - text: Betterposter (Landscape)
+        href: sample_output/IHEID_poster_better_land.html
+      - text: Betterposter (Portrait)
+        href: sample_output/IHEID_poster_better_port.html
     news:
       text: News
       href: news/index.html
@@ -65,6 +71,7 @@ reference:
   - title: "Output functions"
     contents:
       - ends_with("_pdf")
+      - starts_with("iheiddown_")
   - title: "Rendering functions"
     contents:
       - starts_with("preview")
