@@ -109,6 +109,8 @@ Inheriting a ring can lead to a great adventure!
 
 ##  `r advdate(startdate, 2)`: Escaping the Shire
 
+*Required readings*
+
 @Satchell2009
 
 ##  `r advdate(startdate, 3)`: Fleeing from the Nazgûl
