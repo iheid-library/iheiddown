@@ -20,6 +20,7 @@ presentation template
 ## Website
 
 - Updated pkgdown website to Bootstrap 5 theme and added search functionality
+- Added a vignette explaining how to create IHEID themed posters
 
 # iheiddown 0.8.6
 
