@@ -1,0 +1,4 @@
+name: Poster
+description: >
+ Template for creating an HTML posterdown poster with an IHEID twist.
+create_dir: true

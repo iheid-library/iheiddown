@@ -64,6 +64,11 @@ policies: |
   
   *Plagiarism* is not tolerated at the Graduate Institute. 
   If you are unsure, please contact the TA.
+bibimport: |
+  Are you using a bibliography manager like Zotero or Mendeley to manage your
+  PDFs?
+  [Click here](https://raw.githubusercontent.com/jhollway/iheiddown/main/inst/rmarkdown/templates/syllabus/skeleton/references.bib) to get the `.bib` file of this course to
+  import it into your software of choice!
 
 #####################
 ## Bibliography    ##
@@ -90,13 +95,23 @@ documentclass: article
 startdate <- as.Date("2020-09-14")
 ```
 
-##  `r advdate(startdate, 1)`: Inheriting a Ring
+## `r advdate(startdate, 1)`: Inheriting a Ring
+
+Inheriting a ring can lead to a great adventure!
+
+*Required readings*
 
 @Darwin1859
 
-@iheiddown2020
+[*Additional readings*]{color="gray"}
+
+[@iheiddown2020]{color="gray"}
+
+\newpage
 
 ##  `r advdate(startdate, 2)`: Escaping the Shire
+
+*Required readings*
 
 @Satchell2009
 

@@ -28,6 +28,6 @@ These enormous contributions make theses and dissertations easier to write, shar
 
 \begin{flushright}
 James Hollway \\
-Graduate Institute, Geneva \\
+Geneva Graduate Institute \\
 13 June 2020
 \end{flushright}

@@ -1,13 +1,10 @@
 ## Test environments
-* local R installation, R 4.1.0
-* ubuntu 16.04 (on travis-ci), R 4.1.0
-* win-builder (devel)
+
+* local R installation, x86_64-apple-darwin17.0, R 4.1.3
+* Mac OS X 11.6.5 (on Github), R 4.1.3
+* Microsoft Windows Server 2022 10.0.20348 (on Github), R 4.1.3
+* Ubuntu 20.04.4 (on Github), R 4.1.3
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* This release attends to the changes requested by Gregor Seyer:
-  * value tags have been added for `advdate`, `bookdown_profile`,
-  `count_words`, `preview`, and `theme_iheid`.
-  * a running example has been added to `count_words.Rd`
+0 errors | 0 warnings | 0 notes

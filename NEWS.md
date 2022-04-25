@@ -1,3 +1,27 @@
+# iheiddown 0.9.0
+
+## Package updates:
+
+- Closed #118 by commenting out function relying on problematic `{bib2df}` dependency
+- Closed #119 by updating the Geneva Graduate Institute's logos
+- Switched references to the old name of the Geneva Graduate Institute to the new one
+- Closed #117 by adding small caps support to all templates.
+
+## Presentation
+
+- Closed #30 by adding font-scaling relative to parent container for the
+presentation template
+
+## Poster
+
+- Closed #73 by adding a three poster templates from the `{posterdown}` package
+  with an IHEID look.
+
+## Website
+
+- Updated pkgdown website to Bootstrap 5 theme and added search functionality
+- Added a vignette explaining how to create IHEID themed posters
+
 # iheiddown 0.8.6
 
 # Minor fix

@@ -1,0 +1,125 @@
+---
+title: "Posters"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{poster}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r global.options, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = 'center',
+  fig.width = 6,
+  fig.height = 4
+)
+```
+
+```{r setup, include=FALSE}
+pkgs <- c("iheiddown", "magrittr", "ggplot2")
+lapply(pkgs, library, character.only = TRUE)
+```
+
+While `{iheiddown}`'s main aim is to assist students in writing their thesis, it
+can also be used for showcasing projects or papers at conferences with its
+poster template. This short article will walk you through the process of using
+the IHEID-themed poster templates.
+
+## Installation
+
+The installation process is the same than for the thesis template. You'll need
+the following software:
+
+1. Install [R](https://cran.r-project.org) and [R-Studio](https://www.rstudio.com/)
+2. Install a LATEX distribution:
+    - [For MacOS](http://www.tug.org/mactex/)
+    - [For Windows](https://miktex.org/)
+    - [For Linux](https://www.tug.org/texlive/)
+3. Install `{iheiddown}` by typing the following command
+`install.packages("iheiddown") ` in the R-Studio console. 
+
+Note: typing `remotes::install_github("jhollway/iheiddown")` will provide you
+with the latest version from GitHub.
+
+## Create your first poster
+
+Creating your first poster is easy! Before we begin, we have to create a
+new R project by clicking on the file tab in the
+top of the RStudio window and following the instructions of the prompt that
+appears. Now that we have created an R project for our presentation, we can open
+a new R-Markdown file. To do this click on the "plus file" logo in the top left
+corner and then on "R-Markdown".
+
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
+  knitr::include_graphics("images/poster/0-Open_Project.png", dpi = 144)
+```
+
+After you have done this, a little pop-up helper will appear. The first thing we
+will do is to select the `{iheiddown}` template for our presentation. To do so,
+click on the "From Template" option on the left and select one of the
+"Poster {iheiddown}" templates. Now give your poster a name and click
+on "OK".
+
+```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
+  knitr::include_graphics("images/poster/1-Select_Template.png", dpi = 144)
+```
+
+Congrats! You just created your first poster! Let's render it to see what it
+looks like out of the box. This is done by simply clicking the "knit button"
+while viewing the `Poster.Rmd` pane. Et voilà! You have now successfully
+generated your first poster with R.
+
+Take a moment to read through the generated poster to get acquainted
+with the `{R-markdown}` syntax and to get a feel of the possibilities of the
+`{iheiddown}` theme.
+
+## Edit your poster
+
+This section will focus on giving you an overview of the workflow of designing
+your conference posters in R with`{iheiddown}`.
+
+### Three flavors of posters to choose from:
+
+The three flavors `{iheiddown}` incorporates are "re-themed" versions of
+the excellent [`{posterdown}`](https://github.com/brentthorne/posterdown)
+package. They include:
+
+- A classic poster (landscape)
+  - Simple and classic poster layout.
+- A "betterposter" (landscape)
+  - Inspired by Mike Morrison's template allowing you to highlight the central
+  message of your poster in a landscape format.
+- A "betterposter" (portrait)
+  - Inspired by Mike Morrison's template allowing you to highlight the central
+  message of your poster in a portrait format.
+
+Here is the thread that started the `#Betterposter` style:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s fix academic posters! Prepping a poster for <a href="https://twitter.com/hashtag/SIOP19?src=hash&amp;ref_src=twsrc%5Etfw">#SIOP19</a> and sick of the old &quot;wall-of-text&quot; poster design? Watch this cartoon to see a new, faster approach to designing research posters. Includes templates. <a href="https://twitter.com/hashtag/betterposter?src=hash&amp;ref_src=twsrc%5Etfw">#betterposter</a><a href="https://t.co/wyXhiP5CKl">https://t.co/wyXhiP5CKl</a> <a href="https://t.co/UBYB2GzIv9">pic.twitter.com/UBYB2GzIv9</a></p>&mdash; Mike Morrison (@mikemorrison) <a href="https://twitter.com/mikemorrison/status/1110191245035479041?ref_src=twsrc%5Etfw">March 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Choose the one that fits your needs and read on to discover how to edit it!
+
+### Set YAML options
+
+The general options are set in the YAML header. You can define the metadata of
+the document such as the name of the authors, the institution they are a part of
+, and the title of your poster there.
+
+You can also set bibliographic options such as the `.bib` file you want to draw
+your references from (`packages.bib` by default) and the style of the
+bibliographic entries by altering the `.csl` file. Note that packages that were
+used in the code chunks of your problem set have their citation information
+automatically written to a second `.bib` file called `packages.bib`. That way
+you easily give appropriate credit to the work of the creators of the packages
+you use.
+
+That's it! You're now all set to focus on the content of your poster.
+Again, please take a moment to read through the template once it
+is generated as it serves as much as a tutorial than this vignette.
+
+### Printing your posters
+
+Printing your posters can be done by opening the generated HTML file in any
+modern browser and select the "print to PDF" functionality they incorporate.

@@ -35,7 +35,7 @@ iheid_palettes <- list("IHEID" = c("IHEIDRed" = "#E20020",
 
 #' An IHEID palette generator
 #'
-#' These are a few color palettes useful for members of the Graduate Institute.
+#' These are a few color palettes useful for members of the  Geneva Graduate Institute.
 #' This function calls one of three official palettes in
 #' \code{\link{iheid_palette}}: for the Institute, for the Centres, and for the
 #' SDGs.

@@ -61,7 +61,7 @@ corner and then on "R-Markdown".
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our presentation. To do so,
 click on the "From Template" option on the left and select the
-"Syllabus {iheiddown}" template. Now give your presentation a name and click
+"Syllabus {iheiddown}" template. Now give your file a name and click
 on "OK".
 
 ```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}

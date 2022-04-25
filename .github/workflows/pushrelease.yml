@@ -128,7 +128,7 @@ jobs:
         with:
           name: SyllabusExample
           path: Untitled/
-          
+
       - name: Save problem set sample as artifact
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
@@ -151,6 +151,18 @@ jobs:
       - name: Remove problem set project
         if: runner.os == 'macOS'
         run: Rscript -e 'unlink("UntitledPS", recursive = TRUE)'
+      
+      - name: Remove poster project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPoster", recursive = TRUE)'
+
+      - name: Remove poster betterland project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPosterBetterland", recursive = TRUE)'
+
+      - name: Remove poster betterport project
+        if: runner.os == 'macOS'
+        run: Rscript -e 'unlink("UntitledPosterBetterport", recursive = TRUE)'
 
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
@@ -272,7 +284,7 @@ jobs:
   render:
     name: Update README.md and push
     needs: [build, release]
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -310,7 +322,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
 
       - uses: r-lib/actions/setup-pandoc@v1
-      
+
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
 

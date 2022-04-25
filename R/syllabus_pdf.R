@@ -22,16 +22,24 @@ syllabus_pdf <- function(input, ...) {
   code <- readLines(input)
   code <- code[grepl("^code:", code)]
   code <- strsplit(code, " ")[[1]][2]
+  # Set base format
+  output_format <- rmarkdown::pdf_document(
+    latex_engine = "xelatex",
+    template = system.file("rmarkdown",
+                           "templates",
+                           "syllabus_pdf",
+                           "resources",
+                           "template.tex",
+                           package = "iheiddown"))
+  # Add lua filter
+  output_format$pandoc$lua_filters <- c(
+    rmarkdown::pandoc_path_arg(rmarkdown::pkg_file_lua(filters = "color-text.lua",
+                                                      package = "iheiddown")), 
+    output_format$pandoc$lua_filters)
+  # Render stuff
   rmarkdown::render(input,
                     output_file = paste0(code, "_Syllabus_", Sys.Date()),
                     ...,
-                    output_format =
-                      rmarkdown::pdf_document(
-                        latex_engine = "xelatex",
-                        template = system.file("rmarkdown",
-                                               "templates",
-                                               "syllabus_pdf",
-                                               "resources",
-                                               "template.tex",
-                                               package = "iheiddown")))
+                    output_format = output_format)
+                      
 }

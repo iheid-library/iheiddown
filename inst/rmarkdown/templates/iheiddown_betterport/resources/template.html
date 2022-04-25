@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+$for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
+$if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
+<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$if(highlightjs)$
+<link rel="stylesheet" href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css" $if(html5)$$else$type="text/css" $endif$/>
+<script src="$highlightjs$/highlight.js"></script>
+<script type="text/javascript">hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+$endif$
+
+$if(highlighting-css)$<style type="text/css">$highlighting-css$</style>$endif$
+
+$for(css)$
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=$if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=$if(font_family)$$font_family$$else$Rasa$endif$' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+
+<!--
+IHEID colors:
+  #ed2215 IHEID red, used as default main color
+  #800000 Dark red used for links
+-->
+
+<style>
+@page {
+size: $if(poster_width)$$poster_width$$else$36in$endif$ $if(poster_height)$$poster_height$$else$48in$endif$;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: $if(poster_height)$$poster_height$$else$48in$endif$;
+text-align: justify;
+font-size: $if(body_textsize)$$body_textsize$$else$45px$endif$;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid $if(secondary_colour)$$secondary_colour$$else$#800000$endif$ 1mm;
+border-radius: 0.5em;
+padding: 4mm;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+div.sourceCode {
+background-color: transparent;
+width: $if(codechunk_width)$$codechunk_width$$else$85%$endif$;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: $if(secondary_colour)$$secondary_colour$24$else$#80000024$endif$;
+color: $if(secondary_colour)$$secondary_colour$$else$#800000$endif$;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: $if(secondary_colour)$$secondary_colour$$else$#800000$endif$20;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: $if(reference_textsize)$$reference_textsize$$else$20px$endif$;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_topsize)$ (1 - $main_topsize$ - $main_bottomsize$ - 0.01) $else$ 0.6325 $endif$);
+-webkit-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Chrome, Safari, Opera */
+-moz-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Firefox */
+column-count: $if(column_numbers)$$column_numbers$$else$3$endif$;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
+font-family: $if(font_family)$$font_family$$else$Rasa$endif$;
+margin-top: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_topsize)$ $main_topsize$ $else$ 0.25 $endif$);
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: $if(secondary_colour)$$secondary_colour$$else$#800000$endif$;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: $if(secondary_colour)$$secondary_colour$$else$#800000$endif$;
+}
+#title {
+font-size: $if(title_textsize)$$title_textsize$$else$125pt$endif$;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color:$if(author_textcol)$$author_textcol$$else$$if(primary_colour)$$primary_colour$$else$#ed2215$endif$$endif$;
+margin: 0;
+line-height: 85%;
+font-size: $if(author_textsize)$$author_textsize$$else$1.17em$endif$;
+}
+#affiliation {
+padding-top: 0.1em;
+color: $affiliation_textcol$;
+font-style: italic;
+font-size: $if(affiliation_textsize)$$affiliation_textsize$$else$25px$endif$;
+margin: 0;
+}
+sup {
+color: $if(accent_colour)$$accent_colour$$else$#cc0000$endif$;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: $if(secondary_colour)$$secondary_colour$$else$#800000$endif$;
+margin: 0;
+line-height: 85%;
+font-size: $if(authorextra_textsize)$$authorextra_textsize$$else$35px$endif$;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 1%,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 20%,
+      $if(primary_colour)$$primary_colour$$else$#ed2215$endif$75 33%,
+      $if(primary_colour)$$primary_colour$$else$#ed2215$endif$ 50%,
+      $if(primary_colour)$$primary_colour$$else$#ed2215$endif$75 66%,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 80%,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 99%
+    )
+    left
+    bottom
+    $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: $if(body_textcol)$$body_textcol$$else$#000000$endif$;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_topsize)$$main_topsize$$else$0.25$endif$);
+position: absolute;
+background-color: $if(primary_colour)$$primary_colour$$else$#ed2215$endif$;
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$$if(main_textalpha)$$main_textalpha$$else$90$endif$;
+font-family: $if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$;
+background-image: linear-gradient($if(primary_colour)$$primary_colour$$else$#ed2215$endif$ 50%,$if(secondary_colour)$$secondary_colour$$else$#800000$endif$);
+}
+.main strong {
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$;
+}
+.main strong > sup {
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$;
+}
+.main sup {
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$$if(main_textalpha)$$main_textalpha$$else$90$endif$;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc($if(poster_width)$$poster_width$$else$36in$endif$ * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: $if(main_textsize)$$main_textsize$$else$150px$endif$;
+font-family: $if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$;
+text-align: $if(main_textalign)$$main_textalign$$else$center$endif$;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 25px;
+}
+.twitter, i {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 35px;
+}
+.envelope {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 5px;
+text-decoration: none;
+}
+.globe {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 5px;
+text-decoration: none;
+}
+.globetext {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 35px;
+text-decoration: none;
+}
+.poster_wrap {
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: $if(poster_height)$$poster_height$$else$48in$endif$;
+padding: 0cm;
+}
+.main_bottom {
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_bottomsize)$$main_bottomsize$$else$0.1$endif$);
+margin-top: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_bottomsize)$(1 - $main_bottomsize$)$else$0.9$endif$);
+position: absolute;
+background-color: $if(primary_colour)$$primary_colour$$else$#ed2215$endif$;
+background-image: linear-gradient($if(secondary_colour)$$secondary_colour$$else$#800000$endif$ 10%, $if(primary_colour)$$primary_colour$$else$#ed2215$endif$);
+}
+.section {
+  padding-left: $if(column_padding)$$column_padding$$else$10mm$endif$;
+  padding-right: $if(column_padding)$$column_padding$$else$10mm$endif$;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #800000;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+$if(custom_css)$
+<link rel="stylesheet" href=$custom_css$>
+$else$$endif$
+</head>
+<body>
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+$if(title)$<h1 id="title">$title$</h1><br>$else$$endif$
+$if(author)$<h3 id="author" class="author">
+
+$for(author)$
+$if(author.main)$
+$author.name$<sup> $author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup><br>
+$if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
+$else$$endif$
+$if(author.email)$
+<a class='envelope'><i class="fas fa-envelope"></i></a> $author.email$ <br>
+$else$$endif$
+$if(author.website)$
+<a class='globe'><i class="fas fa-globe"></i></a> <a class='globetext' href="$author.website$">$author.website$</a> <br>
+$else$$endif$
+$else$$endif$
+$sep$ $endfor$
+</h3>
+
+<h5 id="author_extra", class="author_extra">
+$for(author)$
+$if(author.main)$
+$else$
+$author.name$<sup>$author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup>
+$endif$
+$sep$ $endfor$
+</h5>
+$else$$endif$
+
+$if(affiliation)$
+<p id="affiliation" class="affiliation">
+$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$<br> $endfor$
+</p>
+$else$$endif$
+</div>
+
+$body$
+
+</div>
+<div class="main">
+<p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=$if(logoleft_name)$$logoleft_name$$else$$endif$>
+<img id="main-img-center" src=$if(logocenter_name)$$logocenter_name$$else$$endif$>
+<img id="main-img-right" src=$if(logoright_name)$$logoright_name$$else$$endif$>
+</div>
+</div>
+
+$if(math)$
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "$if(mathjax)$$mathjax$$endif$";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+</body>
+</html>

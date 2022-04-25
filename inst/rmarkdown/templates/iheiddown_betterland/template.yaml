@@ -1,0 +1,4 @@
+name: Betterland Poster
+description: >
+ Template for creating R Markdown based PDF posters via HTML, CSS and the Better Poster Style with an IHEID twist.
+create_dir: true

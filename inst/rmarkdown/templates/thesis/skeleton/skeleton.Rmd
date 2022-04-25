@@ -5,7 +5,7 @@
 doctitle: |
   `iheiddown`: \
   A Thesis Template \
-  For the Graduate Institute Geneva \
+  For the Geneva Graduate Institute \
   in R Markdown
 firstnames: Author
 lastnames: Name
@@ -79,7 +79,7 @@ knitr::write_bib(c(.packages(), "bookdown"), "bib/packages.bib")
 
 
 Welcome to the *RMarkdown* template for writing masters theses or PhD dissertations 
-at the Graduate Institute of International and Development Studies in Geneva. 
+at the Geneva Graduate Institute. 
 This sample content is based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and the R `bookdown` package.
 
 But hopefully it will provide a nicer interface for those that have never used \TeX\ or \LaTeX\ before.
@@ -115,4 +115,4 @@ Therefore, while this template should be of particular interest to those plannin
 the user-friendly nature of writing _Markdown_ 
 coupled with the extraordinary flexibility of \LaTeX\
 (and the power of **R**)
-should make *useful for everyone writing theses or dissertations at the Graduate Institute*.
+should make *useful for everyone writing theses or dissertations at the Geneva Graduate Institute*.

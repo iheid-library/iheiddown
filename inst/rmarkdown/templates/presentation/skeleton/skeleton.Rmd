@@ -2,7 +2,7 @@
 title: "Title"
 subtitle: "Subtitle"
 author: "<large>Author Name</large>"
-# institute: "<small>Graduate Institute Geneva</small>" # uncomment to include
+# institute: "<small>Geneva Graduate Institute</small>" # uncomment to include
 # date: "`r format(Sys.Date(), '%A, %e %B, %Y')`" # uncomment to include
 output:
   xaringan::moon_reader:
@@ -291,6 +291,15 @@ DT::datatable(head(mtcars, 10),
 
 See the [DT package documentation](https://rstudio.github.io/DT/) for the
 additional options.
+
+---
+# Adding tweets
+
+Embed tweets in your presentation!
+
+.center2[
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">You&#39;re doing it right if you get frustrated: if you&#39;re not frustrated, you&#39;re (probably) not stretching yourself mentally</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/565516733516349441?ref_src=twsrc%5Etfw">11. Februar 2015</a></blockquote>
+]
 
 ---
 class: animate__animated, animate__slideInRight
