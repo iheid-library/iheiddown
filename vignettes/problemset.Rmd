@@ -60,7 +60,7 @@ corner and then on "R-Markdown".
 After you have done this, a little pop-up helper will appear. The first thing we
 will do is to select the `{iheiddown}` template for our presentation. To do so,
 click on the "From Template" option on the left and select the
-"Problem Set {iheiddown}" template. Now give your presentation a name and click
+"Problem Set {iheiddown}" template. Now give your file a name and click
 on "OK".
 
 ```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
@@ -69,14 +69,14 @@ on "OK".
 
 Congrats! You just created your first problem set! We can actually already
 render our problem set. This is done by simply clicking the "knit button"
-while viewing the `MySyllabus.Rmd` pane. Et voilà! You have now successfully
-generated your first syllabus with R.
+while viewing the `MyProblemSet.Rmd` pane. Et voilà! You have now successfully
+generated your first problem set with R.
 
 Take a moment to read through the generated problem set to get acquainted
 with the `{R-markdown}` syntax and to get a feel of the possibilities of the
 `{iheiddown}` theme.
 
-## Edit your syllabus
+## Edit your problem set
 
 This section will focus on giving you an overview of the workflow of writing
 your problem sets in R with`{iheiddown}`.
