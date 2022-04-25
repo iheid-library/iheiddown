@@ -128,7 +128,7 @@ jobs:
         with:
           name: SyllabusExample
           path: Untitled/
-          
+
       - name: Save problem set sample as artifact
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
