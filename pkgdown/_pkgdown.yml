@@ -47,6 +47,8 @@ navbar:
         href: articles/syllabus.html
       - text: Problem Set
         href: articles/problemset.html
+      - text: Poster
+        href: articles/poster.html
     examples:
       text: Examples
       menu:
