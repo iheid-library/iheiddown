@@ -107,6 +107,8 @@ Inheriting a ring can lead to a great adventure!
 
 [@iheiddown2020]{color="gray"}
 
+\newpage
+
 ##  `r advdate(startdate, 2)`: Escaping the Shire
 
 *Required readings*
