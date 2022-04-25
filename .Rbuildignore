@@ -15,4 +15,3 @@
 ^CRAN-RELEASE$
 ^\.github$
 ^\test$
-^\.lintr$
