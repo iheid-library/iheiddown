@@ -5,14 +5,14 @@ Description: A set of tools to support writing various documents
     conventions and regulations.
     The most common use will be for writing and compiling theses or thesis
     chapters, as drafts or for examination with all the correct preamble
-    content. However, the package also offers the creation of html presentation
+    content. However, the package also offers the creation of HTML presentation
     slides via 'xaringan', the capacity to write problem sets and, for course
     instructors, the ability to create syllabi.
     The package includes additional functions for institutional color palettes
     and an institutional 'ggplot' theme, as well as a function for word counts
     and a bibliographical analysis toolkit.
-Date: 2022-04-26
-Version: 0.9.0
+Date: 2022-04-27
+Version: 0.9.1
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
@@ -44,7 +44,6 @@ Imports:
     tibble,
     tidytext,
     bib2df,
-    purrr,
     stringr,
     fs,
     usethis,
