@@ -1,8 +1,10 @@
 ---
 title: "Posters"
+author: "Bernhard Bieri"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{poster}
+  %\VignetteIndexEntry{Posters}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -34,7 +36,7 @@ the following software:
 
 1. Install [R](https://cran.r-project.org) and [R-Studio](https://www.rstudio.com/)
 2. Install a LATEX distribution:
-    - [For MacOS](http://www.tug.org/mactex/)
+    - [For MacOS](https://www.tug.org/mactex/)
     - [For Windows](https://miktex.org/)
     - [For Linux](https://www.tug.org/texlive/)
 3. Install `{iheiddown}` by typing the following command
@@ -95,11 +97,7 @@ package. They include:
   - Inspired by Mike Morrison's template allowing you to highlight the central
   message of your poster in a portrait format.
 
-Here is the thread that started the `#Betterposter` style:
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s fix academic posters! Prepping a poster for <a href="https://twitter.com/hashtag/SIOP19?src=hash&amp;ref_src=twsrc%5Etfw">#SIOP19</a> and sick of the old &quot;wall-of-text&quot; poster design? Watch this cartoon to see a new, faster approach to designing research posters. Includes templates. <a href="https://twitter.com/hashtag/betterposter?src=hash&amp;ref_src=twsrc%5Etfw">#betterposter</a><a href="https://t.co/wyXhiP5CKl">https://t.co/wyXhiP5CKl</a> <a href="https://t.co/UBYB2GzIv9">pic.twitter.com/UBYB2GzIv9</a></p>&mdash; Mike Morrison (@mikemorrison) <a href="https://twitter.com/mikemorrison/status/1110191245035479041?ref_src=twsrc%5Etfw">March 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-Choose the one that fits your needs and read on to discover how to edit it!
+Here is the thread that started the [`#betterposter`](https://twitter.com/mikemorrison/status/1110191245035479041?s=20&t=s3laifia16m89VYH_EMEqA) style. Choose the one that fits your needs and read on to discover how to edit it!
 
 ### Set YAML options
 
