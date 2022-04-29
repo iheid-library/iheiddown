@@ -1,18 +1,17 @@
 Package: iheiddown
 Title: For Writing Geneva Graduate Institute Documents
-Description: A set of tools to support writing various documents
-    according to the Geneva Graduate Institute 
-    conventions and regulations.
-    The most common use will be for writing and compiling theses or thesis
-    chapters, as drafts or for examination with all the correct preamble
-    content. However, the package also offers the creation of html presentation
-    slides via 'xaringan', the capacity to write problem sets and, for course
-    instructors, the ability to create syllabi.
-    The package includes additional functions for institutional color palettes
-    and an institutional 'ggplot' theme, as well as a function for word counts
+Description: A set of tools for writing documents
+    according to Geneva Graduate Institute conventions and regulations.
+    The most common use is for writing and compiling theses or thesis
+    chapters, as drafts or for examination with correct preamble formatting. 
+    However, the package also offers users to create HTML presentation
+    slides with 'xaringan', complete problem sets, format posters, and, 
+    for course instructors, prepare a syllabus.
+    The package includes additional functions for institutional color palettes,
+    an institutional 'ggplot' theme, a function for counting manuscript words,
     and a bibliographical analysis toolkit.
-Date: 2022-04-26
-Version: 0.9.0
+Date: 2022-04-29
+Version: 0.9.1
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
@@ -44,7 +43,6 @@ Imports:
     tibble,
     tidytext,
     bib2df,
-    purrr,
     stringr,
     fs,
     usethis,

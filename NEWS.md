@@ -1,3 +1,11 @@
+# iheiddown 0.9.1
+
+## Package updates:
+
+- Fixed invalid URLs mentioned in the CRAN comments
+- Fixed case-sensitive path extension for Linux checks in poster vignette
+- Switched to a newer ["release action"](https://github.com/ncipollo/release-action) since the old one has recently been archived and is no longer maintained.
+
 # iheiddown 0.9.0
 
 ## Package updates:
