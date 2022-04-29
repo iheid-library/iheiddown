@@ -8,3 +8,7 @@
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
+
+- Fixed issues linked to incoming warnings
+  - Changed package description to avoid words not in the dictionary
+  - Updated a number of URLs to their new locations
