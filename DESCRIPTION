@@ -11,7 +11,7 @@ Description: A set of tools for writing documents
     an institutional 'ggplot' theme, a function for counting manuscript words,
     and a bibliographical analysis toolkit.
 Date: 2022-05-03
-Version: 0.9.5
+Version: 0.9.1
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
