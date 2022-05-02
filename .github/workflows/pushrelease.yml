@@ -346,10 +346,6 @@ jobs:
           install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
 
-       # install packages needed
-      - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "remotes"))'
-
       #Install other non-CRAN packages for sample output generation
       - name: Install packages to render sample output
         run: |
@@ -358,9 +354,6 @@ jobs:
           remotes::install_github("gadenbuie/xaringanExtra")
           remotes::install_github("mitchelloharawild/icons")
           remotes::install_github("ropensci/RefManageR")
-          utils::install.packages("modelsummary")
-          utils::install.packages("kableExtra")
-          utils::install.packages("gt")
         shell: Rscript {0}
 
       - name: Install package
