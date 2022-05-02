@@ -57,5 +57,10 @@ Suggests:
     kableExtra,
     knitr,
     DT,
-    leaflet
+    leaflet,
+    rmarkdown,
+    remotes,
+    modelsummary,
+    kableExtra,
+    gt
 VignetteBuilder: knitr
