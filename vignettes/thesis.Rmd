@@ -14,8 +14,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.align = 'center',
-  fig.width=6,
-  fig.height=4
+  fig.width = 6,
+  fig.height = 4
 )
 ```
 
@@ -60,7 +60,7 @@ a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
 ```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
-  knitr::include_graphics("images/thesis/0-Open_Project.PNG", dpi = 144)
+  knitr::include_graphics("images/thesis/0-OpenProject.png", dpi = 144)
 ```
 
 After you have done this, a little pop-up helper will appear. The first thing we
@@ -75,7 +75,7 @@ our `{bookdown}` based rendering function. Don't worry though, you can rename
 the folder to your project name after creating it.
 
 ```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
-  knitr::include_graphics("images/thesis/1-Create_Thesis.PNG", dpi = 144)
+  knitr::include_graphics("images/thesis/1-CreateThesis.png", dpi = 144)
 ```
 
 Congrats! You just created your first thesis project!
