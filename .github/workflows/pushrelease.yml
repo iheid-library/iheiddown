@@ -181,7 +181,7 @@ jobs:
 
       - name: Bump version and push tag
         id: newtag
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: anothrNick/github-tag-action@1.39.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
@@ -193,12 +193,12 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: ncipollo/release-action@v1
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.newtag.outputs.tag }}
-          name: Release ${{ steps.newtag.outputs.tag }}
+          release_name: Release ${{ steps.newtag.outputs.tag }}
           draft: false
           prerelease: false
 
@@ -290,7 +290,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-r@v2
       - uses: r-lib/actions/setup-pandoc@v1
 
       # install packages needed
@@ -318,10 +318,8 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          persist-credentials: false # add for deployment to work correctly
 
-      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-r@v2
 
       - uses: r-lib/actions/setup-pandoc@v1
 
@@ -348,10 +346,6 @@ jobs:
           install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
 
-       # install packages needed
-      - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "remotes"))'
-
       #Install other non-CRAN packages for sample output generation
       - name: Install packages to render sample output
         run: |
@@ -360,9 +354,6 @@ jobs:
           remotes::install_github("gadenbuie/xaringanExtra")
           remotes::install_github("mitchelloharawild/icons")
           remotes::install_github("ropensci/RefManageR")
-          utils::install.packages("modelsummary")
-          utils::install.packages("kableExtra")
-          utils::install.packages("gt")
         shell: Rscript {0}
 
       - name: Install package
