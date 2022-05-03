@@ -1,15 +1,22 @@
+# iheiddown 0.9.2
+
+## Package updates:
+
+- Fixed case-sensitive path extension for Linux checks in various vignettes
+- Fixed various issues in the `pushrelease` workflow
+  - Release action was fixed by updating tag creation action
+  - Setup-R action was updated to v2
+  - Installing XQuartz dependency for macOS runner building the website since
+  the latest version of `{pdftools}` requires it
+- Packages used in GitHub Actions were moved to Suggests in DESCRIPTION
+
 # iheiddown 0.9.1
 
 ## Package updates:
 
 - Fixed invalid URLs mentioned in the CRAN comments
-- Fixed case-sensitive path extension for Linux checks in various vignettes
-- Fixed various issues in the `pushrelease` workflow
-  - Release action was fixed by updating tag creation action
-  - Setup-R action was updated to v2
-  - Installing Xquartz dependency for macOS runner building the website since
-  the latest version of `{pdftools}` requires it
-- Packages used in GitHub Actions were moved to suggests in Description
+- Fixed case-sensitive path extension for Linux checks in poster vignette
+- Switched to a newer ["release action"](https://github.com/ncipollo/release-action) since the old one has recently been archived and is no longer maintained.
 
 # iheiddown 0.9.0
 
