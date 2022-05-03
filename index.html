@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Write your thesis, outline your syllabus or create IHEID themed presentations.">
 <title>The R Package for IHEID related publications • iheiddown</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/paper/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="The R Package for IHEID related publications">
 <meta property="og:description" content="Write your thesis, outline your syllabus or create IHEID themed presentations.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -19,128 +19,100 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">iheiddown</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.6</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    
+    <a class="navbar-brand me-2" href="index.html">iheiddown</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.2</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="active nav-item">
+  <a class="nav-link" href="index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
-<li>
-  <a href="reference/index.html">Reference</a>
+<li class="nav-item">
+  <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="articles/presentations.html">Presentations</a>
-    </li>
-    <li>
-      <a href="articles/thesis.html">Thesis</a>
-    </li>
-    <li>
-      <a href="articles/syllabus.html">Syllabus</a>
-    </li>
-    <li>
-      <a href="articles/problemset.html">Problem Set</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Examples
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="sample_output/index.html">Presentation</a>
-    </li>
-    <li>
-      <a href="sample_output/IHEIDThesisExample.pdf">Thesis</a>
-    </li>
-    <li>
-      <a href="sample_output/IHEIDSyllabusExample.pdf">Syllabus</a>
-    </li>
-    <li>
-      <a href="sample_output/IHEIDProblemSetExample.pdf">Problem Set</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="news/index.html">News</a>
-</li>
-      </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/jhollway/iheiddown/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-</div>
-<!--/.nav-collapse -->
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="articles/presentations.html">Presentations</a>
+    <a class="dropdown-item" href="articles/thesis.html">Thesis</a>
+    <a class="dropdown-item" href="articles/syllabus.html">Syllabus</a>
+    <a class="dropdown-item" href="articles/problemset.html">Problem Set</a>
+    <a class="dropdown-item" href="articles/poster.html">Poster</a>
   </div>
-<!--/.container -->
+</li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-examples">Examples</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-examples">
+    <a class="dropdown-item" href="sample_output/index.html">Presentation</a>
+    <a class="dropdown-item" href="sample_output/IHEIDThesisExample.pdf">Thesis</a>
+    <a class="dropdown-item" href="sample_output/IHEIDSyllabusExample.pdf">Syllabus</a>
+    <a class="dropdown-item" href="sample_output/IHEIDProblemSetExample.pdf">Problem Set</a>
+    <a class="dropdown-item" href="sample_output/IHEID_poster.html">Poster</a>
+    <a class="dropdown-item" href="sample_output/IHEID_poster_better_land.html">Betterposter (Landscape)</a>
+    <a class="dropdown-item" href="sample_output/IHEID_poster_better_port.html">Betterposter (Portrait)</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">News</a>
+</li>
+      </ul>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jhollway/iheiddown/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
-<!--/.navbar -->
 
-      
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-<div id="iheiddown" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#iheiddown" class="anchor"></a>iheiddown</h1></div>
+    
+  </div>
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="iheiddown">iheiddown<a class="anchor" aria-label="anchor" href="#iheiddown"></a>
+</h1></div>
 <p><img src="reference/figures/iheiddown.png" align="right" width="220"></p>
 <!-- badges: start -->
-<p><a href="https://lifecycle.r-lib.org/articles/stages.html#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a> <img src="https://img.shields.io/cran/v/iheiddown" alt="CRAN/METACRAN"><img src="https://img.shields.io/github/v/release/jhollway/iheiddown" alt="GitHub release (latest by date)"><img src="https://img.shields.io/github/release-date/jhollway/iheiddown" alt="GitHub Release Date"><img src="https://img.shields.io/github/issues-raw/jhollway/iheiddown" alt="GitHub issues"><!-- [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown) --><a href="https://app.codecov.io/gh/jhollway/iheiddown?branch=main"><img src="https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main"><img src="https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main" alt="CodeFactor"></a> <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) --> <!-- badges: end --></p>
-<div id="table-of-contents" class="section level2">
-<h2 class="hasAnchor">
-<a href="#table-of-contents" class="anchor"></a>Table of Contents</h2>
-<ul>
-<li>
-<a href="#iheiddown">iheiddown</a>
-<ul>
+<div class="section level2">
+<h2 id="table-of-contents">Table of Contents<a class="anchor" aria-label="anchor" href="#table-of-contents"></a>
+</h2>
+<ul><li>
+<a href="#iheiddown">iheiddown</a><ul>
 <li><a href="#write-your-dissertation">Write your dissertation</a></li>
 <li><a href="#but-not-only-!">But not only !</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#quick-start-guide">Quick start guide</a></li>
-<li><a href="#knitting-individual-chapters">Knitting individual chapters</a></li>
 <li><a href="#feedback">Feedback</a></li>
 </ul>
-</li>
-</ul>
-<p><a href="https://github.com/jhollway/iheiddown">iheiddown</a> is a package that provides templates for writing documents in styles consistent with the Graduate Institute of International and Development Studies in Geneva/ Institut de Hautes Etudes Internationales et du Developpement (IHEID) in (R) markdown.</p>
-<p>The main use case for <a href="https://github.com/jhollway/iheiddown">iheiddown</a> is for writing a <strong>Masters or PhD Dissertation at IHEID</strong>, as it offers a user-friendly, simple, and straightforward way to write a well-formatted and consistent dissertation that weaves together argument, evidence, and interpretation. However, it also integrates templates for creating IHEID themed presentations powered by <a href="https://github.com/yihui/xaringan"><code>{xaringan}</code></a> as well as a template for IHEID course syllabi.</p>
+</li></ul>
+<p><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> is a package that provides templates for writing documents in styles consistent with the Geneva Graduate Institute/ Institut de Hautes Etudes Internationales et du Developpement (IHEID) in (R) markdown.</p>
+<p>The main use case for <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> is for writing a <strong>Masters or PhD Dissertation at IHEID</strong>, as it offers a user-friendly, simple, and straightforward way to write a well-formatted and consistent dissertation that weaves together argument, evidence, and interpretation. However, it also integrates templates for creating IHEID themed presentations powered by <a href="https://github.com/yihui/xaringan" class="external-link"><code>{xaringan}</code></a> as well as a template for IHEID course syllabi.</p>
 </div>
-<div id="write-your-dissertation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#write-your-dissertation" class="anchor"></a>Write your dissertation</h2>
-<p>The package is built upon the <a href="https://github.com/jhollway/iheidmytex">IHEID LaTeX dissertation template</a>, which offers versus common word processors:</p>
+<div class="section level2">
+<h2 id="write-your-dissertation">Write your dissertation<a class="anchor" aria-label="anchor" href="#write-your-dissertation"></a>
+</h2>
+<p>The package is built upon the <a href="https://github.com/jhollway/iheidmytex" class="external-link">IHEID LaTeX dissertation template</a>, which offers versus common word processors:</p>
 <ul>
 <li>less prone to corruption or crashing</li>
 <li>more internal consistency</li>
@@ -154,13 +126,13 @@
 <li>and much more!</li>
 </ul>
 <p>Though you may have never had problems using Word in the past, the size and structure of most theses tax Word’s capabilities.</p>
-<p>However, <a href="https://github.com/jhollway/iheiddown">iheiddown</a> helps you avoid the need to (learn how to) write in LaTeX. LaTeX can be daunting for first time users, and many users often feel it would only pay off if they were writing very complex dissertations. <a href="https://github.com/jhollway/iheiddown">iheiddown</a> allows students to write their dissertations in <em>RMarkdown</em>. <a href="https://www.markdownguide.org"><em>Markdown</em></a> is a simple and easy-to-use way to ‘markup’ parts of plain text as headings, <strong>bold</strong> or <em>italics</em> (and much more) in ways that remain very readable and thus editable as you write. <a href="https://github.com/jhollway/iheiddown">iheiddown</a>, R, and LaTeX do the work to turn this into a beautiful dissertation. You write in minimally marked-up plain text and you get a correctly-formatted dissertation out at the end.</p>
-<p>But wait, there’s more! Because <a href="https://github.com/jhollway/iheiddown">iheiddown</a> is an <strong>R</strong> package, it especially shines for those who are analysing data. <a href="https://www.r-project.org">R</a> is a <em>free</em> statistical programme and language that has a <em>huge</em> range of packages available for most current methods of analysis and visualisation. <a href="https://www.rstudio.com">RStudio</a> is a typical frontend that makes working in <strong>R</strong> and especially with <a href="https://github.com/jhollway/iheiddown">iheiddown</a> easy. So though <a href="https://github.com/jhollway/iheiddown">iheiddown</a> is especially attractive to those writing dissertations with many tables and figures, the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.</p>
+<p>However, <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> helps you avoid the need to (learn how to) write in LaTeX. LaTeX can be daunting for first time users, and many users often feel it would only pay off if they were writing very complex dissertations. <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> allows students to write their dissertations in <em>RMarkdown</em>. <a href="https://www.markdownguide.org" class="external-link"><em>Markdown</em></a> is a simple and easy-to-use way to ‘markup’ parts of plain text as headings, <strong>bold</strong> or <em>italics</em> (and much more) in ways that remain very readable and thus editable as you write. <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>, R, and LaTeX do the work to turn this into a beautiful dissertation. You write in minimally marked-up plain text and you get a correctly-formatted dissertation out at the end.</p>
+<p>But wait, there’s more! Because <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> is an <strong>R</strong> package, it especially shines for those who are analysing data. <a href="https://www.r-project.org" class="external-link">R</a> is a <em>free</em> statistical programme and language that has a <em>huge</em> range of packages available for most current methods of analysis and visualisation. <a href="https://www.rstudio.com" class="external-link">RStudio</a> is a typical frontend that makes working in <strong>R</strong> and especially with <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> easy. So though <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> is especially attractive to those writing dissertations with many tables and figures, the user-friendly nature and pretty output should make it of great benefit to nearly anyone writing a thesis project.</p>
 <p>You can see an example of the kind of dissertation output on the package website.</p>
 </div>
-<div id="but-not-only-" class="section level2">
-<h2 class="hasAnchor">
-<a href="#but-not-only-" class="anchor"></a>But not only !</h2>
+<div class="section level2">
+<h2 id="but-not-only-">But not only !<a class="anchor" aria-label="anchor" href="#but-not-only-"></a>
+</h2>
 <p>Not quite done yet, there is even more! Take a look at the following table for all available templates:</p>
 <table class="table">
 <thead><tr class="header">
@@ -181,18 +153,23 @@
 </tr>
 <tr class="odd">
 <td>
-<a href="https://github.com/yihui/xaringan"><code>{xaringan}</code></a> presentations</td>
+<a href="https://github.com/yihui/xaringan" class="external-link"><code>{xaringan}</code></a> presentations</td>
 <td>HTML (can be printed to PDF)</td>
 <td><span class="emoji" data-emoji="thumbsup">👍</span></td>
 </tr>
 <tr class="even">
 <td>Problem set</td>
 <td>PDF</td>
+<td><span class="emoji" data-emoji="thumbsup">👍</span></td>
+</tr>
+<tr class="odd">
+<td>Posters</td>
+<td>HTML (+ print to PDF)</td>
 <td>
 <span class="emoji" data-emoji="star2">🌟</span> <span class="emoji" data-emoji="new">🆕</span> <span class="emoji" data-emoji="star2">🌟</span>
 </td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><em>Your idea</em></td>
 <td><em>Open a PR!</em></td>
 <td><span class="emoji" data-emoji="sparkles">✨</span></td>
@@ -200,43 +177,43 @@
 </tbody>
 </table>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div id="prerequisites" class="section level3">
-<h3 class="hasAnchor">
-<a href="#prerequisites" class="anchor"></a>Prerequisites</h3>
-<p>You will first need to install on your system<sup><a href="#myfootnote2">2</a></sup>:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<div class="section level3">
+<h3 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h3>
+<p>You will first need to install the following software on your system<sup><a href="#myfootnote2">2</a></sup>:</p>
 <ul>
-<li><a href="https://cran.r-project.org">R</a></li>
+<li><a href="https://cran.r-project.org" class="external-link">R</a></li>
 <li>
-<a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio version 1.2 or higher</a>, and</li>
+<a href="https://www.rstudio.com/products/rstudio/download/#download" class="external-link">RStudio version 1.2 or higher</a>, and</li>
 <li>
-<a href="https://www.latex-project.org/get/">LaTeX</a> or <a href="https://miktex.org/howto/install-miktex/">MiKTeX</a><sup><a href="#myfootnote1">1</a></sup>
+<a href="https://www.latex-project.org/get/" class="external-link">LaTeX</a> or <a href="https://miktex.org/howto/install-miktex/" class="external-link">MiKTeX</a><sup><a href="#myfootnote1">1</a></sup>
 </li>
 </ul>
 </div>
-<div id="stable-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#stable-version" class="anchor"></a>Stable version</h3>
-<p>The easiest way to install the latest stable version of <a href="https://github.com/jhollway/iheiddown">iheiddown</a> is via CRAN. Simply open the R console and enter:</p>
-<p><code>install.packages('iheiddown')</code></p>
-<p>You can then begin to use <a href="https://github.com/jhollway/iheiddown">iheiddown</a> by loading the package:</p>
-<p><code><a href="https://github.com/jhollway/iheiddown">library(iheiddown)</a></code></p>
+<div class="section level3">
+<h3 id="installing-the-stable-version">Installing the Stable Version<a class="anchor" aria-label="anchor" href="#installing-the-stable-version"></a>
+</h3>
+<p>The easiest way to install the latest stable version of <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> is via CRAN. Simply open the R console and enter the following to install and load <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'iheiddown'</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a></span><span class="op">)</span></code></pre></div>
 <p>That’s it! <code>iheiddown</code> is now installed and ready to go.</p>
 </div>
-<div id="development-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#development-version" class="anchor"></a>Development version</h3>
-<p>To get access to the latest features, you may want to install the latest development version of the package.</p>
-<p>An easy way of getting access to this version is to install the latest main version of <a href="https://github.com/jhollway/iheiddown">iheiddown</a> from Github. To do that, please install the <a href="https://remotes.r-lib.org">remotes</a> package from CRAN and then enter the following commands into the console:</p>
+<div class="section level3">
+<h3 id="istalling-the-development-version">Istalling the Development Version<a class="anchor" aria-label="anchor" href="#istalling-the-development-version"></a>
+</h3>
+<p>To get access to the latest features, you may want to install the development version of the package.</p>
+<p>An easy way of getting access to this version is to install the latest main version of <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> from Github. To do that, please install the <a href="https://remotes.r-lib.org" class="external-link">remotes</a> package from CRAN and then enter the following commands into the console:</p>
 <ul>
 <li>For latest stable version: <code>remotes::install_github("jhollway/iheiddown")</code>
 </li>
 <li>For latest development version: <code>remotes::install_github("jhollway/iheiddown@develop")</code>
 </li>
 </ul>
-<p>Alternatively, you can find the binaries for all major OSes – Windows, Mac, and Linux – by looking up the latest release of the package <a href="https://github.com/jhollway/iheiddown/releases/latest">here</a>. Download the appropriate binary for your operating system, and install using an adapted version of the following commands:</p>
+<p>Alternatively, you can find the binaries for all major OSes – Windows, Mac, and Linux – by looking up the latest release of the package <a href="https://github.com/jhollway/iheiddown/releases/latest" class="external-link">here</a>. Manually download the appropriate binary for your operating system, and install using an adapted version of the following commands:</p>
 <ul>
 <li>For Windows: <code>install.packages("~/Downloads/iheiddown_winOS.zip", repos = NULL)</code>
 </li>
@@ -247,12 +224,12 @@
 </ul>
 </div>
 </div>
-<div id="quick-start-guide" class="section level2">
-<h2 class="hasAnchor">
-<a href="#quick-start-guide" class="anchor"></a>Quick start guide</h2>
-<p><a href="https://github.com/jhollway/iheiddown">iheiddown</a>, among other things, sets up a thesis template that you can then modify for your dissertation. It’s very easy to get started!</p>
+<div class="section level2">
+<h2 id="quick-start-guide">Quick start guide<a class="anchor" aria-label="anchor" href="#quick-start-guide"></a>
+</h2>
+<p><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>, among other things, sets up a thesis template that you can then modify for your dissertation. It’s very easy to get started!</p>
 <p>Since the process is similar for theses, presentations, problem sets and syllabi let us take a look at how to set up a thesis project.</p>
-<ol>
+<ol style="list-style-type: decimal">
 <li>Open RStudio (if it is not already).</li>
 <li>Click the new document symbol at the very top left and choose <code>R Markdown...</code>.</li>
 <li>Then from the options on the left <code>From Template</code>.</li>
@@ -262,152 +239,83 @@
 <li>Select where the project should be saved on your hard drive.</li>
 </ol>
 <p>Congratulations! You have now set up your first thesis project. For a more detailed walkthrough of the different functionalities and how to get started with each one, please check out the different articles on the <a href="https://jhollway.github.io/iheiddown/">package website</a>.</p>
-<!--
-Commented this out since it is a duplicate of the information we have already
-on the website in the vignette. A quick start guide should suffice on the
-landing page. What do you think ?
-### Writing your thesis
-
-When you create the template for the first time, 
-the main document you have created (e.g. 'Untitled.Rmd') will automatically open in RStudio.
-In this document you can enter in key details about yourself and your dissertation
-between the \-\-\- and \-\-\-.
-Note that any text after hashtags, \#, are comments only and are not computed. 
-
-The \#metadata\# section should be fairly self-explanatory.
-The \#front matter\# section includes pointers to various front matter elements,
-such as dedications, acknowledgments (thank you), abbreviations, and your abstract.
-Note that it points to files in a folder created by the template 
-called "front-and-back-matter/".
-If you look in this folder, you will find placeholders for your own
-abstract and acknowledgments.
-You can simply edit these and the 
-edited versions will be used when the thesis is compiled.
-This section also includes various options for 
-toggling lists of figures, tables, etc, in the final version.
-
-The \#bibliography\# section points to where the bibtex file (.bib) with
-all your bibliographic information resides.
-You can also just call your .bib file "references.bib" and replace the
-template version in the bib/ folder.
-Lastly, the \#formatting\# section offers options for changing the format
-ready for printing.
-You can mostly ignore the \#output\# section, for now.
-
-Below the second \-\-\- is some example text that will become 
-the preface of the thesis when it is compiled.
-So where is the real content of the dissertation?
-
-Just as the abstract and acknowledgements, etc,
-were kept in a "front-matter/" folder,
-so too are the individual chapters of your dissertation
-kept in a "chapters/" folder.
-The placeholder text is designed to take you through the
-basic syntax and more complicated options available when
-using _RMarkdown_,
-but once you feel comfortable and have created your own
-examples, feel free to delete the placeholder text
-(or even the files) and create your own in its place.
-
-_Markdown_ is easy to read as well as write,
-so there's no need for endless compilation.
-But when it comes time to compile the document,
-just turn to your main .Rmd file ('Untitled.Rmd' in our case)
-and either click the `Knit` button at the top
-or use the keyboard shortcut `Shift-Cmd-K` (Mac) or `Shift-Ctrl-K` (Windows).
-
-Finally, please check out the package website's thesis article for a more
-detailed look at the contents of your thesis project and a step by step guide
-on how to generate one.
--->
-<!-- 
-## Knitting individual chapters
-
-To knit an individual chapter without compiling the entire thesis:
-1. open the **.Rmd** file of a chapter
-2. add a YAML header specifying the output format(s) (e.g. `bookdown::word_document2` for a word document you might want to upload to Google Docs for feedback from collaborators)
-3. Click the `knit` button (the output file is then saved in the root folder)
-
-As shown in the sample chapters' YAML headers, to output a single chapter to PDF, use:
-
-```yaml
-output:
-  bookdown::pdf_document2:
-    template: templates/iheiddiss.tex
-```
-This will format the chapter in the myiheidtex style but without including the front matter (table of contents, abstract, etc)
-
-
-### Output
-
-All your front matter and chapters of your thesis will be compiled
-and the complete product can be found under the project folder "versions/".
-A date is automatically appended to the filename to assist with tracking versions.
-
-The PDF version is fully functional. 
-The word, gitbook and epub versions might be developed at a later time.
--->
 </div>
-<div id="feedback" class="section level2">
-<h2 class="hasAnchor">
-<a href="#feedback" class="anchor"></a>Feedback</h2>
-<p>Please <a href="https://github.com/jhollway/iheiddown/issues">raise an issue</a> for this repo if you encounter any bugs or if you have any feature requests. You can also vote on existing issues that you would like to see addressed soon. If you would like to contribute to the repo, please fork this repository and open a pull request when your changes are ready, or <a href="https://jameshollway.com">get in touch with me</a> directly.</p>
-<p><sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you have the latest MiKTeX version installed on you computer. From the MiKTeX console, you should regularly check for updates as “MiKTeX user mode”, this will prevent issues when generating your pdf document from your Markdown template.<br><sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons, Yihui Xie’s <a href="https://yihui.org/tinytex/">TinyTeX</a> is causing trouble. Try <code><a href="https://rdrr.io/pkg/tinytex/man/install_tinytex.html">tinytex::uninstall_tinytex()</a></code> and install a local copy. Unfortunately, full LaTeX installations are <em>large</em>.</p>
+<div class="section level2">
+<h2 id="feedback">Feedback<a class="anchor" aria-label="anchor" href="#feedback"></a>
+</h2>
+<p>Please <a href="https://github.com/jhollway/iheiddown/issues" class="external-link">raise an issue</a> for this repo if you encounter any bugs or if you have any feature requests. You can also vote on existing issues that you would like to see addressed soon. If you would like to contribute to the repo, please fork this repository and open a pull request when your changes are ready, or <a href="https://jameshollway.com" class="external-link">get in touch with me</a> directly.</p>
+<p><sup><a name="myfootnote1">1</a></sup> For Windows users, make sure you have the latest MiKTeX version installed on you computer. From the MiKTeX console, you should regularly check for updates as “MiKTeX user mode”, this will prevent issues when generating your pdf document from your Markdown template.<br><sup><a name="myfootnote2">2</a></sup> Note that, for unclear reasons, Yihui Xie’s <a href="https://yihui.org/tinytex/" class="external-link">TinyTeX</a> is causing trouble. Try <code><a href="https://rdrr.io/pkg/tinytex/man/install_tinytex.html" class="external-link">tinytex::uninstall_tinytex()</a></code> and install a local copy. Unfortunately, full LaTeX installations are <em>large</em>.</p>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
-<h2>Links</h2>
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=iheiddown">https://​cloud.r-project.org/​package=iheiddown</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/jhollway/iheiddown/">https://​github.com/​jhollway/​iheiddown/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/jhollway/iheiddown/issues">https://​github.com/​jhollway/​iheiddown/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=iheiddown" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/jhollway/iheiddown/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/jhollway/iheiddown/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>
-<a href="https://jameshollway.com">James Hollway</a> <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-8361-9647" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing iheiddown</a></li>
 </ul>
 </div>
 
-  </div>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>
+<a href="https://jameshollway.com" class="external-link">James Hollway</a> <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-8361-9647" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
+<li><a href="https://app.codecov.io/gh/jhollway/iheiddown?branch=main" class="external-link"><img src="https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main" class="external-link"><img src="https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main" alt="CodeFactor"></a></li>
+</ul>
+</div>
+
+  </aside>
 </div>
 
 
-      <footer><div class="copyright">
-  <p>Developed by <a href="https://jameshollway.com">James Hollway</a>.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p></p>
+<p>Developed by <a href="https://jameshollway.com" class="external-link">James Hollway</a>.</p>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+<div class="pkgdown-footer-right">
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
 
+  
 
   </body>
 </html>

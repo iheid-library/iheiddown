@@ -29,9 +29,22 @@
 
 body { font-family: 'Garamond' }
 
+.huge{font-size: 140%}
+
+.big{font-size: 120%}
+
 .small{font-size: 80%}
 
 .tiny{font-size: 40%}
+/*Centers non text objects in the middle of the slide*/
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
 .red {
 color: red;
@@ -50,6 +63,10 @@ color: #3B7A57;
 }
 
 .footnote{font-size: 50%;}
+
+.smallcaps{
+  font-variant: small-caps;
+}
 
 .caption {
   text-align: center;
@@ -116,8 +133,20 @@ hidden behind other background information.*/
 .logo-iheid_white::before {
   	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IHEID_couleur_tx_blanc.png);
 }
-.logo-ee::before {
-  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_EE_rvb_2.png);
+.logo-econ::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_INTL_ECO_engl_2022_RGB_color.png);
+}
+.logo-law::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_INTL_LAW_engl_2022_RGB_color.png);
+}
+.logo-history::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IHP_engl_2022_RGB_color.png);
+}
+.logo-irps::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_IRPS_engl_2022_RGB_color.png);
+}
+.logo-mint::before {
+  	background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/logo_MINT_engl_2022_RGB_color.png);
 }
 
 /* Tables */
@@ -130,7 +159,7 @@ div.remark-slide-container h1 {
 	font-family: 'Open Sans', sans-serif;
 	color: #e10020;
 	letter-spacing: -1px;
-font-size: 48px;
+  font-size: 2.25em
 }
 
 a, a > code {
@@ -142,20 +171,24 @@ div.remark-slide-container h2 {
 	font-family: 'Open Sans', sans-serif;
 	color: #535353;
 	letter-spacing: -1px;
-	font-size: 36px
+	font-size: 1.5em
 }
 
 div.remark-slide-container h3 {
 	font-family: 'Open Sans', sans-serif;
 	color: #000;
 	letter-spacing: -1px;
-	font-size: 24px;
-	padding-top: 50px
+	font-size: 1.25em;
+	padding-top: 1.3em
+}
+
+div.remark-slide-container p {
+	font-size: 1.1em;
 }
 
 .title-slide {
-  background-image: url(https://wp.unil.ch/ssmtp4sd/files/2014/10/Education_IHEID_logo.png);
-  background-position: 95% 95%;
+  background-image: url(https://raw.githubusercontent.com/jhollway/iheiddown/develop/inst/logos/Logo_IHEID_couleur.png);
+  background-position: 95% 90%;
 	background-size: 30%;
   background-color: #FFFFFF;
 	text-align:left;

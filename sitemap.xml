@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jhollway.github.io/iheiddown/index.html</loc>
+    <loc>https://jhollway.github.io/iheiddown/404.html</loc>
   </url>
   <url>
-    <loc>https://jhollway.github.io/iheiddown/reference/thesis_pdf.html</loc>
+    <loc>https://jhollway.github.io/iheiddown/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/articles/poster.html</loc>
   </url>
   <url>
     <loc>https://jhollway.github.io/iheiddown/articles/presentations.html</loc>
@@ -17,5 +29,23 @@
   </url>
   <url>
     <loc>https://jhollway.github.io/iheiddown/articles/thesis.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/pull_request_template.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/thesis_pdf.html</loc>
   </url>
 </urlset>
