@@ -4,15 +4,6 @@
     <loc>https://jhollway.github.io/iheiddown/404.html</loc>
   </url>
   <url>
-    <loc>https://jhollway.github.io/iheiddown/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://jhollway.github.io/iheiddown/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://jhollway.github.io/iheiddown/LICENSE.html</loc>
-  </url>
-  <url>
     <loc>https://jhollway.github.io/iheiddown/articles/index.html</loc>
   </url>
   <url>
@@ -34,7 +25,16 @@
     <loc>https://jhollway.github.io/iheiddown/authors.html</loc>
   </url>
   <url>
+    <loc>https://jhollway.github.io/iheiddown/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
     <loc>https://jhollway.github.io/iheiddown/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/LICENSE.html</loc>
   </url>
   <url>
     <loc>https://jhollway.github.io/iheiddown/news/index.html</loc>
@@ -43,7 +43,43 @@
     <loc>https://jhollway.github.io/iheiddown/pull_request_template.html</loc>
   </url>
   <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/advdate.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/bibstats.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/bookdown_profile.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/chapter_pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/countwords.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/iheid_palette.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/iheid_palettes.html</loc>
+  </url>
+  <url>
     <loc>https://jhollway.github.io/iheiddown/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/posterdown_html.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/preview.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/problemset_pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/syllabus_pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://jhollway.github.io/iheiddown/reference/theme_iheid.html</loc>
   </url>
   <url>
     <loc>https://jhollway.github.io/iheiddown/reference/thesis_pdf.html</loc>

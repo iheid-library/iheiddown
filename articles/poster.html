@@ -91,12 +91,14 @@
 
 
 
-<script src="poster_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+
+<div class="row">
   <main id="main"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Posters</h1>
-                        <h4 data-toc-skip class="author">Bernhard Bieri</h4>
+                        <h4 data-toc-skip class="author">Bernhard
+Bieri</h4>
             
-            <h4 data-toc-skip class="date">2022-05-03</h4>
+            <h4 data-toc-skip class="date">2022-05-08</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jhollway/iheiddown/blob/HEAD/vignettes/poster.Rmd" class="external-link"><code>vignettes/poster.Rmd</code></a></small>
       <div class="d-none name"><code>poster.Rmd</code></div>
@@ -104,11 +106,16 @@
 
     
     
-<p>While <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s main aim is to assist students in writing their thesis, it can also be used for showcasing projects or papers at conferences with its poster template. This short article will walk you through the process of using the IHEID-themed poster templates.</p>
+<p>While <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s main aim is to assist students in
+writing their thesis, it can also be used for showcasing projects or
+papers at conferences with its poster template. This short article will
+walk you through the process of using the IHEID-themed poster
+templates.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The installation process is the same than for the thesis template. You’ll need the following software:</p>
+<p>The installation process is the same than for the thesis template.
+You’ll need the following software:</p>
 <ol style="list-style-type: decimal">
 <li>Install <a href="https://cran.r-project.org" class="external-link">R</a> and <a href="https://www.rstudio.com/" class="external-link">R-Studio</a>
 </li>
@@ -119,36 +126,56 @@
 <li><a href="https://www.tug.org/texlive/" class="external-link">For Linux</a></li>
 </ul>
 </li>
-<li>Install <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> by typing the following command <code>install.packages("iheiddown")</code> in the R-Studio console.</li>
+<li>Install <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> by typing the following command
+<code>install.packages("iheiddown")</code> in the R-Studio console.</li>
 </ol>
-<p>Note: typing <code>remotes::install_github("jhollway/iheiddown")</code> will provide you with the latest version from GitHub.</p>
+<p>Note: typing
+<code>remotes::install_github("jhollway/iheiddown")</code> will provide
+you with the latest version from GitHub.</p>
 </div>
 <div class="section level2">
 <h2 id="create-your-first-poster">Create your first poster<a class="anchor" aria-label="anchor" href="#create-your-first-poster"></a>
 </h2>
-<p>Creating your first poster is easy! Before we begin, we have to create a new R project by clicking on the file tab in the top of the RStudio window and following the instructions of the prompt that appears. Now that we have created an R project for our presentation, we can open a new R-Markdown file. To do this click on the “plus file” logo in the top left corner and then on “R-Markdown”.</p>
+<p>Creating your first poster is easy! Before we begin, we have to
+create a new R project by clicking on the file tab in the top of the
+RStudio window and following the instructions of the prompt that
+appears. Now that we have created an R project for our presentation, we
+can open a new R-Markdown file. To do this click on the “plus file” logo
+in the top left corner and then on “R-Markdown”.</p>
 <div class="figure" style="text-align: center">
 <img src="images/poster/0-Open_Project.png" alt="Step 1: Open a project" width="80%"><p class="caption">
 Step 1: Open a project
 </p>
 </div>
-<p>After you have done this, a little pop-up helper will appear. The first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> template for our presentation. To do so, click on the “From Template” option on the left and select one of the “Poster {iheiddown}” templates. Now give your poster a name and click on “OK”.</p>
+<p>After you have done this, a little pop-up helper will appear. The
+first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>
+template for our presentation. To do so, click on the “From Template”
+option on the left and select one of the “Poster {iheiddown}” templates.
+Now give your poster a name and click on “OK”.</p>
 <div class="figure" style="text-align: center">
-<img src="images/poster/1-Select_Template.PNG" alt="Step 2: Select a template" width="80%"><p class="caption">
+<img src="images/poster/1-Select_Template.png" alt="Step 2: Select a template" width="80%"><p class="caption">
 Step 2: Select a template
 </p>
 </div>
-<p>Congrats! You just created your first poster! Let’s render it to see what it looks like out of the box. This is done by simply clicking the “knit button” while viewing the <code>Poster.Rmd</code> pane. Et voilà! You have now successfully generated your first poster with R.</p>
-<p>Take a moment to read through the generated poster to get acquainted with the <code>{R-markdown}</code> syntax and to get a feel of the possibilities of the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme.</p>
+<p>Congrats! You just created your first poster! Let’s render it to see
+what it looks like out of the box. This is done by simply clicking the
+“knit button” while viewing the <code>Poster.Rmd</code> pane. Et voilà!
+You have now successfully generated your first poster with R.</p>
+<p>Take a moment to read through the generated poster to get acquainted
+with the <code>{R-markdown}</code> syntax and to get a feel of the
+possibilities of the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme.</p>
 </div>
 <div class="section level2">
 <h2 id="edit-your-poster">Edit your poster<a class="anchor" aria-label="anchor" href="#edit-your-poster"></a>
 </h2>
-<p>This section will focus on giving you an overview of the workflow of designing your conference posters in R with<a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>.</p>
+<p>This section will focus on giving you an overview of the workflow of
+designing your conference posters in R with<a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>.</p>
 <div class="section level3">
 <h3 id="three-flavors-of-posters-to-choose-from">Three flavors of posters to choose from:<a class="anchor" aria-label="anchor" href="#three-flavors-of-posters-to-choose-from"></a>
 </h3>
-<p>The three flavors <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> incorporates are “re-themed” versions of the excellent <a href="https://github.com/brentthorne/posterdown" class="external-link"><code>{posterdown}</code></a> package. They include:</p>
+<p>The three flavors <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> incorporates are
+“re-themed” versions of the excellent <a href="https://github.com/brentthorne/posterdown" class="external-link"><code>{posterdown}</code></a>
+package. They include:</p>
 <ul>
 <li>A classic poster (landscape)
 <ul>
@@ -157,28 +184,45 @@ Step 2: Select a template
 </li>
 <li>A “betterposter” (landscape)
 <ul>
-<li>Inspired by Mike Morrison’s template allowing you to highlight the central message of your poster in a landscape format.</li>
+<li>Inspired by Mike Morrison’s template allowing you to highlight the
+central message of your poster in a landscape format.</li>
 </ul>
 </li>
 <li>A “betterposter” (portrait)
 <ul>
-<li>Inspired by Mike Morrison’s template allowing you to highlight the central message of your poster in a portrait format.</li>
+<li>Inspired by Mike Morrison’s template allowing you to highlight the
+central message of your poster in a portrait format.</li>
 </ul>
 </li>
 </ul>
-<p>Here is the thread that started the <a href="https://twitter.com/mikemorrison/status/1110191245035479041?s=20&amp;t=s3laifia16m89VYH_EMEqA" class="external-link"><code>#betterposter</code></a> style. Choose the one that fits your needs and read on to discover how to edit it!</p>
+<p>Here is the thread that started the <a href="https://twitter.com/mikemorrison/status/1110191245035479041?s=20&amp;t=s3laifia16m89VYH_EMEqA" class="external-link"><code>#betterposter</code></a>
+style. Choose the one that fits your needs and read on to discover how
+to edit it!</p>
 </div>
 <div class="section level3">
 <h3 id="set-yaml-options">Set YAML options<a class="anchor" aria-label="anchor" href="#set-yaml-options"></a>
 </h3>
-<p>The general options are set in the YAML header. You can define the metadata of the document such as the name of the authors, the institution they are a part of , and the title of your poster there.</p>
-<p>You can also set bibliographic options such as the <code>.bib</code> file you want to draw your references from (<code>packages.bib</code> by default) and the style of the bibliographic entries by altering the <code>.csl</code> file. Note that packages that were used in the code chunks of your problem set have their citation information automatically written to a second <code>.bib</code> file called <code>packages.bib</code>. That way you easily give appropriate credit to the work of the creators of the packages you use.</p>
-<p>That’s it! You’re now all set to focus on the content of your poster. Again, please take a moment to read through the template once it is generated as it serves as much as a tutorial than this vignette.</p>
+<p>The general options are set in the YAML header. You can define the
+metadata of the document such as the name of the authors, the
+institution they are a part of , and the title of your poster there.</p>
+<p>You can also set bibliographic options such as the <code>.bib</code>
+file you want to draw your references from (<code>packages.bib</code> by
+default) and the style of the bibliographic entries by altering the
+<code>.csl</code> file. Note that packages that were used in the code
+chunks of your problem set have their citation information automatically
+written to a second <code>.bib</code> file called
+<code>packages.bib</code>. That way you easily give appropriate credit
+to the work of the creators of the packages you use.</p>
+<p>That’s it! You’re now all set to focus on the content of your poster.
+Again, please take a moment to read through the template once it is
+generated as it serves as much as a tutorial than this vignette.</p>
 </div>
 <div class="section level3">
 <h3 id="printing-your-posters">Printing your posters<a class="anchor" aria-label="anchor" href="#printing-your-posters"></a>
 </h3>
-<p>Printing your posters can be done by opening the generated HTML file in any modern browser and select the “print to PDF” functionality they incorporate.</p>
+<p>Printing your posters can be done by opening the generated HTML file
+in any modern browser and select the “print to PDF” functionality they
+incorporate.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
