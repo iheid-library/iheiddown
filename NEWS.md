@@ -2,7 +2,7 @@
 
 ## Package updates:
 
-- bibstats functions no longer force print
+- `bibstats` functions no longer force print
 - `count_words()` test skipped on Linux
 
 # iheiddown 0.9.2
