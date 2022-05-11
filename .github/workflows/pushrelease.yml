@@ -326,7 +326,7 @@ jobs:
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
 
-      - name: Install X11 dependencies on MacOS
+      - name: Install X11 dependencies on MacOS for pdftools
         run: |
           brew install --cask xquartz
 
