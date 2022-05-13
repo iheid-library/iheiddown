@@ -153,18 +153,18 @@ file.copy("index/assets", target_dir, recursive = TRUE, overwrite = TRUE)
 # Poster
 file.copy("UntitledPoster/UntitledPoster_files",
           target_dir, recursive = TRUE, overwrite = TRUE)
-file.copy("UntitledPoster/UntitledPoster.html",
+file.copy("UntitledPoster/IHEID_poster.html",
           target_dir, overwrite = TRUE)
 # Posterbetterland
 file.copy("UntitledPosterBetterland/myplot.svg", target_dir, overwrite = TRUE)
 file.copy("UntitledPosterBetterland/UntitledPosterBetterland_files",
           target_dir, recursive = TRUE, overwrite = TRUE)
-file.copy("UntitledPosterBetterland/UntitledPosterBetterland.html",
+file.copy("UntitledPosterBetterland/IHEID_poster_better_land.html",
           target_dir, overwrite = TRUE)
 # Posterbetterport
 file.copy("UntitledPosterBetterport/UntitledPosterBetterport_files",
           target_dir, recursive = TRUE, overwrite = TRUE)
-file.copy("UntitledPosterBetterport/UntitledPosterBetterport.html",
+file.copy("UntitledPosterBetterport/IHEID_poster_better_port.html",
           target_dir, overwrite = TRUE)
 
 

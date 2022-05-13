@@ -62,8 +62,8 @@ percent_female <- function(bib_file,
     authors <- stringr::str_remove(authors, ".*,[:blank:]")
     authors <- stringr::str_remove(authors, "\\s.*")
     gender <- table(gender::gender(authors, method = "genderize")$gender)
-    print(paste0((1 - round(gender[2] / sum(gender), 2)) * 100,
-                 "% female authors"))
+    paste0((1 - round(gender[2] / sum(gender), 2)) * 100,
+                 "% female authors")
   } else if (by == "publication") {
     # Percentage of papers written by at least one women
     for (i in seq_len(length(authors))) {
@@ -78,8 +78,8 @@ percent_female <- function(bib_file,
     }
     gender <- sapply(authors,
                      function(x) any(gender::gender(x, method = "genderize")$gender == "female"))
-    print(paste0(round(sum(gender) / length(gender), 2) * 100,
-                 "% female authors"))
+    paste0(round(sum(gender) / length(gender), 2) * 100,
+                 "% female authors")
   }
 }
 
@@ -94,8 +94,8 @@ mean_year <- function(bib_file, rmd_file) {
     bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   }
   years <- as.numeric(bib$YEAR)
-  print(paste0("Average date of publication: ",
-               round(mean(years, na.rm = TRUE))))
+  paste0("Average date of publication: ",
+               round(mean(years, na.rm = TRUE)))
 }
 
 #' @rdname bibstats
@@ -116,7 +116,7 @@ mean_pages <- function(bib_file, rmd_file) {
     else as.numeric(x)
   })
   pages <- unlist(pages)
-  print(paste0("Average number of pages: ", round(mean(pages))))
+  paste0("Average number of pages: ", round(mean(pages)))
 }
 
 #' @rdname bibstats
@@ -140,7 +140,7 @@ total_pages <- function(bib_file, rmd_file) {
     else as.numeric(x)
   })
   pages <- unlist(pages)
-  print(paste0("Total number of pages: ", round(sum(pages))))
+  paste0("Total number of pages: ", round(sum(pages)))
 }
 
 find_bib <- function() {

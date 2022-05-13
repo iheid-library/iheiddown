@@ -1,3 +1,10 @@
+# iheiddown 0.9.3
+
+## Package updates:
+
+- `bibstats` functions no longer force print
+- `count_words()` test skipped on Linux
+
 # iheiddown 0.9.2
 
 ## Package updates:

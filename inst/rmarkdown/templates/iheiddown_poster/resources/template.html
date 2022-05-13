@@ -253,10 +253,10 @@ font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
 border-radius: 2mm;
 }
 code {
-font-size: 25pt;
+font-size: 0.75em;
 font-family: monospace;
 background-color: $if(secondary_colour)$$secondary_colour$24$else$#80000024$endif$;
-color: $if(secondary_colour)$$secondary_colour$$else$#FFFFFF$endif$;
+color: $if(primary_colour)$$primary_colour$$else$#1C1C1C$endif$;
 padding: 1.2mm;
 line-height: 1;
 border-radius: 2mm;
@@ -268,14 +268,6 @@ font-size: 20pt;
 font-size: 20pt;
 padding-bottom: 3mm;
 
-}
-code {
-font-size: 1em;
-font-family: monospace;
-background-color: $if(secondary_colour)$$secondary_colour$24$else$#80000024$endif$;
-color: $if(primary_colour)$$primary_colour$$else$#FFFFFF$endif$;
-padding: 1.2mm;
-border-radius: 2mm;
 }
 .poster_title code {
 font-size: 1em;
