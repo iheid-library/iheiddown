@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">iheiddown</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,14 +91,12 @@
 
 
 
-
-<div class="row">
+<script src="problemset_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <main id="main"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Writing your problem sets</h1>
-                        <h4 data-toc-skip class="author">Bernhard
-Bieri</h4>
+                        <h4 data-toc-skip class="author">Bernhard Bieri</h4>
             
-            <h4 data-toc-skip class="date">2022-05-08</h4>
+            <h4 data-toc-skip class="date">2022-05-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jhollway/iheiddown/blob/HEAD/vignettes/problemset.Rmd" class="external-link"><code>vignettes/problemset.Rmd</code></a></small>
       <div class="d-none name"><code>problemset.Rmd</code></div>
@@ -106,15 +104,11 @@ Bieri</h4>
 
     
     
-<p>While <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s main aim is to assist students in
-writing their thesis, it can also be used for shorter projects such as
-problem sets. This short article will walk you through the process of
-using the problem set template.</p>
+<p>While <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s main aim is to assist students in writing their thesis, it can also be used for shorter projects such as problem sets. This short article will walk you through the process of using the problem set template.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The installation process is the same than for the thesis template.
-You’ll need the following software:</p>
+<p>The installation process is the same than for the thesis template. You’ll need the following software:</p>
 <ol style="list-style-type: decimal">
 <li>Install <a href="https://cran.r-project.org" class="external-link">R</a> and <a href="https://www.rstudio.com/" class="external-link">R-Studio</a>
 </li>
@@ -125,80 +119,45 @@ You’ll need the following software:</p>
 <li><a href="https://www.tug.org/texlive/" class="external-link">For Linux</a></li>
 </ul>
 </li>
-<li>Install <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> by typing the following command
-<code>install.packages("iheiddown")</code> in the R-Studio console.</li>
+<li>Install <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> by typing the following command <code>install.packages("iheiddown")</code> in the R-Studio console.</li>
 </ol>
-<p>Note: typing
-<code>remotes::install_github("jhollway/iheiddown")</code> will provide
-you with the latest version from GitHub.</p>
+<p>Note: typing <code>remotes::install_github("jhollway/iheiddown")</code> will provide you with the latest version from GitHub.</p>
 </div>
 <div class="section level2">
 <h2 id="create-your-first-problem-set">Create your first problem set<a class="anchor" aria-label="anchor" href="#create-your-first-problem-set"></a>
 </h2>
-<p>Creating your first problem set is easy! Before we begin, we have to
-create a new R project by clicking on the file tab in the top of the
-RStudio window and following the instructions of the prompt that
-appears. Now that we have created an R project for our presentation, we
-can open a new R-Markdown file. To do this click on the “plus file” logo
-in the top left corner and then on “R-Markdown”.</p>
+<p>Creating your first problem set is easy! Before we begin, we have to create a new R project by clicking on the file tab in the top of the RStudio window and following the instructions of the prompt that appears. Now that we have created an R project for our presentation, we can open a new R-Markdown file. To do this click on the “plus file” logo in the top left corner and then on “R-Markdown”.</p>
 <div class="figure" style="text-align: center">
 <img src="images/problemset/0-Open_Project.png" alt="Step 1: Open a project" width="80%"><p class="caption">
 Step 1: Open a project
 </p>
 </div>
-<p>After you have done this, a little pop-up helper will appear. The
-first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>
-template for our presentation. To do so, click on the “From Template”
-option on the left and select the “Problem Set {iheiddown}” template.
-Now give your file a name and click on “OK”.</p>
+<p>After you have done this, a little pop-up helper will appear. The first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> template for our presentation. To do so, click on the “From Template” option on the left and select the “Problem Set {iheiddown}” template. Now give your file a name and click on “OK”.</p>
 <div class="figure" style="text-align: center">
 <img src="images/problemset/1-Create_PS.png" alt="Step 2: Select a template" width="80%"><p class="caption">
 Step 2: Select a template
 </p>
 </div>
-<p>Congrats! You just created your first problem set! We can actually
-already render our problem set. This is done by simply clicking the
-“knit button” while viewing the <code>MyProblemSet.Rmd</code> pane. Et
-voilà! You have now successfully generated your first problem set with
-R.</p>
-<p>Take a moment to read through the generated problem set to get
-acquainted with the <code>{R-markdown}</code> syntax and to get a feel
-of the possibilities of the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme.</p>
+<p>Congrats! You just created your first problem set! We can actually already render our problem set. This is done by simply clicking the “knit button” while viewing the <code>MyProblemSet.Rmd</code> pane. Et voilà! You have now successfully generated your first problem set with R.</p>
+<p>Take a moment to read through the generated problem set to get acquainted with the <code>{R-markdown}</code> syntax and to get a feel of the possibilities of the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme.</p>
 </div>
 <div class="section level2">
 <h2 id="edit-your-problem-set">Edit your problem set<a class="anchor" aria-label="anchor" href="#edit-your-problem-set"></a>
 </h2>
-<p>This section will focus on giving you an overview of the workflow of
-writing your problem sets in R with<a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>.</p>
+<p>This section will focus on giving you an overview of the workflow of writing your problem sets in R with<a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>.</p>
 <div class="section level3">
 <h3 id="set-yaml-options">Set YAML options<a class="anchor" aria-label="anchor" href="#set-yaml-options"></a>
 </h3>
-<p>The general options are set in the YAML header. You can define the
-metadata such as the name of the authors, the course code <em>(required
-for the file name)</em>, and the course name.</p>
-<p>You can also set bibliographic options such as the <code>.bib</code>
-file you want to draw your references from (<code>references.bib</code>
-by default) and the style of the bibliographic entries by altering the
-<code>.csl</code> file. Note that packages that were used in the code
-chunks of your problem set have their citation information automatically
-written to a second <code>.bib</code> file called
-<code>packages.bib</code>. That way you easily give appropriate credit
-to the work of the creators of the packages you use.</p>
-<p>That’s it! You’re now all set to focus on the content of your problem
-sets. Again, please take a moment to read through the problem set
-template once it is generated as it serves as much as a tutorial than
-this vignette.</p>
+<p>The general options are set in the YAML header. You can define the metadata such as the name of the authors, the course code <em>(required for the file name)</em>, and the course name.</p>
+<p>You can also set bibliographic options such as the <code>.bib</code> file you want to draw your references from (<code>references.bib</code> by default) and the style of the bibliographic entries by altering the <code>.csl</code> file. Note that packages that were used in the code chunks of your problem set have their citation information automatically written to a second <code>.bib</code> file called <code>packages.bib</code>. That way you easily give appropriate credit to the work of the creators of the packages you use.</p>
+<p>That’s it! You’re now all set to focus on the content of your problem sets. Again, please take a moment to read through the problem set template once it is generated as it serves as much as a tutorial than this vignette.</p>
 </div>
 <div class="section level3">
 <h3 id="understanding-the-appendix-section">Understanding the appendix section<a class="anchor" aria-label="anchor" href="#understanding-the-appendix-section"></a>
 </h3>
-<p>You might have spotted a somewhat unusual code chunk at the end of
-the file in the appendix section.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}</span></span></code></pre></div>
-<p>This special code chunk displays all the code you ran neatly at the
-end of your analysis. This will help you keep your problem sets clean
-while still providing your reader with a high level of transparency on
-how you manipulated your data and created your output.</p>
+<p>You might have spotted a somewhat unusual code chunk at the end of the file in the appendix section.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="bn">```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}</span></span></code></pre></div>
+<p>This special code chunk displays all the code you ran neatly at the end of your analysis. This will help you keep your problem sets clean while still providing your reader with a high level of transparency on how you manipulated your data and created your output.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

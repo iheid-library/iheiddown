@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">iheiddown</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,14 +91,12 @@
 
 
 
-
-<div class="row">
+<script src="presentations_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <main id="main"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Creating presentations</h1>
-                        <h4 data-toc-skip class="author">Bernhard
-Bieri</h4>
+                        <h4 data-toc-skip class="author">Bernhard Bieri</h4>
             
-            <h4 data-toc-skip class="date">2022-05-08</h4>
+            <h4 data-toc-skip class="date">2022-05-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jhollway/iheiddown/blob/HEAD/vignettes/presentations.Rmd" class="external-link"><code>vignettes/presentations.Rmd</code></a></small>
       <div class="d-none name"><code>presentations.Rmd</code></div>
@@ -106,19 +104,11 @@ Bieri</h4>
 
     
     
-<p><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> not only allows its users to create
-scholarly documents but also provides them with a simple way to create
-great presentations to share the contents of their research effectively.
-This article will help you get started from the ground up and help you
-create your very own first presentation.</p>
+<p><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> not only allows its users to create scholarly documents but also provides them with a simple way to create great presentations to share the contents of their research effectively. This article will help you get started from the ground up and help you create your very own first presentation.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The presentation theme is based on Yihui Xie’s excellent <a href="https://github.com/yihui/xaringan" class="external-link"><code>{xaringan}</code></a>
-package. Hence the first thing to do is to install the necessary
-components as well as <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> itself. Note that we can
-also install the latest version of the package from GitHub directly by
-using <code>remotes::install_github("jhollway/iheiddown")</code>.</p>
+<p>The presentation theme is based on Yihui Xie’s excellent <a href="https://github.com/yihui/xaringan" class="external-link"><code>{xaringan}</code></a> package. Hence the first thing to do is to install the necessary components as well as <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> itself. Note that we can also install the latest version of the package from GitHub directly by using <code>remotes::install_github("jhollway/iheiddown")</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Install the required packages</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"iheiddown"</span><span class="op">)</span>
@@ -128,141 +118,76 @@ using <code>remotes::install_github("jhollway/iheiddown")</code>.</p>
 <span class="co"># Load the packages in your session</span>
 <span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"iheiddown"</span>, <span class="st">"xaringan"</span>, <span class="st">"servr"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="va">library</span>, character.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<p>Before we go any further, we should introduce <a href="https://github.com/yihui/xaringan" class="external-link"><code>{xaringan}</code></a> a
-bit more since you’ll be working with when creating presentations with
-the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme. The first thing to know is that
-there are many ways to create presentations in (R-)Markdown and that
-there is not one solution that fulfills all needs. However, after
-careful consideration (and reading <a href="https://yihui.org/en/2017/08/why-xaringan-remark-js/" class="external-link">this blog
-post</a>) we settled on <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a>to develop our
-presentation template for.</p>
-<p>If you want to know more about <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> and other
-presentation packages for R, check out <a href="https://bookdown.org/yihui/rmarkdown/xaringan.html" class="external-link">this excellent
-book</a>.</p>
+<p>Before we go any further, we should introduce <a href="https://github.com/yihui/xaringan" class="external-link"><code>{xaringan}</code></a> a bit more since you’ll be working with when creating presentations with the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme. The first thing to know is that there are many ways to create presentations in (R-)Markdown and that there is not one solution that fulfills all needs. However, after careful consideration (and reading <a href="https://yihui.org/en/2017/08/why-xaringan-remark-js/" class="external-link">this blog post</a>) we settled on <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a>to develop our presentation template for.</p>
+<p>If you want to know more about <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> and other presentation packages for R, check out <a href="https://bookdown.org/yihui/rmarkdown/xaringan.html" class="external-link">this excellent book</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="create-your-first-presentation">Create your first presentation<a class="anchor" aria-label="anchor" href="#create-your-first-presentation"></a>
 </h2>
-<p>Creating your first presentation is easy! Let’s look at how it is
-done. Before we begin, we have to create a new R project by clicking on
-the file tab in the top of the RStudio window and following the
-instructions of the prompt that appears. Now that we have created an R
-project for our presentation, we can open a new R-Markdown file. To do
-this click on the “plus file” logo in the top left corner and then on
-“R-Markdown”.</p>
+<p>Creating your first presentation is easy! Let’s look at how it is done. Before we begin, we have to create a new R project by clicking on the file tab in the top of the RStudio window and following the instructions of the prompt that appears. Now that we have created an R project for our presentation, we can open a new R-Markdown file. To do this click on the “plus file” logo in the top left corner and then on “R-Markdown”.</p>
 <div class="figure" style="text-align: center">
 <img src="images/presentations/0-OpenProject.png" alt="Step 1: Open a project" width="80%"><p class="caption">
 Step 1: Open a project
 </p>
 </div>
-<p>After you have done this, a little pop-up helper will appear. The
-first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>
-template for our presentation. To do so, click on the “From Template”
-option on the left and select the “Presentation {iheiddown}” template.
-Now give your presentation a name and click on “OK”.</p>
+<p>After you have done this, a little pop-up helper will appear. The first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> template for our presentation. To do so, click on the “From Template” option on the left and select the “Presentation {iheiddown}” template. Now give your presentation a name and click on “OK”.</p>
 <div class="figure" style="text-align: center">
 <img src="images/presentations/1-SelectTemplate.png" alt="Step 2: Select a template" width="80%"><p class="caption">
 Step 2: Select a template
 </p>
 </div>
 <p>Congrats! You just created your first presentation!</p>
-<p>Hold on, this doesn’t look anything like slides!? To see your slides,
-you have to “knit” the code by clicking on the little “knit” button on
-the presentation.Rmd file. This will run all the code chunks and convert
-the markdown code to an HTML presentation that you will be able to share
-with your audience.</p>
-<p>Take a moment to flick through the slides to get acquainted with the
-<code>{R-markdown}</code> syntax and to get a feel of the possibilities
-of <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> and the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme. These
-slides are as much a tutorial as this vignette!</p>
+<p>Hold on, this doesn’t look anything like slides!? To see your slides, you have to “knit” the code by clicking on the little “knit” button on the presentation.Rmd file. This will run all the code chunks and convert the markdown code to an HTML presentation that you will be able to share with your audience.</p>
+<p>Take a moment to flick through the slides to get acquainted with the <code>{R-markdown}</code> syntax and to get a feel of the possibilities of <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> and the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> theme. These slides are as much a tutorial as this vignette!</p>
 </div>
 <div class="section level2">
 <h2 id="edit-your-presentation">Edit your presentation<a class="anchor" aria-label="anchor" href="#edit-your-presentation"></a>
 </h2>
-<p>This section will focus on giving you an overview of what a
-<a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> presentation is comprised of and give you a few
-tips and tricks to edit your presentations.</p>
+<p>This section will focus on giving you an overview of what a <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> presentation is comprised of and give you a few tips and tricks to edit your presentations.</p>
 <div class="section level3">
 <h3 id="your-first-edit">Your first edit<a class="anchor" aria-label="anchor" href="#your-first-edit"></a>
 </h3>
-<p>As you may have noticed by now, <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> presentations
-are not quite like more traditional WYSIWYG (what you see is what you
-get) presentation tools like PowerPoint. In short, you write in the
-R-markdown file, define style classes in the CSS files and create macros
-in the JavaScript file. This is all a bit confusing isn’t it?
-Thankfully, there is a way to vizualise your edits easily in real
-time!</p>
+<p>As you may have noticed by now, <a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> presentations are not quite like more traditional WYSIWYG (what you see is what you get) presentation tools like PowerPoint. In short, you write in the R-markdown file, define style classes in the CSS files and create macros in the JavaScript file. This is all a bit confusing isn’t it? Thankfully, there is a way to vizualise your edits easily in real time!</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Install/Load the servr package if you haven't done it already</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"servr"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/yihui/servr" class="external-link">servr</a></span><span class="op">)</span>
 
 <span class="co"># Serve your {xaringan} presentation to see live updates when you edit</span>
-<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu"><a href="../reference/preview.html">preview_start</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu">preview_start</span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># Close the connection to the live rendering when you're done</span>
-<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu"><a href="../reference/preview.html">preview_stop</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> includes a handy function called
-<code>inf_mr()</code> which will work in concert with the
-<a href="https://github.com/yihui/servr" class="external-link">servr</a> package to render your sites locally and update
-them as soon as you save your markdown document. We simply wrapped these
-functions inside the more convenient <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> versions:
-<code>preview_realtime()</code> and <code><a href="../reference/preview.html">preview_stop()</a></code>. This
-makes it a lot easier to edit your slides!</p>
+<span class="fu">iheiddown</span><span class="fu">::</span><span class="fu">preview_stop</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> includes a handy function called <code>inf_mr()</code> which will work in concert with the <a href="https://github.com/yihui/servr" class="external-link">servr</a> package to render your sites locally and update them as soon as you save your markdown document. We simply wrapped these functions inside the more convenient <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> versions: <code>preview_realtime()</code> and <code>preview_stop()</code>. This makes it a lot easier to edit your slides!</p>
 </div>
 <div class="section level3">
-<h3 id="the-different-elements-of-a-xaringan-presentation">The different elements of a <code>{xaringan}</code>
-presentation<a class="anchor" aria-label="anchor" href="#the-different-elements-of-a-xaringan-presentation"></a>
+<h3 id="the-different-elements-of-a-xaringan-presentation">The different elements of a <code>{xaringan}</code> presentation<a class="anchor" aria-label="anchor" href="#the-different-elements-of-a-xaringan-presentation"></a>
 </h3>
-<p><a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> presentations are comprised of three main
-components:</p>
+<p><a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> presentations are comprised of three main components:</p>
 <ul>
 <li>The main .Rmd file for raw content</li>
 <li>The CSS file for style and layout options</li>
 <li>The macros.js file for handy functions</li>
 </ul>
-<p>The main .Rmd file will be the core of your presentation, since it is
-where you will write the text, run R code chunks, and <a href="https://www.bbc.com/culture/article/20170825-how-the-gif-won-the-internet" class="external-link">display
-gifs</a> to entertain your audience.</p>
-<p>The CSS file contains all the styling options that will be used to
-display the the content of the <code>.Rmd</code> file in a nice manner.
-This file contains the definitions of all the classes we use in the
-presentation.</p>
-<p>Finally, the <code>macros.js</code> file specifies small functions
-used for specific cases. An example of a macro would be the inclusion of
-<a href="https://github.com/emilyriederer/xaringan_columns" class="external-link">Emily
-Riederer’s <code>xaringan_columns</code> macros</a>.</p>
-<p>Note that editing the CSS and the macros files is not recommended for
-beginner users as the point of having a theme is to avoid having to
-fiddle with these files. Advanced users who wish to contribute a feature
-should <a href="https://github.com/jhollway/iheiddown/issues" class="external-link">open an
-issue on Github</a> to suggest the additional features.</p>
+<p>The main .Rmd file will be the core of your presentation, since it is where you will write the text, run R code chunks, and <a href="https://www.bbc.com/culture/article/20170825-how-the-gif-won-the-internet" class="external-link">display gifs</a> to entertain your audience.</p>
+<p>The CSS file contains all the styling options that will be used to display the the content of the <code>.Rmd</code> file in a nice manner. This file contains the definitions of all the classes we use in the presentation.</p>
+<p>Finally, the <code>macros.js</code> file specifies small functions used for specific cases. An example of a macro would be the inclusion of <a href="https://github.com/emilyriederer/xaringan_columns" class="external-link">Emily Riederer’s <code>xaringan_columns</code> macros</a>.</p>
+<p>Note that editing the CSS and the macros files is not recommended for beginner users as the point of having a theme is to avoid having to fiddle with these files. Advanced users who wish to contribute a feature should <a href="https://github.com/jhollway/iheiddown/issues" class="external-link">open an issue on Github</a> to suggest the additional features.</p>
 </div>
 <div class="section level3">
 <h3 id="tips-and-tricks-for-editing-your-presentations">Tips and tricks for editing your presentations<a class="anchor" aria-label="anchor" href="#tips-and-tricks-for-editing-your-presentations"></a>
 </h3>
-<p>The following sections cover additional tips and tricks that are not
-mentionned in the slides. You’ll discover how to animate your slides and
-how to include a bibliography.</p>
+<p>The following sections cover additional tips and tricks that are not mentionned in the slides. You’ll discover how to animate your slides and how to include a bibliography.</p>
 <div class="section level4">
 <h4 id="slide-transitions">Slide transitions<a class="anchor" aria-label="anchor" href="#slide-transitions"></a>
 </h4>
-<p>For ease of use, we have included the <a href="https://animate.style/" class="external-link"><code>{animate.style}</code></a> library
-of CSS animations. This allows us to easily animate our slides with the
-addition of the CSS class <code>animate__animated</code> and the desired
-animation e.g. <code>animate__slideInRight</code> on the desired
-slide.</p>
-<p>For a full list of the available animations and further options,
-check out <a href="https://animate.style/" class="external-link">animate.style</a>.</p>
+<p>For ease of use, we have included the <a href="https://animate.style/" class="external-link"><code>{animate.style}</code></a> library of CSS animations. This allows us to easily animate our slides with the addition of the CSS class <code>animate__animated</code> and the desired animation e.g. <code>animate__slideInRight</code> on the desired slide.</p>
+<p>For a full list of the available animations and further options, check out <a href="https://animate.style/" class="external-link">animate.style</a>.</p>
 </div>
 <div class="section level4">
 <h4 id="adding-iheid-logos">Adding IHEID logos<a class="anchor" aria-label="anchor" href="#adding-iheid-logos"></a>
 </h4>
-<p>We implemented an easy way of including logos from the institute in
-the top right corner of your presentation. Simply add the
-<code>with-logo</code> CSS class along the specific logo’s class at the
-top of a given slide! Here is a list of the logos currently available in
-the package.</p>
+<p>We implemented an easy way of including logos from the institute in the top right corner of your presentation. Simply add the <code>with-logo</code> CSS class along the specific logo’s class at the top of a given slide! Here is a list of the logos currently available in the package.</p>
 <table class="table">
 <thead><tr class="header">
 <th>Logo</th>
@@ -323,23 +248,15 @@ the package.</p>
 </tr>
 </tbody>
 </table>
-<p>If you think of an IHEID related logo that you would like to add to
-this collection, feel free to <a href="https://github.com/jhollway/iheiddown/issues" class="external-link">raise an issue</a>
-and link to the logo resource.</p>
+<p>If you think of an IHEID related logo that you would like to add to this collection, feel free to <a href="https://github.com/jhollway/iheiddown/issues" class="external-link">raise an issue</a> and link to the logo resource.</p>
 </div>
 <div class="section level4">
 <h4 id="citations-and-bibliography">Citations and Bibliography<a class="anchor" aria-label="anchor" href="#citations-and-bibliography"></a>
 </h4>
-<p>We all stand on the shoulders of giants when we are conducting
-research. This is why we have implemented an easy way of generating
-citations and adding a bibliography to your presentation. Note that this
-method uses the package <a href="https://docs.ropensci.org/RefManageR" class="external-link">RefManageR</a> that you will need to
-install.</p>
+<p>We all stand on the shoulders of giants when we are conducting research. This is why we have implemented an easy way of generating citations and adding a bibliography to your presentation. Note that this method uses the package <a href="https://docs.ropensci.org/RefManageR" class="external-link">RefManageR</a> that you will need to install.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"RefManageR"</span><span class="op">)</span></code></pre></div>
-<p>The first step to adding a bibliography is to define its options in a
-code chunk at the very top of your <code>presentation.Rmd</code>
-file.</p>
+<p>The first step to adding a bibliography is to define its options in a code chunk at the very top of your <code>presentation.Rmd</code> file.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Initializes the bibliography</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/RefManageR" class="external-link">RefManageR</a></span><span class="op">)</span>
@@ -354,58 +271,37 @@ file.</p>
 <span class="va">myBib</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://docs.ropensci.org/RefManageR/reference/ReadBib.html" class="external-link">ReadBib</a></span><span class="op">(</span><span class="st">"myBib.bib"</span>, check <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co"># Note: don't forget to clear the knitr cache to account for changes in the</span>
 <span class="co"># bibliography.</span></code></pre></div>
-<p>The second step is to cite the papers you want to cite inline with
-<code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">Citet()</a></code>, <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">Citep()</a></code>, <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">AutoCite()</a></code> or
-<code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">NoCite()</a></code>. Here is an example:
-<code>Citet(myBib, "Entry_Name")</code>. Note that every element that
-you wish to put in the bibliography at the end must be cited. Hence, if
-you only want a bibliographical element to appear in the bibliography
-but not as a citation on one of your slides, use the
-<code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">NoCite()</a></code> function.</p>
-<p>The third and final step is to print the full bibliography in the
-last slides of your presentation.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r refs, echo=FALSE, results="asis"}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">PrintBibliography(myBib)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>Finally, note that you can specify the number of references you want
-to print on each slide to avoid overfilling them.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r refs, echo=FALSE, results="asis"}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">PrintBibliography(bib, start = 1, end = 7)</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>For more in depth information about the integration of bibliographic
-information into your presentations, please visit <a href="https://github.com/yihui/xaringan/wiki/Bibliography-and-citations" class="external-link">this
-wiki</a>.</p>
+<p>The second step is to cite the papers you want to cite inline with <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">Citet()</a></code>, <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">Citep()</a></code>, <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">AutoCite()</a></code> or <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">NoCite()</a></code>. Here is an example: <code>Citet(myBib, "Entry_Name")</code>. Note that every element that you wish to put in the bibliography at the end must be cited. Hence, if you only want a bibliographical element to appear in the bibliography but not as a citation on one of your slides, use the <code><a href="https://docs.ropensci.org/RefManageR/reference/Cite.html" class="external-link">NoCite()</a></code> function.</p>
+<p>The third and final step is to print the full bibliography in the last slides of your presentation.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="bn">```{r refs, echo=FALSE, results="asis"}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bn">PrintBibliography(myBib)</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="bn">```</span></span></code></pre></div>
+<p>Finally, note that you can specify the number of references you want to print on each slide to avoid overfilling them.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="bn">```{r refs, echo=FALSE, results="asis"}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bn">PrintBibliography(bib, start = 1, end = 7)</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="bn">```</span></span></code></pre></div>
+<p>For more in depth information about the integration of bibliographic information into your presentations, please visit <a href="https://github.com/yihui/xaringan/wiki/Bibliography-and-citations" class="external-link">this wiki</a>.</p>
 </div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="presenting">Presenting<a class="anchor" aria-label="anchor" href="#presenting"></a>
 </h2>
-<p>After creating your presentation, it is time to share it with the
-world! To do so, simply open the HTML file that was created in your
-project folder after you knitted it.</p>
-<p><a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> provides you with nifty shortcuts to toggle
-presenter mode (p) or duplicate the slides (c) to present them on a
-second screen. Clicking “h” will pull up the entire list of shortcuts.
-Present away!</p>
+<p>After creating your presentation, it is time to share it with the world! To do so, simply open the HTML file that was created in your project folder after you knitted it.</p>
+<p><a href="https://github.com/yihui/xaringan" class="external-link">xaringan</a> provides you with nifty shortcuts to toggle presenter mode (p) or duplicate the slides (c) to present them on a second screen. Clicking “h” will pull up the entire list of shortcuts. Present away!</p>
 </div>
 <div class="section level2">
 <h2 id="printing-the-slides">Printing the slides<a class="anchor" aria-label="anchor" href="#printing-the-slides"></a>
 </h2>
 <p>There are two main ways to print slides.</p>
 <ul>
-<li>Print the slides that you rendered after opening them in your
-browser just like you would print a normal Web page.
+<li>Print the slides that you rendered after opening them in your browser just like you would print a normal Web page.
 <ul>
 <li>Works best in the Google Chrome browser</li>
 </ul>
 </li>
-<li>Use <code><a href="https://rdrr.io/pkg/pagedown/man/chrome_print.html" class="external-link">pagedown::chrome_print()</a></code> when viewing your
-Rmarkdown file</li>
-<li>Use <code>xaringan_to_pdf()</code> an extended printing function
-that works especially well for complex slide decks. You can find this
-function in <a href="https://www.garrickadenbuie.com/blog/print-xaringan-chromote/" class="external-link">this
-great blog article</a> by Garrick Aden Buie.</li>
+<li>Use <code><a href="https://rdrr.io/pkg/pagedown/man/chrome_print.html" class="external-link">pagedown::chrome_print()</a></code> when viewing your Rmarkdown file</li>
+<li>Use <code>xaringan_to_pdf()</code> an extended printing function that works especially well for complex slide decks. You can find this function in <a href="https://www.garrickadenbuie.com/blog/print-xaringan-chromote/" class="external-link">this great blog article</a> by Garrick Aden Buie.</li>
 </ul>
 </div>
 <div class="section level2">
@@ -417,14 +313,10 @@ great blog article</a> by Garrick Aden Buie.</li>
 <ul>
 <li>Readings
 <ul>
-<li><a href="https://bookdown.org/yihui/rmarkdown/xaringan.html" class="external-link"><code>{Xaringan}</code>
-documentation</a></li>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="external-link">Markdown
-cheatsheet</a></li>
-<li><a href="https://bookdown.org/yihui/rmarkdown/" class="external-link">R Markdown: The
-Definitive Guide</a></li>
-<li><a href="https://www.garrickadenbuie.com/" class="external-link">Garrick Aden-Buie’s
-website</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/xaringan.html" class="external-link"><code>{Xaringan}</code> documentation</a></li>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="external-link">Markdown cheatsheet</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/" class="external-link">R Markdown: The Definitive Guide</a></li>
+<li><a href="https://www.garrickadenbuie.com/" class="external-link">Garrick Aden-Buie’s website</a></li>
 </ul>
 </li>
 <li>Extensions
@@ -432,17 +324,14 @@ website</a></li>
 <li>
 <a href="https://github.com/gadenbuie/xaringanExtra" class="external-link"><code>{xaringanExtra}</code></a>
 <ul>
-<li>A collection of neat extensions to make your presentation even
-prettier/ more functional</li>
+<li>A collection of neat extensions to make your presentation even prettier/ more functional</li>
 </ul>
 </li>
 <li>
 <a href="https://evamaerey.github.io/flipbookr/" class="external-link"><code>{flipbookr}</code></a>
 <ul>
 <li>
-<code>{flipbookr}</code> aims to remove some of the confusion that
-might arise when showcasing large chunks of code by taking a step by
-step approach.</li>
+<code>{flipbookr}</code> aims to remove some of the confusion that might arise when showcasing large chunks of code by taking a step by step approach.</li>
 </ul>
 </li>
 </ul>

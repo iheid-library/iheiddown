@@ -23,21 +23,22 @@ Google fonts api stuff
 <title>Generate Reproducible &amp; Live HTML and PDF Conference Posters Using RMarkdown</title>
 
 
+<script src="UntitledPoster_files/accessible-code-block/empty-anchor.js"></script>
 
 
-<style type="text/css">pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+<style type="text/css">code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -57,7 +58,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -404,7 +405,7 @@ of this template allows you to get familiar with its layout. Head over to
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
-<p>This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown &gt; Knitr &gt; Markdown &gt; Pandoc &gt; HTML/CSS &gt; PDF. You can even use the bibliography the same way <span class="citation">(<strong>iheiddown?</strong>)</span>.</p>
+<p>This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown &gt; Knitr &gt; Markdown &gt; Pandoc &gt; HTML/CSS &gt; PDF. You can even use the bibliography the same way <span class="citation">(<span class="citeproc-not-found" data-reference-id="iheiddown"><strong>???</strong></span>)</span>.</p>
 </div>
 <div id="results" class="section level1">
 <h1>Results</h1>
@@ -580,14 +581,14 @@ Petal.Width
 Figure 1: Great figure!
 </p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> data<span class="sc">$</span>Sepal.Length, </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> data<span class="sc">$</span>Sepal.Width, </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> data<span class="sc">$</span>Species,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Length (cm)&quot;</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Sepal Width (cm)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data &lt;-<span class="st"> </span>iris</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">plot</span>(<span class="dt">x =</span> data<span class="op">$</span>Sepal.Length, </span>
+<span id="cb1-4"><a href="#cb1-4"></a>     <span class="dt">y =</span> data<span class="op">$</span>Sepal.Width, </span>
+<span id="cb1-5"><a href="#cb1-5"></a>     <span class="dt">col =</span> data<span class="op">$</span>Species,</span>
+<span id="cb1-6"><a href="#cb1-6"></a>     <span class="dt">pch =</span> <span class="dv">19</span>, </span>
+<span id="cb1-7"><a href="#cb1-7"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length (cm)&quot;</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Sepal Width (cm)&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:morefigs"></span>
 <img src="UntitledPoster_files/figure-html/morefigs-1.png" alt="Amazing, right?!" width="80%" />
 <p class="caption">
@@ -605,12 +606,12 @@ Figure 2: Amazing, right?!
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-R-iheiddown" class="csl-entry">
-Hollway, James. 2022. <em>Iheiddown: For Writing Geneva Graduate Institute Documents</em>. <a href="https://github.com/jhollway/iheiddown">https://github.com/jhollway/iheiddown</a>.
+<div id="refs" class="references">
+<div id="ref-R-iheiddown">
+<p>Hollway, James. 2022. <em>Iheiddown: For Writing Geneva Graduate Institute Documents</em>. <a href="https://github.com/jhollway/iheiddown">https://github.com/jhollway/iheiddown</a>.</p>
 </div>
-<div id="ref-R-pagedown" class="csl-entry">
-Xie, Yihui, Romain Lesur, Brent Thorne, and Xianying Tan. 2022. <em>Pagedown: Paginate the HTML Output of r Markdown with CSS for Print</em>. <a href="https://github.com/rstudio/pagedown">https://github.com/rstudio/pagedown</a>.
+<div id="ref-R-pagedown">
+<p>Xie, Yihui, Romain Lesur, Brent Thorne, and Xianying Tan. 2022. <em>Pagedown: Paginate the Html Output of R Markdown with Css for Print</em>. <a href="https://github.com/rstudio/pagedown">https://github.com/rstudio/pagedown</a>.</p>
 </div>
 </div>
 </div>

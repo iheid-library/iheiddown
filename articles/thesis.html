@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">iheiddown</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.9.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,14 +91,12 @@
 
 
 
-
-<div class="row">
+<script src="thesis_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <main id="main"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Writing your thesis</h1>
-                        <h4 data-toc-skip class="author">Bernhard
-Bieri</h4>
+                        <h4 data-toc-skip class="author">Bernhard Bieri</h4>
             
-            <h4 data-toc-skip class="date">2022-05-08</h4>
+            <h4 data-toc-skip class="date">2022-05-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jhollway/iheiddown/blob/HEAD/vignettes/thesis.Rmd" class="external-link"><code>vignettes/thesis.Rmd</code></a></small>
       <div class="d-none name"><code>thesis.Rmd</code></div>
@@ -106,21 +104,12 @@ Bieri</h4>
 
     
     
-<p><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s primary feature is to enable students of
-the Institute to write their thesis in R-Markdown. It takes care of the
-annoying formatting process and automates the most repetitive tasks a
-student faces when writing scholarly documents. In short,
-<a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> allows its users to focus on the
-<em>content</em> rather than the <em>formatting</em> of a thesis.</p>
-<p>This guide will show you how to get up and running and start writing
-your thesis in R while providing you with helpful tips and tricks to
-make you familiar with the workflow of writing your very own scholarly
-documents in R.</p>
+<p><a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s primary feature is to enable students of the Institute to write their thesis in R-Markdown. It takes care of the annoying formatting process and automates the most repetitive tasks a student faces when writing scholarly documents. In short, <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> allows its users to focus on the <em>content</em> rather than the <em>formatting</em> of a thesis.</p>
+<p>This guide will show you how to get up and running and start writing your thesis in R while providing you with helpful tips and tricks to make you familiar with the workflow of writing your very own scholarly documents in R.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The installation process is the same than for the thesis template.
-You’ll need the following software:</p>
+<p>The installation process is the same than for the thesis template. You’ll need the following software:</p>
 <ol style="list-style-type: decimal">
 <li>Install <a href="https://cran.r-project.org" class="external-link">R</a> and <a href="https://www.rstudio.com/" class="external-link">R-Studio</a>
 </li>
@@ -131,179 +120,100 @@ You’ll need the following software:</p>
 <li><a href="https://www.tug.org/texlive/" class="external-link">For Linux</a></li>
 </ul>
 </li>
-<li>Install <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> by typing the following command
-<code>install.packages("iheiddown")</code> in the R-Studio console.</li>
+<li>Install <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> by typing the following command <code>install.packages("iheiddown")</code> in the R-Studio console.</li>
 </ol>
-<p>Note: typing
-<code>remotes::install_github("jhollway/iheiddown")</code> will provide
-you with the latest version from GitHub.</p>
+<p>Note: typing <code>remotes::install_github("jhollway/iheiddown")</code> will provide you with the latest version from GitHub.</p>
 </div>
 <div class="section level2">
 <h2 id="create-your-first-thesis-project">Create your first thesis project<a class="anchor" aria-label="anchor" href="#create-your-first-thesis-project"></a>
 </h2>
-<p>Creating your first thesis is easy! Let’s look at how it is done.
-Before we begin, we have to create a new R project by clicking on the
-file tab in the top of the RStudio window and following the instructions
-of the prompt that appears. Now that we have created an R project for
-our presentation, we can open a new R-Markdown file. To do this click on
-the “plus file” logo in the top left corner and then on
-“R-Markdown”.</p>
+<p>Creating your first thesis is easy! Let’s look at how it is done. Before we begin, we have to create a new R project by clicking on the file tab in the top of the RStudio window and following the instructions of the prompt that appears. Now that we have created an R project for our presentation, we can open a new R-Markdown file. To do this click on the “plus file” logo in the top left corner and then on “R-Markdown”.</p>
 <div class="figure" style="text-align: center">
 <img src="images/thesis/0-OpenProject.png" alt="Step 1: Open a project" width="80%"><p class="caption">
 Step 1: Open a project
 </p>
 </div>
-<p>After you have done this, a little pop-up helper will appear. The
-first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>
-template for our thesis. To do so, click on the “From Template” option
-on the left and select the “Thesis {iheiddown}” template. Now give your
-thesis a name and click on “OK”.</p>
-<p>Important note! Name your project <code>index</code>. This makes sure
-that the main Rmd file is called <code>index.Rmd</code> which is
-required to render your thesis with our <a href="https://github.com/rstudio/bookdown" class="external-link">bookdown</a> based
-rendering function. Don’t worry though, you can rename the folder to
-your project name after creating it.</p>
+<p>After you have done this, a little pop-up helper will appear. The first thing we will do is to select the <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> template for our thesis. To do so, click on the “From Template” option on the left and select the “Thesis {iheiddown}” template. Now give your thesis a name and click on “OK”.</p>
+<p>Important note! Name your project <code>index</code>. This makes sure that the main Rmd file is called <code>index.Rmd</code> which is required to render your thesis with our <a href="https://github.com/rstudio/bookdown" class="external-link">bookdown</a> based rendering function. Don’t worry though, you can rename the folder to your project name after creating it.</p>
 <div class="figure" style="text-align: center">
 <img src="images/thesis/1-CreateThesis.png" alt="Step 2: Select a template" width="80%"><p class="caption">
 Step 2: Select a template
 </p>
 </div>
 <p>Congrats! You just created your first thesis project!</p>
-<p>Hold on, this doesn’t look anything like a Word processor!? To see
-your thesis, you have to “knit” the code by clicking on the little
-“knit” button while viewing the <code>00-MyThesis.Rmd</code> file. This
-will run all the code chunks in every chapter and convert the Markdown
-code to a correctly formatted PDF document that you will find in the
-<code>\versions</code> folder of your project.</p>
-<p>Take a moment to read through the generated PDF to get acquainted
-with the <code>{R-Markdown}</code> syntax and to get a feel of the
-possibilities of <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s thesis template. This first
-document is as much a tutorial as this vignette!</p>
+<p>Hold on, this doesn’t look anything like a Word processor!? To see your thesis, you have to “knit” the code by clicking on the little “knit” button while viewing the <code>00-MyThesis.Rmd</code> file. This will run all the code chunks in every chapter and convert the Markdown code to a correctly formatted PDF document that you will find in the <code>\versions</code> folder of your project.</p>
+<p>Take a moment to read through the generated PDF to get acquainted with the <code>{R-Markdown}</code> syntax and to get a feel of the possibilities of <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>’s thesis template. This first document is as much a tutorial as this vignette!</p>
 </div>
 <div class="section level2">
 <h2 id="edit-your-thesis">Edit your thesis<a class="anchor" aria-label="anchor" href="#edit-your-thesis"></a>
 </h2>
-<p>This section will focus on giving you an overview of the elements of
-an <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> thesis and give you a few tips and tricks to
-edit it.</p>
+<p>This section will focus on giving you an overview of the elements of an <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> thesis and give you a few tips and tricks to edit it.</p>
 <div class="section level3">
 <h3 id="the-different-elements-of-a-iheiddown-thesis">The different elements of a <code>{iheiddown}</code> thesis<a class="anchor" aria-label="anchor" href="#the-different-elements-of-a-iheiddown-thesis"></a>
 </h3>
-<p>After this initial preview, let’s look at how the thesis project is
-structured to better understand how to edit it.</p>
+<p>After this initial preview, let’s look at how the thesis project is structured to better understand how to edit it.</p>
 <div class="section level4">
 <h4 id="the-index-file">The index file<a class="anchor" aria-label="anchor" href="#the-index-file"></a>
 </h4>
-<p>The index file contains two things: the YAML header and the preface
-of your thesis. It is also the backbone of your thesis in the sense that
-this is where you will want to knit your whole thesis from.</p>
-<p>The YAML header is the place where the main options, metadata and
-formatting parameters are set. You can set the title of your
-presentation here, add your name, change the front matter of your thesis
-(abstract, acknowledgments, table of content, etc.).</p>
-<p>The second element in this file is the preface. The only crucial
-thing to know here is that in order to create your package bibliography
-(the software you use to render your thesis) you need to leave the first
-code chunk there.</p>
+<p>The index file contains two things: the YAML header and the preface of your thesis. It is also the backbone of your thesis in the sense that this is where you will want to knit your whole thesis from.</p>
+<p>The YAML header is the place where the main options, metadata and formatting parameters are set. You can set the title of your presentation here, add your name, change the front matter of your thesis (abstract, acknowledgments, table of content, etc.).</p>
+<p>The second element in this file is the preface. The only crucial thing to know here is that in order to create your package bibliography (the software you use to render your thesis) you need to leave the first code chunk there.</p>
 </div>
 <div class="section level4">
 <h4 id="the-chapters">The chapters<a class="anchor" aria-label="anchor" href="#the-chapters"></a>
 </h4>
-<p>The chapters contain the meat of your thesis, this is where you will
-outline your idea, run your analyses and draw your conclusions.</p>
-<p>Chapters are structured in a similar way, so let us open the
-<code>01-introduction.Rmd</code> chapter. In it, you will first find a
-YAML header that where you can set various chapter level metadata and
-options.</p>
-<p>Note that if for some reason you rename the chapter, you will need to
-specify the new name in the YAML header too under the <code>input</code>
-option. Once you have done this you can write away!</p>
-<p>The last thing to know about individual chapters is that you can knit
-them individually. This comes in handy when you want to generate only
-one part of your thesis for preview purposes.</p>
+<p>The chapters contain the meat of your thesis, this is where you will outline your idea, run your analyses and draw your conclusions.</p>
+<p>Chapters are structured in a similar way, so let us open the <code>01-introduction.Rmd</code> chapter. In it, you will first find a YAML header that where you can set various chapter level metadata and options.</p>
+<p>Note that if for some reason you rename the chapter, you will need to specify the new name in the YAML header too under the <code>input</code> option. Once you have done this you can write away!</p>
+<p>The last thing to know about individual chapters is that you can knit them individually. This comes in handy when you want to generate only one part of your thesis for preview purposes.</p>
 </div>
 <div class="section level4">
 <h4 id="the-appendix-and-the-references-files">The appendix and the references files<a class="anchor" aria-label="anchor" href="#the-appendix-and-the-references-files"></a>
 </h4>
-<p>These files are a bit special as you might notice when you open
-them.</p>
-<p>The <code>99-references.Rmd</code> file generates the bibliography.
-This happens automatically, so you will most likely not need to alter
-this file. Just know that you can set the title of the reference section
-in the first line.</p>
-<p>The <code>98-appendix.Rmd</code> file allows you to showcase code,
-additional outputs and more in a separate section to avoid unnecessarily
-cluttering the main body of your thesis. This can be done by <a href="https://bookdown.org/yihui/rmarkdown-cookbook/reuse-chunks.html" class="external-link">referencing
-code chunks</a> from your main body and printing the computations you
-did in your R chunks or by adding new ones.</p>
+<p>These files are a bit special as you might notice when you open them.</p>
+<p>The <code>99-references.Rmd</code> file generates the bibliography. This happens automatically, so you will most likely not need to alter this file. Just know that you can set the title of the reference section in the first line.</p>
+<p>The <code>98-appendix.Rmd</code> file allows you to showcase code, additional outputs and more in a separate section to avoid unnecessarily cluttering the main body of your thesis. This can be done by <a href="https://bookdown.org/yihui/rmarkdown-cookbook/reuse-chunks.html" class="external-link">referencing code chunks</a> from your main body and printing the computations you did in your R chunks or by adding new ones.</p>
 </div>
 <div class="section level4">
 <h4 id="the-_bookdown-yml-file">The <code>_bookdown.yml</code> file<a class="anchor" aria-label="anchor" href="#the-_bookdown-yml-file"></a>
 </h4>
-<p>The <code>_bookdown.yml</code> file contains additional information
-for the YAML header of the main <code>.Rmd</code> file. A standard user
-should not have to edit it. If for some reason or another you still feel
-like it, you need to know that you can set additional <code>.Rmd</code>
-subdirectories, set another output file than the standard
-<code>\versions</code> file, and toggle the deletion of merged files
-after the knitting process ended here.</p>
+<p>The <code>_bookdown.yml</code> file contains additional information for the YAML header of the main <code>.Rmd</code> file. A standard user should not have to edit it. If for some reason or another you still feel like it, you need to know that you can set additional <code>.Rmd</code> subdirectories, set another output file than the standard <code>\versions</code> file, and toggle the deletion of merged files after the knitting process ended here.</p>
 </div>
 <div class="section level4">
 <h4 id="the-bib-folder">The <code>\bib</code> folder<a class="anchor" aria-label="anchor" href="#the-bib-folder"></a>
 </h4>
-<p>The bibliography folder contains two files; <code>packages.bib</code>
-and <code>references.bib</code>. The former is automatically generated
-by the first code chunk in the <code>index.Rmd</code> file and cites the
-packages you have loaded when running your code chunks. You will not
-need to alter this.</p>
-<p>On the other hand, the <code>references.bib</code> file is the place
-to dump the bibtex citations that you will cite in your thesis.</p>
+<p>The bibliography folder contains two files; <code>packages.bib</code> and <code>references.bib</code>. The former is automatically generated by the first code chunk in the <code>index.Rmd</code> file and cites the packages you have loaded when running your code chunks. You will not need to alter this.</p>
+<p>On the other hand, the <code>references.bib</code> file is the place to dump the bibtex citations that you will cite in your thesis.</p>
 </div>
 <div class="section level4">
 <h4 id="the-data-folder">The <code>\data</code> folder<a class="anchor" aria-label="anchor" href="#the-data-folder"></a>
 </h4>
-<p>The data folder is the place to put all the data that you use in the
-code chunk of your analysis. Remember to keep it tidy so you can easily
-link data to outputs down the line such as graphs and tables.</p>
+<p>The data folder is the place to put all the data that you use in the code chunk of your analysis. Remember to keep it tidy so you can easily link data to outputs down the line such as graphs and tables.</p>
 </div>
 <div class="section level4">
 <h4 id="the-figures-folder">The <code>\figures</code> folder<a class="anchor" aria-label="anchor" href="#the-figures-folder"></a>
 </h4>
-<p>The figures folder will contain all the graphical elements that you
-may want to include in your thesis e.g. figures, graphs, or images. It
-also contains a file named <code>SecretariatDocument.pdf</code> that you
-will need to replace with the one that was handed to you by the PhD or
-Master’s secretariat. Remember to rename the file you got from the
-secretariat as <code>SecretariatDocument.pdf</code>. Otherwise
-<a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> will not recognize it.</p>
+<p>The figures folder will contain all the graphical elements that you may want to include in your thesis e.g. figures, graphs, or images. It also contains a file named <code>SecretariatDocument.pdf</code> that you will need to replace with the one that was handed to you by the PhD or Master’s secretariat. Remember to rename the file you got from the secretariat as <code>SecretariatDocument.pdf</code>. Otherwise <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> will not recognize it.</p>
 </div>
 <div class="section level4">
 <h4 id="the-front-matter-folder">The <code>\front-matter</code> folder<a class="anchor" aria-label="anchor" href="#the-front-matter-folder"></a>
 </h4>
-<p>The front matter folder contains the front matter of your thesis.
-This is where you will be able to edit the abbreviations part in the
-corresponding Latex file, the acknowledgments section or the abstract of
-your thesis in their respective <code>.Rmd</code> files.</p>
+<p>The front matter folder contains the front matter of your thesis. This is where you will be able to edit the abbreviations part in the corresponding Latex file, the acknowledgments section or the abstract of your thesis in their respective <code>.Rmd</code> files.</p>
 </div>
 <div class="section level4">
 <h4 id="the-versions-folder">The <code>\versions</code> folder<a class="anchor" aria-label="anchor" href="#the-versions-folder"></a>
 </h4>
-<p>This is where you will find the pdf file after your thesis has been
-knitted by <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>.</p>
+<p>This is where you will find the pdf file after your thesis has been knitted by <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a>.</p>
 </div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="additional-resources">Additional resources<a class="anchor" aria-label="anchor" href="#additional-resources"></a>
 </h2>
-<p>Here is a list of additional links that will help you get familiar
-with our <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> thesis template,
-<a href="https://github.com/rstudio/bookdown" class="external-link">bookdown</a> and <code>Markdown</code> syntax.</p>
+<p>Here is a list of additional links that will help you get familiar with our <a href="https://github.com/jhollway/iheiddown" class="external-link">iheiddown</a> thesis template, <a href="https://github.com/rstudio/bookdown" class="external-link">bookdown</a> and <code>Markdown</code> syntax.</p>
 <ul>
-<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/" class="external-link">R-Markdown
-Cookbook</a></li>
-<li><a href="https://bookdown.org/yihui/bookdown/" class="external-link">Bookdown
-book</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/" class="external-link">R-Markdown Cookbook</a></li>
+<li><a href="https://bookdown.org/yihui/bookdown/" class="external-link">Bookdown book</a></li>
 <li><a href="https://www.markdownguide.org/" class="external-link">Markdown guide</a></li>
 </ul>
 </div>
