@@ -213,4 +213,4 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
                            color = iheid_palette("IHEID")["IHEIDGrey"]))
     ret <- ret + theme(plot.margin = plot_margin)
     ret
-  }
+}
