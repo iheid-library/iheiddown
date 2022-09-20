@@ -62,7 +62,7 @@ presentation template
 
 # iheiddown 0.8.6
 
-# Minor fix
+## Minor fix
 
 - Re-rendered README.md manually following CRAN comments about a potentially invalid URL
 
