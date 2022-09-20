@@ -2,8 +2,8 @@
 
 ## Package updates:
 
-- Added more informative message for when `percent_female()` reaches API rate limits
-- `bibstats` functions tests skipped on linux
+- Closed #126 by adding more informative message for when `percent_female()` reaches API rate limits
+- Skipped `bibstats` functions tests on linux
 
 ## Thesis
 
