@@ -4,8 +4,11 @@
 #' templates with a little IHEID twist to them. All exports are in HTML format.
 #' You can save them by printing them to PDF via a modern browser.
 #'
-#' @inheritParams pagedown::poster_relaxed
 #' @param ... Additional arguments to `rmarkdown::html_document`
+#' @param template Additional argument passed to `pagedown::poster_relaxed`.
+#' IHEID poster templates by default.
+#' @param css Additional argument passed to `pagedown::poster_relaxed`.
+#' NULL by default.
 #' @source [`{Posterdown}`](https://github.com/brentthorne/posterdown)
 #' @return R Markdown output format to pass to
 #'   [rmarkdown::render()]
@@ -15,7 +18,10 @@
 #' file <- file.path(tempdir(),"foo.rmd")
 #' rmarkdown::draft(file, template="iheiddown_poster", package="iheiddown")
 #' }
-#' @rdname posterdown_html
+#' @name posterdown_html
+NULL
+
+#' @rdname posterdown_html 
 #' @export
 iheiddown_poster <- function(...,
 	template = system.file("rmarkdown",
