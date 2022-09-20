@@ -20,13 +20,13 @@ Authors@R:
            comment = c(ORCID = "0000-0002-8361-9647")),
       person(given = "Bernhard",
            family = "Bieri",
-           role = c("ctb"),
+           role = "ctb",
            email = "bernhard.bieri@graduateinstitute.ch",
            comment = c(ORCID = "0000-0001-5943-9059")),
       person(given = "Henrique",
            family = "Sposito",
            role = "ctb",
-           comment = c("IHEID", ORCID = "0000-0003-3420-6085"))
+           comment = c(ORCID = "0000-0003-3420-6085"))
     )
 URL: https://github.com/jhollway/iheiddown
 BugReports: https://github.com/jhollway/iheiddown/issues
