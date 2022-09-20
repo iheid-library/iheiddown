@@ -1,3 +1,14 @@
+# iheiddown 0.9.4
+
+## Package updates:
+
+- Added more informative message for when `percent_female()` reaches API rate limits
+- `bibstats` functions tests skipped on linux
+
+## Thesis
+
+- Added packages to 'thesis_pdf' template to improve rendering
+
 # iheiddown 0.9.3
 
 ## Package updates:
