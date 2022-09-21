@@ -1,3 +1,14 @@
+# iheiddown 0.9.4
+
+## Package updates:
+
+- Closed #126 by adding more informative message for when `percent_female()` reaches API rate limits
+- Skipped `bibstats` functions tests on linux
+
+## Thesis
+
+- Added packages to 'thesis_pdf' template to improve rendering
+
 # iheiddown 0.9.3
 
 ## Package updates:
@@ -51,7 +62,7 @@ presentation template
 
 # iheiddown 0.8.6
 
-# Minor fix
+## Minor fix
 
 - Re-rendered README.md manually following CRAN comments about a potentially invalid URL
 

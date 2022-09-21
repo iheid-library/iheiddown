@@ -10,8 +10,8 @@ Description: A set of tools for writing documents
     The package includes additional functions for institutional color palettes,
     an institutional 'ggplot' theme, a function for counting manuscript words,
     and a bibliographical analysis toolkit.
-Date: 2022-05-12
-Version: 0.9.3
+Date: 2022-09-20
+Version: 0.9.4
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
@@ -20,9 +20,13 @@ Authors@R:
            comment = c(ORCID = "0000-0002-8361-9647")),
       person(given = "Bernhard",
            family = "Bieri",
-           role = c("ctb"),
+           role = "ctb",
            email = "bernhard.bieri@graduateinstitute.ch",
-           comment = c(ORCID = "0000-0001-5943-9059"))
+           comment = c(ORCID = "0000-0001-5943-9059")),
+      person(given = "Henrique",
+           family = "Sposito",
+           role = "ctb",
+           comment = c(ORCID = "0000-0003-3420-6085"))
     )
 URL: https://github.com/jhollway/iheiddown
 BugReports: https://github.com/jhollway/iheiddown/issues
@@ -51,7 +55,7 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Suggests: 
     testthat,
     kableExtra,

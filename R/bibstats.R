@@ -28,7 +28,6 @@
 #' @importFrom bib2df bib2df
 #' @importFrom utils install.packages
 #' @return Prints a summary statistic (e.g. mean or proportion)
-#' 
 NULL
 
 #' @rdname bibstats
@@ -40,20 +39,19 @@ percent_female <- function(bib_file,
   if (missing(bib_file)) bib_file <- find_bib()
   if (missing(rmd_file)) rmd_file <- rstudioapi::getSourceEditorContext()$path
   by <- match.arg(by, c("author", "publication"))
-  
   # if (!requireNamespace("genderdata", quietly = TRUE)) {
   #   if (!requireNamespace("remotes", quietly = TRUE)) {
   #     utils::install.packages("remotes")
   #   }
   #   remotes::install_github("lmullen/genderdata")
   # }
-  
   bib <- suppressWarnings(bib2df::bib2df(bib_file))
   if (!missing(rmd_file)) {
     used <- get_used_bib(bib_file, rmd_file)
     bib <- dplyr::filter(bib, .data$BIBTEXKEY %in% used)
   }
   authors <- bib$AUTHOR
+  gender <- NULL
   # Total percentage of women
   if (by == "author") {
     authors <- unlist(authors)
@@ -61,9 +59,16 @@ percent_female <- function(bib_file,
     authors <- stringr::str_remove(authors, "\\}")
     authors <- stringr::str_remove(authors, ".*,[:blank:]")
     authors <- stringr::str_remove(authors, "\\s.*")
-    gender <- table(gender::gender(authors, method = "genderize")$gender)
-    paste0((1 - round(gender[2] / sum(gender), 2)) * 100,
-                 "% female authors")
+    gender <- tryCatch({
+      table(gender::gender(authors, method = "genderize")$gender)
+    },
+    message = "Rate limit for the `{gender}` R package has been reached due to the amount of download requests.
+    Please wait a few hours and try again later."
+    )
+    if (!is.null(gender)) {
+      paste0((1 - round(gender[2] / sum(gender), 2)) * 100,
+             "% female authors") 
+    }
   } else if (by == "publication") {
     # Percentage of papers written by at least one women
     for (i in seq_len(length(authors))) {
@@ -76,10 +81,17 @@ percent_female <- function(bib_file,
                                                  ".*,[:blank:]")
       }
     }
-    gender <- sapply(authors,
-                     function(x) any(gender::gender(x, method = "genderize")$gender == "female"))
-    paste0(round(sum(gender) / length(gender), 2) * 100,
-                 "% female authors")
+    gender <- tryCatch({
+      sapply(authors, function(x)
+        any(gender::gender(x, method = "genderize")$gender == "female"))
+      },
+      message = "Rate limit for the `{gender}` R package has been reached due to the amount of download requests.
+      Please wait a few hours and try again later."
+      )
+    if (!is.null(gender)) {
+      paste0(round(sum(gender) / length(gender), 2) * 100,
+             "% female authors") 
+    }
   }
 }
 

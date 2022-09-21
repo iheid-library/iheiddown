@@ -30,6 +30,8 @@ $endif$
 
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\emph{\thepage}}}
 
+\fancyfoot[C]{\emph{\thepage}}
+
 % This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.) Page numbers are also printed on the right side.
 $if(draft)$
 \fancyfoot[C]{\emph{DRAFT: \today}}
@@ -275,18 +277,25 @@ $endif$
 \newlist{abbrv}{itemize}{1}
 \setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
 
+% Packages used to display math
 \usepackage{nicefrac}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{textcomp}
+\usepackage{adjustbox} % adjust things to page width
+
 
 \usepackage{longtable} 
 	% Allows tables to span multiple pages (this package must be called before hyperref)
 
+\usepackage{colortbl, xcolor}
+  % Allows cells to be colored. Required by kableExtra
+
 \usepackage[font=small,labelfont=bf]{caption} 
 	% Nicer captions
 
-\usepackage{multicol,multirow,array} 
+\usepackage{multicol,multirow,array,xparse,pdflscape} 
 	% Used to make multiple columns for the indices and for creating columns that span multiple rows in tables
 
 \usepackage{rotating} 
@@ -301,7 +310,10 @@ $endif$
 \usepackage{graphicx}
 \graphicspath{{figures/}{_bookdown_files/}}
 
-\usepackage{xfrac}
+\usepackage{float} % Use the 'float' package for table and figure alignment
+\floatplacement{figure}{H} % Make every figure with caption = h
+
+\usepackage{blkarray} % Adding annotations to border for matrices
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACTUAL DOCUMENT HERE  %%
@@ -321,7 +333,9 @@ $endif$
 
 \vspace*{1cm}
 
+$if(phd)$
 \sffamily{Thesis No. $thesisno$}
+$endif$
 
 \vspace*{1cm}
 \sffamily\textbf{Supervisor: $supervisor$}\\
