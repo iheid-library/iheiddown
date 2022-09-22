@@ -1,5 +1,5 @@
 test_that("Bibstats works properly", {
-  testthat::skip_on_os("linux")
+  testthat::skip_on_cran()
   rmarkdown::draft(file = "test", template = "syllabus",
                    package = "iheiddown", create_dir = TRUE, edit = FALSE)
   expect_equal(percent_female(bib_file = "test/references.bib",

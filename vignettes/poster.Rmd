@@ -55,7 +55,7 @@ a new R-Markdown file. To do this click on the "plus file" logo in the top left
 corner and then on "R-Markdown".
 
 ```{r, echo = FALSE, out.width="80%", fig.cap="Step 1: Open a project"}
-  knitr::include_graphics("images/poster/0-Open_Project.png", dpi = 144)
+knitr::include_graphics("images/poster/0-Open_Project.png", dpi = 144)
 ```
 
 After you have done this, a little pop-up helper will appear. The first thing we
@@ -65,7 +65,7 @@ click on the "From Template" option on the left and select one of the
 on "OK".
 
 ```{r, echo = FALSE, out.width="80%", fig.cap="Step 2: Select a template"}
-  knitr::include_graphics("images/poster/1-Select_Template.png", dpi = 144)
+knitr::include_graphics("images/poster/select_template.png", dpi = 144)
 ```
 
 Congrats! You just created your first poster! Let's render it to see what it
