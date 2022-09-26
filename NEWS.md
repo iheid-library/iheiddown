@@ -1,3 +1,9 @@
+# iheiddown 0.9.5
+
+## Package updates:
+
+- Fixed misspelling for image file used in poster.Rmd vignette
+
 # iheiddown 0.9.4
 
 ## Package updates:
