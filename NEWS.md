@@ -1,3 +1,9 @@
+# iheiddown 0.9.6
+
+## Package updates:
+
+- Fixed theming issue relating to ggplot2's change from "size" to "linewidth"
+
 # iheiddown 0.9.5
 
 ## Package updates:

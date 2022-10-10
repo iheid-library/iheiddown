@@ -10,8 +10,8 @@ Description: A set of tools for writing documents
     The package includes additional functions for institutional color palettes,
     an institutional 'ggplot' theme, a function for counting manuscript words,
     and a bibliographical analysis toolkit.
-Date: 2022-09-22
-Version: 0.9.5
+Date: 2022-10-10
+Version: 0.9.6
 Authors@R: 
     c(person(given = "James",
            family = "Hollway",
@@ -55,7 +55,7 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 Suggests: 
     testthat,
     kableExtra,
