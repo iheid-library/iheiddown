@@ -79,9 +79,11 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
       ret <- ret +
         theme(panel.grid = element_line(color = grid_col, linewidth = 0.2))
       ret <- ret +
-        theme(panel.grid.major = element_line(color = grid_col, linewidth = 0.2))
+        theme(panel.grid.major = element_line(color = grid_col,
+                                              linewidth = 0.2))
       ret <- ret +
-        theme(panel.grid.minor = element_line(color = grid_col, linewidth = 0.15))
+        theme(panel.grid.minor = element_line(color = grid_col,
+                                              linewidth = 0.15))
       if (inherits(grid, "character")) {
         if (regexpr("X", grid)[1] < 0) ret <- ret +
             theme(panel.grid.major.x = element_blank())
@@ -101,7 +103,7 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
       ret <- ret +
         theme(axis.line = element_line(color =
                                          iheid_palette("IHEID")["IHEIDBlack"],
-                                       linewidth = 0.15))
+                                      linewidth = 0.15))
       if (inherits(axis, "character")) {
         axis <- tolower(axis)
         if (regexpr("x", axis)[1] < 0) {
@@ -117,7 +119,8 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
             theme(axis.line.y = element_blank())
         } else {
           ret <- ret +
-            theme(axis.line.y = element_line(color = axis_col, linewidth = 0.15))
+            theme(axis.line.y = element_line(color = axis_col,
+                                             linewidth = 0.15))
         }
       } else {
         ret <- ret +
