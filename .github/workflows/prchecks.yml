@@ -40,7 +40,6 @@ jobs:
             any::rcmdcheck
             any::covr
             any::remotes
-            any::roxygen2
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
@@ -69,9 +68,6 @@ jobs:
           remotes::install_github("gadenbuie/xaringanExtra")
           remotes::install_github("giocomai/ganttrify")
         shell: Rscript {0}
-
-      - name: Document
-        run: Rscript -e 'roxygen2::roxygenise()'
 
       - name: Binary
         run: |
