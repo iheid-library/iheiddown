@@ -35,7 +35,7 @@ License: MIT + file LICENSE
 Imports: 
     bookdown,
     dplyr,
-    ggplot2 (>= 3.3.6),
+    ggplot2 (>= 3.4.0),
     rmarkdown,
     xaringan,
     crayon,
