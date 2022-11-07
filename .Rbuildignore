@@ -12,3 +12,6 @@
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
 ^.DS_Store$
+^working$
+^Untitled$
+^Meta$
