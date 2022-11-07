@@ -16,4 +16,3 @@
 ^\.github$
 ^\test$
 ^CRAN-SUBMISSION$
-^.*\.log$
