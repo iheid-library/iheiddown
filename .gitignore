@@ -5,7 +5,6 @@
 oxforddown/*
 docs/*
 Untitled/*
-*.Rd
 *.maf
 *.mtc*
 inst/rmarkdown/templates/thesis/skeleton/_bookdown_files/*
