@@ -43,7 +43,7 @@ jobs:
             any::roxygen2
             any::remotes
           needs: check
-      
+
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
@@ -56,7 +56,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install --cask xquartz
-          
+
        - name: Install GitHub dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
@@ -64,7 +64,7 @@ jobs:
           remotes::install_github("gadenbuie/xaringanExtra")
           remotes::install_github("giocomai/ganttrify")
         shell: Rscript {0}
-          
+
       - name: Document
         run: Rscript -e 'roxygen2::roxygenise()'
 
@@ -87,6 +87,6 @@ jobs:
         with:
           name: ${{ matrix.config.asset_name }}
           path: build/
-        
+
       - name: Calculate code coverage
         run: Rscript -e "covr::codecov()"
