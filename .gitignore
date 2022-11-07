@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 oxforddown/*
-^.*\.log$
 docs/*
 Untitled/*
 *.Rd
