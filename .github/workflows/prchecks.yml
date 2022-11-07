@@ -3,7 +3,7 @@ on:
     branches:
       - main
 
-name: Binary checks
+name: Binary creation
 
 jobs:
 
@@ -38,10 +38,16 @@ jobs:
           cache-version: 2
           extra-packages: |
             any::rcmdcheck
-            any::lintr
-            any::roxygen2
+            any::covr
             any::remotes
+            any::roxygen2
           needs: check
+
+      - uses: r-lib/actions/check-r-package@v2
+        env:
+          _R_CHECK_FORCE_SUGGESTS_: false
+        with:
+          upload-snapshots: true
 
       - name: Install system dependencies
         if: runner.os == 'Linux'
@@ -66,12 +72,6 @@ jobs:
 
       - name: Document
         run: Rscript -e 'roxygen2::roxygenise()'
-
-      - uses: r-lib/actions/check-r-package@v2
-        env:
-          _R_CHECK_FORCE_SUGGESTS_: false
-        with:
-          upload-snapshots: true
 
       - name: Binary
         run: |
