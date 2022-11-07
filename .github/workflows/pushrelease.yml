@@ -29,12 +29,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup R
-        uses: r-lib/actions/setup-r@main
+        uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
 
       - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@main
+        uses: r-lib/actions/setup-tinytex@master
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v1
@@ -181,7 +181,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout one
-        uses: actions/checkout@main
+        uses: actions/checkout@master
         with:
           fetch-depth: '0'
 
