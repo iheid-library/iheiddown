@@ -66,7 +66,7 @@ jobs:
           brew install --cask xquartz
 
       - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@master
+        uses: r-lib/actions/setup-tinytex@main
 
       - name: Install GitHub dependencies
         run: |
@@ -157,7 +157,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout one
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: '0'
 
@@ -315,7 +315,7 @@ jobs:
         run: R CMD INSTALL .
 
       - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@master
+        uses: r-lib/actions/setup-tinytex@main
 
       - name: Install X11 dependencies on MacOS for pdftools
         run: |

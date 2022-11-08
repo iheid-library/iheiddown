@@ -62,7 +62,7 @@ jobs:
           brew install --cask xquartz
 
       - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@master
+        uses: r-lib/actions/setup-tinytex@main
 
       - name: Install GitHub dependencies
         run: |
