@@ -270,14 +270,17 @@ jobs:
     needs: build
     runs-on: macOS-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
-
-      # install packages needed
-      - name: install required packages
-        run: Rscript -e 'install.packages("rmarkdown")'
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 2
+          extra-packages: |
+            any::rmarkdown
+            any::devtools
+          needs: check
 
       # Render README.md using rmarkdown
       - name: render README
