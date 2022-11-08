@@ -65,6 +65,9 @@ jobs:
         run: |
           brew install --cask xquartz
 
+      - name: Setup tinytex
+        uses: r-lib/actions/setup-tinytex@v2
+
       - name: Install GitHub dependencies
         run: |
           remotes::install_github("crsh/citr")
@@ -312,7 +315,7 @@ jobs:
         run: R CMD INSTALL .
 
       - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@master
+        uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install X11 dependencies on MacOS for pdftools
         run: |
