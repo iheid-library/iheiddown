@@ -312,6 +312,10 @@ jobs:
             any::rcmdcheck
             any::pkgdown
             any::remotes
+            any::rmarkdown
+            any::modelsummary
+            any::gt
+            any::kableExtra
           needs: check
 
       - name: Install package
@@ -333,11 +337,19 @@ jobs:
           remotes::install_github("ropensci/RefManageR")
         shell: Rscript {0}
 
-      - name: Render output samples
+      - name: Install package
+        run: R CMD INSTALL .
+
+      - name: Build site # build pkgdown site in separate step
+        run: Rscript -e 'pkgdown::build_site()'
+
+      - name: Render output samples # Render output samples after that
         run: Rscript R/_render.R
 
-      - name: Deploy package
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
+      - name: Deploy # deploy the docs folder to gh-pages with output samples
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs
+          CLEAN: true
