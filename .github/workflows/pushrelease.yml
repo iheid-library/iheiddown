@@ -10,11 +10,12 @@ jobs:
   build:
     name: Build for ${{ matrix.config.os }}
     runs-on: ${{ matrix.config.os }}
+    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
     strategy:
       fail-fast: false
       matrix:
         config:
-          - {os: macOS-latest,   r: 'release', artifact_name: '*.tar.gz', asset_name: macOS}
+          - {os: macOS-latest, r: 'release', artifact_name: '*.tar.gz', asset_name: macOS}
           - {os: windows-latest, r: 'release', artifact_name: '*.zip', asset_name: winOS}
           - {os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest", artifact_name: '*.tar.gz', asset_name: linuxOS}
 
@@ -24,36 +25,33 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
 
-      - name: Setup tinytex
-        uses: r-lib/actions/setup-tinytex@master
+      - uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Setup pandoc
-        uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-         pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
+          cache-version: 2
+          extra-packages: |
+            any::rcmdcheck
+            any::covr
+            any::remotes
+            any::pkgbuild
+            any::rmarkdown
+            any::modelsummary
+            any::gt
+            any::kableExtra
+          needs: check
 
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
-      - name: Cache R packages
-        if: runner.os != 'Windows'
-        uses: actions/cache@v1
+      - uses: r-lib/actions/check-r-package@v2
+        env:
+          _R_CHECK_FORCE_SUGGESTS_: false
         with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+          upload-snapshots: true
 
       - name: Install system dependencies
         if: runner.os == 'Linux'
@@ -68,16 +66,15 @@ jobs:
         run: |
           brew install --cask xquartz
 
-      - name: Install dependencies
+      - name: Install GitHub dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("pkgbuild")
-          utils::install.packages("roxygen2")
-          utils::install.packages("covr")
+          remotes::install_github("crsh/citr")
+          remotes::install_github("gadenbuie/xaringanExtra")
+          remotes::install_github("giocomai/ganttrify")
+          remotes::install_github("mitchelloharawild/icons")
+          remotes::install_github("ropensci/RefManageR")
         shell: Rscript {0}
-
-      - name: Document
-        run: Rscript -e 'roxygen2::roxygenise()'
 
       - name: Binary
         run: |
@@ -88,7 +85,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Save binary artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.config.asset_name }}
           path: build/
@@ -96,25 +93,6 @@ jobs:
       - name: Install package
         if: runner.os == 'macOS'
         run: R CMD INSTALL .
-
-      # install packages needed
-      - name: Install R-Markdown and remotes
-        if: runner.os == 'macOS'
-        run: Rscript -e 'install.packages(c("rmarkdown","remotes"))'
-
-      #Install other non-CRAN packages for sample output generation
-      - name: Install non-CRAN dependencies
-        if: runner.os == 'macOS'
-        run: |
-          remotes::install_github("crsh/citr")
-          remotes::install_github("giocomai/ganttrify")
-          remotes::install_github("gadenbuie/xaringanExtra")
-          remotes::install_github("mitchelloharawild/icons")
-          remotes::install_github("ropensci/RefManageR")
-          utils::install.packages("modelsummary")
-          utils::install.packages("kableExtra")
-          utils::install.packages("gt")
-        shell: Rscript {0}
 
       - name: Render output samples
         if: runner.os == 'macOS'
@@ -175,9 +153,7 @@ jobs:
   release:
     name: Bump version and release
     needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout one
         uses: actions/checkout@master
@@ -198,12 +174,12 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: ncipollo/release-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.newtag.outputs.tag }}
-          release_name: Release ${{ steps.newtag.outputs.tag }}
+          tag: ${{ steps.newtag.outputs.tag }}
+          name: Release ${{ steps.newtag.outputs.tag }}
           draft: false
           prerelease: false
 
@@ -212,6 +188,48 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -R
+
+      - name: Rename Mac release
+        run: mv ./macOS/*.tgz iheidown_macOS.tgz
+
+      - name: Upload Mac binary
+        id: upload-mac
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: iheidown_macOS.tgz
+          asset_name: iheidown_macOS.tgz
+          asset_content_type: application/zip
+
+      - name: Rename Linux release
+        run: mv ./linuxOS/*.tar.gz iheidown_linuxOS.tar.gz
+
+      - name: Upload Linux binary
+        id: upload-lin
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: iheidown_linuxOS.tar.gz
+          asset_name: iheidown_linuxOS.tar.gz
+          asset_content_type: application/zip
+
+      - name: Rename Windows release
+        run: mv ./winOS/*.zip iheidown_winOS.zip
+
+      - name: Upload Windows binary
+        id: upload-win
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: iheidown_winOS.zip
+          asset_name: iheidown_winOS.zip
+          asset_content_type: application/zip
 
       - name: Upload Thesis Example Asset
         id: upload-thesis-example
@@ -246,69 +264,24 @@ jobs:
           asset_name: IHEIDProblemSetExample.pdf
           asset_content_type: application/pdf
 
-      - name: Rename Mac release
-        run: mv ./macOS/*.tgz iheiddown_macOS.tgz
-
-      - name: Upload Mac binary
-        id: upload-mac
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: iheiddown_macOS.tgz
-          asset_name: iheiddown_macOS.tgz
-          asset_content_type: application/zip
-
-      - name: Rename Linux release
-        run: mv ./linuxOS/*.tar.gz iheiddown_linuxOS.tar.gz
-
-      - name: Upload Linux binary
-        id: upload-lin
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: iheiddown_linuxOS.tar.gz
-          asset_name: iheiddown_linuxOS.tar.gz
-          asset_content_type: application/zip
-
-      - name: Rename Windows release
-        run: mv ./winOS/*.zip iheiddown_winOS.zip
-
-      - name: Upload Windows binary
-        id: upload-win
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: iheiddown_winOS.zip
-          asset_name: iheiddown_winOS.zip
-          asset_content_type: application/zip
-
   render:
     name: Update README.md and push
-    needs: [build, release]
+    needs: build
     runs-on: macOS-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
 
       # install packages needed
-      - name: Install required packages
-        run: |
-          install.packages("rmarkdown")
-          install.packages("devtools")
-        shell: Rscript {0}
+      - name: install required packages
+        run: Rscript -e 'install.packages("rmarkdown")'
 
       # Render README.md using rmarkdown
       - name: render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
-
+      # Add man/figures/README-* to the git add call if plots are generated
       - name: commit rendered README
         run: |
           git add README.md
@@ -317,7 +290,7 @@ jobs:
 
   pkgdown:
     name: Build and deploy website
-    needs: release
+    needs: render
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -328,6 +301,18 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 2
+          extra-packages: |
+            any::rcmdcheck
+            any::pkgdown
+            any::remotes
+          needs: check
+
+      - name: Install package
+        run: R CMD INSTALL .
+
       - name: Setup tinytex
         uses: r-lib/actions/setup-tinytex@master
 
@@ -335,50 +320,21 @@ jobs:
         run: |
           brew install --cask xquartz
 
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
-      - name: Cache R packages
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-
-      - name: Install dependencies
+      - name: Install GitHub dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
-          install.packages("pkgdown", type = "binary")
-        shell: Rscript {0}
-
-      #Install other non-CRAN packages for sample output generation
-      - name: Install packages to render sample output
-        run: |
-          remotes::install_github("giocomai/ganttrify")
           remotes::install_github("crsh/citr")
           remotes::install_github("gadenbuie/xaringanExtra")
+          remotes::install_github("giocomai/ganttrify")
           remotes::install_github("mitchelloharawild/icons")
           remotes::install_github("ropensci/RefManageR")
         shell: Rscript {0}
 
-      - name: Install package
-        run: R CMD INSTALL .
-
-      - name: Build site # build pkgdown site in separate step
-        run: Rscript -e 'pkgdown::build_site()'
-
-      - name: Render output samples # Render output samples after that
-        if: runner.os == 'macOS'
+      - name: Render output samples
         run: Rscript R/_render.R
 
-      - name: Deploy # deploy the docs folder to gh-pages with output samples
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs
-          CLEAN: true
+      - name: Deploy package
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'

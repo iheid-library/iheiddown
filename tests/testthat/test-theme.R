@@ -25,7 +25,7 @@ test_that("theme_iheid() grid is correct", {
     iheiddown::theme_iheid()
   expect_identical(p[["theme"]][["panel.grid"]][["colour"]],
                    "grey85")
-  expect_identical(p[["theme"]][["panel.grid"]][["size"]], 0.2)
+  expect_identical(p[["theme"]][["panel.grid"]][["linewidth"]], 0.2)
 })
 
 test_that("theme_iheid() caption style is correct", {

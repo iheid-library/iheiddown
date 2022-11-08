@@ -77,11 +77,13 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
     # Set grid
     if (inherits(grid, "character") | grid == TRUE) {
       ret <- ret +
-        theme(panel.grid = element_line(color = grid_col, size = 0.2))
+        theme(panel.grid = element_line(color = grid_col, linewidth = 0.2))
       ret <- ret +
-        theme(panel.grid.major = element_line(color = grid_col, size = 0.2))
+        theme(panel.grid.major = element_line(color = grid_col,
+                                              linewidth = 0.2))
       ret <- ret +
-        theme(panel.grid.minor = element_line(color = grid_col, size = 0.15))
+        theme(panel.grid.minor = element_line(color = grid_col,
+                                              linewidth = 0.15))
       if (inherits(grid, "character")) {
         if (regexpr("X", grid)[1] < 0) ret <- ret +
             theme(panel.grid.major.x = element_blank())
@@ -101,7 +103,7 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
       ret <- ret +
         theme(axis.line = element_line(color =
                                          iheid_palette("IHEID")["IHEIDBlack"],
-                                       size = 0.15))
+                                      linewidth = 0.15))
       if (inherits(axis, "character")) {
         axis <- tolower(axis)
         if (regexpr("x", axis)[1] < 0) {
@@ -110,20 +112,21 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
         } else {
           ret <- ret +
             theme(axis.line.x = element_line(color = axis_col,
-                                                        size = 0.15))
+                                             linewidth = 0.15))
         }
         if (regexpr("y", axis)[1] < 0) {
           ret <- ret +
             theme(axis.line.y = element_blank())
         } else {
           ret <- ret +
-            theme(axis.line.y = element_line(color = axis_col, size = 0.15))
+            theme(axis.line.y = element_line(color = axis_col,
+                                             linewidth = 0.15))
         }
       } else {
         ret <- ret +
-          theme(axis.line.x = element_line(color = axis_col, size = 0.15))
+          theme(axis.line.x = element_line(color = axis_col, linewidth = 0.15))
         ret <- ret +
-          theme(axis.line.y = element_line(color = axis_col, size = 0.15))
+          theme(axis.line.y = element_line(color = axis_col, linewidth = 0.15))
       }
     } else {
       ret <- ret +
@@ -135,9 +138,9 @@ theme_iheid <- function(base_family="sans", base_size = 11.5,
       ret <- ret + theme(axis.ticks.x = element_blank())
       ret <- ret + theme(axis.ticks.y = element_blank())
     } else {
-      ret <- ret + theme(axis.ticks = element_line(size = 0.15))
-      ret <- ret + theme(axis.ticks.x = element_line(size = 0.15))
-      ret <- ret + theme(axis.ticks.y = element_line(size = 0.15))
+      ret <- ret + theme(axis.ticks = element_line(linewidth = 0.15))
+      ret <- ret + theme(axis.ticks.x = element_line(linewidth = 0.15))
+      ret <- ret + theme(axis.ticks.y = element_line(linewidth = 0.15))
       ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
     }
     # Set the position of axis title
