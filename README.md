@@ -136,7 +136,7 @@ library(iheiddown)
 
 That’s it! `iheiddown` is now installed and ready to go.
 
-### Istalling the Development Version
+### Installing the Development Version
 
 To get access to the latest features, you may want to install the
 development version of the package.
