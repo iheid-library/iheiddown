@@ -9,4 +9,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-- Fixed ggplot2 theme issue with "size" argument
+- Updated website hyperlink for RStudio to "posit" 
