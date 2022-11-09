@@ -1,3 +1,9 @@
+# iheiddown 0.9.7
+
+## Package updates:
+
+- Updated website links for RStudio to "posit"
+
 # iheiddown 0.9.6
 
 ## Package updates:

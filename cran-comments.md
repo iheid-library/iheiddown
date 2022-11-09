@@ -9,4 +9,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-- Added informative message for when rate limits are reached with `percent_female()`
+- Updated website hyperlink for RStudio to "posit" 
