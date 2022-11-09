@@ -39,7 +39,7 @@ the workflow of writing your very own scholarly documents in R.
 The installation process is the same than for the thesis template. You'll need
 the following software:
 
-1. Install [R](https://cran.r-project.org) and [R-Studio](https://www.rstudio.com/)
+1. Install [R](https://cran.r-project.org) and [R-Studio](https://posit.co/)
 2. Install a LATEX distribution:
     - [For MacOS](https://www.tug.org/mactex/)
     - [For Windows](https://miktex.org/)

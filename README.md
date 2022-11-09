@@ -84,13 +84,12 @@ But wait, there’s more! Because `{iheiddown}` is an **R** package, it
 especially shines for those who are analysing data.
 [R](https://www.r-project.org) is a *free* statistical programme and
 language that has a *huge* range of packages available for most current
-methods of analysis and visualisation.
-[RStudio](https://www.rstudio.com) is a typical frontend that makes
-working in **R** and especially with `{iheiddown}` easy. So though
-`{iheiddown}` is especially attractive to those writing dissertations
-with many tables and figures, the user-friendly nature and pretty output
-should make it of great benefit to nearly anyone writing a thesis
-project.
+methods of analysis and visualisation. [RStudio](https://posit.co/) is a
+typical frontend that makes working in **R** and especially with
+`{iheiddown}` easy. So though `{iheiddown}` is especially attractive to
+those writing dissertations with many tables and figures, the
+user-friendly nature and pretty output should make it of great benefit
+to nearly anyone writing a thesis project.
 
 You can see an example of the kind of dissertation output on the package
 website.
@@ -118,8 +117,7 @@ system<sup>[2](#myfootnote2)</sup>:
 
 -   [R](https://cran.r-project.org)
 -   [RStudio version 1.2 or
-    higher](https://www.rstudio.com/products/rstudio/download/#download),
-    and
+    higher](https://posit.co/download/rstudio-desktop/#download), and
 -   [LaTeX](https://www.latex-project.org/get/) or
     [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup>
 
