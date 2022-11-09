@@ -4,6 +4,7 @@
     <title>Title</title>
     <meta charset="utf-8" />
     <meta name="author" content="Author Name" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
     <link href="index_files/remark-css/default.css" rel="stylesheet" />
     <link href="index_files/remark-css/ninjutsu.css" rel="stylesheet" />
     <script src="index_files/htmlwidgets/htmlwidgets.js"></script>
@@ -184,7 +185,7 @@ runif(5)
 ```
 
 ```
-## [1] 0.08171127 0.25916737 0.89888609 0.93971281 0.28122773
+## [1] 0.9480611 0.4707902 0.7157110 0.4774978 0.6872948
 ```
 --
 
@@ -194,7 +195,7 @@ rnorm(5)
 ```
 
 ```
-## [1]  0.8097545  0.3224775  0.2599235 -0.2228744 -0.2115959
+## [1]  0.57326739 -1.06320230  0.54740997 -0.05959862 -0.03637554
 ```
 --
 
@@ -204,7 +205,7 @@ rbinom(5, 1, 0.5)
 ```
 
 ```
-## [1] 0 0 1 1 1
+## [1] 0 1 1 0 0
 ```
 --
 
@@ -214,7 +215,7 @@ rcauchy(5)
 ```
 
 ```
-## [1] -4.4791116  4.2435187  0.1172761 -1.6875630  0.3075178
+## [1] 194.7510851   3.8080989  -0.5987905  -0.6925268  -0.3329851
 ```
 
 ---
@@ -256,8 +257,8 @@ leaflet() %&gt;%
   setView(6.1435, 46.2210, zoom = 17)
 ```
 
-<div id="htmlwidget-7c1964d0c474f74963ed" style="width:720px;height:288px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7c1964d0c474f74963ed">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[46.221,6.1435],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8673e028c5c6073b7467" style="width:720px;height:288px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8673e028c5c6073b7467">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[46.221,6.1435],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -397,8 +398,8 @@ DT::datatable(head(mtcars, 10),
   fillContainer = FALSE, options = list(pageLength = 4))
 ```
 
-<div id="htmlwidget-75c26ff0c51b87d9ca41" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-75c26ff0c51b87d9ca41">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2],[6,6,4,6,8,6,8,4,4,6],[160,160,108,258,360,225,360,146.7,140.8,167.6],[110,110,93,110,175,105,245,62,95,123],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3],[0,0,1,1,0,1,0,1,1,1],[1,1,1,0,0,0,0,0,0,0],[4,4,4,3,3,3,3,4,4,4],[4,4,1,1,2,1,4,2,2,4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9b914a2fc7c298c4b0a4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9b914a2fc7c298c4b0a4">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2],[6,6,4,6,8,6,8,4,4,6],[160,160,108,258,360,225,360,146.7,140.8,167.6],[110,110,93,110,175,105,245,62,95,123],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3],[0,0,1,1,0,1,0,1,1,1],[1,1,1,0,0,0,0,0,0,0],[4,4,4,3,3,3,3,4,4,4],[4,4,1,1,2,1,4,2,2,4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 See the [DT package documentation](https://rstudio.github.io/DT/) for the
 additional options.
