@@ -80,7 +80,7 @@ knitr::write_bib(c(.packages(), "bookdown"), "bib/packages.bib")
 
 Welcome to the *RMarkdown* template for writing masters theses or PhD dissertations 
 at the Geneva Graduate Institute. 
-This sample content is based on the [IHEID  LaTeX dissertation template](https://github.com/jhollway/iheidmytex) and the R `bookdown` package.
+This sample content is based on the [IHEID  LaTeX dissertation template](https://github.com/iheid-library/iheidmytex) and the R `bookdown` package.
 
 But hopefully it will provide a nicer interface for those that have never used \TeX\ or \LaTeX\ before.
 

@@ -1,3 +1,10 @@
+# iheiddown 0.9.9
+
+## Package updates:
+
+- Updated moved html links
+- Skipped `count_words()` test on Linux
+
 # iheiddown 0.9.8
 
 ## Package updates:

@@ -59,10 +59,10 @@ ganttrify(project = ganttrify::test_project,
     - [Documentation](https://ggplot2.tidyverse.org/)
     - [Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 
-- [`bookdown`](https://bookdown.org/yihui/bookdown/)
+- [`bookdown`](https://yihui.org/bookdown/)
 
 ## Anything else?
 
 If you'd like to see examples of other things in this template, 
-please add them as feature requests to the [iheiddown](https://github.com/jhollway/iheiddown) website. 
+please add them as feature requests to the [iheiddown](https://github.com/iheid-library/iheiddown) website. 
 We love to see people using _RMarkdown_ for their theses, and are happy to help.

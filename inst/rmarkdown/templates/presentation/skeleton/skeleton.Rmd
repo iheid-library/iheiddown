@@ -224,7 +224,7 @@ class: with-logo logo-iheid
 define the `with-logo` class alongside the class of the logo itself 
 (`logo-iheid` in this case) on every slide you want the logo to appear.
 
-See [the presentation vignette](https://github.com/jhollway/iheiddown) for a
+See [the presentation vignette](https://github.com/iheid-library/iheiddown) for a
 list of the included logos.]
 
 ---
@@ -264,7 +264,7 @@ Riederer, you can create nice looking multicolumn tables using clean markdown co
 knitr::kable(head(mtcars[1:4], 5), format = 'html')
 ```
 
-See [the knitr documentation](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+See [the knitr documentation](https://yihui.org/rmarkdown-cookbook/kable.html)
 for additional options.
 ]
 
