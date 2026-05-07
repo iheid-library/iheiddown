@@ -1,3 +1,12 @@
+# iheiddown 0.9.8
+
+## Package updates:
+
+- Bumped DESCRIPTION metadata (version/date/roxygen note)
+- Fixed `count_words()` test to use a committed test.Rmd fixture instead of generating a draft vignette at runtime
+- Updated some dplyr pipelines
+- Updated GitHub Actions release workflow artifact upload and download actions
+
 # iheiddown 0.9.7
 
 ## Package updates:
