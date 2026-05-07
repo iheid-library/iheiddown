@@ -8,3 +8,5 @@
   )
   )
 }
+
+utils::globalVariables(c("value", "is_code", "start_end", "start_comment", "end_comment"))

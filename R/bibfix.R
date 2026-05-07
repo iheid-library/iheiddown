@@ -35,16 +35,16 @@ get_used_bib <- function(bib_file, rmd_file) {
     remove_html_comment() %>%
     remove_bullets() %>%
     get_biblines() %>%
-    dplyr::mutate(value = stringr::str_remove(.data$value, "@")) %>%
-    select(.data$value) %>%
+    dplyr::mutate(value = stringr::str_remove(value, "@")) %>%
+    select(value) %>%
     as.vector()
   current_bibs$value
 }
 
 remove_bullets <- function(x) {
-  dplyr::mutate(x, value = stringr::str_remove(.data$value, "^-[:space:]+"))
+  dplyr::mutate(x, value = stringr::str_remove(value, "^-[:space:]+"))
 }
 
 get_biblines <- function(x) {
-  dplyr::filter(x, grepl("@", .data$value))
+  dplyr::filter(x, grepl("@", value))
 }
