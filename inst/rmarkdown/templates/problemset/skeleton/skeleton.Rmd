@@ -131,7 +131,9 @@ $$ E("Escaping"|"Magic") = \frac{a}{b}$$
 Inserting images is easy! Place the image in your main folder and use the
 following syntax (see the RMarkdown file).
 
-![Ideal place for melting rings](volcano.jpg)
+```{r volcano-figure, echo=FALSE, fig.cap="Ideal place for melting rings", out.width="80%"}
+knitr::include_graphics("volcano.jpg")
+```
 
 # Appendix
 
