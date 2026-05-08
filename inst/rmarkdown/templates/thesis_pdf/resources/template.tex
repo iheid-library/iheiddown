@@ -315,6 +315,13 @@ $endif$
 
 \usepackage{blkarray} % Adding annotations to border for matrices
 
+% pandoc compatibility for newer image wrappers
+\makeatletter
+\@ifundefined{pandocbounded}{%
+  \newcommand{\pandocbounded}[1]{#1}%
+}{}
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACTUAL DOCUMENT HERE  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
