@@ -89,7 +89,11 @@ jobs:
 
       - name: Render output samples
         if: runner.os == 'macOS'
-        run: Rscript R/_render.R
+        run: |
+          Rscript R/_render.R || {
+          find . -name "*.log" -maxdepth 3 -print -exec tail -n 200 {} \;
+          exit 1
+          }
 
       - name: Save Thesis Sample as artifact
         if: runner.os == 'macOS'
