@@ -75,6 +75,13 @@ $endif$
 % Print whole bibliography
 \nocite{*}
 
+% Pandoc citeproc compatibility
+\providecommand{\citeproc}[2]{#2}
+\providecommand{\CSLBlock}[1]{#1\hfill\break}
+\providecommand{\CSLLeftMargin}[1]{#1}
+\providecommand{\CSLRightInline}[1]{#1}
+\providecommand{\CSLIndent}[1]{\hspace{#1}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
