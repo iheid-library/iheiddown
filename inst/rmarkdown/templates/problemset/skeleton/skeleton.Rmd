@@ -133,7 +133,7 @@ following syntax (see the RMarkdown file).
 
 ![Ideal place for melting rings](volcano.jpg)
 
-# Appendix:
+# Appendix
 
 Note that you can reference previous code chunks at the end of the code for full
 transparency. This is a good way to avoid cluttering your main body with
@@ -151,5 +151,5 @@ all chunks used in this document.
 knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")
 ```
 
-# References:
+# References
 <!-- The bibliography is automatically generated here. -->
