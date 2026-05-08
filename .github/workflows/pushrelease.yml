@@ -101,21 +101,21 @@ jobs:
 
       - name: Save Thesis Sample as artifact
         if: runner.os == 'macOS'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: examples
           path: 00-Example/versions/
 
       - name: Save Syllabus Sample as artifact
         if: runner.os == 'macOS'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: SyllabusExample
           path: Untitled/
 
       - name: Save problem set sample as artifact
         if: runner.os == 'macOS'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ProblemSetExample
           path: UntitledPS/
