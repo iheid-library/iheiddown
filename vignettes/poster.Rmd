@@ -97,7 +97,7 @@ package. They include:
   - Inspired by Mike Morrison's template allowing you to highlight the central
   message of your poster in a portrait format.
 
-Here is the thread that started the [`#betterposter`](https://twitter.com/mikemorrison/status/1110191245035479041?s=20&t=s3laifia16m89VYH_EMEqA) style. Choose the one that fits your needs and read on to discover how to edit it!
+Here is the thread that started the [`#betterposter`](https://x.com/mikemorrison/status/1110191245035479041?s=20&t=s3laifia16m89VYH_EMEqA) style. Choose the one that fits your needs and read on to discover how to edit it!
 
 ### Set YAML options
 

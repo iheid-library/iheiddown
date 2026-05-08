@@ -59,7 +59,7 @@ settled on `{xaringan}`to develop our presentation template for.
 
 If you want to know more about `{xaringan}` and other presentation packages for
 R, check out
-[this excellent book](https://bookdown.org/yihui/rmarkdown/xaringan.html).
+[this excellent book](https://yihui.org/rmarkdown/xaringan.html).
 
 ## Create your first presentation
 
@@ -153,7 +153,7 @@ An example of a macro would be the inclusion of
 Note that editing the CSS and the macros files is not recommended for beginner
 users as the point of having a theme is to avoid having to fiddle with these
 files. Advanced users who wish to contribute a feature should [open an issue on
-Github](https://github.com/jhollway/iheiddown/issues) to suggest the additional
+Github](https://github.com/iheid-library/iheiddown/issues) to suggest the additional
 features.
 
 ### Tips and tricks for editing your presentations 
@@ -197,7 +197,7 @@ the logos currently available in the package.
 | GMC                 | logo-gmc          |
 
 If you think of an IHEID related logo that you would like to add to this
-collection, feel free to [raise an issue](https://github.com/jhollway/iheiddown/issues)
+collection, feel free to [raise an issue](https://github.com/iheid-library/iheiddown/issues)
 and link to the logo resource.
 
 #### Citations and Bibliography
@@ -287,9 +287,9 @@ There are two main ways to print slides.
 ### A non-exhaustive list of additional readings and extensions 
 
 - Readings
-  - [`{Xaringan}` documentation](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+  - [`{Xaringan}` documentation](https://yihui.org/rmarkdown/xaringan.html)
   - [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  - [R Markdown: The Definitive Guide](https://yihui.org/rmarkdown/)
   - [Garrick Aden-Buie's website](https://www.garrickadenbuie.com/)
 - Extensions
   - [`{xaringanExtra}`](https://github.com/gadenbuie/xaringanExtra)

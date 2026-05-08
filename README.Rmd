@@ -21,7 +21,7 @@ devtools::source_gist("c83e078bf8c81b035e32c3fc0cf04ee8",
 ![GitHub issues](https://img.shields.io/github/issues-raw/jhollway/iheiddown)
 <!-- [![HitCount](http://hits.dwyl.com/jhollway/iheiddown.svg)](http://hits.dwyl.com/jhollway/iheiddown) -->
 [![Codecov test coverage](https://codecov.io/gh/jhollway/iheiddown/branch/main/graph/badge.svg)](https://app.codecov.io/gh/jhollway/iheiddown?branch=main)
-[![CodeFactor](https://www.codefactor.io/repository/github/jhollway/iheiddown/badge/main)](https://www.codefactor.io/repository/github/jhollway/iheiddown/overview/main)
+[![CodeFactor](https://www.codefactor.io/repository/github/iheid-library/iheiddown/badge/main)](https://www.codefactor.io/repository/github/iheid-library/iheiddown/overview/main)
 <!-- ![GitHub All Releases](https://img.shields.io/github/downloads/jhollway/iheiddown/total) -->
 <!-- badges: end -->
 
@@ -47,7 +47,7 @@ IHEID course syllabi.
 
 ## Write your dissertation 
 
-The package is built upon the [IHEID LaTeX dissertation template](https://github.com/jhollway/iheidmytex),
+The package is built upon the [IHEID LaTeX dissertation template](https://github.com/iheid-library/iheidmytex),
 which offers versus common word processors:
 
 - less prone to corruption or crashing
@@ -108,7 +108,7 @@ all available templates:
 You will first need to install the following software on your system<sup>[2](#myfootnote2)</sup>:
 
 - [R](https://cran.r-project.org)
-- [RStudio version 1.2 or higher](https://posit.co/download/rstudio-desktop/#download), and 
+- [RStudio version 1.2 or higher](https://posit.co/download/rstudio-desktop#download), and 
 - [LaTeX](https://www.latex-project.org/get/) or [MiKTeX](https://miktex.org/howto/install-miktex/)<sup>[1](#myfootnote1)</sup>
 
 ### Installing the Stable Version
@@ -137,7 +137,7 @@ following commands into the console:
 - For latest development version: `remotes::install_github("jhollway/iheiddown@develop")`
 
 Alternatively, you can find the binaries for all major OSes -- Windows, Mac, and Linux -- 
-by looking up the latest release of the package [here](https://github.com/jhollway/iheiddown/releases/latest).
+by looking up the latest release of the package [here](https://github.com/iheid-library/iheiddown/releases/latest).
 Manually download the appropriate binary for your operating system,
 and install using an adapted version of the following commands:
 
@@ -163,11 +163,11 @@ let us take a look at how to set up a thesis project.
 Congratulations! You have now set up your first thesis project. For a more
 detailed walkthrough of the different functionalities and how to get started
 with each one, please check out the different articles on the
-[package website](https://jhollway.github.io/iheiddown/).
+[package website](https://iheid-library.github.io/iheiddown/).
 
 ## Feedback
 
-Please [raise an issue](https://github.com/jhollway/iheiddown/issues) for this repo
+Please [raise an issue](https://github.com/iheid-library/iheiddown/issues) for this repo
 if you encounter any bugs or if you have any feature requests.
 You can also vote on existing issues that you would like to see addressed soon.
 If you would like to contribute to the repo,

@@ -1,5 +1,5 @@
 -- A function to color text in HTML and Latex outputs.
--- Source: https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html
+-- Source: https://yihui.org/rmarkdown-cookbook/font-color.html
 Span = function(el)
   color = el.attributes['color']
   -- if no color attribute, return unchange

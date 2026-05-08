@@ -84,7 +84,7 @@ and to conclude the block quotation...
 
 I just start another paragraph.
 If you would like fancier block quotes,
-just raise this as an issue [on GitHub](https://github.com/jhollway/iheiddown).
+just raise this as an issue [on GitHub](https://github.com/iheid-library/iheiddown).
 
 ## Lists
 

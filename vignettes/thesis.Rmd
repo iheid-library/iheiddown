@@ -143,7 +143,7 @@ that you can set the title of the reference section in the first line.
 
 The `98-appendix.Rmd` file allows you to showcase code, additional outputs and
 more in a separate section to avoid unnecessarily cluttering the main body of
-your thesis. This can be done by [referencing code chunks](https://bookdown.org/yihui/rmarkdown-cookbook/reuse-chunks.html)
+your thesis. This can be done by [referencing code chunks](https://yihui.org/rmarkdown-cookbook/reuse-chunks.html)
 from your main body and printing the computations you did in your R chunks or 
 by adding new ones.
 
@@ -198,6 +198,6 @@ This is where you will find the pdf file after your thesis has been knitted by
 Here is a list of additional links that will help you get familiar with our
 `{iheiddown}` thesis template, `{bookdown}` and `Markdown` syntax.
 
-- [R-Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
-- [Bookdown book](https://bookdown.org/yihui/bookdown/)
+- [R-Markdown Cookbook](https://yihui.org/rmarkdown-cookbook/)
+- [Bookdown book](https://yihui.org/bookdown/)
 - [Markdown guide](https://www.markdownguide.org/)
