@@ -78,6 +78,13 @@ $endif$
 % Print whole bibliography
 \nocite{*}
 
+% pandoc compatibility for newer image wrappers
+\makeatletter
+\@ifundefined{pandocbounded}{%
+  \newcommand{\pandocbounded}[1]{#1}%
+}{}
+\makeatother
+
 % Pandoc citeproc compatibility
 \providecommand{\citeproc}[2]{#2}
 \providecommand{\CSLBlock}[1]{#1\hfill\break}
